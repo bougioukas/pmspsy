@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Basic Statistics for the Social Sciences"
+  title: "Advanced Statistics for Psychology"
   subtitle: "1st Edition"
   author: 
     - name: "Konstantinos I. Bougioukas, PhD"
@@ -24,7 +24,7 @@ reference-location: margin
 
 share:
   permalink: "https://statsocial.netlify.app/"
-  description: "Basic Statistics for the Social Sciences"
+  description: "Advanced Statistics for Psychology"
   twitter: true
   facebook: true
   linkedin: true
