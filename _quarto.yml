@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Advanced Statistics for Psychology"
+  title: "Advanced Statistical Methods for Analyzing Empirical Data"
   subtitle: "1st Edition"
   author: 
     - name: "Konstantinos I. Bougioukas, PhD"
@@ -24,7 +24,7 @@ reference-location: margin
 
 share:
   permalink: "https://statsocial.netlify.app/"
-  description: "Advanced Statistics for Psychology"
+  description: "Advanced Statistical Methods for Analyzing Empirical Data"
   twitter: true
   facebook: true
   linkedin: true
