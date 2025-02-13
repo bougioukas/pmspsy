@@ -1,0 +1,50 @@
+project:
+  type: book
+
+book:
+  title: "Basic Statistics for the Social Sciences"
+  subtitle: "1st Edition"
+  author: 
+    - name: "Konstantinos I. Bougioukas, PhD"
+      orcid: "0000-0002-6533-1391"
+  date: today
+  cover-image: images/cover.png
+  favicon: images/cover.png
+  chapters:
+    - index.qmd
+    - references.qmd
+
+  page-footer: 
+    right: "Built with [Quarto](https://quarto.org/)^®^"
+    left: "&copy; Copyright 2024, Konstantinos I. Bougioukas. License: [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)."
+  back-to-top-navigation: true
+
+bibliography: references.bib
+reference-location: margin
+
+share:
+  permalink: "https://statsocial.netlify.app/"
+  description: "Basic Statistics for the Social Sciences"
+  twitter: true
+  facebook: true
+  linkedin: true
+
+format:
+  html:
+    theme:
+      light: [cosmo, custom.scss]
+    grid:
+      sidebar-width: 270px
+      body-width: 840px
+      margin-width: 250px
+    fontsize: 1.25em
+    linestretch: 1.5
+    toc-title: "On this page"
+    link-external-newwindow: true
+    number-depth: 3
+    html-math-method: mathjax
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
