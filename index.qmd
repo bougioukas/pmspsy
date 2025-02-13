@@ -1,15 +1,18 @@
 # Welcome! {.unnumbered}
 
-This open course introduces students to key concepts and statistical methods used in the quantitative social and behavioral sciences to describe and test hypotheses about the social world and human behavior. Students will learn to:
+This open course introduces postgraduate students to advanced statistical methods used in the quantitative social, educational, and behavioral sciences. Students will learn:
 
--   Describe and summarize data distributions.
+-   Analysis of Variance (ANOVA) designs.
 
--   Formulate and test various types of research hypotheses.
+-   Simple and multiple linear regression. 
 
--   Analyze associations between factors, characteristics, or events.
+-   Simple and multiple logistic regression.
 
--   Interpret and critically evaluate published statistics.
+-   Factor Analysis.
 
-The student may also learn about the proper use of graphing and statistical software.
+-   Mediation and Path Analysis.
 
-{{< qrcode https://statsocial.netlify.app/ width=100 height=100 colorDark='#0011bb' >}}
+-   Meta-analysis.
+
+The student will also learn about the principles of data visualization and statistical software JAMOVI.
+
