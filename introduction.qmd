@@ -356,11 +356,7 @@ Next, we select the **Filters button** ![](images/filters.png){width="30" height
 
 In order to access functions, press the ![](images/fx.png){width="30" height="28"} icon in the filter settings and from "**VARIABLES**" double-click on `age` (or we just type the variable name but if the variable has a space, we must use ticks `''` around the variable name). Then type the condition `age >= 18` in the formula box and press **ENTER** from the keyboard (@fig-filter1_age).
 
-<<<<<<< HEAD
 ![Adding a filter.](images/filter1_age.png){#fig-filter1_age}
-=======
-![Adding a filter](images/filter1_age.png){#fig-filter1_age}
->>>>>>> ce47051cddfa246319dff4bea04a7f89b89c492e
 
 ::: callout-tip
 ## Relational (or comparison) operators in Jamovi
