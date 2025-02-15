@@ -210,11 +210,9 @@ window.Quarto = {
   <li><a href="#the-dataset" id="toc-the-dataset" class="nav-link" data-scroll-target="#the-dataset"><span class="header-section-number">1.5.1</span> The dataset</a></li>
   <li><a href="#opening-the-file" id="toc-opening-the-file" class="nav-link" data-scroll-target="#opening-the-file"><span class="header-section-number">1.5.2</span> Opening the file</a></li>
   </ul></li>
-  <li><a href="#transforming-data" id="toc-transforming-data" class="nav-link" data-scroll-target="#transforming-data"><span class="header-section-number">1.6</span> Transforming data</a>
-  <ul class="collapse">
-  <li><a href="#adding-labels-to-codes" id="toc-adding-labels-to-codes" class="nav-link" data-scroll-target="#adding-labels-to-codes"><span class="header-section-number">1.6.1</span> Adding labels to codes</a></li>
-  <li><a href="#changing-the-measure-type" id="toc-changing-the-measure-type" class="nav-link" data-scroll-target="#changing-the-measure-type"><span class="header-section-number">1.6.2</span> Changing the measure type</a></li>
-  </ul></li>
+  <li><a href="#adding-labels-to-codes" id="toc-adding-labels-to-codes" class="nav-link" data-scroll-target="#adding-labels-to-codes"><span class="header-section-number">1.6</span> Adding labels to codes</a></li>
+  <li><a href="#changing-the-measure-type" id="toc-changing-the-measure-type" class="nav-link" data-scroll-target="#changing-the-measure-type"><span class="header-section-number">1.7</span> Changing the measure type</a></li>
+  <li><a href="#filtering-data" id="toc-filtering-data" class="nav-link" data-scroll-target="#filtering-data"><span class="header-section-number">1.8</span> Filtering data</a></li>
   </ul>
 </nav>
     </div>
@@ -514,8 +512,8 @@ Table&nbsp;1.2: Types of data and measures
 <div id="fig-rses" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f625dae61102d73460be" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f625dae61102d73460be">{"x":{"filter":"none","vertical":false,"extensions":["Scroller","Buttons"],"data":[[2,2,1,1,1,1,2,1,2,2,2,2,1,2,2,2,2,2,2,2,1,2,1,1,2,1,2,2,1,2,2,2,2,2,2,1,2,2,2,2,1,2,2,1,2,2,2,1,1,2,1,2,2,1,1,2,1,2,2,1,2,1,2,2,2,2,1,2,1,2,1,1,2,1,2,1,2,1,2,2,1,2,2,1,2,2,1,2,2,1,2,2,1,2,2,2,2,2,2,2,2,1,2,2,1,2,2,1,1,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1,2,2,2,2,2,1,1,1,2,1,2,2,2,2,1,2,2,2,1,2,1,1,2,2,1,2,1,2,1,1,2,2,1,2,1,2,2,1,1,1,1,1,2,2,2,2,2,2,2,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,2,1,2,2,1,1,2,2,1,1,1,1,2,1,2,2,1,2,1,1,1,2,2,2,2,2,2,2,1,2,2,1,2,2,1,1,2,2,2,1,2,2,1,2,2,2,2,2,2,1,1,1,2,1,1,1],[18,19,18,17,17,18,18,17,18,14,17,20,17,18,17,17,18,18,22,14,16,14,17,18,15,18,18,17,16,20,18,20,16,20,16,18,17,19,20,17,20,18,17,20,16,14,20,18,18,18,21,17,18,14,22,16,16,19,17,17,22,21,19,21,19,16,17,16,19,21,17,18,17,18,16,16,18,17,18,17,17,18,20,20,21,18,21,20,18,16,19,19,16,20,21,17,17,21,20,19,17,18,20,20,19,20,16,18,16,19,19,18,19,15,18,18,18,21,18,16,18,18,17,20,19,20,19,16,21,16,16,15,15,17,15,19,18,15,18,16,18,17,19,19,18,17,16,15,15,20,17,22,14,16,17,19,18,19,19,19,19,20,18,15,21,18,18,18,21,18,21,17,19,18,22,16,20,15,15,20,15,15,17,16,21,15,15,17,18,18,21,18,16,21,17,18,19,17,17,18,15,18,16,19,19,14,18,17,19,19,17,17,16,16,17,16,17,15,16,17,15,15,16,16,18,18,20,20,19,17,17,18,18,19,18,18,15,18,17,19,18,17,17,22,18,19,22,22,19,16,22,15,15,18,17,15,22,14],[9,3,3,12,3,3,7,3,2,3,3,1,3,7,3,3,9,13,1,1,1,5,1,2,3,3,5,9,5,5,9,7,5,3,3,3,7,5,3,3,5,3,3,4,15,0,0,0,0,3,3,4,5,1,3,1,3,5,3,1,5,5,4,3,4,5,5,5,1,3,5,3,4,5,7,5,1,3,3,3,5,8,3,1,3,5,3,5,3,3,2,1,1,4,7,3,7,8,7,7,7,4,4,4,4,1,1,4,4,5,5,7,1,7,5,4,7,16,4,4,9,4,5,4,10,4,7,7,5,4,4,4,4,5,5,5,4,1,5,4,12,5,7,7,4,4,4,0,12,4,5,4,7,4,18,8,0,5,5,5,4,4,4,6,4,6,8,3,3,6,3,2,3,6,13,6,3,12,6,3,3,8,3,6,2,3,3,3,5,5,8,2,3,3,5,2,2,3,3,3,8,3,8,5,6,6,6,3,6,3,4,4,4,6,10,4,6,4,4,6,6,6,2,8,6,12,6,6,4,6,10,8,8,2,6,4,2,4,8,2,1,4,2,6,2,7,5,6,4,2,6,2,2,5,7,5,8,4],[3,1,2,2,2,2,1,2,2,3,3,3,2,1,1,1,2,0,1,2,1,2,0,2,1,3,3,2,2,2,1,2,1,2,2,2,1,1,2,1,1,2,0,3,1,2,2,1,2,1,3,2,2,2,2,2,3,1,1,2,2,2,1,2,2,1,1,1,2,1,1,2,1,2,2,2,2,2,2,2,2,0,2,3,1,1,1,2,1,1,1,1,3,1,2,2,1,1,2,3,1,2,3,1,3,1,1,3,1,1,1,1,1,2,2,3,1,2,3,2,2,1,1,2,1,2,2,1,1,2,1,1,1,2,1,1,2,2,2,3,2,2,1,1,2,2,2,3,1,1,3,2,2,3,1,1,2,1,3,3,2,1,2,1,1,2,1,2,2,2,2,2,2,2,2,2,2,1,2,1,2,1,2,0,3,1,2,1,3,0,2,2,2,1,2,2,1,1,2,3,2,2,1,2,2,2,2,1,1,3,2,2,2,3,1,2,1,3,2,1,2,2,2,3,2,3,1,1,1,1,0,2,1,1,2,1,2,2,1,2,2,2,2,3,2,1,3,3,2,2,2,1,1,1,2,2,2,2],[3,2,2,2,2,2,1,1,1,2,3,2,1,1,0,1,1,1,1,2,1,2,1,1,1,3,2,1,1,2,1,2,1,1,3,2,1,1,2,0,1,1,1,2,1,2,2,1,2,1,2,1,1,1,2,2,2,1,1,2,3,2,1,2,1,1,2,1,1,1,1,2,1,2,1,2,1,1,2,2,1,1,2,3,1,1,1,1,1,2,0,1,2,1,1,2,2,2,2,2,1,2,2,1,2,3,1,3,1,1,2,2,1,1,1,2,3,1,2,1,1,2,1,1,1,2,1,2,1,3,1,2,2,1,1,2,1,2,1,2,1,2,0,1,1,2,2,2,1,1,3,1,2,3,1,0,3,1,3,3,3,2,1,1,1,1,1,2,2,2,1,2,2,2,1,2,3,1,2,1,2,1,1,1,2,3,2,2,2,0,1,2,1,2,1,3,2,1,2,3,1,2,1,1,1,2,1,2,1,3,1,1,1,3,1,1,1,2,2,1,1,1,2,3,3,2,1,1,2,1,2,2,2,2,2,2,2,1,2,1,1,2,2,2,1,1,3,2,2,1,2,1,1,2,1,1,2,2],[0,1,0,0,1,1,1,1,1,1,1,1,1,2,2,3,1,2,2,1,2,2,2,1,1,0,1,1,1,1,2,1,2,2,1,1,2,2,1,2,1,1,3,1,1,1,1,1,0,2,0,1,2,2,0,1,1,1,1,1,1,0,2,1,3,1,1,2,1,2,1,1,2,1,1,1,1,1,1,1,2,3,1,0,3,1,2,1,1,1,2,2,0,2,2,2,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,2,0,1,2,0,1,1,2,1,1,3,1,3,1,2,1,1,0,1,1,2,1,2,1,1,0,3,1,2,2,1,1,1,0,1,2,1,1,1,1,1,2,1,2,0,0,1,1,1,1,1,2,2,2,2,1,1,0,0,0,1,0,0,3,1,1,0,1,2,2,1,0,1,1,0,3,1,1,1,1,1,1,2,1,1,0,1,1,2,0,2,1,1,1,2,0,2,1,2,0,2,2,2,1,1,1,1,1,0,2,0,0,2,1,1,2,2,1,0,1,0,1,1,2,2,3,1,1,1,0,1,3,1,0,0,1,1,2,1,1,1,1,0,1],[2,2,1,1,2,3,1,2,1,2,3,2,1,1,1,1,1,1,1,2,1,3,1,2,1,3,2,1,2,2,1,3,0,1,2,2,1,1,2,1,1,2,1,3,1,2,1,1,2,1,2,1,1,1,3,2,2,1,1,2,2,2,0,2,1,2,2,1,2,1,1,2,1,2,2,2,2,2,2,2,1,0,2,3,2,1,1,1,2,2,0,1,3,1,1,1,3,3,2,2,1,2,2,1,2,1,1,3,1,2,2,3,1,2,1,3,2,1,3,2,1,1,1,2,1,2,1,3,1,2,2,3,3,3,1,3,1,2,2,3,1,2,1,0,2,2,1,3,1,1,3,1,2,3,1,1,2,1,2,2,3,1,2,1,1,1,1,2,2,2,2,1,2,1,1,1,1,1,1,1,1,2,1,1,3,1,3,2,2,0,1,2,1,3,1,2,1,1,1,3,2,2,1,1,1,2,2,1,1,2,1,2,1,2,1,1,1,3,2,1,2,2,3,1,1,3,1,1,2,1,2,2,2,2,1,3,2,1,1,1,1,2,2,3,2,2,3,2,2,1,3,1,1,1,3,2,1,2],[0,1,2,1,2,1,1,1,1,0,1,1,2,1,2,1,1,2,1,2,1,1,3,2,1,0,1,2,2,2,3,1,2,2,1,2,1,2,1,2,1,2,3,2,1,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,3,2,1,3,1,3,1,1,1,1,1,1,2,1,2,2,1,2,1,0,3,1,1,2,1,2,3,2,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,2,2,3,2,1,1,1,3,2,1,1,2,1,2,0,1,3,1,2,2,2,1,1,1,2,1,0,1,1,1,1,2,1,2,0,0,1,1,1,1,1,1,1,1,2,2,1,1,1,2,2,2,1,3,2,1,2,1,2,2,0,2,2,1,0,2,2,0,2,2,2,1,2,1,2,0,1,1,1,2,2,1,1,1,2,1,2,1,2,1,2,1,2,0,1,2,1,1,0,2,2,1,1,1,2,1,2,1,1,1,2,2,1,1,2,3,1,1,2,1,2,3,1,0,1,2,1,2,1,2,2,1,2,1],[2,1,2,2,2,2,2,2,2,3,3,2,2,1,0,2,2,1,1,2,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,1,2,2,0,2,2,1,2,2,2,2,2,1,1,1,2,1,1,2,2,2,2,2,2,2,3,1,2,1,2,1,1,2,1,2,2,1,2,2,2,2,2,2,2,1,1,2,3,1,2,1,2,2,1,1,0,2,1,1,1,1,1,2,2,1,2,2,1,2,2,2,2,1,2,1,1,2,2,1,2,2,1,2,2,2,1,2,2,1,2,1,1,1,2,2,1,1,1,1,1,1,2,2,2,1,2,1,1,2,2,1,2,1,1,3,1,2,2,2,1,2,1,1,2,2,2,2,2,2,1,1,2,2,2,2,2,3,2,2,2,2,1,1,2,2,1,1,1,3,2,1,1,3,0,2,1,2,1,1,2,1,2,1,2,2,2,1,3,1,2,2,2,1,3,1,2,2,3,1,1,1,2,3,1,2,2,3,1,1,2,2,2,2,1,1,2,2,2,2,1,2,1,1,1,2,2,2,2,2,1,2,2,3,2,3,2,1,2,1,2,2,2],[3,0,1,1,1,1,2,2,3,3,2,2,1,1,2,0,3,0,1,1,1,2,0,2,2,1,2,1,2,1,1,2,1,1,3,1,1,1,2,2,2,2,0,1,2,2,2,2,1,1,2,1,1,1,2,1,2,2,2,2,1,2,1,2,1,1,1,1,2,1,2,2,1,2,2,2,2,2,1,1,1,0,2,2,1,2,1,1,2,1,1,1,2,1,1,1,0,0,2,2,1,2,2,1,2,1,2,3,1,1,0,0,1,2,1,2,2,1,2,2,1,1,2,2,1,1,1,0,1,1,0,0,0,2,1,0,1,1,1,2,1,2,1,1,2,2,1,2,2,1,3,0,2,2,2,1,2,1,3,3,2,1,2,2,2,1,1,2,2,1,2,2,2,1,1,1,2,1,2,2,2,1,1,0,2,1,2,1,2,1,1,2,1,0,2,2,1,2,2,1,2,3,1,1,1,2,2,1,1,2,1,2,1,2,1,1,1,3,3,1,2,2,3,0,1,2,1,1,1,1,1,2,2,3,1,0,2,1,1,1,2,2,2,2,2,1,2,2,2,2,2,1,1,2,0,2,1,2],[1,2,1,1,1,1,1,1,1,1,0,1,1,1,2,1,1,2,1,1,1,1,3,2,1,1,1,1,2,1,2,1,3,2,1,1,1,2,1,2,1,2,2,1,1,1,1,1,1,1,1,1,2,2,2,1,1,1,1,1,1,0,3,1,3,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,2,2,1,0,3,1,1,1,2,2,2,2,1,1,3,2,2,2,1,1,2,1,1,1,1,1,1,1,1,1,2,2,2,1,2,1,1,2,1,1,1,1,1,1,2,1,3,2,1,2,2,2,2,1,1,2,2,1,1,1,3,1,3,3,2,1,1,1,1,2,1,2,1,1,1,3,1,0,1,1,1,1,1,1,1,2,1,1,2,1,1,1,0,1,1,1,1,2,1,1,1,2,3,3,0,1,1,1,1,3,1,1,1,2,1,1,1,1,1,0,1,2,1,1,3,1,1,1,2,1,3,1,1,0,2,1,2,1,1,2,1,1,1,2,1,1,1,1,2,1,3,1,1,1,1,2,1,2,1,3,2,1,1,1,2,3,1,1,0,1,0,2,2,0,2,1,1,1],[1,2,1,1,1,1,1,1,1,1,0,1,2,1,2,3,1,3,1,1,1,1,3,1,1,1,2,2,1,1,2,1,2,2,1,1,1,2,1,2,1,1,2,0,1,1,1,1,1,1,1,2,2,2,2,1,1,1,1,1,2,1,2,0,2,2,1,2,1,2,1,1,1,1,1,0,1,1,1,1,2,2,1,1,2,1,1,2,1,2,2,2,1,1,2,2,2,2,1,1,1,0,1,1,1,2,1,1,1,2,1,2,3,1,2,1,1,2,1,1,2,1,1,1,2,1,2,2,1,2,2,2,2,1,1,2,2,1,1,1,2,0,2,2,1,1,1,1,1,2,0,2,0,1,1,2,1,1,0,1,1,3,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,2,2,2,0,1,1,1,1,2,2,1,2,2,1,1,1,1,1,1,1,1,1,1,2,0,1,1,2,1,2,1,1,0,2,2,2,0,0,3,1,1,1,2,1,1,1,2,1,1,2,0,0,0,1,2,0,2,1,2,1,0,0,1,1,2,1,1,1,1,1,1,2,1,2,1,1,0],[0,2,1,1,1,1,1,1,1,1,0,1,1,1,2,3,1,3,1,1,1,1,3,2,1,0,2,1,2,1,2,1,3,2,1,1,1,2,1,2,1,2,2,0,1,1,1,1,1,1,1,1,2,2,2,1,0,1,1,1,2,0,3,1,2,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,2,2,1,1,2,1,1,1,2,2,2,2,1,1,2,2,2,2,1,0,1,1,0,1,0,1,1,0,1,1,2,2,2,1,2,1,1,2,1,1,1,1,1,1,2,1,2,2,1,1,2,2,2,1,1,2,2,1,1,1,2,1,3,3,2,1,1,1,1,2,1,2,1,1,1,3,0,1,0,0,1,1,1,1,1,2,1,1,2,1,1,1,0,1,1,1,0,2,1,1,1,2,2,3,0,1,1,1,1,3,1,1,1,2,1,0,1,1,1,1,1,1,1,1,2,1,1,1,2,1,2,1,1,0,2,1,2,1,1,2,1,1,0,2,1,0,1,1,1,1,2,1,1,1,1,2,1,2,1,2,1,1,1,1,2,2,1,1,0,1,1,2,2,1,2,1,1,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>sex<\/th>\n      <th>age<\/th>\n      <th>time_spent<\/th>\n      <th>q1<\/th>\n      <th>q2<\/th>\n      <th>q3<\/th>\n      <th>q4<\/th>\n      <th>q5<\/th>\n      <th>q6<\/th>\n      <th>q7<\/th>\n      <th>q8<\/th>\n      <th>q9<\/th>\n      <th>q10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"Bt","scrollY":452,"scroller":true,"scrollX":true,"pageLength":10,"buttons":[{"extend":"csv","filename":"rses"}],"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12]},{"name":"sex","targets":0},{"name":"age","targets":1},{"name":"time_spent","targets":2},{"name":"q1","targets":3},{"name":"q2","targets":4},{"name":"q3","targets":5},{"name":"q4","targets":6},{"name":"q5","targets":7},{"name":"q6","targets":8},{"name":"q7","targets":9},{"name":"q8","targets":10},{"name":"q9","targets":11},{"name":"q10","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-55bcc85a33553f8f1855" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-55bcc85a33553f8f1855">{"x":{"filter":"none","vertical":false,"extensions":["Scroller","Buttons"],"data":[[2,2,1,1,1,1,2,1,2,2,2,2,1,2,2,2,2,2,2,2,1,2,1,1,2,1,2,2,1,2,2,2,2,2,2,1,2,2,2,2,1,2,2,1,2,2,2,1,1,2,1,2,2,1,1,2,1,2,2,1,2,1,2,2,2,2,1,2,1,2,1,1,2,1,2,1,2,1,2,2,1,2,2,1,2,2,1,2,2,1,2,2,1,2,2,2,2,2,2,2,2,1,2,2,1,2,2,1,1,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1,2,2,2,2,2,1,1,1,2,1,2,2,2,2,1,2,2,2,1,2,1,1,2,2,1,2,1,2,1,1,2,2,1,2,1,2,2,1,1,1,1,1,2,2,2,2,2,2,2,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,2,1,2,2,1,1,2,2,1,1,1,1,2,1,2,2,1,2,1,1,1,2,2,2,2,2,2,2,1,2,2,1,2,2,1,1,2,2,2,1,2,2,1,2,2,2,2,2,2,1,1,1,2,1,1,1],[18,19,18,17,17,18,18,17,18,14,17,20,17,18,17,17,18,18,22,14,16,14,17,18,15,18,18,17,16,20,18,20,16,20,16,18,17,19,20,17,20,18,17,20,16,14,20,18,18,18,21,17,18,14,22,16,16,19,17,17,22,21,19,21,19,16,17,16,19,21,17,18,17,18,16,16,18,17,18,17,17,18,20,20,21,18,21,20,18,16,19,19,16,20,21,17,17,21,20,19,17,18,20,20,19,20,16,18,16,19,19,18,19,15,18,18,18,21,18,16,18,18,17,20,19,20,19,16,21,16,16,15,15,17,15,19,18,15,18,16,18,17,19,19,18,17,16,15,15,20,17,22,14,16,17,19,18,19,19,19,19,20,18,15,21,18,18,18,21,18,21,17,19,18,22,16,20,15,15,20,15,15,17,16,21,15,15,17,18,18,21,18,16,21,17,18,19,17,17,18,15,18,16,19,19,14,18,17,19,19,17,17,16,16,17,16,17,15,16,17,15,15,16,16,18,18,20,20,19,17,17,18,18,19,18,18,15,18,17,19,18,17,17,22,18,19,22,22,19,16,22,15,15,18,17,15,22,14],[9,3,3,12,3,3,7,3,2,3,3,1,3,7,3,3,9,13,1,1,1,5,1,2,3,3,5,9,5,5,9,7,5,3,3,3,7,5,3,3,5,3,3,4,15,0,0,0,0,3,3,4,5,1,3,1,3,5,3,1,5,5,4,3,4,5,5,5,1,3,5,3,4,5,7,5,1,3,3,3,5,8,3,1,3,5,3,5,3,3,2,1,1,4,7,3,7,8,7,7,7,4,4,4,4,1,1,4,4,5,5,7,1,7,5,4,7,16,4,4,9,4,5,4,10,4,7,7,5,4,4,4,4,5,5,5,4,1,5,4,12,5,7,7,4,4,4,0,12,4,5,4,7,4,18,8,0,5,5,5,4,4,4,6,4,6,8,3,3,6,3,2,3,6,13,6,3,12,6,3,3,8,3,6,2,3,3,3,5,5,8,2,3,3,5,2,2,3,3,3,8,3,8,5,6,6,6,3,6,3,4,4,4,6,10,4,6,4,4,6,6,6,2,8,6,12,6,6,4,6,10,8,8,2,6,4,2,4,8,2,1,4,2,6,2,7,5,6,4,2,6,2,2,5,7,5,8,4],[3,1,2,2,2,2,1,2,2,3,3,3,2,1,1,1,2,0,1,2,1,2,0,2,1,3,3,2,2,2,1,2,1,2,2,2,1,1,2,1,1,2,0,3,1,2,2,1,2,1,3,2,2,2,2,2,3,1,1,2,2,2,1,2,2,1,1,1,2,1,1,2,1,2,2,2,2,2,2,2,2,0,2,3,1,1,1,2,1,1,1,1,3,1,2,2,1,1,2,3,1,2,3,1,3,1,1,3,1,1,1,1,1,2,2,3,1,2,3,2,2,1,1,2,1,2,2,1,1,2,1,1,1,2,1,1,2,2,2,3,2,2,1,1,2,2,2,3,1,1,3,2,2,3,1,1,2,1,3,3,2,1,2,1,1,2,1,2,2,2,2,2,2,2,2,2,2,1,2,1,2,1,2,0,3,1,2,1,3,0,2,2,2,1,2,2,1,1,2,3,2,2,1,2,2,2,2,1,1,3,2,2,2,3,1,2,1,3,2,1,2,2,2,3,2,3,1,1,1,1,0,2,1,1,2,1,2,2,1,2,2,2,2,3,2,1,3,3,2,2,2,1,1,1,2,2,2,2],[3,2,2,2,2,2,1,1,1,2,3,2,1,1,0,1,1,1,1,2,1,2,1,1,1,3,2,1,1,2,1,2,1,1,3,2,1,1,2,0,1,1,1,2,1,2,2,1,2,1,2,1,1,1,2,2,2,1,1,2,3,2,1,2,1,1,2,1,1,1,1,2,1,2,1,2,1,1,2,2,1,1,2,3,1,1,1,1,1,2,0,1,2,1,1,2,2,2,2,2,1,2,2,1,2,3,1,3,1,1,2,2,1,1,1,2,3,1,2,1,1,2,1,1,1,2,1,2,1,3,1,2,2,1,1,2,1,2,1,2,1,2,0,1,1,2,2,2,1,1,3,1,2,3,1,0,3,1,3,3,3,2,1,1,1,1,1,2,2,2,1,2,2,2,1,2,3,1,2,1,2,1,1,1,2,3,2,2,2,0,1,2,1,2,1,3,2,1,2,3,1,2,1,1,1,2,1,2,1,3,1,1,1,3,1,1,1,2,2,1,1,1,2,3,3,2,1,1,2,1,2,2,2,2,2,2,2,1,2,1,1,2,2,2,1,1,3,2,2,1,2,1,1,2,1,1,2,2],[0,1,0,0,1,1,1,1,1,1,1,1,1,2,2,3,1,2,2,1,2,2,2,1,1,0,1,1,1,1,2,1,2,2,1,1,2,2,1,2,1,1,3,1,1,1,1,1,0,2,0,1,2,2,0,1,1,1,1,1,1,0,2,1,3,1,1,2,1,2,1,1,2,1,1,1,1,1,1,1,2,3,1,0,3,1,2,1,1,1,2,2,0,2,2,2,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,2,0,1,2,0,1,1,2,1,1,3,1,3,1,2,1,1,0,1,1,2,1,2,1,1,0,3,1,2,2,1,1,1,0,1,2,1,1,1,1,1,2,1,2,0,0,1,1,1,1,1,2,2,2,2,1,1,0,0,0,1,0,0,3,1,1,0,1,2,2,1,0,1,1,0,3,1,1,1,1,1,1,2,1,1,0,1,1,2,0,2,1,1,1,2,0,2,1,2,0,2,2,2,1,1,1,1,1,0,2,0,0,2,1,1,2,2,1,0,1,0,1,1,2,2,3,1,1,1,0,1,3,1,0,0,1,1,2,1,1,1,1,0,1],[2,2,1,1,2,3,1,2,1,2,3,2,1,1,1,1,1,1,1,2,1,3,1,2,1,3,2,1,2,2,1,3,0,1,2,2,1,1,2,1,1,2,1,3,1,2,1,1,2,1,2,1,1,1,3,2,2,1,1,2,2,2,0,2,1,2,2,1,2,1,1,2,1,2,2,2,2,2,2,2,1,0,2,3,2,1,1,1,2,2,0,1,3,1,1,1,3,3,2,2,1,2,2,1,2,1,1,3,1,2,2,3,1,2,1,3,2,1,3,2,1,1,1,2,1,2,1,3,1,2,2,3,3,3,1,3,1,2,2,3,1,2,1,0,2,2,1,3,1,1,3,1,2,3,1,1,2,1,2,2,3,1,2,1,1,1,1,2,2,2,2,1,2,1,1,1,1,1,1,1,1,2,1,1,3,1,3,2,2,0,1,2,1,3,1,2,1,1,1,3,2,2,1,1,1,2,2,1,1,2,1,2,1,2,1,1,1,3,2,1,2,2,3,1,1,3,1,1,2,1,2,2,2,2,1,3,2,1,1,1,1,2,2,3,2,2,3,2,2,1,3,1,1,1,3,2,1,2],[0,1,2,1,2,1,1,1,1,0,1,1,2,1,2,1,1,2,1,2,1,1,3,2,1,0,1,2,2,2,3,1,2,2,1,2,1,2,1,2,1,2,3,2,1,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,3,2,1,3,1,3,1,1,1,1,1,1,2,1,2,2,1,2,1,0,3,1,1,2,1,2,3,2,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,2,2,3,2,1,1,1,3,2,1,1,2,1,2,0,1,3,1,2,2,2,1,1,1,2,1,0,1,1,1,1,2,1,2,0,0,1,1,1,1,1,1,1,1,2,2,1,1,1,2,2,2,1,3,2,1,2,1,2,2,0,2,2,1,0,2,2,0,2,2,2,1,2,1,2,0,1,1,1,2,2,1,1,1,2,1,2,1,2,1,2,1,2,0,1,2,1,1,0,2,2,1,1,1,2,1,2,1,1,1,2,2,1,1,2,3,1,1,2,1,2,3,1,0,1,2,1,2,1,2,2,1,2,1],[2,1,2,2,2,2,2,2,2,3,3,2,2,1,0,2,2,1,1,2,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,1,2,2,0,2,2,1,2,2,2,2,2,1,1,1,2,1,1,2,2,2,2,2,2,2,3,1,2,1,2,1,1,2,1,2,2,1,2,2,2,2,2,2,2,1,1,2,3,1,2,1,2,2,1,1,0,2,1,1,1,1,1,2,2,1,2,2,1,2,2,2,2,1,2,1,1,2,2,1,2,2,1,2,2,2,1,2,2,1,2,1,1,1,2,2,1,1,1,1,1,1,2,2,2,1,2,1,1,2,2,1,2,1,1,3,1,2,2,2,1,2,1,1,2,2,2,2,2,2,1,1,2,2,2,2,2,3,2,2,2,2,1,1,2,2,1,1,1,3,2,1,1,3,0,2,1,2,1,1,2,1,2,1,2,2,2,1,3,1,2,2,2,1,3,1,2,2,3,1,1,1,2,3,1,2,2,3,1,1,2,2,2,2,1,1,2,2,2,2,1,2,1,1,1,2,2,2,2,2,1,2,2,3,2,3,2,1,2,1,2,2,2],[3,0,1,1,1,1,2,2,3,3,2,2,1,1,2,0,3,0,1,1,1,2,0,2,2,1,2,1,2,1,1,2,1,1,3,1,1,1,2,2,2,2,0,1,2,2,2,2,1,1,2,1,1,1,2,1,2,2,2,2,1,2,1,2,1,1,1,1,2,1,2,2,1,2,2,2,2,2,1,1,1,0,2,2,1,2,1,1,2,1,1,1,2,1,1,1,0,0,2,2,1,2,2,1,2,1,2,3,1,1,0,0,1,2,1,2,2,1,2,2,1,1,2,2,1,1,1,0,1,1,0,0,0,2,1,0,1,1,1,2,1,2,1,1,2,2,1,2,2,1,3,0,2,2,2,1,2,1,3,3,2,1,2,2,2,1,1,2,2,1,2,2,2,1,1,1,2,1,2,2,2,1,1,0,2,1,2,1,2,1,1,2,1,0,2,2,1,2,2,1,2,3,1,1,1,2,2,1,1,2,1,2,1,2,1,1,1,3,3,1,2,2,3,0,1,2,1,1,1,1,1,2,2,3,1,0,2,1,1,1,2,2,2,2,2,1,2,2,2,2,2,1,1,2,0,2,1,2],[1,2,1,1,1,1,1,1,1,1,0,1,1,1,2,1,1,2,1,1,1,1,3,2,1,1,1,1,2,1,2,1,3,2,1,1,1,2,1,2,1,2,2,1,1,1,1,1,1,1,1,1,2,2,2,1,1,1,1,1,1,0,3,1,3,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,2,2,1,0,3,1,1,1,2,2,2,2,1,1,3,2,2,2,1,1,2,1,1,1,1,1,1,1,1,1,2,2,2,1,2,1,1,2,1,1,1,1,1,1,2,1,3,2,1,2,2,2,2,1,1,2,2,1,1,1,3,1,3,3,2,1,1,1,1,2,1,2,1,1,1,3,1,0,1,1,1,1,1,1,1,2,1,1,2,1,1,1,0,1,1,1,1,2,1,1,1,2,3,3,0,1,1,1,1,3,1,1,1,2,1,1,1,1,1,0,1,2,1,1,3,1,1,1,2,1,3,1,1,0,2,1,2,1,1,2,1,1,1,2,1,1,1,1,2,1,3,1,1,1,1,2,1,2,1,3,2,1,1,1,2,3,1,1,0,1,0,2,2,0,2,1,1,1],[1,2,1,1,1,1,1,1,1,1,0,1,2,1,2,3,1,3,1,1,1,1,3,1,1,1,2,2,1,1,2,1,2,2,1,1,1,2,1,2,1,1,2,0,1,1,1,1,1,1,1,2,2,2,2,1,1,1,1,1,2,1,2,0,2,2,1,2,1,2,1,1,1,1,1,0,1,1,1,1,2,2,1,1,2,1,1,2,1,2,2,2,1,1,2,2,2,2,1,1,1,0,1,1,1,2,1,1,1,2,1,2,3,1,2,1,1,2,1,1,2,1,1,1,2,1,2,2,1,2,2,2,2,1,1,2,2,1,1,1,2,0,2,2,1,1,1,1,1,2,0,2,0,1,1,2,1,1,0,1,1,3,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,2,2,2,0,1,1,1,1,2,2,1,2,2,1,1,1,1,1,1,1,1,1,1,2,0,1,1,2,1,2,1,1,0,2,2,2,0,0,3,1,1,1,2,1,1,1,2,1,1,2,0,0,0,1,2,0,2,1,2,1,0,0,1,1,2,1,1,1,1,1,1,2,1,2,1,1,0],[0,2,1,1,1,1,1,1,1,1,0,1,1,1,2,3,1,3,1,1,1,1,3,2,1,0,2,1,2,1,2,1,3,2,1,1,1,2,1,2,1,2,2,0,1,1,1,1,1,1,1,1,2,2,2,1,0,1,1,1,2,0,3,1,2,1,1,2,1,2,1,1,1,1,1,1,2,1,1,1,2,2,1,1,2,1,1,1,2,2,2,2,1,1,2,2,2,2,1,0,1,1,0,1,0,1,1,0,1,1,2,2,2,1,2,1,1,2,1,1,1,1,1,1,2,1,2,2,1,1,2,2,2,1,1,2,2,1,1,1,2,1,3,3,2,1,1,1,1,2,1,2,1,1,1,3,0,1,0,0,1,1,1,1,1,2,1,1,2,1,1,1,0,1,1,1,0,2,1,1,1,2,2,3,0,1,1,1,1,3,1,1,1,2,1,0,1,1,1,1,1,1,1,1,2,1,1,1,2,1,2,1,1,0,2,1,2,1,1,2,1,1,0,2,1,0,1,1,1,1,2,1,1,1,1,2,1,2,1,2,1,1,1,1,2,2,1,1,0,1,1,2,2,1,2,1,1,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>sex<\/th>\n      <th>age<\/th>\n      <th>time_spent<\/th>\n      <th>q1<\/th>\n      <th>q2<\/th>\n      <th>q3<\/th>\n      <th>q4<\/th>\n      <th>q5<\/th>\n      <th>q6<\/th>\n      <th>q7<\/th>\n      <th>q8<\/th>\n      <th>q9<\/th>\n      <th>q10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"Bt","scrollY":452,"scroller":true,"scrollX":true,"pageLength":10,"buttons":[{"extend":"csv","filename":"rses"}],"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12]},{"name":"sex","targets":0},{"name":"age","targets":1},{"name":"time_spent","targets":2},{"name":"q1","targets":3},{"name":"q2","targets":4},{"name":"q3","targets":5},{"name":"q4","targets":6},{"name":"q5","targets":7},{"name":"q6","targets":8},{"name":"q7","targets":9},{"name":"q8","targets":10},{"name":"q9","targets":11},{"name":"q10","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.4: Table with raw data.
@@ -611,10 +609,8 @@ Figure&nbsp;1.8: Our dataset.
 <p>As we can see this is a data set with 258 observations and 13 variables. JAMOVI has classified all the variables as nominal <img src="images/nominal.png" width="24" height="22">; however, only the <code>sex</code> variable is actually nominal.</p>
 </section>
 </section>
-<section id="transforming-data" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="transforming-data"><span class="header-section-number">1.6</span> Transforming data</h2>
-<section id="adding-labels-to-codes" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="adding-labels-to-codes"><span class="header-section-number">1.6.1</span> Adding labels to codes</h3>
+<section id="adding-labels-to-codes" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="adding-labels-to-codes"><span class="header-section-number">1.6</span> Adding labels to codes</h2>
 <ul>
 <li><strong>sex variable</strong></li>
 </ul>
@@ -645,8 +641,8 @@ Figure&nbsp;1.10: Adding labels to numerically coded Values.
 <p>Notice how the numbers “1” and “2” have moved to the lower right under the text we’re typing, allowing us to still see which label corresponds to each numerical code. Press <code>Enter</code> or click anywhere outside the labels box to save these labels.</p>
 <p>We close the variable settings by pressing the arrow in the top-right corner <img src="images/up_arrow.png" width="25" height="25">.</p>
 </section>
-<section id="changing-the-measure-type" class="level3" data-number="1.6.2">
-<h3 data-number="1.6.2" class="anchored" data-anchor-id="changing-the-measure-type"><span class="header-section-number">1.6.2</span> Changing the measure type</h3>
+<section id="changing-the-measure-type" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="changing-the-measure-type"><span class="header-section-number">1.7</span> Changing the measure type</h2>
 <p>Next, we will change the measure type of <code>age</code> and <code>time_spent</code> variables from nominal to continuous.</p>
 <ul>
 <li><strong>age variable</strong></li>
@@ -715,6 +711,7 @@ Figure&nbsp;1.15: Change the measure type of time_spent from nominal to continuo
 </figcaption>
 </figure>
 </div>
+<p>&nbsp;</p>
 <p>From the drop-down list of “Measure type” we select the ordinal type <img src="images/ordinal.png" width="23" height="21">, as shown in <a href="#fig-ordinal_multipleq1_10" class="quarto-xref">Figure&nbsp;<span>1.16</span></a>.</p>
 <div id="fig-ordinal_multipleq1_10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -726,9 +723,124 @@ Figure&nbsp;1.16: Change the measure type of q1 to q10 from nominal to ordinal.
 </figcaption>
 </figure>
 </div>
-
-
 </section>
+<section id="filtering-data" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="filtering-data"><span class="header-section-number">1.8</span> Filtering data</h2>
+<p>Next, we select the <strong>Filters button</strong> <img src="images/filters.png" width="30" height="28"> from the <strong>Data</strong> tab. This opens the “Row FILTERS” view at the top of the Jamovi screen where we can add a filter called “<strong>Filter 1</strong>” (<a href="#fig-filter1_age" class="quarto-xref">Figure&nbsp;<span>1.17</span></a>). Let’s say that we want to study only the adults from the participants in this survey.</p>
+<p>In order to access functions, press the <img src="images/fx.png" width="30" height="28"> icon in the filter settings and from “<strong>VARIABLES</strong>” double-click on <code>age</code> (or we just type the variable name but if the variable has a space, we must use ticks <code>''</code> around the variable name). Then type the condition <code>age &gt;= 18</code> in the formula box and press <strong>ENTER</strong> from the keyboard (<a href="#fig-filter1_age" class="quarto-xref">Figure&nbsp;<span>1.17</span></a>).</p>
+<div id="fig-filter1_age" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-filter1_age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/filter1_age.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filter1_age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.17: Adding a filter.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Relational (or comparison) operators in Jamovi
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>symbol</strong></th>
+<th style="text-align: left;"><strong>read as</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td style="text-align: left;">less than</td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td style="text-align: left;">greater than</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td style="text-align: left;">equal to</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td style="text-align: left;">less than or equal to</td>
+</tr>
+<tr class="odd">
+<td>&gt;=</td>
+<td style="text-align: left;">greater than or equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td style="text-align: left;">not equal to</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Notice that a column named <code>Filter 1</code> has been added to the Spreadsheet view. Cells that meet the condition <code>age &gt;= 18</code> are checked with a green tick <img src="images/tick.png" width="24" height="21">, while the rest have a red x symbol <img src="images/x.png" width="24" height="21">. Lines with an <code>X</code> are grayed out indicating that these observations are now outside of the current dataset.</p>
+<p>There is also a switch where we can activate <img src="images/active.png" width="27" height="20"> or inactivate <img src="images/inactive.png" width="27" height="20"> the filter (note that an inactivate filter will remain visible and can be toggled to active at any time).</p>
+<p>It is also possible to hide all filter columns by clicking on the eye symbol <img src="images/eye.png" width="26" height="23"> of the filters. In this case, all filters and the filtered data will remain active but will be invisible.</p>
+<p>Finally, if we want to delete the filter permanently, we can click on the <img src="images/x_del.png" width="27" height="20"> of the filter .</p>
+<p>But we can do more complicated filters than this! Let’s say that we’re interested in the <strong>adult females</strong>. In fact we can specify this in three ways:</p>
+<p><strong>a)</strong> by using the <code>and</code> operator in “<strong>Filter 1</strong>” which means that both conditions (adults and females) in the expression must be true at the same time. Therefore, we type the expression <code>age &gt;= 18 and sex == 'female'</code> (<a href="#fig-filter1_age_and_sex" class="quarto-xref">Figure&nbsp;<span>1.18</span></a>):</p>
+<div id="fig-filter1_age_and_sex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-filter1_age_and_sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/filter1_age_and_sex.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filter1_age_and_sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.18: Combining conditions with “and” operator in one expression.
+</figcaption>
+</figure>
+</div>
+<p>Note that in the above expression we can also use double quotes around the <code>"female"</code> (i.e.&nbsp;<code>age &gt;= 18 and sex == "female"</code>) or even the coded value (i.e.&nbsp;<code>age &gt;= 18 and sex == 2</code>).</p>
+<p><strong>b)</strong> by adding the second condition (i.e.&nbsp;<code>sex == "female"</code>) as <strong>another expression</strong> to “<strong>Filter 1</strong>” (by clicking the small <code>+</code> beside the first expression) (<a href="#fig-filter1_age_sex" class="quarto-xref">Figure&nbsp;<span>1.19</span></a>):</p>
+<div id="fig-filter1_age_sex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-filter1_age_sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/filter1_age_sex.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filter1_age_sex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.19: Multiple expressions in the same filter.
+</figcaption>
+</figure>
+</div>
+<p>This additional expression comes to be represented with its own column <code>F1(2)</code> (<a href="#fig-filter1_age_sex" class="quarto-xref">Figure&nbsp;<span>1.19</span></a>), and by looking at the ticks and crosses, we can see which expression is responsible for excluding each row.</p>
+<p><strong>c)</strong> adding a new “<strong>Filter 2</strong>” (by selecting the <strong>large +</strong> to the left of the filters dialog box) (<a href="#fig-filter2" class="quarto-xref">Figure&nbsp;<span>1.20</span></a>). In this case, we can activate or inactivate the filters separately.</p>
+<div id="fig-filter2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-filter2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/filter2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filter2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.20: Multiple expressions using multiple filters.
+</figcaption>
+</figure>
+</div>
+<p>We close the filter settings by pressing the arrow in the top-right corner <img src="images/up_arrow.png" width="25" height="25">.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Filters in Jamovi exclude the rows for which the expression is not true. When filters are active, <strong>all results</strong> will be based on the filtered data. If we want to see unfiltered results we will either need to delete the filter or toggle it to inactive.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+
+
 </section>
 
 </main> <!-- /main -->
