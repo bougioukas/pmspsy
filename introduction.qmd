@@ -382,8 +382,6 @@ There is also a switch where we can activate ![](images/active.png){width="27" h
 It is also possible to hide all filter columns by clicking on the eye symbol ![](images/eye.png){width="26" height="23"} of the filters. In this case, all filters and the filtered data will remain active but will be invisible.
 
 Finally, if we want to delete the filter permanently, we can click on the ![](images/x_del.png){width="27" height="20"} of the filter .
-<<<<<<< HEAD
-
 
 
 But we can do more complicated filters than this! Let's say that we're interested in the **adult females**. In fact we can specify this in three ways:
@@ -398,9 +396,6 @@ Note that in the above expression we can also use double quotes around the `"fem
 
 
 **b)** by adding the second condition (i.e. `sex == "female"`) as **another expression** to "**Filter 1**" (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex):
-=======
->>>>>>> ce47051cddfa246319dff4bea04a7f89b89c492e
-
 
 ![Multiple expressions in the same filter.](images/filter1_age_sex.png){#fig-filter1_age_sex}
 
