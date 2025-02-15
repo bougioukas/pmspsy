@@ -282,6 +282,8 @@ As we can see this is a data set with `r nrow(rses)` observations and `r ncol(rs
 
 ### Adding labels to codes
 
+-   **sex variable**
+
 The first variable, named `sex`, is a categorical variable coded as 1 for males and 2 for females. Notice that it is correctly identified as a nominal ![](images/nominal.png){width="24" height="22"} variable in Jamovi.
 
 We can assign labels to numerically coded values of categorical variables, such as `sex`, by accessing the data variable settings. One way to achieve this is by double-clicking on the variable name `sex`, which  opens the additional menu of variable settings at the top of the Jamovi screen (@fig-labels0).
@@ -305,6 +307,9 @@ We close the variable settings by pressing the arrow in the top-right corner ![]
 
 Next, we will change the measure type of `age` and `time_spent` variables from nominal to continuous. 
 
+
+-   **age variable**
+
 Double-click on the variable name `age` to open the data variable settings, as shown in @fig-type_age:
 
 ![Data variable menu settings for the age variable.](images/type_age.png){#fig-type_age width="90%"}
@@ -315,9 +320,12 @@ From the drop-down list of "Measure type" we select the continuous type ![](imag
 
 ![Change the measure type of age from nominal to continuous. .](images/type_age2.png){#fig-type_age2 width="80%"}
 
+
+-   **time_spent variable**
+
 Instead of closing the data variable menu using the arrow in the top-right corner, we can click on the ![](images/greater.png){width="25" height="25"} to proceed to the next variable setting, `time_spent`. As before, we select the continuous type for this variable from the "Measure type" drop-down list, as shown in @fig-time.
 
-![Change the measure type of age from nominal to continuous. .](images/time.png){#fig-time width="80%"}
+![Change the measure type of time_spent from nominal to continuous. .](images/time.png){#fig-time width="80%"}
 
 
 
