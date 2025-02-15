@@ -1,4 +1,4 @@
-# Introduction to Jamovi {#sec-introduction}
+# Introduction to Jamovi and data preparation {#sec-introduction}
 
 ```{r}
 #| include: false
@@ -284,34 +284,42 @@ As we can see this is a data set with `r nrow(rses)` observations and `r ncol(rs
 
 The first variable, named `sex`, is a categorical variable coded as 1 for males and 2 for females. Notice that it is correctly identified as a nominal ![](images/nominal.png){width="24" height="22"} variable in Jamovi.
 
-We can assign labels to numerically coded values of categorical variables, such as `sex`, by accessing the variable settings. One way to achieve this is by double-clicking on the variable name `sex`, which  opens the additional menu of variable settings at the top of the Jamovi screen (@fig-labels0).
+We can assign labels to numerically coded values of categorical variables, such as `sex`, by accessing the data variable settings. One way to achieve this is by double-clicking on the variable name `sex`, which  opens the additional menu of variable settings at the top of the Jamovi screen (@fig-labels0).
 
 ![An additional menu appears at the top of the Jamovi screen after double-clicking on the variable name sex.](images/labels0.png){#fig-labels0}
+
+ 
 
 In this menu, we will find the *Levels* setup. Here, we can specify the labels that should appear for each category level. Click on the number "1" in the *Levels* box to edit its label, changing it from "1" to  "male". Similarly, click on the number "2" and change it to "female" (@fig-labels).
 
 
 ![Adding labels to numerically coded Values.](images/labels.png){#fig-labels}
 
-Notice how the numbers "1" and "2" have moved to the lower right under the text we're typing, allowing us to still see which label corresponds to each number. Click anywhere outside the labels box to save these labels.
+Notice how the numbers "1" and "2" have moved to the lower right under the text we're typing, allowing us to still see which label corresponds to each numerical code. Press `Enter` or click anywhere outside the labels box to save these labels.
 
 We close the variable settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
 
+
+
+### Changing the measure type
+
+Next, we will change the measure type of `age` and `time_spent` variables from nominal to continuous. 
+
+Double-click on the variable name `age` to open the data variable settings, as shown in @fig-type_age:
+
+![Data variable menu settings for the age variable.](images/type_age.png){#fig-type_age width="90%"}
+
  
-
-### Changing the measure type and adding labels
-
-First, we will add labels to the nominal variable `sex`.  
-
-
-
-
-the measure type from nominal to continuous for all variables except `sex`. For example, double-click on the variable name `age`. This will open an additional menu at the top of the JAMOVI screen, as shown in @fig-type_age:
-
-![Extra menu for data variables.](images/type_age.png){#fig-type_age width="90%"}
 
 From the drop-down list of "Measure type" we select the continuous type ![](images/continuous.png){width="23" height="21"}, as shown in @fig-type_age2.
 
-![Extra menu for data variables.](images/type_age2.png){#fig-type_age2 width="80%"}
+![Change the measure type of age from nominal to continuous. .](images/type_age2.png){#fig-type_age2 width="80%"}
 
-The categorical variable `sex` is coded as 1 for males and 2 for females, and it is stored as nominal ![](images/nominal.png){width="24" height="22"}.
+Instead of closing the data variable menu using the arrow in the top-right corner, we can click on the ![](images/greater.png){width="25" height="25"} to proceed to the next variable setting, `time_spent`. As before, we select the continuous type for this variable from the "Measure type" drop-down list, as shown in @fig-time.
+
+![Change the measure type of age from nominal to continuous. .](images/time.png){#fig-time width="80%"}
+
+
+
+
+
