@@ -278,9 +278,8 @@ knitr::include_graphics(here::here("images", "dataset.png"))
 
 As we can see this is a data set with `r nrow(rses)` observations and `r ncol(rses)` variables. JAMOVI has classified all the variables as nominal ![](images/nominal.png){width="24" height="22"}; however, only the `sex` variable is actually nominal.
 
-## Transforming data
 
-### Adding labels to codes
+## Adding labels to codes
 
 -   **sex variable**
 
@@ -303,7 +302,7 @@ We close the variable settings by pressing the arrow in the top-right corner ![]
 
 
 
-### Changing the measure type
+## Changing the measure type
 
 Next, we will change the measure type of `age` and `time_spent` variables from nominal to continuous. 
 
@@ -343,6 +342,7 @@ After that, we click on the Edit button ![](images/edit.png){width="36" height="
 
 ![Change the measure type of time_spent from nominal to continuous.](images/multiple_q1_10.png){#fig-multiple_q1_10}
 
+ 
 
 From the drop-down list of "Measure type" we select the ordinal type ![](images/ordinal.png){width="23" height="21"}, as shown in @fig-ordinal_multipleq1_10.
 
@@ -350,11 +350,33 @@ From the drop-down list of "Measure type" we select the ordinal type ![](images/
 ![Change the measure type of q1 to q10 from nominal to ordinal.](images/ordinal_multipleq1_10.png){#fig-ordinal_multipleq1_10 width="80%"}
 
 
+## Filtering data
 
+Next, we select the **Filters button** ![](images/filters.png){width="30" height="28"} from the **Data** tab. This opens the "Row FILTERS" view at the top of the Jamovi screen where we can add a filter called "**Filter 1**" (@fig-filter1_age). Let's say that we want to study only the adults from the participants in this survey.
 
+In order to access functions, press the ![](images/fx.png){width="30" height="28"} icon in the filter settings and from "**VARIABLES**" double-click on `age` (or we just type the variable name but if the variable has a space, we must use ticks `''` around the variable name). Then type the condition `age >= 18` in the formula box and press **ENTER** from the keyboard (@fig-filter1_age).
 
+![Adding a filter](images/filter1_age.png){#fig-filter1_age}
 
+::: callout-tip
+## Relational (or comparison) operators in Jamovi
 
+| **symbol** | **read as**              |
+|------------|:-------------------------|
+| \<         | less than                |
+| \>         | greater than             |
+| ==         | equal to                 |
+| \<=        | less than or equal to    |
+| \>=        | greater than or equal to |
+| !=         | not equal to             |
+:::
 
+Notice that a column named `Filter 1` has been added to the Spreadsheet view. Cells that meet the condition `age >= 18` are checked with a green tick ![](images/tick.png){width="24" height="21"}, while the rest have a red x symbol ![](images/x.png){width="24" height="21"}. Lines with an `X` are grayed out indicating that these observations are now outside of the current dataset.
+
+There is also a switch where we can activate ![](images/active.png){width="27" height="20"} or inactivate ![](images/inactive.png){width="27" height="20"} the filter (note that an inactivate filter will remain visible and can be toggled to active at any time).
+
+It is also possible to hide all filter columns by clicking on the eye symbol ![](images/eye.png){width="26" height="23"} of the filters. In this case, all filters and the filtered data will remain active but will be invisible.
+
+Finally, if we want to delete the filter permanently, we can click on the ![](images/x_del.png){width="27" height="20"} of the filter .
 
 
