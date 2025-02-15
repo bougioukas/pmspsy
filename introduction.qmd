@@ -325,7 +325,34 @@ From the drop-down list of "Measure type" we select the continuous type ![](imag
 
 Instead of closing the data variable menu using the arrow in the top-right corner, we can click on the ![](images/greater.png){width="25" height="25"} to proceed to the next variable setting, `time_spent`. As before, we select the continuous type for this variable from the "Measure type" drop-down list, as shown in @fig-time.
 
-![Change the measure type of time_spent from nominal to continuous. .](images/time.png){#fig-time width="80%"}
+![Change the measure type of time_spent from nominal to continuous.](images/time.png){#fig-time width="80%"}
+
+We close the variable settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
+
+
+-   **q1 to q10 variables**
+
+Finally, we will change the measure type of `q1` to `q10` variables from nominal to ordinal. In the Variables tab, we tick the `q1` to `q10` variables, as shown in @fig-q1_10.
+
+
+![Change the measure type of time_spent from nominal to continuous.](images/q1_10.png){#fig-q1_10 width="60%"}
+
+ 
+
+After that, we click on the Edit button ![](images/edit.png){width="36" height="40"} to open the data variable settings, as shown in @fig-multiple_q1_10.
+
+![Change the measure type of time_spent from nominal to continuous.](images/multiple_q1_10.png){#fig-multiple_q1_10}
+
+
+From the drop-down list of "Measure type" we select the ordinal type ![](images/ordinal.png){width="23" height="21"}, as shown in @fig-ordinal_multipleq1_10.
+
+
+![Change the measure type of q1 to q10 from nominal to ordinal.](images/ordinal_multipleq1_10.png){#fig-ordinal_multipleq1_10 width="80%"}
+
+
+
+
+
 
 
 
