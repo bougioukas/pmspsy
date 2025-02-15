@@ -12,6 +12,8 @@ book:
   favicon: images/cover.png
   chapters:
     - index.qmd
+    - introduction.qmd
+    #- sources.qmd
     - references.qmd
 
   page-footer: 

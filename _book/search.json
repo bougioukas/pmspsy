@@ -4,9 +4,79 @@
     "href": "index.html",
     "title": "Advanced Statistical Methods for Analyzing Empirical Data",
     "section": "",
-    "text": "Welcome!\nThis open course introduces postgraduate students to advanced statistical methods used in the quantitative social, educational, and behavioral sciences. Students will learn:\n\nAnalysis of Variance (ANOVA) designs.\nSimple and multiple linear regression.\nSimple and multiple logistic regression.\nFactor Analysis.\nMediation and Path Analysis.\nMeta-analysis.\n\nThe student will also learn about the principles of data visualization and statistical software JAMOVI.",
+    "text": "Welcome!\nThis course introduces postgraduate students to advanced statistical methods used in the quantitative social, educational, and behavioral sciences. Students will learn:\n\nData management.\nAnalysis of Variance (ANOVA) designs.\nSimple and multiple linear regression.\nSimple and multiple logistic regression.\nFactor Analysis.\nMediation and Path Analysis.\nMeta-analysis.\n\nThe student will also learn about the principles of data visualization and statistical software JAMOVI.\n     \nSources for reading\n\nAnalysis of Variance Designs: A Conceptual and Computational Approach with SPSS and SAS\nLearning Statistics with Jamovi",
     "crumbs": [
       "Welcome!"
+    ]
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "1  Introduction to Jamovi",
+    "section": "",
+    "text": "1.1 Why Jamovi?\nJamovi is a new fee open “3rd generation” statistical software that is built on top of the programming language R (Figure 1.1). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "introduction.html#why-jamovi",
+    "href": "introduction.html#why-jamovi",
+    "title": "1  Introduction to Jamovi",
+    "section": "",
+    "text": "Figure 1.1: Jamovi is free and open statistical software\n\n\n\n\n\n\n\n\n\nSome other advantages are:\n\n\n\n\nUser-friendly point-and-click interface.\nDisplays informative tables and clear visuals.\nSupports add-on modules for advanced statistical analysis.\nAllows integration with R.\nProvides access to a user guide and community resources on the Jamovi website.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "introduction.html#downloading-and-installing-jamovi",
+    "href": "introduction.html#downloading-and-installing-jamovi",
+    "title": "1  Introduction to Jamovi",
+    "section": "1.2 Downloading and installing Jamovi",
+    "text": "1.2 Downloading and installing Jamovi\nJamovi is available for Windows (64-bit), macOS, Linux and ChromeOS. Installation on desktop is quite straight-forward. Just go to the Jamovi download page https://www.jamovi.org/download.html, and download the latest version (current release) for your operating system.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "introduction.html#navigating-jamovi",
+    "href": "introduction.html#navigating-jamovi",
+    "title": "1  Introduction to Jamovi",
+    "section": "1.3 Navigating Jamovi",
+    "text": "1.3 Navigating Jamovi\nWhen jamovi first opens, we will see a screen something like in Figure 1.2.\n\n\n\n\n\n\n\n\nFigure 1.2: Jamovi starts up!.\n\n\n\n\n\nTo the left is the spreadsheet view, and to the right is where the results of statistical tests appear. Down the middle is a bar separating these two regions, and this can be dragged to the left or the right to change their sizes.\n \nLet’s take a quick look at the Jamovi Main Menu, referred to hereafter as the Menu, as shown in Figure 1.3. This Menu is displayed at the very top of the Jamovi screen:\n\n\n\n\n\n\n\n\nFigure 1.3: The menu bar provides access to all functions of the program.\n\n\n\n\n\nThere are six tabs in the Menu (from left to right): 1. File (a layer with three horizontal levels \\(\\equiv\\)), 2. Variables, 3. Data, 4. Analyses, 5. Edit, and 6. Settings (the three dots \\(\\vdots\\) at the top right of the window) tabs. A toolbar appears whenever we click on a Menu tab (Table 1.1).\n \n\n\n\nTable 1.1: Menu and toolbars of Jamovi\n\n\n\n\n\n\n\n\n\nMenu tab\nToolbar\n\n\n\n\n\nFile tab (\\(\\equiv\\))\nThe file tab  allows us to open/import existing files, save and export our files.\n\n\n\n\n\nVariables tab\nThis allows us to view and search our variables in a list view.\n\n\nThis view allows us to easily navigate our variables and do the following:\n\nSearch for a variable by scrolling through the list or search for one by name.\nEdit the variable names and descriptions by double-clicking in the relevant field.\nEdit our variable details by double-clicking on the data symbol (the screen will appear for us to add all the necessary information).\nCreate a new variable by clicking on the in the bottom right corner. |\n\n\n\n\nData tab\nHere we will see our raw data which are organised like Excel in rows and columns. We can also manipulate our data and add new variables when necessary.\n\n\nSpecifically, this tab allows us to do the following:\n\nRename and add details to existing variables. Click on the Setup button, or double-click on the variable we want to manage.\nCompute and transform variables\nAdd and/or Delete variables (columns)\nAdd Filters\nAdd and/or Delete Rows\n\n\n\n\nAnalyses tab\nIt includes the available statistical analyses that can be performed by Jamovi.\n\n\nWe will spend most of our time in the Analyses Tab. The following six modules are pre-installed:\n\nExploration\nT-Tests\nANOVA\nRegression\nFrequencies\nFactor\n\nFor example, if we want to perform regression analysis, we simply click the ’’Regression” button.\nAll other modules need to be installed using the Modules button (Plus button) in our top-right  |\n\n\n\nEdit tab\nIt includes a toolbar similar to a word processor.\n\n\nWe can add extra information to our results using the buttons that are very similar to what we would find in Word (though there are fewer options).\n\n\n\nSettings tab\n(the three dots \\({\\vdots}\\) at the top right of the window)\n\nIt includes the application settings that can be manged by the users according to their preferences.\n\n\nWe can apply our preferences for a number of settings such as:\n\nHow many decimal numbers we want.\nIf we want to learn R, we can also display the R syntax.\nOur graph color scheme.\nOur default missing value.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "introduction.html#types-of-variables-in-jamovi",
+    "href": "introduction.html#types-of-variables-in-jamovi",
+    "title": "1  Introduction to Jamovi",
+    "section": "1.4 Types of Variables in Jamovi",
+    "text": "1.4 Types of Variables in Jamovi\nData variables can be one of four measure types:\n\n Nominal: This type is for nominal categorical variables.\n Ordinal: This type is for ordinal categorical variables.\n Continuous : this type is for variables with numeric values which are considered to be of Interval or Ratio scales.\n ID: This will usally be our first column. This can be text or numbers, but it should be unique to each row.\n\n \nAdditionally, data variables can be one of three data types:\n\nInteger: These are full numbers e.g. 1, 2, 3, … 100, etc. - Integers can be used for all three measure types . When used for Nominal/Ordinal data numbers will represent labels e.g. male=1; female=2.\nDecimal: These are numbers with decimal points. e.g. 1.3, 5.6, 7.8, etc. - This will usually only be used for continuous data.\nText: This can be used for ordinal and nominal data.\n\nThe measure types are designated by the symbol in the header of the variable’s column. Note that some combinations of data-type and measure-type don’t make sense, and Jamovi won’t let us choose these.\n\n\n\nTable 1.2: Types of data and measures\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeasure\n\n\n\n\n\nData\nNominal\nOrdinal\nContinuous\n\n\nInteger\n\\({\\checkmark}\\)\n\\({\\checkmark}\\)\n\\({\\checkmark}\\)\n\n\nDecimal\n\n\n\\({\\checkmark}\\)\n\n\nText\n\\({\\checkmark}\\)\n\\({\\checkmark}\\)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "introduction.html#importing-data",
+    "href": "introduction.html#importing-data",
+    "title": "1  Introduction to Jamovi",
+    "section": "1.5 Importing data",
+    "text": "1.5 Importing data\n\n1.5.1 The dataset\nIt is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing datasets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi. We will use the following dataset as an example (Figure 1.4).\n\n\n\n\n\n\n\n\nFigure 1.4: Table with raw data.\n\n\n\n\n(NOTE: You can find other formats of the data (OMV, Excel) at the link: https://osf.io/gvctz/).\n   \nThe meta-data (data about the data) for this dataset are as following:\n\nsex: sex (1 = male, 2 = female).\nage: age in years.\ntime_spend: hours spent on social media.\n\\(q_1 ... q_{10}\\): Ten questions (items) of Rosenberg Self-Esteem Scale (RSES). The 10 items are answered on a four point scale ranging from strongly agree to strongly disagree coded as follows: Strongly Agree = 3, Agree = 2, Disagree = 1, and Strongly Disagree = 0.\n\n\nPositively worded Items 1, 2, 4, 6, and 7.\nNegatively worded Items 3, 5, 8, 9, and 10 (codes should be reversed).\n\n\n\n\n\n\n\nFigure 1.5: Codes should be reversed for the negatively worded Items.\n\n\n\nThe scale ranges from 0-30 (we add the scores for all items), with 30 indicating the highest total score possible.\nMore information for the RSES: Rosenberg Self-Esteem Scale.\n\n\n1.5.2 Opening the file\nTo open this csv file, click on the File tab  at the top left hand corner (just left of the Variables tab) (Figure 1.6).\n\n\n\n\n\n\nFigure 1.6: Click on the File tab\n\n\n\nThis will open the menu shown in Figure 1.7. Select ‘Open’ and then ‘This PC’. Choose the downloaded file from the files listed on ‘Browse’ which are stored on our computer folders:\n\n\n\n\n\n\n\n\nFigure 1.7: Open an existing file stored on our computer into Jamovi.\n\n\n\n\n\n \nThe flowchart of the process is:\n\n\n\n\n\nflowchart LR\n  A(File tab) -.-&gt; B(Open) -.-&gt; C(This PC) -.-&gt; D(Browse) -.-&gt; E(Open \\n 'the downloaded file')\n\n\n\n\n\n\n \nWe should see data now in the Spreadsheet view (Figure 1.8).\n\n\n\n\n\n\n\n\nFigure 1.8: Our dataset.\n\n\n\n\n\nAs we can see this is a data set with 258 observations and 13 variables. JAMOVI has classified all the variables as nominal ; however, only the sex variable is actually nominal.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
+    ]
+  },
+  {
+    "objectID": "introduction.html#transforming-data",
+    "href": "introduction.html#transforming-data",
+    "title": "1  Introduction to Jamovi",
+    "section": "1.6 Transforming data",
+    "text": "1.6 Transforming data\n\n1.6.1 Adding labels to codes\nThe first variable, named sex, is a categorical variable coded as 1 for males and 2 for females. Notice that it is correctly identified as a nominal  variable in Jamovi.\nWe can assign labels to numerically coded values of categorical variables, such as sex, by accessing the variable settings. One way to achieve this is by double-clicking on the variable name sex, which opens the additional menu of variable settings at the top of the Jamovi screen (Figure 1.9).\n\n\n\n\n\n\nFigure 1.9: An additional menu appears at the top of the Jamovi screen after double-clicking on the variable name sex.\n\n\n\nIn this menu, we will find the Levels setup. Here, we can specify the labels that should appear for each category level. Click on the number “1” in the Levels box to edit its label, changing it from “1” to “male”. Similarly, click on the number “2” and change it to “female” (Figure 1.10).\n\n\n\n\n\n\nFigure 1.10: Adding labels to numerically coded Values.\n\n\n\nNotice how the numbers “1” and “2” have moved to the lower right under the text we’re typing, allowing us to still see which label corresponds to each number. Click anywhere outside the labels box to save these labels.\nWe close the variable settings by pressing the arrow in the top-right corner .\n \n\n\n1.6.2 Changing the measure type and adding labels\nFirst, we will add labels to the nominal variable sex.\nthe measure type from nominal to continuous for all variables except sex. For example, double-click on the variable name age. This will open an additional menu at the top of the JAMOVI screen, as shown in Figure 1.11:\n\n\n\n\n\n\nFigure 1.11: Extra menu for data variables.\n\n\n\nFrom the drop-down list of “Measure type” we select the continuous type , as shown in Figure 1.12.\n\n\n\n\n\n\nFigure 1.12: Extra menu for data variables.\n\n\n\nThe categorical variable sex is coded as 1 for males and 2 for females, and it is stored as nominal .",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Jamovi</span>"
     ]
   }
 ]

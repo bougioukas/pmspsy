@@ -1,6 +1,8 @@
 # Welcome! {.unnumbered}
 
-This open course introduces postgraduate students to advanced statistical methods used in the quantitative social, educational, and behavioral sciences. Students will learn:
+This course introduces postgraduate students to advanced statistical methods used in the quantitative social, educational, and behavioral sciences. Students will learn:
+
+-   Data management.
 
 -   Analysis of Variance (ANOVA) designs.
 
@@ -15,4 +17,21 @@ This open course introduces postgraduate students to advanced statistical method
 -   Meta-analysis.
 
 The student will also learn about the principles of data visualization and statistical software JAMOVI.
+
+
+ 
+ 
+ 
+
+
+**Sources for reading**
+
+-   [Analysis of Variance Designs: A Conceptual and Computational Approach with SPSS and SAS](https://www.cambridge.org/highereducation/books/analysis-of-variance-designs/5500246DE031763B7D439A162FA97DF5#overview)
+-   [Learning Statistics with Jamovi](https://davidfoxcroft.github.io/lsj-book/)
+
+
+
+
+
+
 
