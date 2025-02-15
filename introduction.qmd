@@ -408,4 +408,4 @@ We close the filter settings by pressing the arrow in the top-right corner ![](i
 Filters in Jamovi exclude the rows for which the expression is not true. When filters are active, **all results** will be based on the filtered data. If we want to see unfiltered results we will either need to delete the filter or toggle it to inactive.
 :::
 
-
+ 
