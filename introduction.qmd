@@ -326,7 +326,7 @@ We close the variable settings by pressing the arrow in the top-right corner ![]
 
 -   **q1 to q10 variables**
 
-Finally, we will change the measure type of `q1` to `q10` variables from nominal to ordinal. In the Variables tab, we tick the `q1` to `q10` variables, as shown in @fig-q1_10.
+Finally, we will change the measure type of `q1` to `q10` variables from nominal to ordinal. In the Variables tab, we select the checkboxes for the `q1` through `q10` variables, as shown in @fig-q1_10.
 
 ![Change the measure type of time_spent from nominal to continuous.](images/q1_10.png){#fig-q1_10 width="60%"}
 
@@ -412,8 +412,7 @@ Filters in Jamovi exclude the rows for which the expression is not true. When fi
 
 ## Transforming a variable
 
-
--   **Transform a quantitative variable into a qualitative variable**
+### Transform a quantitative variable into a qualitative variable
 
 Sometimes it can be useful to convert a quantitative variable into a qualitative variable with levels. For example, the `time_spent` can be categorized as follows:
 
@@ -426,9 +425,7 @@ Sometimes it can be useful to convert a quantitative variable into a qualitative
 -   greater than 11 `r fa("arrow-right", fill = "orange")` ">11"
 
 
-Click on `time_spent` variable and then press the ![](images/transform_button.png){width="40" height="36"}) from the toolbar of the Data tab.
-
-This opens the "**TRANSFORMED VARIABLE**" view, where we can set the name of the transformed variable such as `time_spent2` and create the transformation. To do this, select the source variable, the `time_spent` in this case, in the *Source Variable* field and create a new transformation using transform field (@fig-create_new_transf), which is initially set to 'none'.
+Select `time_spent` variable and click the Transform button  ![](images/transform_button.png){width="40" height="36"} from the toolbar of the Data tab. This opens the "**TRANSFORMED VARIABLE**" view, where we can set the name of the transformed variable such as `time_spent2` and create the transformation. To do this, select the source variable, the `time_spent` in this case, in the *Source Variable* field and create a new transformation using transform field (@fig-create_new_transf), which is initially set to 'none'.
 
 
 ![Setting up a new transformation of a variable.](images/create_new_transf.png){#fig-create_new_transf}
@@ -460,16 +457,19 @@ We can add as many conditions as we want by selecting `+ Add recode condition`. 
 
 Finally, after the `else use` box just add the label for the data that does not meet the above conditions (here `'>11'`), as shown in @fig-recode3.
 
+
 ![Adding the final label for the data that does not meet the above conditions.](images/recode3.png){#fig-recode3}
+
  
 
--   **Reverse scoring of items**
+### Reverse scoring of items
 
-In order to compute a total score for all items of RSES we need first  to reverse the score of the negatively worded questions 3, 5, 8, 9, and 10. To reverse score these items, we can just use the following simple steps.
+To compute the total score for all items of the RSES, we first need to reverse the scores of the negatively worded questions (3, 5, 8, 9, and 10). To do this, we can follow these simple steps.
 
-In the Variables tab, we tick the `q3`, `q5`, `q8`, `q9`, and `q10` variables, as shown in @fig-rev_items.
+In the Variables tab, we select the checkboxes for the `q3`, `q5`, `q8`, `q9`, and `q10` variables, as shown in @fig-rev_items.
 
 ![Select the variables to be reversed.](images/rev_items.png){#fig-rev_items width="60%"}
+
  
 
 After that, we click on the Transform button ![](images/transform_button.png){width="40" height="36"}) from the toolbar of the Variables tab to open the Transform variable settings. Then, we `Create New Transform`, as shown in @fig-new_transf.
@@ -478,27 +478,27 @@ After that, we click on the Transform button ![](images/transform_button.png){wi
 
  
 
-In the transform window, we enter `_R` as a suffix for the variable names and specify `3-$source` in the condition box, as shown in @fig-new_transform2.
+In the Transform view, we enter `_R` as a suffix for the variable names and specify `3-$source` in the condition box, as shown in @fig-transform2.
 
 ![Transform variable settings.](images/transform2.png){#fig-transform2 width="60%"}
 
-![Data with the reversed variables.](images/reversed_data.png){#fig-transform2 width="60%"}
 
+![Data with the reversed variables.](images/reversed_data.png){#fig-reversed_data width="60%"}
 
  
 
 ## Compute a new variable
 
-Finally, we will compute the total score (0-30) from responses to 10 questions on the Rosenberg Self-Esteem Scale.
+Finally, we compute each participant's total score (ranging from 0 to 30) based on their responses to the 10 questions of the Rosenberg Self-Esteem Scale.
 
 Adding computed variables to a Jamovi spreadsheet is straightforward.
 Click on the Compute button ![](images/compute_button.png){width="40" height="36"}) from the toolbar of the Data tab. An empty column has been created at the end of our dataset (@fig-compute1). The black dot symbol in the right of the column header indicates that this is a computed variable.
 
 ![Compute a new variable.](images/compute1.png){#fig-compute1 width="60%"}
 
-To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="36" height="34"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) (@fig-sum_score) and we press `ENTER`:
+To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="36" height="36"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) and we press `ENTER` (@fig-sum_score).
 
-![Compute the total score.](images/sum_score.png){#fig-sum_score}
+![Computation of the total score.](images/sum_score.png){#fig-sum_score}
 
 
 
