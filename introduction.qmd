@@ -18,10 +18,10 @@ When we have finished this Lab, we should be able to:
 ::: {.callout-caution icon="false"}
 ## `r fa("circle-dot", prefer_type = "regular", fill = "red")` Learning objectives
 
--   Navigate Jamovi, import files and transform the data.
--   Filter data.
--   Compute new variables based on other variables in our data.
--   Transform existing variables.
+-   Navigate Jamovi and import datasets.
+-   Filter rows in the data for focused analysis.
+-   Transform existing variables to prepare data for analysis.
+-   Compute new variables based on other variables in the dataset.
 :::
 
 ## Why Jamovi?
