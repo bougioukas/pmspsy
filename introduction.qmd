@@ -496,9 +496,9 @@ Click on the Compute button ![](images/compute_button.png){width="40" height="36
 
 ![Compute a new variable.](images/compute1.png){#fig-compute1 width="60%"}
 
-To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="36" height="34"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) (@fig-sum_score):
+To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="36" height="34"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) (@fig-sum_score) and we press `ENTER`:
 
-![Compute the total score.](images/sum_score.png){#fig-sum_score width="60%"}
+![Compute the total score.](images/sum_score.png){#fig-sum_score}
 
 
 
