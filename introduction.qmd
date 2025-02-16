@@ -338,7 +338,7 @@ From the drop-down list of "Measure type" we select the ordinal type ![](images/
 
 ![Change the measure type of q1 to q10 from nominal to ordinal.](images/ordinal_multipleq1_10.png){#fig-ordinal_multipleq1_10 width="80%"}
 
-<<<<<<< HEAD
+
 
 ## Filtering data
 
@@ -392,5 +392,4 @@ We close the filter settings by pressing the arrow in the top-right corner ![](i
 ::: callout-important
 Filters in Jamovi exclude the rows for which the expression is not true. When filters are active, **all results** will be based on the filtered data. If we want to see unfiltered results we will either need to delete the filter or toggle it to inactive.
 :::
-=======
->>>>>>> 0aaa381f8bdb6a7b932d893dfe88e752cdb75bbd
+
