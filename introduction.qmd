@@ -212,7 +212,7 @@ DT::datatable(rses, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
 
 ```
 
-(**NOTE:** You can find other formats of the data (OMV, Excel) at the link: [https://osf.io/gvctz/](https://osf.io/gvctz/)).
+(**NOTE:** You can find other formats of the data (OMV, Excel) at the link: <https://osf.io/gvctz/>).
 
    
 
@@ -225,15 +225,13 @@ The meta-data (data about the data) for this dataset are as following:
 
 -   Positively worded Items 1, 2, 4, 6, and 7.
 
--   Negatively worded Items 3, 5, 8, 9, and 10 (codes should be reversed). 
+-   Negatively worded Items 3, 5, 8, 9, and 10 (codes should be reversed).
 
-
-![Codes should be reversed for the negatively worded Items. ](images/rsescode.png){#fig-rsescode}
+![Codes should be reversed for the negatively worded Items.](images/rsescode.png){#fig-rsescode}
 
 The scale ranges from 0-30 (we add the scores for all items), with 30 indicating the highest total score possible.
 
 More information for the RSES: [Rosenberg Self-Esteem Scale](https://socy.umd.edu/about-us/using-rosenberg-self-esteem-scale).
-
 
 ### Opening the file
 
@@ -278,21 +276,19 @@ knitr::include_graphics(here::here("images", "dataset.png"))
 
 As we can see this is a data set with `r nrow(rses)` observations and `r ncol(rses)` variables. JAMOVI has classified all the variables as nominal ![](images/nominal.png){width="24" height="22"}; however, only the `sex` variable is actually nominal.
 
-
 ## Adding labels to codes
 
 -   **sex variable**
 
 The first variable, named `sex`, is a categorical variable coded as 1 for males and 2 for females. Notice that it is correctly identified as a nominal ![](images/nominal.png){width="24" height="22"} variable in Jamovi.
 
-We can assign labels to numerically coded values of categorical variables, such as `sex`, by accessing the data variable settings. One way to achieve this is by double-clicking on the variable name `sex`, which  opens the additional menu of variable settings at the top of the Jamovi screen (@fig-labels0).
+We can assign labels to numerically coded values of categorical variables, such as `sex`, by accessing the data variable settings. One way to achieve this is by double-clicking on the variable name `sex`, which opens the additional menu of variable settings at the top of the Jamovi screen (@fig-labels0).
 
 ![An additional menu appears at the top of the Jamovi screen after double-clicking on the variable name sex.](images/labels0.png){#fig-labels0}
 
  
 
-In this menu, we will find the *Levels* setup. Here, we can specify the labels that should appear for each category level. Click on the number "1" in the *Levels* box to edit its label, changing it from "1" to  "male". Similarly, click on the number "2" and change it to "female" (@fig-labels).
-
+In this menu, we will find the *Levels* setup. Here, we can specify the labels that should appear for each category level. Click on the number "1" in the *Levels* box to edit its label, changing it from "1" to "male". Similarly, click on the number "2" and change it to "female" (@fig-labels).
 
 ![Adding labels to numerically coded Values.](images/labels.png){#fig-labels}
 
@@ -300,12 +296,9 @@ Notice how the numbers "1" and "2" have moved to the lower right under the text 
 
 We close the variable settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
 
-
-
 ## Changing the measure type
 
-Next, we will change the measure type of `age` and `time_spent` variables from nominal to continuous. 
-
+Next, we will change the measure type of `age` and `time_spent` variables from nominal to continuous.
 
 -   **age variable**
 
@@ -319,7 +312,6 @@ From the drop-down list of "Measure type" we select the continuous type ![](imag
 
 ![Change the measure type of age from nominal to continuous. .](images/type_age2.png){#fig-type_age2 width="80%"}
 
-
 -   **time_spent variable**
 
 Instead of closing the data variable menu using the arrow in the top-right corner, we can click on the ![](images/greater.png){width="25" height="25"} to proceed to the next variable setting, `time_spent`. As before, we select the continuous type for this variable from the "Measure type" drop-down list, as shown in @fig-time.
@@ -328,11 +320,9 @@ Instead of closing the data variable menu using the arrow in the top-right corne
 
 We close the variable settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
 
-
 -   **q1 to q10 variables**
 
 Finally, we will change the measure type of `q1` to `q10` variables from nominal to ordinal. In the Variables tab, we tick the `q1` to `q10` variables, as shown in @fig-q1_10.
-
 
 ![Change the measure type of time_spent from nominal to continuous.](images/q1_10.png){#fig-q1_10 width="60%"}
 
@@ -346,9 +336,7 @@ After that, we click on the Edit button ![](images/edit.png){width="36" height="
 
 From the drop-down list of "Measure type" we select the ordinal type ![](images/ordinal.png){width="23" height="21"}, as shown in @fig-ordinal_multipleq1_10.
 
-
 ![Change the measure type of q1 to q10 from nominal to ordinal.](images/ordinal_multipleq1_10.png){#fig-ordinal_multipleq1_10 width="80%"}
-
 
 ## Filtering data
 
@@ -379,17 +367,13 @@ It is also possible to hide all filter columns by clicking on the eye symbol ![]
 
 Finally, if we want to delete the filter permanently, we can click on the ![](images/x_del.png){width="27" height="20"} of the filter .
 
-
 But we can do more complicated filters than this! Let's say that we're interested in the **adult females**. In fact we can specify this in three ways:
 
 **a)** by using the `and` operator in "**Filter 1**" which means that both conditions (adults and females) in the expression must be true at the same time. Therefore, we type the expression `age >= 18 and sex == 'female'` (@fig-filter1_age_and_sex):
 
-
 ![Combining conditions with "and" operator in one expression.](images/filter1_age_and_sex.png){#fig-filter1_age_and_sex}
 
 Note that in the above expression we can also use double quotes around the `"female"` (i.e. `age >= 18 and sex == "female"`) or even the coded value (i.e. `age >= 18 and sex == 2`).
-
-
 
 **b)** by adding the second condition (i.e. `sex == "female"`) as **another expression** to "**Filter 1**" (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex):
 
@@ -400,7 +384,6 @@ This additional expression comes to be represented with its own column `F1(2)` (
 **c)** adding a new "**Filter 2**" (by selecting the **large +** to the left of the filters dialog box) (@fig-filter2). In this case, we can activate or inactivate the filters separately.
 
 ![Multiple expressions using multiple filters.](images/filter2.png){#fig-filter2}
-
 
 We close the filter settings by pressing the arrow in the top-right corner ![](images/up_arrow.png){width="25" height="25"}.
 
