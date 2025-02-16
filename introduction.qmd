@@ -425,25 +425,16 @@ Sometimes it can be useful to convert a quantitative variable into a qualitative
 
 Click on `time_spent` variable and then press the ![](images/transform_button.png){width="36" height="34"}) from the toolbar of the Data tab.
 
-This opens the "**TRANSFORMED VARIABLE**" view where we can set the name of the transformed variable such as `time_spent2` and create the transformation by selecting the source variable, here the `time_spent`, in the *Source Variable* field, and creating a new transformation using transform field (@fig-create_new_transf).
+This opens the "**TRANSFORMED VARIABLE**" view, where we can set the name of the transformed variable such as `time_spent2` and create the transformation. To do this, select the source variable, the `time_spent` in this case, in the *Source Variable* field and create a new transformation using transform field (@fig-create_new_transf), which is initially set to 'none'.
 
 
-![Setting up the transformation of a variable.](images/create_new_transf.png){#fig-create_new_transf}
-
- 
-
-```{mermaid}
-flowchart LR
-  A(Source variable) -.-> B[[BMI]]
-  C(using transform) -.-> D[[Create New Transform...]]
-```
-
+![Setting up a new transformation of a variable.](images/create_new_transf.png){#fig-create_new_transf}
 
  
 
 This opens the "TRANSFORM" view where Jamovi gives each transformation a name (e.g., `Transform 1`; if we want we can change it). This allows us to use it again later on other variables if we wish. We can also add a description (@fig-transf_view).
 
-![Box for adding conditions to the transformation.](images/transf_view.png){#fig-transf_view}
+![Box for adding conditions to the transformation.](images/transf_view.png){#fig-transf_view width="60%"}
 
 Now we need to **add conditions**. Jamovi uses simple `if ... else` statements and executes each statement starting from the top. So let's start!
 
@@ -451,20 +442,22 @@ First, select **`+ Add recode condition`**. Second, we need to fill the **boxes*
 
 -   The **`$source`** is the variable we want to transform (here `time_spent`)- don't change this.
 -   Select the appropriate **comparison operator** (here `<=` )
--   In the next box, we will put the `time_spent` value we want as the cut off point.
+-   In the next box, we will put the `time_spent` value we want as the cut off point (e.g., 3).
 -   After the use, add our new label (here `'0-3'`). If we are using text we must enclose it in `'...'`
 
 ![Adding the first condition.](images/recode1.png){#fig-recode1}
 
+ 
 
 We can add as many conditions as we want by selecting `+ Add recode condition`. This will add a new `if $source` line into the box (@fig-recode2). Remember they will be executed in order.
 
-![Adding the first condition.](images/recode2.png){#fig-recode2}
+![Adding the second condition.](images/recode2.png){#fig-recode2}
 
+ 
 
-Finally, after the `else use` box just add the label for the data that does not meet the above conditions (here `'obese'`), as shown in @fig-recode3.
+Finally, after the `else use` box just add the label for the data that does not meet the above conditions (here `'>11'`), as shown in @fig-recode3.
 
-![Adding the first condition.](images/recode3.png){#fig-recode3}
+![Adding the final label for the data that does not meet the above conditions.](images/recode3.png){#fig-recode3}
 
 
 
