@@ -389,7 +389,7 @@ But we can do more complicated filters than this! Let's say that we're intereste
 
 ![Combining conditions with "and" operator in one expression.](images/filter1_age_and_sex.png){#fig-filter1_age_and_sex}
 
-Note that in the above expression we can also use double quotes around the `"female"` (i.e. `age >= 18 and sex == "female"`) or even the coded value (i.e. `age >= 18 and sex == 2`).
+Note that in the above expression we can also use double quotes around the `"female"` (i.e., `age >= 18 and sex == "female"`) or even the coded value (i.e., `age >= 18 and sex == 2`).
 
 **b)** by adding the second condition (i.e. `sex == "female"`) as **another expression** to "**Filter 1**" (by clicking the small `+` beside the first expression) (@fig-filter1_age_sex):
 
