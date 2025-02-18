@@ -502,3 +502,4 @@ To set up the computed variable, either double-click the column header, or click
 
 ![Computation of the total score.](images/sum_score.png){#fig-sum_score}
 
+
