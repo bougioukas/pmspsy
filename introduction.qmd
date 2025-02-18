@@ -444,9 +444,7 @@ First, select **`+ Add recode condition`**. Second, we need to fill the **boxes*
 
 ![Adding the first condition (0-3).](images/recode1.png){#fig-recode1}
 
-
  
-
 
 We can add as many conditions as we want by selecting `+ Add recode condition`. This will add a new `if $source` line into the box (@fig-recode2). Remember they will be executed in order.
 
@@ -454,15 +452,13 @@ We can add as many conditions as we want by selecting `+ Add recode condition`. 
 
  
 
-
 ![Adding the third condition (8-11).](images/recode3.png){#fig-recode3}
 
  
 
 Finally, after the `else use` box just add the label for the data that does not meet the above conditions (here `'>11'`), as shown in @fig-recode4.
 
-![Adding the final label for the data that does not meet the above conditions (>11).](images/recode4.png){#fig-recode4}
-
+![Adding the final label for the data that does not meet the above conditions (\>11).](images/recode4.png){#fig-recode4}
 
  
 
@@ -501,5 +497,3 @@ Adding computed variables to a Jamovi spreadsheet is straightforward. Click on t
 To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="34" height="36"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) and we press `ENTER` (@fig-sum_score).
 
 ![Computation of the total score.](images/sum_score.png){#fig-sum_score}
-
-
