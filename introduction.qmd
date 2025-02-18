@@ -342,14 +342,13 @@ From the drop-down list of "Measure type" we select the ordinal type ![](images/
 
 ![Change the measure type of q1 to q10 from nominal to ordinal.](images/ordinal_multipleq1_10.png){#fig-ordinal_multipleq1_10 width="80%"}
 
-
  
 
 ## Filtering rows
 
 Next, we select the **Filters button** ![](images/filters.png){width="30" height="28"} from the **Data** tab. This opens the "Row FILTERS" view at the top of the Jamovi screen where we can add a filter called "**Filter 1**" (@fig-filter1_age). Let's say that we want to study only the adults from the participants in this survey.
 
--  **Simple condition**
+-   **Simple condition**
 
 In order to access functions, press the ![](images/fx.png){width="30" height="28"} icon in the filter settings and from "**VARIABLES**" double-click on `age` (or we just type the variable name but if the variable has a space, we must use ticks `''` around the variable name). Then type the condition `age >= 18` in the formula box and press **ENTER** from the keyboard (@fig-filter1_age).
 
@@ -382,7 +381,7 @@ Finally, if we want to delete the filter permanently, we can click on the ![](im
 
  
 
--  **Multiple conditions**
+-   **Multiple conditions**
 
 But we can do more complicated filters than this! Let's say that we're interested in the **adult females**. In fact we can specify this in three ways:
 
@@ -422,11 +421,9 @@ Sometimes it can be useful to convert a quantitative variable into a qualitative
 
 -   8 to 11 `r fa("arrow-right", fill = "orange")` "8-11"
 
--   greater than 11 `r fa("arrow-right", fill = "orange")` ">11"
+-   greater than 11 `r fa("arrow-right", fill = "orange")` "\>11"
 
-
-Select `time_spent` variable and click the Transform button  ![](images/transform_button.png){width="40" height="36"} from the toolbar of the Data tab. This opens the "**TRANSFORMED VARIABLE**" view, where we can set the name of the transformed variable such as `time_spent2` and create the transformation. To do this, select the source variable, the `time_spent` in this case, in the *Source Variable* field and create a new transformation using transform field (@fig-create_new_transf), which is initially set to 'none'.
-
+Select `time_spent` variable and click the Transform button ![](images/transform_button.png){width="40" height="36"} from the toolbar of the Data tab. This opens the "**TRANSFORMED VARIABLE**" view, where we can set the name of the transformed variable such as `time_spent2` and create the transformation. To do this, select the source variable, the `time_spent` in this case, in the *Source Variable* field and create a new transformation using transform field (@fig-create_new_transf), which is initially set to 'none'.
 
 ![Setting up a new transformation of a variable.](images/create_new_transf.png){#fig-create_new_transf}
 
@@ -445,20 +442,27 @@ First, select **`+ Add recode condition`**. Second, we need to fill the **boxes*
 -   In the next box, we will put the `time_spent` value we want as the cut off point (e.g., 3).
 -   After the use, add our new label (here `'0-3'`). If we are using text we must enclose it in `'...'`
 
-![Adding the first condition.](images/recode1.png){#fig-recode1}
+![Adding the first condition (0-3).](images/recode1.png){#fig-recode1}
+
 
  
+
 
 We can add as many conditions as we want by selecting `+ Add recode condition`. This will add a new `if $source` line into the box (@fig-recode2). Remember they will be executed in order.
 
-![Adding the second condition.](images/recode2.png){#fig-recode2}
+![Adding the second condition (4-7).](images/recode2.png){#fig-recode2}
 
  
 
-Finally, after the `else use` box just add the label for the data that does not meet the above conditions (here `'>11'`), as shown in @fig-recode3.
 
+![Adding the third condition (8-11).](images/recode3.png){#fig-recode3}
 
-![Adding the final label for the data that does not meet the above conditions.](images/recode3.png){#fig-recode3}
+ 
+
+Finally, after the `else use` box just add the label for the data that does not meet the above conditions (here `'>11'`), as shown in @fig-recode4.
+
+![Adding the final label for the data that does not meet the above conditions (>11).](images/recode4.png){#fig-recode4}
+
 
  
 
@@ -482,7 +486,6 @@ In the Transform view, we enter `_R` as a suffix for the variable names and spec
 
 ![Transform variable settings.](images/transform2.png){#fig-transform2 width="60%"}
 
-
 ![Data with the reversed variables.](images/reversed_data.png){#fig-reversed_data width="60%"}
 
  
@@ -491,15 +494,10 @@ In the Transform view, we enter `_R` as a suffix for the variable names and spec
 
 Finally, we compute each participant's total score (ranging from 0 to 30) based on their responses to the 10 questions of the Rosenberg Self-Esteem Scale.
 
-Adding computed variables to a Jamovi spreadsheet is straightforward.
-Click on the Compute button ![](images/compute_button.png){width="40" height="36"}) from the toolbar of the Data tab. An empty column has been created at the end of our dataset (@fig-compute1). The black dot symbol in the right of the column header indicates that this is a computed variable.
+Adding computed variables to a Jamovi spreadsheet is straightforward. Click on the Compute button ![](images/compute_button.png){width="40" height="36"}) from the toolbar of the Data tab. An empty column has been created at the end of our dataset (@fig-compute1). The black dot symbol in the right of the column header indicates that this is a computed variable.
 
 ![Compute a new variable.](images/compute1.png){#fig-compute1 width="60%"}
 
 To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="34" height="36"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) and we press `ENTER` (@fig-sum_score).
 
 ![Computation of the total score.](images/sum_score.png){#fig-sum_score}
-
-
-
-
