@@ -501,3 +501,6 @@ Adding computed variables to a Jamovi spreadsheet is straightforward. Click on t
 To set up the computed variable, either double-click the column header, or click the **Setup** button ![](images/setup_button.png){width="34" height="36"}) in the **Data** tab. This opens the "**COMPUTED VARIABLE**" view, where we can name the computed variable `score`. Next, we select the `SUM` function from the available options for use in the **Formula** box. Finally, we add the `q`-variables in the formula separated by comma (note that we must use the reversed variables in the sum) and we press `ENTER` (@fig-sum_score).
 
 ![Computation of the total score.](images/sum_score.png){#fig-sum_score}
+
+
+
