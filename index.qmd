@@ -18,7 +18,9 @@ This course introduces postgraduate students to advanced statistical methods use
 
 -   Principles of Evidence Synthesis (Systematic reviews, Meta-analysis, Umbrella reviews).
 
-The student will also learn about the principles of data visualization and statistical software JAMOVI.
+ 
+
+The students will also learn about the principles of data visualization and statistical software JAMOVI.
 
      
 
