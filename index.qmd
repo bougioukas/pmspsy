@@ -4,34 +4,25 @@ This course introduces postgraduate students to advanced statistical methods use
 
 -   Data management.
 
--   Analysis of Variance (ANOVA) designs.
+-   Analysis of Variance (ANOVA) Designs.
 
--   Simple and multiple linear regression. 
+-   Simple and multiple Linear Regression.
 
--   Simple and multiple logistic regression.
+-   Simple and multiple Logistic Regression.
 
 -   Factor Analysis.
 
 -   Mediation and Path Analysis.
 
--   Meta-analysis.
+-   Basic Structural Equation Modeling (SEM).
+
+-   Principles of Evidence Synthesis (Systematic reviews, Meta-analysis, Umbrella reviews).
 
 The student will also learn about the principles of data visualization and statistical software JAMOVI.
 
-
- 
- 
- 
-
+     
 
 **Sources for reading**
 
 -   [Analysis of Variance Designs: A Conceptual and Computational Approach with SPSS and SAS](https://www.cambridge.org/highereducation/books/analysis-of-variance-designs/5500246DE031763B7D439A162FA97DF5#overview)
 -   [Learning Statistics with Jamovi](https://davidfoxcroft.github.io/lsj-book/)
-
-
-
-
-
-
-
