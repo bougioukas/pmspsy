@@ -13,6 +13,7 @@ book:
   chapters:
     - index.qmd
     - introduction.qmd
+    - anova1.qmd
     #- sources.qmd
     - references.qmd
 

@@ -1,0 +1,358 @@
+# ANOVA Designs (1) {#sec-anova1}
+
+```{r}
+#| include: false
+
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readxl)
+sat <- read_excel(here("data", "sat.xlsx"))
+symptoms <- read_excel(here("data", "symptoms.xlsx"))
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Apply hypothesis testing
+-   Understand one-way between-subjects ANOVA
+-   Understand one-way repeated ANOVA
+-   Perform post-hoc tests
+-   Interpret the results
+:::
+
+## One-way between-subjects Analysis of Variance (One-way ANOVA)
+
+The one-way between-subjects analysis of variance (one-way ANOVA) is used to compare more than two **independent** (unrelated or unpaired) samples. We may think of it as an extension of Student's t-test.
+
+Although, ANOVA can detect whether there are mean differences between groups, it does not identify which groups are different from the others. At first, we might consider to compare all groups in pairs with t-tests. However, this approach can lead to incorrect conclusions due to the multiple comparisons problem. Each additional t-test increases the likelihood of making at least one Type I error (false positive) across the set (often called a family) of comparisons.
+
+This is the reason why, after an ANOVA test concluding on at least one difference between groups (omnibus analysis), we should perform statistical tests that take into account the number of comparisons (post hoc tests). Some of the more commonly used ones are Tukey test, and Games-Howell test.
+
+### Importing data
+
+The SAT is used by a wide range of colleges and universities as part of the application process for college admission. Assume we are interested in the effect of preparation time on SAT performance.
+
+In this example, we have five student groups, each containing seven cases. The groups contain students who have studied for either zero, two, four, six, or eight months prior to taking the SAT.
+
+```{r}
+#| echo: false
+#| label: fig-sat0
+#| fig-cap: Table with raw data.
+
+DT::datatable(sat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'sat'
+      ))))
+
+```
+
+Open the dataset named "sat" from the file tab in the menu (@fig-sat1).
+
+![The sat dataset.](images/sat1.png){#fig-sat1 width="75%"}
+
+ 
+
+We prepare the data as follows (@fig-sat2):
+
+![The modified dataset.](images/sat2.png){#fig-sat2 width="75%"}
+
+### Research question
+
+A quaziexperimental study explored the effect of preparation time on SAT performance, with students having studied for different duration (zero, two, four, six, or eight months). The question of interest is whether the mean SAT score differs across these preparation times.
+
+### Hypothesis testing for the one-way ANOVA test
+
+::: {.callout-note icon="false"}
+## Null hypothesis and alternative hypothesis
+
+-   $H_0$: all group means are equal (the means of SAT in the five conditions are equal: $\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4} = \mu_{5}$)
+-   $H_1$: at least one group mean differs from the others (there is at least one group with mean SAT score different from the others)
+:::
+
+### Assumptions
+
+A.  The dependent variable, `satscore`, should be approximately **normally** distributed for all groups. To increase the number of observations used in assessing normality, we often examine the residuals from the ANOVA model for the entire dataset using a normal quantile plot of the standardized residuals (Normal Q-Q plot).
+
+B.  The data in groups have similar **variance** (also named as homogeneity of variance or homoscedasticity).
+
+### Descriptive statistics and plots
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Exploration) -.-> B(Descriptives)
+```
+
+as shown below in @fig-descript_sat.
+
+![Select exploration and Desctriptives.](images/descript_sat.png){#fig-descript_sat width="55%"}
+
+Highlight `satscore` in the left panel and click it (or drug it) over the the ***Variables***. Then highlight the `group` and click it over the ***Split by*** (@fig-descriptive_sat). Additionally, select *variables across rows*.
+
+![Descriptive dialog box.](images/descriptive_sat.png){#fig-descriptive_sat width="55%"}
+
+![The modified dataset.](images/descriptive_sat1.png){#fig-descriptive_sat1 width="70%"}
+
+To generate boxplots, click the ***Plots***, and check *Box plot*, *Data*, and *Mean*.
+
+![Selection of boxplots.](images/plot_sat.png){#fig-plot_sat width="65%"}
+
+![Boxplots.](images/boxplot_sat.png){#fig-boxplot_sat width="65%"}
+
+### ANOVA (omnibus analysis)
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(ANOVA) -.-> C(ANOVA)
+```
+
+as shown below in @fig-sat3.
+
+![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> ANOVA.](images/sat3.png){#fig-sat3 width="55%"}
+
+**NOTE:** There is also a One-Way ANOVA menu option. This version of the ANOVA analysis does not have all the options we want so we are not going to use this method, so we will run our analysis via “ANOVA” rather than “One-Way ANOVA”.
+
+ 
+
+In the ANOVA dialog box, highlight `satscore` in the left panel and click it (or drug it) over the the ***Dependent Variable***. Then highlight the `group` and click it over the ***Fixed Factors*** (@fig-sat4). Additionally, check $\eta^2$.
+
+![ANOVA dialog box.](images/sat4.png){#fig-sat4 width="65%"}
+
+ 
+
+**Assumptions Checks**
+
+Click the ***Assumptions Checks***, and check *Homogeneity test*, *Normality test*, and *Q-Q plot* (@fig-sat41).
+
+![Assumption selections for ANOVA.](images/sat41.png){width="65%"}
+
+-   **Normality of distributions**
+
+::: callout-important
+# Remember: Hypothesis testing for Shapiro-Wilk test for normality
+
+$H_{0}$: the data came from a normally distributed population.
+
+$H_{1}$: the data tested are not normally distributed.
+
+-   If p − value \< 0.05, reject the null hypothesis, $H_{0}$.
+-   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
+:::
+
+![Normality test.](images/normal_sat.png){#fig-normal_sat width="30%"}
+
+The Shapiro-Wilk test of normality suggests normal distributions (p=0.56 \> 0.05; $H_o$ is not rejected).
+
+ 
+
+![Normal Q-Q plot.](images/qq_sat.png){#fig-qq_sat width="55%"}
+
+ 
+
+-   **Equality of variances**
+
+::: callout-important
+# Remember: Hypothesis testing for Levene's test for equality of variances
+
+$H_{0}$: the variances of `WeightLoss` in all groups are equal ($σ^2_1=σ^2_2=σ^2_3=σ^2_4=σ^2_5$)
+
+$H_{1}$: the variances of `satscore` differ between groups ($σ^2_i\neq σ^2_j$, where $i,j= 1, 2, 3, 4, 5$ and $i\neq j$)
+
+-   If p − value \< 0.05, reject the null hypothesis, $H_{0}$.
+-   If p − value ≥ 0.05, do not reject the null hypothesis, $H_{0}$.
+:::
+
+![Levene's test.](images/homo_sat.png){#fig-homo_sat width="35%"}
+
+Since p = 0.239 \> 0.05, the $H_0$ of the Levene's test is not rejected and the variances of the five conditions are comparable; in short, it appears that the assumption of homogeneity of variance has not been violated.
+
+ 
+
+**ANOVA table**
+
+![Summary table of ANOVA.](images/anova_sat.png){#fig-anova_sat width="75%"}
+
+ 
+
+In @fig-anova_sat, the F-statistic is calculated as follows:
+
+$$F= \frac{Mean \ Square \ between \ groups}{Mean \ Square \ within \ groups} = \frac{Mean \ Square \ group}{Mean \ Square \ residuals} = \frac{57624.3}{1325.7} = 43.467$$
+
+Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 4 and 30, respectively.
+
+The p-value \< 0.001 (reject $H_0$ of the ANOVA test). **There is at least one condition with mean SAT which is different from the other means**.
+
+This table also presents the eta squared ($\eta^2 = 0.85$) , which expresses the proportion of variability explained by the group relative to the total variability. A value of 0.85 (85%) means that 85% of the variation in SAT scores can be attributed to the preparation time and would be considered a large effect size. (**NOTE:** Whether the $\eta^2$ value is considered “high” or not is relative and depends on the research context).
+
+ 
+
+### Post hoc tests
+
+Click the ***Post Hoc Tests***, then highlight the `group` in the left panel and click it (or drug it) over the the right panel. Check *Tukey* correction.
+
+![Post Hoc Tests panels.](images/posthoc_sat.png){#fig-posthoc_sat width="55%"}
+
+ 
+
+![Post Hoc Tests (Tukey correction).](images/posthoc_res.png){#fig-posthoc_res width="85%"}
+
+ 
+
+::: content-box-green
+**Interpretation**
+
+An analysis of variance showed that the amount of preparation for the SAT in which students engaged appeared to significantly affect their performances on the test, F(4, 30) = 43.47, p \< 0.001, $\eta^2 = 0.85$. Post-hoc analyses with Tukey’s test, adjusting p-values for multiple comparisons, indicated that each additional two months of study up to six months was associated with significantly higher SAT scores. However, there was no significant difference in scores between the six month and eight month study groups.
+:::
+
+ 
+
+## One-way within-subjects Analysis of Variance (repeated one-way ANOVA)
+
+The one-way repeated measures analysis of variance (also known as a within-subjects ANOVA) is an extension of the paired t-test designed to assess whether there are significant differences in the means of three or more related groups, such as comparing the difference between three or more time points.
+
+### Importing data
+
+In hypothetical study, it is hoped that a certain drug will alleviate the intensity of symptoms of a certain disease. Symptom intensity was evaluated on a twelve-point scale with higher values indicating more intense symptoms. Two pre-treatment baseline measurements are made, the first a month prior to treatment and the second one week prior to treatment. Post-treatments measures of symptom intensity are made after one week, one month, and one year following administration of the drug. In this simplified example, we have eight patients in the study.
+
+```{r}
+#| echo: false
+#| label: fig-symptoms0
+#| fig-cap: Table with raw data.
+
+DT::datatable(symptoms, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'symptoms'
+      ))))
+
+```
+
+Open the dataset named "symptoms" from the file tab in the menu (@fig-symptoms1).
+
+![The symptoms dataset.](images/symptoms1.png){#fig-symptoms1 width="75%"}
+
+ 
+
+We prepare the data as follows (@fig-symptoms2):
+
+![The modified dataset.](images/symptoms2.png){#fig-symptoms2 width="75%"}
+
+### Research question
+
+A study investigated the effect of a drug on symptom intensity in a specific disease, assessing eight patients before (two pre-test baseline measures) and after treatment (three post-test measures). The primary question is whether the mean symptom intensity score changed over time.
+
+### Hypothesis testsing for the one-way repeated ANOVA test
+
+::: {.callout-note icon="false"}
+## Null hypothesis and alternative hypothesis
+
+-   $H_0$: all related group means are equal (the means of symptom intensity score in the five time points are equal: $\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4} = \mu_{5}$)
+-   $H_1$: at least one group mean differs from the others (there is at least one group with mean symptom intensity score different from the others)
+:::
+
+### Assumptions
+
+A.  The data are **normally** distributed in all time points.
+B.  The **variances** of the differences between all possible pairs of within-subject conditions are equal (sphericity assumption).
+
+### ANOVA (omnibus analysis)
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(ANOVA) -.-> C(Repeated Measures ANOVA)
+```
+
+as shown below in @fig-repeated_aov1.
+
+![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> Repeated Measures ANOVA.](images/repeated_aov1.png){#fig-repeated_aov1 width="55%"}
+
+ 
+
+In the repeated ANOVA dialog box, define the levels of the "RM Factor 1" which we will rename as **time**. Then, highlight the variables from `pre1` to `post3` in the left panel and click them (or drug them) to the ***Repeated Measure Cells***. Additionally, check $\eta^2$ and Partial $\eta^2$ (@fig-repeated_dialog).
+
+![Repeated ANOVA dialog box.](images/repeated_dialog.png){#fig-repeated_dialog width="65%"}
+
+ 
+
+### Descriptive statistics and plots
+
+![The estimated marginal means panels.](images/means_symptom1.png){#fig-means_symptom1 width="65%"}
+
+![Descriptive statistics.](images/means_symptom2.png){#fig-means_symptom2 width="55%"}
+
+![Plot with means.](images/means_symptom3.png){#fig-means_symptom3 width="55%"}
+
+ 
+
+**Assumptions Checks**
+
+Click on ***Assumptions Checks***, select *Sphericity tests*, and *Q-Q Plot* (@fig-sphericity0).
+
+![Assumption selections for repeated ANOVA.](images/sphericity0.png){#fig-sphericity0 width="65%"}
+
+-   **Normality of distributions**
+
+![Normal Q-Q plot.](images/qq_symptom.png){#fig-qq_symptom width="55%"}
+
+-   **Sphericity assumption**
+
+This assumption is usually checked with the **Mauchly's sphericity test**, where null hypothesis states that the variances of the differences are equal (@fig-sphericity2).
+
+![Assumption selections for repeated ANOVA.](images/sphericity2.png){#fig-sphericity2 width="65%"}
+
+In our example, the assumption of sphericity has not been met (p = 0.043). In this case, we have to correct the degrees of freedom in repeated ANOVA analysis.
+
+There are two correction options $\epsilon$ available: Greenhouse-Geisser (GGe), or Huynh-Feldt (HFe) (@fig-sphericity1). The general recommendation is to use the Greenhouse-Geisser $\epsilon$ correction when it is less than 0.75; otherwise, we should use the Huynh-Feldt $\epsilon$ correction.
+
+As the GGe value is less than 0.75, we use the Greenhouse-Geisser adjustment of 0.488.
+
+![Assumption selections for repeated ANOVA.](images/sphericity1.png){#fig-sphericity1 width="65%"}
+
+The corrected degrees of freedom are:
+
+$df_1*GGe=4*0.488=1.95$
+
+and
+
+$df_2*HFe=28*0.488=13.66$.
+
+ 
+
+**Repeated ANOVA table**
+
+![Summary table of repeated ANOVA.](images/repeated_res.png){#fig-repeated_res width="85%"}
+
+As we can see from , the within-subjects variable was statisticaly significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
+
+### Post hoc tests
+
+Click the ***Post Hoc Tests***, then highlight the `time` in the left panel and click it (or drug it) over the the right panel. Check *Bonferroni* correction.
+
+![Post Hoc Tests panels.](images/posthoc_symptom.png){#fig-posthoc_symptom width="55%"}
+
+ 
+
+![Post Hoc Tests (Bonferroni correction).](images/posthoc_res1.png){#fig-posthoc_res1 width="85%"}
+
+ 
+
+::: content-box-green
+**Interpretation**
+
+Based on Greenhouse-Geisser correction for violation of sphericity, a one-way within-subjects ANOVA revealed a significant difference in the pre-test and post-test means, F(1.95, 13.66) = 18.62, p \< 0.001, within-subjects $\eta^2 = 0.73$. Pairwise comparisons using a Bonferroni correction to maintain an alpha level of 0.05 revealed that intensity of symptoms remained constant from the two pre-test baseline measures, significantly decreased after a week following drug therapy, and further significantly decreased after one month. Symptom intensity did not significantly differ from that level at the end of a year.
+:::
