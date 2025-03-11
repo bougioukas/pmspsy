@@ -1,0 +1,10 @@
+# Presentations
+
+
+-   **Lecture 1: Introduction**
+
+![psy-introduction](presentations/introduction.pdf){width="60%" height="400"}
+
+     
+
+

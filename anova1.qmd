@@ -136,7 +136,7 @@ In the ANOVA dialog box, highlight `satscore` in the left panel and click it (or
 
 Click the ***Assumptions Checks***, and check *Homogeneity test*, *Normality test*, and *Q-Q plot* (@fig-sat41).
 
-![Assumption selections for ANOVA.](images/sat41.png){width="65%"}
+![Assumption selections for ANOVA.](images/sat41.png){#fig-sat41 width="65%"}
 
 -   **Normality of distributions**
 
@@ -337,7 +337,7 @@ $df_2*HFe=28*0.488=13.66$.
 
 ![Summary table of repeated ANOVA.](images/repeated_res.png){#fig-repeated_res width="85%"}
 
-As we can see from , the within-subjects variable was statisticaly significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
+As we can see from @fig-repeated_res, the within-subjects variable was statisticaly significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
 
 ### Post hoc tests
 

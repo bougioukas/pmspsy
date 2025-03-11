@@ -1,0 +1,172 @@
+# ANOVA Designs (2) {#sec-anova2}
+
+```{r}
+#| include: false
+
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readxl)
+loneliness <- read_excel(here("data", "loneliness.xlsx"))
+math <- read_excel(here("data", "math.xlsx"))
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Apply hypothesis testing
+-   Understand two-way between-subjects ANOVA
+-   Understand analysis of covariance (ANCOVA)
+-   Perform post hoc tests
+-   Interpret the results
+:::
+
+## Two-way between-subjects Analysis of Variance (Two-way ANOVA)
+
+A research design is not limited to examining the effects of a single independent variable. In this section, we will explore how to incorporate a second independent variable. A design that includes multiple independent variables is known as a *factorial design*, where each level of one independent variable is combined with each level of the other.
+
+After obtaining a significant ANOVA result, it is essential to conduct post hoc tests that account for the number of comparisons to ensure accurate statistical interpretation.
+
+### Importing data
+
+Assume that we are interested in feelings of loneliness experienced by adults who are living alone. We sample individuals from three different types of population centers: large metropolitan cities, small municipalities or towns, and rural communities (coded as 1, 2, and 3). Recognizing that gender might be an important factor, we recorded the gender of participants (1 = female, 2 = male). Thirty participants completed a loneliness inventory, with scores ranging from 0 to 60.
+
+```{r}
+#| echo: false
+#| label: fig-loneliness0
+#| fig-cap: Table with raw data.
+
+DT::datatable(loneliness, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'loneliness'
+      ))))
+
+```
+
+Open the dataset named "loneliness" from the file tab in the menu (@fig-loneliness1).
+
+![The loneliness dataset.](images/loneliness1.png){#fig-loneliness1 width="65%"}
+
+ 
+
+We prepare the data as follows (@fig-loneliness2):
+
+![The modified dataset.](images/loneliness2.png){#fig-loneliness2 width="65%"}
+
+### Research question
+
+The question of interest is whether the effect of gender and residence on loneliness. Specifically, we want to answer the following questions:
+
+-   Does loneliness differ based on gender?
+
+-   Does it differ based on residential community?
+
+-   Does the effect of residence on loneliness depend on gender?
+
+### Hypothesis testing for the one-way ANOVA test
+
+::: {.callout-note icon="false"}
+## Null and alternative hypotheses
+
+**Main effect: gender**
+
+-   $H_0$: There is no significant difference in loneliness scores between males and females. ($\mu_{female} = \mu_{male}$)
+
+-   $H_1$: There is a significant difference in loneliness scores between males and females ($\mu_{female} \neq \mu_{male}$).
+
+**Main effect: residence**
+
+-   $H_0$: There is no significant difference in loneliness scores among individuals from different residential communities ($\mu_{city} = \mu_{town} = \mu_{rural}$)
+
+-   $H_1$: At least one residential community has a significantly different loneliness score.
+
+**Interaction effect between gender and residence**
+
+-   $H_0$: There is no interaction effect between gender and residence on loneliness scores (i.e., the effect of gender on loneliness does not depend on residential community).
+
+-   $H_1$: There is a significant interaction effect between gender and residence on loneliness scores (i.e., the effect of gender on loneliness varies depending on residential community).
+:::
+
+### Assumptions
+
+A.  **Normality of Residuals:** The loneliness scores should be approximately normally distributed within each group (i.e., for each combination of gender and residential community).
+
+B.  **Homogeneity of Variance (Homoscedasticity):** The variance of loneliness scores should be approximately equal across all groups. (also named as homogeneity of variance or homoscedasticity).
+
+### ANOVA (omnibus analysis)
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(ANOVA) -.-> C(ANOVA)
+```
+
+as shown below in @fig-sat3.
+
+![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> ANOVA.](images/sat3.png){#fig-sat3 width="55%"}
+
+ 
+
+In the ANOVA dialog box, highlight `loneliness` in the left panel and drug it to the the ***Dependent Variable***. Then highlight the `gender` and `residence` and drug them to the ***Fixed Factors*** (@fig-lone1). Additionally, check $\eta^2$.
+
+![ANOVA dialog box.](images/lone1.png){#fig-lone1 width="65%"}
+
+ 
+
+### Descriptive statistics and plots
+
+![The estimated marginal means panels.](images/lone3.png){#fig-lone3 width="65%"}
+
+![Descriptive statistics.](images/lone5.png){#fig-lone5 width="55%"}
+
+![Plot with means.](images/lone6.png){#fig-lone6 width="55%"}
+
+ 
+
+**Assumptions Checks**
+
+Click the ***Assumptions Checks***, and check *Homogeneity test*, *Normality test*, and *Q-Q plot* (@fig-sat41).
+
+![Assumption selections for ANOVA.](images/sat41.png){#fig-sat41 width="65%"}
+
+![Normality test.](images/lone7.png){#fig-lone7 width="30%"}
+
+![Normal Q-Q plot.](images/lone8.png){#fig-lone8 width="55%"}
+
+ 
+
+-   **Equality of variances**
+
+![Levene's test.](images/lone9.png){#fig-lone9 width="35%"}
+
+**ANOVA table**
+
+![Summary table of ANOVA.](images/lone10.png){#fig-lone10 width="75%"}
+
+### Post hoc tests
+
+Click the ***Post Hoc Tests***, then highlight the `gender`, `residence`, and `gender x residence` in the left panel and click it over the the right panel. Check *Bonferroni* correction.
+
+![Post Hoc Tests panels.](images/lone4.png){#fig-lone4 width="55%"}
+
+ 
+
+![Post Hoc Tests (Bonferroni correction).](images/lone11.png){#fig-lone11 width="85%"}
+
+ 
+
+::: content-box-green
+**Interpretation**
+
+Simple effects tests were conducted using the Bonferroni adjustment to maintain an alpha level of 0.05. Results showed that females were lonelier in both small towns and rural communities compared to large cities. Males, on the other hand, experienced greater loneliness in small towns than in rural communities. Additionally, females in rural communities felt significantly lonelier than males.
+
+:::
