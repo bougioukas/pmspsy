@@ -105,7 +105,7 @@ Highlight `satscore` in the left panel and click it (or drug it) over the the **
 
 The default descriptive statistics are shown in @fig-descriptive_sat1: the mean, median, standard deviation, minimum and maximum.
 
-![The modified dataset.](images/descriptive_sat1.png){#fig-descriptive_sat1 width="70%"}
+![Descriptive statistics.](images/descriptive_sat1.png){#fig-descriptive_sat1 width="70%"}
 
 To generate boxplots, click the ***Plots***, and check *Box plot*, *Data*, and *Mean*.
 
