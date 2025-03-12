@@ -101,6 +101,10 @@ Highlight `satscore` in the left panel and click it (or drug it) over the the **
 
 ![Descriptive dialog box.](images/descriptive_sat.png){#fig-descriptive_sat width="55%"}
 
+ 
+
+The default descriptive statistics are shown in @fig-descriptive_sat1: the mean, median, standard deviation, minimum and maximum.
+
 ![The modified dataset.](images/descriptive_sat1.png){#fig-descriptive_sat1 width="70%"}
 
 To generate boxplots, click the ***Plots***, and check *Box plot*, *Data*, and *Mean*.
@@ -108,6 +112,10 @@ To generate boxplots, click the ***Plots***, and check *Box plot*, *Data*, and *
 ![Selection of boxplots.](images/plot_sat.png){#fig-plot_sat width="65%"}
 
 ![Boxplots.](images/boxplot_sat.png){#fig-boxplot_sat width="65%"}
+
+The plot suggests that the median SAT score increases as the months progress, suggesting a positive association between time and SAT score improvement.
+
+
 
 ### ANOVA (omnibus analysis)
 
@@ -176,7 +184,7 @@ $H_{1}$: the variances of `satscore` differ between groups ($σ^2_i\neq σ^2_j$,
 
 ![Levene's test.](images/homo_sat.png){#fig-homo_sat width="35%"}
 
-Since p = 0.239 \> 0.05, the $H_0$ of the Levene's test is not rejected and the variances of the five conditions are comparable; in short, it appears that the assumption of homogeneity of variance has not been violated.
+Since p = 0.239 \> 0.05, the $H_0$ of the Levene's test is not rejected and the variances of the five conditions are comparable; in short, it appears that the assumption of homogeneity of variance is not violated.
 
  
 
@@ -194,7 +202,12 @@ Note that we compare this value to an F-distribution (F-test). The degrees of fr
 
 The p-value \< 0.001 (reject $H_0$ of the ANOVA test). **There is at least one condition with mean SAT score which is different from the other means**.
 
-This table also presents the eta squared ($\eta^2 = 0.85$) , which expresses the proportion of variability explained by the group relative to the total variability. A value of 0.85 (85%) means that 85% of the variation in SAT scores can be attributed to the preparation time and would be considered a large effect size. (**NOTE:** Whether the $\eta^2$ value is considered “high” or not is relative and depends on the research context).
+This table also presents the eta squared ($\eta^2 = 0.85$) , which expresses the proportion of variability explained by the group relative to the total variability: 
+
+$$\eta^2 = \frac{Sum \ of \ squares \ group}{Total \ sum \ of \ squares} = \frac{230497}{230497 + 39771} = \frac{230497}{270268}=0.85$$
+
+
+A value of 0.85 (85%) means that 85% of the variation in SAT scores can be attributed to the preparation time and would be considered a large effect size. (**NOTE:** Whether the $\eta^2$ value is considered “high” or not is relative and depends on the research context).
 
  
 
