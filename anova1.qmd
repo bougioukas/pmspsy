@@ -223,7 +223,7 @@ Click the ***Post Hoc Tests***, then highlight the `group` in the left panel and
 
 ![Post Hoc Tests (Tukey correction).](images/posthoc_res.png){#fig-posthoc_res width="85%"}
 
-For example, the mean difference between zero months and two months is: 412.857 - 474.286 = -61.428, which is significant (p=0.028).
+For example, the mean difference between zero months and two months is: 412.857 - 474.286 = -61.429, which is significant (p=0.028).
 
 
  
