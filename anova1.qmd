@@ -113,7 +113,7 @@ To generate boxplots, click the ***Plots***, and check *Box plot*, *Data*, and *
 
 ![Boxplots.](images/boxplot_sat.png){#fig-boxplot_sat width="65%"}
 
-The plot suggests that the median SAT score increases as the months progress, suggesting a positive association between time and SAT score improvement.
+The plot suggests that the mean SAT score (black square) increases as the months progress, suggesting a positive association between time and SAT score improvement.
 
 
 
@@ -166,6 +166,8 @@ The Shapiro-Wilk test of normality suggests normal distributions (p=0.56 \> 0.05
  
 
 ![Normal Q-Q plot.](images/qq_sat.png){#fig-qq_sat width="55%"}
+
+The data points mostly fall along the diagonal line, indicating that the residuals are approximately normally distributed. Additionally, there are no extreme deviations or systematic patterns, suggesting that normality holds well.
 
  
 
@@ -309,6 +311,9 @@ In the repeated ANOVA dialog box, define the levels of the "RM Factor 1" which w
 ![Descriptive statistics.](images/means_symptom2.png){#fig-means_symptom2 width="55%"}
 
 ![Plot with means.](images/means_symptom3.png){#fig-means_symptom3 width="55%"}
+
+The graph shows a clear downward trend in mean symptom intensity over time.
+
 
  
 
