@@ -223,6 +223,9 @@ Click the ***Post Hoc Tests***, then highlight the `group` in the left panel and
 
 ![Post Hoc Tests (Tukey correction).](images/posthoc_res.png){#fig-posthoc_res width="85%"}
 
+For example, the mean difference between zero months and two months is: 412.857 - 474.286 = -61.428, which is significant (p=0.028).
+
+
  
 
 ::: content-box-green
@@ -312,7 +315,7 @@ In the repeated ANOVA dialog box, define the levels of the "RM Factor 1" which w
 
 ![Plot with means.](images/means_symptom3.png){#fig-means_symptom3 width="55%"}
 
-The graph shows a clear downward trend in mean symptom intensity over time.
+The graph shows a clear reduction in mean symptom intensity after the treatment.
 
 
  
@@ -355,7 +358,7 @@ $df_2*HFe=28*0.488=13.66$.
 
 ![Summary table of repeated ANOVA.](images/repeated_res.png){#fig-repeated_res width="85%"}
 
-As we can see from @fig-repeated_res, the within-subjects variable was statisticaly significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
+As we can see from @fig-repeated_res, the within-subjects variable (time) was statistically significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
 
 ### Post hoc tests
 
