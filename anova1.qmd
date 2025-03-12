@@ -33,7 +33,7 @@ The one-way between-subjects analysis of variance (one-way ANOVA) is used to com
 
 Although, ANOVA can detect whether there are mean differences between groups, it does not identify which groups are different from the others. At first, we might consider to compare all groups in pairs with t-tests. However, this approach can lead to incorrect conclusions due to the multiple comparisons problem. Each additional t-test increases the likelihood of making at least one Type I error (false positive) across the set (often called a family) of comparisons.
 
-This is the reason why, after an ANOVA test concluding on at least one difference between groups (omnibus analysis), we should perform statistical tests that take into account the number of comparisons (post hoc tests). Some of the more commonly used ones are Tukey test, and Games-Howell test.
+This is why, after an ANOVA test concludes that at least one difference exists between groups (omnibus analysis), we should perform statistical tests that account for the number of comparisons (post hoc tests). Some of the most commonly used post hoc tests include the Tukey test, Bonferroni correction, and Holm test.
 
 ### Importing data
 
@@ -192,7 +192,7 @@ $$F= \frac{Mean \ Square \ between \ groups}{Mean \ Square \ within \ groups} = 
 
 Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 4 and 30, respectively.
 
-The p-value \< 0.001 (reject $H_0$ of the ANOVA test). **There is at least one condition with mean SAT which is different from the other means**.
+The p-value \< 0.001 (reject $H_0$ of the ANOVA test). **There is at least one condition with mean SAT score which is different from the other means**.
 
 This table also presents the eta squared ($\eta^2 = 0.85$) , which expresses the proportion of variability explained by the group relative to the total variability. A value of 0.85 (85%) means that 85% of the variation in SAT scores can be attributed to the preparation time and would be considered a large effect size. (**NOTE:** Whether the $\eta^2$ value is considered “high” or not is relative and depends on the research context).
 
