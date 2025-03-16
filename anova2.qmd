@@ -11,8 +11,7 @@ library(fontawesome)
 
 
 library(readxl)
-loneliness <- read_excel(here("data", "loneliness.xlsx"))
-math <- read_excel(here("data", "math.xlsx"))
+symptoms <- read_excel(here("data", "symptoms.xlsx"))
 ```
 
 When we have finished this Lab, we should be able to:
@@ -21,85 +20,60 @@ When we have finished this Lab, we should be able to:
 ## Learning objectives
 
 -   Apply hypothesis testing
--   Understand two-way between-subjects ANOVA
--   Understand analysis of covariance (ANCOVA)
--   Perform post hoc tests
+-   Understand one-way repeated ANOVA
+-   Perform post-hoc tests
 -   Interpret the results
 :::
 
-## Two-way between-subjects Analysis of Variance (Two-way ANOVA)
+## One-way within-subjects Analysis of Variance (repeated one-way ANOVA)
 
-A research design is not limited to examining the effects of a single independent variable. In this section, we will explore how to incorporate a second independent variable. A design that includes multiple independent variables is known as a *factorial design*, where each level of one independent variable is combined with each level of the other.
-
-After obtaining a significant ANOVA result, it is essential to conduct post hoc tests that account for the number of comparisons to ensure accurate statistical interpretation.
+The one-way repeated measures analysis of variance (also known as a within-subjects ANOVA) is an extension of the paired t-test designed to assess whether there are significant differences in the means of three or more related groups, such as comparing the difference between three or more time points.
 
 ### Importing data
 
-Assume that we are interested in feelings of loneliness experienced by adults who are living alone. We sample individuals from three different types of population centers: large metropolitan cities, small municipalities or towns, and rural communities (coded as 1, 2, and 3). Recognizing that gender might be an important factor, we recorded the gender of participants (1 = female, 2 = male). Thirty participants completed a loneliness inventory, with scores ranging from 0 to 60.
+In hypothetical study, it is hoped that a certain drug will alleviate the intensity of symptoms of a certain disease. Symptom intensity was evaluated on a twelve-point scale with higher values indicating more intense symptoms. Two pre-treatment baseline measurements are made, the first a month prior to treatment and the second one week prior to treatment. Post-treatments measures of symptom intensity are made after one week, one month, and one year following administration of the drug. In this simplified example, we have eight patients in the study.
 
 ```{r}
 #| echo: false
-#| label: fig-loneliness0
+#| label: fig-symptoms0
 #| fig-cap: Table with raw data.
 
-DT::datatable(loneliness, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+DT::datatable(symptoms, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
               options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
       list(list(
         extend = 'csv',
-        filename = 'loneliness'
+        filename = 'symptoms'
       ))))
 
 ```
 
-Open the dataset named "loneliness" from the file tab in the menu (@fig-loneliness1).
+Open the dataset named "symptoms" from the file tab in the menu (@fig-symptoms1).
 
-![The loneliness dataset.](images/loneliness1.png){#fig-loneliness1 width="65%"}
+![The symptoms dataset.](images/symptoms1.png){#fig-symptoms1 width="75%"}
 
  
 
-We prepare the data as follows (@fig-loneliness2):
+We prepare the data as follows (@fig-symptoms2):
 
-![The modified dataset.](images/loneliness2.png){#fig-loneliness2 width="65%"}
+![The modified dataset.](images/symptoms2.png){#fig-symptoms2 width="75%"}
 
 ### Research question
 
-The question of interest is whether the effect of gender and residence on loneliness. Specifically, we want to answer the following questions:
+A study investigated the effect of a drug on symptom intensity in a specific disease, assessing eight patients before (two pre-test baseline measures) and after treatment (three post-test measures). The primary question is whether the mean symptom intensity score changed over time.
 
--   Does loneliness differ based on gender?
-
--   Does it differ based on residential community?
-
--   Does the effect of residence on loneliness depend on gender?
-
-### Hypothesis testing for the one-way ANOVA test
+### Hypothesis testsing for the one-way repeated ANOVA test
 
 ::: {.callout-note icon="false"}
-## Null and alternative hypotheses
+## Null hypothesis and alternative hypothesis
 
-**Main effect: gender**
-
--   $H_0$: There is no significant difference in loneliness scores between males and females. ($\mu_{female} = \mu_{male}$)
-
--   $H_1$: There is a significant difference in loneliness scores between males and females ($\mu_{female} \neq \mu_{male}$).
-
-**Main effect: residence**
-
--   $H_0$: There is no significant difference in loneliness scores among individuals from different residential communities ($\mu_{city} = \mu_{town} = \mu_{rural}$)
-
--   $H_1$: At least one residential community has a significantly different loneliness score.
-
-**Interaction effect between gender and residence**
-
--   $H_0$: There is no interaction effect between gender and residence on loneliness scores (i.e., the effect of gender on loneliness does not depend on residential community).
-
--   $H_1$: There is a significant interaction effect between gender and residence on loneliness scores (i.e., the effect of gender on loneliness varies depending on residential community).
+-   $H_0$: all related group means are equal (the means of symptom intensity score in the five time points are equal: $\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4} = \mu_{5}$)
+-   $H_1$: at least one group mean differs from the others (there is at least one group with mean symptom intensity score different from the others)
 :::
 
 ### Assumptions
 
-A.  **Normality of Residuals:** The loneliness scores should be approximately normally distributed within each group (i.e., for each combination of gender and residential community).
-
-B.  **Homogeneity of Variance (Homoscedasticity):** The variance of loneliness scores should be approximately equal across all groups. (also named as homogeneity of variance or homoscedasticity).
+A.  The data are **normally** distributed in all time points.
+B.  The **variances** of the differences between all possible pairs of within-subject conditions are equal (sphericity assumption).
 
 ### ANOVA (omnibus analysis)
 
@@ -107,66 +81,87 @@ On the Jamovi top menu navigate to
 
 ```{mermaid}
 flowchart LR
-  A(Analyses) -.-> B(ANOVA) -.-> C(ANOVA)
+  A(Analyses) -.-> B(ANOVA) -.-> C(Repeated Measures ANOVA)
 ```
 
-as shown below in @fig-sat3.
+as shown below in @fig-repeated_aov1.
 
-![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> ANOVA.](images/sat3.png){#fig-sat3 width="55%"}
+![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> Repeated Measures ANOVA.](images/repeated_aov1.png){#fig-repeated_aov1 width="55%"}
 
  
 
-In the ANOVA dialog box, highlight `loneliness` in the left panel and drug it to the the ***Dependent Variable***. Then highlight the `gender` and `residence` and drug them to the ***Fixed Factors*** (@fig-lone1). Additionally, check $\eta^2$.
+In the repeated ANOVA dialog box, define the levels of the "RM Factor 1" which we will rename as **time**. Then, highlight the variables from `pre1` to `post3` in the left panel and click them (or drug them) to the ***Repeated Measure Cells***. Additionally, check $\eta^2$ and Partial $\eta^2$ (@fig-repeated_dialog).
 
-![ANOVA dialog box.](images/lone1.png){#fig-lone1 width="65%"}
+![Repeated ANOVA dialog box.](images/repeated_dialog.png){#fig-repeated_dialog width="65%"}
 
  
 
 ### Descriptive statistics and plots
 
-![The estimated marginal means panels.](images/lone3.png){#fig-lone3 width="65%"}
+![The estimated marginal means panels.](images/means_symptom1.png){#fig-means_symptom1 width="65%"}
 
-![Descriptive statistics.](images/lone5.png){#fig-lone5 width="55%"}
+![Descriptive statistics.](images/means_symptom2.png){#fig-means_symptom2 width="55%"}
 
-![Plot with means.](images/lone6.png){#fig-lone6 width="55%"}
+![Plot with means.](images/means_symptom3.png){#fig-means_symptom3 width="55%"}
+
+The graph shows a clear reduction in mean symptom intensity after the treatment.
 
  
 
 **Assumptions Checks**
 
-Click the ***Assumptions Checks***, and check *Homogeneity test*, *Normality test*, and *Q-Q plot* (@fig-sat41).
+Click on ***Assumptions Checks***, select *Sphericity tests*, and *Q-Q Plot* (@fig-sphericity0).
 
-![Assumption selections for ANOVA.](images/sat41.png){#fig-sat41 width="65%"}
+![Assumption selections for repeated ANOVA.](images/sphericity0.png){#fig-sphericity0 width="65%"}
 
-![Normality test.](images/lone7.png){#fig-lone7 width="30%"}
+-   **Normality of distributions**
 
-![Normal Q-Q plot.](images/lone8.png){#fig-lone8 width="55%"}
+![Normal Q-Q plot.](images/qq_symptom.png){#fig-qq_symptom width="55%"}
+
+-   **Sphericity assumption**
+
+This assumption is usually checked with the **Mauchly's sphericity test**, where null hypothesis states that the variances of the differences are equal (@fig-sphericity2).
+
+![Assumption selections for repeated ANOVA.](images/sphericity2.png){#fig-sphericity2 width="65%"}
+
+In our example, the assumption of sphericity has not been met (p = 0.043). In this case, we have to correct the degrees of freedom in repeated ANOVA analysis.
+
+There are two correction options $\epsilon$ available: Greenhouse-Geisser (GGe), or Huynh-Feldt (HFe) (@fig-sphericity1). The general recommendation is to use the Greenhouse-Geisser $\epsilon$ correction when it is less than 0.75; otherwise, we should use the Huynh-Feldt $\epsilon$ correction.
+
+As the GGe value is less than 0.75, we use the Greenhouse-Geisser adjustment of 0.488.
+
+![Assumption selections for repeated ANOVA.](images/sphericity1.png){#fig-sphericity1 width="65%"}
+
+The corrected degrees of freedom are:
+
+$df_1*GGe=4*0.488=1.95$
+
+and
+
+$df_2*HFe=28*0.488=13.66$.
 
  
 
--   **Equality of variances**
+**Repeated ANOVA table**
 
-![Levene's test.](images/lone9.png){#fig-lone9 width="35%"}
+![Summary table of repeated ANOVA.](images/repeated_res.png){#fig-repeated_res width="85%"}
 
-**ANOVA table**
-
-![Summary table of ANOVA.](images/lone10.png){#fig-lone10 width="75%"}
+As we can see from @fig-repeated_res, the within-subjects variable (time) was statistically significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
 
 ### Post hoc tests
 
-Click the ***Post Hoc Tests***, then highlight the `gender`, `residence`, and `gender x residence` in the left panel and click it over the the right panel. Check *Bonferroni* correction.
+Click the ***Post Hoc Tests***, then highlight the `time` in the left panel and click it (or drug it) over the the right panel. Check *Bonferroni* correction.
 
-![Post Hoc Tests panels.](images/lone4.png){#fig-lone4 width="55%"}
+![Post Hoc Tests panels.](images/posthoc_symptom.png){#fig-posthoc_symptom width="55%"}
 
  
 
-![Post Hoc Tests (Bonferroni correction).](images/lone11.png){#fig-lone11 width="85%"}
+![Post Hoc Tests (Bonferroni correction).](images/posthoc_res1.png){#fig-posthoc_res1 width="85%"}
 
  
 
 ::: content-box-green
 **Interpretation**
 
-Simple effects tests were conducted using the Bonferroni adjustment to maintain an alpha level of 0.05. Results showed that females were lonelier in both small towns and rural communities compared to large cities. Males, on the other hand, experienced greater loneliness in small towns than in rural communities. Additionally, females in rural communities felt significantly lonelier than males.
-
+Based on Greenhouse-Geisser correction for violation of sphericity, a one-way within-subjects ANOVA revealed a significant difference in the pre-test and post-test means, F(1.95, 13.66) = 18.62, p \< 0.001, within-subjects $\eta^2 = 0.73$. Pairwise comparisons using a Bonferroni correction to maintain an alpha level of 0.05 revealed that intensity of symptoms remained constant from the two pre-test baseline measures, significantly decreased after a week following drug therapy, and further significantly decreased after one month. Symptom intensity did not significantly differ from that level at the end of a year.
 :::

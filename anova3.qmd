@@ -1,0 +1,208 @@
+# ANOVA Designs (3) {#sec-anova3}
+
+```{r}
+#| include: false
+
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readxl)
+mistakes <- read_excel(here("data", "mistakes.xlsx"))
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Apply hypothesis testing
+-   Understand two-way between-subjects ANOVA
+-   Understand moderation analysis (interaction)
+-   Perform post hoc tests
+-   Interpret the results
+:::
+
+## Two-way between-subjects Analysis of Variance (Two-way ANOVA)
+
+A research design is not limited to examining the effects of a single independent variable. In this section, we will explore how to incorporate a second independent variable. A design that includes multiple independent variables is known as a *factorial design*, where each level of one independent variable is combined with each level of the other.
+
+After obtaining a significant ANOVA result, it is essential to conduct post hoc tests that account for the number of comparisons to ensure accurate statistical interpretation.
+
+### Importing data
+
+Assume that researchers are interested in exploring the role of analogical thinking in the problem-solving skills of children and adolescents. The researchers sample 21 students from primary school (6th grade students from "Dimotiko", ages 11-12) and 21 students from secondary school (3rd grade students from "Gymnasium", ages 14-15). The students are then randomly assigned to one of three groups, each consisting of 7 students: a control group, experimental group 1 (exposure to similar examples without instructions), and experimental group 2 (exposure to similar examples with instructions). The outcome measured is the **number of mistakes** made while attempting to solve the problems.
+
+```{r}
+#| echo: false
+#| label: fig-mistakes0
+#| fig-cap: Table with raw data.
+
+DT::datatable(mistakes, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'mistakes'
+      ))))
+
+```
+
+Open the dataset named "mistakes" from the file tab in the menu (@fig-mistakes1).
+
+![The mistakes dataset.](images/mistakes1.png){#fig-mistakes1 width="55%"}
+
+ 
+
+We prepare the data as follows (@fig-mistakes2):
+
+![The modified dataset.](images/mistakes2.png){#fig-mistakes2 width="55%"}
+
+### Research question
+
+The question of interest is whether the effect of school age and instructions on the number of mistakes. Specifically, we want to answer the following questions:
+
+-   Does the number of mistakes differ based on instructions?
+
+-   Does it differ based on school age?
+
+-   Does the effect of instructions on the number of mistakes depend on school age (moderator)?
+
+### Hypothesis testing for the one-way ANOVA test
+
+::: {.callout-note icon="false"}
+## Null and alternative hypotheses
+
+**Main effect: intervention**
+
+-   $H_0$: There is no significant difference in number of mistakes between intervention groups ($\mu_{control} = \mu_{exper1} = \mu_{exper2}$)
+
+-   $H_1$: At least one intervention has a significantly different mean number of mistakes.
+
+**Main effect: school age**
+
+-   $H_0$: There is no significant difference in number of mistakes between primary and secondary school. ($\mu_{primary} = \mu_{secondary}$)
+
+-   $H_1$: There is a significant difference in number of mistakes between primary and secondary school ($\mu_{primary} \neq \mu_{secondary}$).
+
+**Interaction effect between intervention and school age**
+
+-   $H_0$: There is no interaction effect between intervention and school age on number of mistakes (i.e., the effect of intervention on number of mistakes does not depend on school age).
+
+-   $H_1$: There is a significant interaction effect between intervention and school age on number of mistakes (i.e., the effect of intervention on number of mistakes varies depending on school age).
+:::
+
+### Assumptions
+
+A.  **Normality of Residuals:** The number of mistakes should be approximately normally distributed within each group (i.e., for each combination of gender and residential community).
+
+B.  **Homogeneity of Variance (Homoscedasticity):** The variance of number of mistakes should be approximately equal across all groups. (also named as homogeneity of variance or homoscedasticity).
+
+### ANOVA (omnibus analysis)
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(ANOVA) -.-> C(ANOVA)
+```
+
+as shown below in @fig-sat3.
+
+![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> ANOVA.](images/sat3.png){#fig-sat3 width="55%"}
+
+ 
+
+In the ANOVA dialog box, highlight `intervention` in the left panel and drug it to the the ***Dependent Variable***. Then highlight the `gender` and `school_age` and drug them to the ***Fixed Factors*** (@fig-mistakes3). Additionally, check $\eta^2$.
+
+![ANOVA dialog box.](images/mistakes3.png){#fig-mistakes3 width="65%"}
+
+ 
+
+### Descriptive statistics and plots
+
+![The estimated marginal means panels.](images/mistakes4.png){#fig-mistakes4 width="65%"}
+
+![Descriptive statistics.](images/mistakes5.png){#fig-mistakes5 width="55%"}
+
+![Plot with means.](images/mistakes6.png){#fig-mistakes6 width="65%"}
+
+We have created an interaction plot that illustrates the simple effects of intervention for primary and secondary school students. The resulting plot shows an interaction because the lines are not parallel. In this example, school age is a moderator.
+
+ 
+
+**Assumptions Checks**
+
+Click the ***Assumptions Checks***, and check *Homogeneity test*, *Normality test*, and *Q-Q plot* (@fig-sat41).
+
+![Assumption selections for ANOVA.](images/sat41.png){#fig-sat41 width="65%"}
+
+![Normality test.](images/mistakes7.png){#fig-mistakes7 width="30%"}
+
+The Shapiro-Wilk test of normality suggests normal distributions (p=0.08 \> 0.05; $H_o$ is not rejected).
+
+ 
+
+![Normal Q-Q plot.](images/mistakes8.png){#fig-mistakes8 width="55%"}
+
+The data points mostly fall along the diagonal line, indicating that the residuals are approximately normally distributed.
+
+ 
+
+-   **Equality of variances**
+
+![Levene's test.](images/mistakes9.png){#fig-mistakes9 width="35%"}
+
+Since p = 0.19 \> 0.05, the $H_0$ of the Levene's test is not rejected and the variances are comparable.
+
+ 
+
+**ANOVA table**
+
+![Summary table of ANOVA.](images/mistakes10.png){#fig-mistakes10 width="75%"}
+
+We observe that both main effects—intervention (F = 14.2, p \<0.001) and school age (F = 48.9, p \<0.001), are significant. Additionally, the interaction is also significant (F = 23.1, p \<0.001).
+
+A key principle in interpreting and reporting factorial analysis results is that interactions take precedence over main effects. This is because interactions offer a more detailed and comprehensive understanding of the data.
+
+Therefore, we can conduct a simple effects analysis (which can be performed in the Linear Models module) and follow up with post hoc tests.
+
+
+![Simple effects (school age as moderator).](images/mistakes13.png){#fig-mistakes13 width="55%"}
+
+
+The number of mistakes in the intervention groups differs significantly only among secondary school students (F = 36.7, p \<0.001).
+
+ 
+
+![Simple effects (intervention as moderator).](images/mistakes14.png){#fig-mistakes14 width="55%"}
+
+The number of mistakes between primary school and secondary school students are significant for the experimental groups (F = 12.2, p = 0.001 and F = 82.8, p \<0.001).
+
+
+
+### Post hoc tests
+
+Click the ***Post Hoc Tests***, then highlight the `gender x residence` in the left panel and click it over the the right panel. Check *Tukey* correction.
+
+![Post Hoc Tests panels.](images/mistakes11.png){#fig-mistakes11 width="55%"}
+
+ 
+
+![Post Hoc Tests (Bonferroni correction).](images/mistakes12.png){#fig-mistakes12 width="85%"}
+
+ 
+
+::: content-box-green
+**Interpretation**
+
+Simple effects tests were conducted using the Tukey adjustment to maintain an alpha level of 0.05. Results showed that the effect of instructions on the number of mistakes depends on school age.
+
+Primary school students showed a relatively stable number of mistakes across all three groups, with their mistakes remaining high even with experimental interventions.
+
+Secondary school students demonstrated a significant decrease in mistakes. Specifically, there was a significant reduction in mistakes when comparing the control group to the group exposed to examples (MD = 12.6, p = 0.019). Adding instructions led to an even greater reduction in mistakes (MD = 18.9, p \<0.001), indicating that explicit guidance further enhanced their problem-solving skills.
+
+Additionally, secondary school students made significantly fewer mistakes than primary school students in both experimental interventions, suggesting that older children may have a stronger ability to apply analogical reasoning in problem-solving after being exposed to similar examples and instructions.
+:::

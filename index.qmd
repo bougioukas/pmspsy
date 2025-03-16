@@ -4,11 +4,9 @@ This course introduces postgraduate students to advanced statistical methods use
 
 -   Data management.
 
--   Analysis of Variance (ANOVA) Designs.
+-   Analysis of Variance (ANOVA) Designs. Moderator analysis.
 
 -   Simple and multiple Linear Regression.
-
--   Simple and multiple Logistic Regression.
 
 -   Factor Analysis.
 

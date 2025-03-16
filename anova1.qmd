@@ -12,7 +12,6 @@ library(fontawesome)
 
 library(readxl)
 sat <- read_excel(here("data", "sat.xlsx"))
-symptoms <- read_excel(here("data", "symptoms.xlsx"))
 ```
 
 When we have finished this Lab, we should be able to:
@@ -22,7 +21,6 @@ When we have finished this Lab, we should be able to:
 
 -   Apply hypothesis testing
 -   Understand one-way between-subjects ANOVA
--   Understand one-way repeated ANOVA
 -   Perform post-hoc tests
 -   Interpret the results
 :::
@@ -115,8 +113,6 @@ To generate boxplots, click the ***Plots***, and check *Box plot*, *Data*, and *
 
 The plot suggests that the mean SAT score (black square) increases as the months progress, suggesting a positive association between time and SAT score improvement.
 
-
-
 ### ANOVA (omnibus analysis)
 
 On the Jamovi top menu navigate to
@@ -204,10 +200,9 @@ Note that we compare this value to an F-distribution (F-test). The degrees of fr
 
 The p-value \< 0.001 (reject $H_0$ of the ANOVA test). **There is at least one condition with mean SAT score which is different from the other means**.
 
-This table also presents the eta squared ($\eta^2 = 0.85$) , which expresses the proportion of variability explained by the group relative to the total variability: 
+This table also presents the eta squared ($\eta^2 = 0.85$) , which expresses the proportion of variability explained by the group relative to the total variability:
 
 $$\eta^2 = \frac{Sum \ of \ squares \ group}{Total \ sum \ of \ squares} = \frac{230497}{230497 + 39771} = \frac{230497}{270268}=0.85$$
-
 
 A value of 0.85 (85%) means that 85% of the variation in SAT scores can be attributed to the preparation time and would be considered a large effect size. (**NOTE:** Whether the $\eta^2$ value is considered “high” or not is relative and depends on the research context).
 
@@ -225,155 +220,10 @@ Click the ***Post Hoc Tests***, then highlight the `group` in the left panel and
 
 For example, the mean difference between zero months and two months is: 412.857 - 474.286 = -61.429, which is significant (p=0.028).
 
-
  
 
 ::: content-box-green
 **Interpretation**
 
 An analysis of variance showed that the amount of preparation for the SAT in which students engaged appeared to significantly affect their performances on the test, F(4, 30) = 43.47, p \< 0.001, $\eta^2 = 0.85$. Post-hoc analyses with Tukey’s test, adjusting p-values for multiple comparisons, indicated that each additional two months of study up to six months was associated with significantly higher SAT scores. However, there was no significant difference in scores between the six month and eight month study groups.
-:::
-
- 
-
-## One-way within-subjects Analysis of Variance (repeated one-way ANOVA)
-
-The one-way repeated measures analysis of variance (also known as a within-subjects ANOVA) is an extension of the paired t-test designed to assess whether there are significant differences in the means of three or more related groups, such as comparing the difference between three or more time points.
-
-### Importing data
-
-In hypothetical study, it is hoped that a certain drug will alleviate the intensity of symptoms of a certain disease. Symptom intensity was evaluated on a twelve-point scale with higher values indicating more intense symptoms. Two pre-treatment baseline measurements are made, the first a month prior to treatment and the second one week prior to treatment. Post-treatments measures of symptom intensity are made after one week, one month, and one year following administration of the drug. In this simplified example, we have eight patients in the study.
-
-```{r}
-#| echo: false
-#| label: fig-symptoms0
-#| fig-cap: Table with raw data.
-
-DT::datatable(symptoms, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
-              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
-      list(list(
-        extend = 'csv',
-        filename = 'symptoms'
-      ))))
-
-```
-
-Open the dataset named "symptoms" from the file tab in the menu (@fig-symptoms1).
-
-![The symptoms dataset.](images/symptoms1.png){#fig-symptoms1 width="75%"}
-
- 
-
-We prepare the data as follows (@fig-symptoms2):
-
-![The modified dataset.](images/symptoms2.png){#fig-symptoms2 width="75%"}
-
-### Research question
-
-A study investigated the effect of a drug on symptom intensity in a specific disease, assessing eight patients before (two pre-test baseline measures) and after treatment (three post-test measures). The primary question is whether the mean symptom intensity score changed over time.
-
-### Hypothesis testsing for the one-way repeated ANOVA test
-
-::: {.callout-note icon="false"}
-## Null hypothesis and alternative hypothesis
-
--   $H_0$: all related group means are equal (the means of symptom intensity score in the five time points are equal: $\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4} = \mu_{5}$)
--   $H_1$: at least one group mean differs from the others (there is at least one group with mean symptom intensity score different from the others)
-:::
-
-### Assumptions
-
-A.  The data are **normally** distributed in all time points.
-B.  The **variances** of the differences between all possible pairs of within-subject conditions are equal (sphericity assumption).
-
-### ANOVA (omnibus analysis)
-
-On the Jamovi top menu navigate to
-
-```{mermaid}
-flowchart LR
-  A(Analyses) -.-> B(ANOVA) -.-> C(Repeated Measures ANOVA)
-```
-
-as shown below in @fig-repeated_aov1.
-
-![Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -\> ANOVA ![](images/anova_icon.png){width="35" height="33"} -\> Repeated Measures ANOVA.](images/repeated_aov1.png){#fig-repeated_aov1 width="55%"}
-
- 
-
-In the repeated ANOVA dialog box, define the levels of the "RM Factor 1" which we will rename as **time**. Then, highlight the variables from `pre1` to `post3` in the left panel and click them (or drug them) to the ***Repeated Measure Cells***. Additionally, check $\eta^2$ and Partial $\eta^2$ (@fig-repeated_dialog).
-
-![Repeated ANOVA dialog box.](images/repeated_dialog.png){#fig-repeated_dialog width="65%"}
-
- 
-
-### Descriptive statistics and plots
-
-![The estimated marginal means panels.](images/means_symptom1.png){#fig-means_symptom1 width="65%"}
-
-![Descriptive statistics.](images/means_symptom2.png){#fig-means_symptom2 width="55%"}
-
-![Plot with means.](images/means_symptom3.png){#fig-means_symptom3 width="55%"}
-
-The graph shows a clear reduction in mean symptom intensity after the treatment.
-
-
- 
-
-**Assumptions Checks**
-
-Click on ***Assumptions Checks***, select *Sphericity tests*, and *Q-Q Plot* (@fig-sphericity0).
-
-![Assumption selections for repeated ANOVA.](images/sphericity0.png){#fig-sphericity0 width="65%"}
-
--   **Normality of distributions**
-
-![Normal Q-Q plot.](images/qq_symptom.png){#fig-qq_symptom width="55%"}
-
--   **Sphericity assumption**
-
-This assumption is usually checked with the **Mauchly's sphericity test**, where null hypothesis states that the variances of the differences are equal (@fig-sphericity2).
-
-![Assumption selections for repeated ANOVA.](images/sphericity2.png){#fig-sphericity2 width="65%"}
-
-In our example, the assumption of sphericity has not been met (p = 0.043). In this case, we have to correct the degrees of freedom in repeated ANOVA analysis.
-
-There are two correction options $\epsilon$ available: Greenhouse-Geisser (GGe), or Huynh-Feldt (HFe) (@fig-sphericity1). The general recommendation is to use the Greenhouse-Geisser $\epsilon$ correction when it is less than 0.75; otherwise, we should use the Huynh-Feldt $\epsilon$ correction.
-
-As the GGe value is less than 0.75, we use the Greenhouse-Geisser adjustment of 0.488.
-
-![Assumption selections for repeated ANOVA.](images/sphericity1.png){#fig-sphericity1 width="65%"}
-
-The corrected degrees of freedom are:
-
-$df_1*GGe=4*0.488=1.95$
-
-and
-
-$df_2*HFe=28*0.488=13.66$.
-
- 
-
-**Repeated ANOVA table**
-
-![Summary table of repeated ANOVA.](images/repeated_res.png){#fig-repeated_res width="85%"}
-
-As we can see from @fig-repeated_res, the within-subjects variable (time) was statistically significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p \< 0.001, $\eta^2_p = 0.727$.
-
-### Post hoc tests
-
-Click the ***Post Hoc Tests***, then highlight the `time` in the left panel and click it (or drug it) over the the right panel. Check *Bonferroni* correction.
-
-![Post Hoc Tests panels.](images/posthoc_symptom.png){#fig-posthoc_symptom width="55%"}
-
- 
-
-![Post Hoc Tests (Bonferroni correction).](images/posthoc_res1.png){#fig-posthoc_res1 width="85%"}
-
- 
-
-::: content-box-green
-**Interpretation**
-
-Based on Greenhouse-Geisser correction for violation of sphericity, a one-way within-subjects ANOVA revealed a significant difference in the pre-test and post-test means, F(1.95, 13.66) = 18.62, p \< 0.001, within-subjects $\eta^2 = 0.73$. Pairwise comparisons using a Bonferroni correction to maintain an alpha level of 0.05 revealed that intensity of symptoms remained constant from the two pre-test baseline measures, significantly decreased after a week following drug therapy, and further significantly decreased after one month. Symptom intensity did not significantly differ from that level at the end of a year.
 :::

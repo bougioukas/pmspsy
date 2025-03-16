@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; ANOVA Designs (1) – Advanced Statistical Methods for Analyzing Empirical Data</title>
+<title>4&nbsp; ANOVA Designs (3) – Advanced Statistical Methods for Analyzing Empirical Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./anova2.html" rel="next">
-<link href="./introduction.html" rel="prev">
+<link href="./presentations.html" rel="next">
+<link href="./anova2.html" rel="prev">
 <link href="./images/cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -148,7 +148,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anova1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ANOVA Designs (1)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anova3.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -187,7 +187,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anova1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./anova1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ANOVA Designs (1)</span></span></a>
   </div>
 </li>
@@ -199,7 +199,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anova3.html" class="sidebar-item-text sidebar-link">
+  <a href="./anova3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></span></a>
   </div>
 </li>
@@ -225,15 +225,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#one-way-between-subjects-analysis-of-variance-one-way-anova" id="toc-one-way-between-subjects-analysis-of-variance-one-way-anova" class="nav-link active" data-scroll-target="#one-way-between-subjects-analysis-of-variance-one-way-anova"><span class="header-section-number">2.1</span> One-way between-subjects Analysis of Variance (One-way ANOVA)</a>
+  <li><a href="#two-way-between-subjects-analysis-of-variance-two-way-anova" id="toc-two-way-between-subjects-analysis-of-variance-two-way-anova" class="nav-link active" data-scroll-target="#two-way-between-subjects-analysis-of-variance-two-way-anova"><span class="header-section-number">4.1</span> Two-way between-subjects Analysis of Variance (Two-way ANOVA)</a>
   <ul class="collapse">
-  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data"><span class="header-section-number">2.1.1</span> Importing data</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question"><span class="header-section-number">2.1.2</span> Research question</a></li>
-  <li><a href="#hypothesis-testing-for-the-one-way-anova-test" id="toc-hypothesis-testing-for-the-one-way-anova-test" class="nav-link" data-scroll-target="#hypothesis-testing-for-the-one-way-anova-test"><span class="header-section-number">2.1.3</span> Hypothesis testing for the one-way ANOVA test</a></li>
-  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"><span class="header-section-number">2.1.4</span> Assumptions</a></li>
-  <li><a href="#descriptive-statistics-and-plots" id="toc-descriptive-statistics-and-plots" class="nav-link" data-scroll-target="#descriptive-statistics-and-plots"><span class="header-section-number">2.1.5</span> Descriptive statistics and plots</a></li>
-  <li><a href="#anova-omnibus-analysis" id="toc-anova-omnibus-analysis" class="nav-link" data-scroll-target="#anova-omnibus-analysis"><span class="header-section-number">2.1.6</span> ANOVA (omnibus analysis)</a></li>
-  <li><a href="#post-hoc-tests" id="toc-post-hoc-tests" class="nav-link" data-scroll-target="#post-hoc-tests"><span class="header-section-number">2.1.7</span> Post hoc tests</a></li>
+  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data"><span class="header-section-number">4.1.1</span> Importing data</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question"><span class="header-section-number">4.1.2</span> Research question</a></li>
+  <li><a href="#hypothesis-testing-for-the-one-way-anova-test" id="toc-hypothesis-testing-for-the-one-way-anova-test" class="nav-link" data-scroll-target="#hypothesis-testing-for-the-one-way-anova-test"><span class="header-section-number">4.1.3</span> Hypothesis testing for the one-way ANOVA test</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"><span class="header-section-number">4.1.4</span> Assumptions</a></li>
+  <li><a href="#anova-omnibus-analysis" id="toc-anova-omnibus-analysis" class="nav-link" data-scroll-target="#anova-omnibus-analysis"><span class="header-section-number">4.1.5</span> ANOVA (omnibus analysis)</a></li>
+  <li><a href="#descriptive-statistics-and-plots" id="toc-descriptive-statistics-and-plots" class="nav-link" data-scroll-target="#descriptive-statistics-and-plots"><span class="header-section-number">4.1.6</span> Descriptive statistics and plots</a></li>
+  <li><a href="#post-hoc-tests" id="toc-post-hoc-tests" class="nav-link" data-scroll-target="#post-hoc-tests"><span class="header-section-number">4.1.7</span> Post hoc tests</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -243,7 +243,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-anova1" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ANOVA Designs (1)</span></span></h1>
+<h1 class="title"><span id="sec-anova3" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></span></h1>
 </div>
 
 
@@ -273,163 +273,105 @@ Learning objectives
 <div class="callout-body-container callout-body">
 <ul>
 <li>Apply hypothesis testing</li>
-<li>Understand one-way between-subjects ANOVA</li>
-<li>Perform post-hoc tests</li>
+<li>Understand two-way between-subjects ANOVA</li>
+<li>Understand moderation analysis (interaction)</li>
+<li>Perform post hoc tests</li>
 <li>Interpret the results</li>
 </ul>
 </div>
 </div>
-<section id="one-way-between-subjects-analysis-of-variance-one-way-anova" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="one-way-between-subjects-analysis-of-variance-one-way-anova"><span class="header-section-number">2.1</span> One-way between-subjects Analysis of Variance (One-way ANOVA)</h2>
-<p>The one-way between-subjects analysis of variance (one-way ANOVA) is used to compare more than two <strong>independent</strong> (unrelated or unpaired) samples. We may think of it as an extension of Student’s t-test.</p>
-<p>Although, ANOVA can detect whether there are mean differences between groups, it does not identify which groups are different from the others. At first, we might consider to compare all groups in pairs with t-tests. However, this approach can lead to incorrect conclusions due to the multiple comparisons problem. Each additional t-test increases the likelihood of making at least one Type I error (false positive) across the set (often called a family) of comparisons.</p>
-<p>This is why, after an ANOVA test concludes that at least one difference exists between groups (omnibus analysis), we should perform statistical tests that account for the number of comparisons (post hoc tests). Some of the most commonly used post hoc tests include the Tukey test, Bonferroni correction, and Holm test.</p>
-<section id="importing-data" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="importing-data"><span class="header-section-number">2.1.1</span> Importing data</h3>
-<p>The SAT is used by a wide range of colleges and universities as part of the application process for college admission. Assume we are interested in the effect of preparation time on SAT performance.</p>
-<p>In this example, we have five student groups, each containing seven cases. The groups contain students who have studied for either zero, two, four, six, or eight months prior to taking the SAT.</p>
+<section id="two-way-between-subjects-analysis-of-variance-two-way-anova" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="two-way-between-subjects-analysis-of-variance-two-way-anova"><span class="header-section-number">4.1</span> Two-way between-subjects Analysis of Variance (Two-way ANOVA)</h2>
+<p>A research design is not limited to examining the effects of a single independent variable. In this section, we will explore how to incorporate a second independent variable. A design that includes multiple independent variables is known as a <em>factorial design</em>, where each level of one independent variable is combined with each level of the other.</p>
+<p>After obtaining a significant ANOVA result, it is essential to conduct post hoc tests that account for the number of comparisons to ensure accurate statistical interpretation.</p>
+<section id="importing-data" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="importing-data"><span class="header-section-number">4.1.1</span> Importing data</h3>
+<p>Assume that researchers are interested in exploring the role of analogical thinking in the problem-solving skills of children and adolescents. The researchers sample 21 students from primary school (6th grade students from “Dimotiko”, ages 11-12) and 21 students from secondary school (3rd grade students from “Gymnasium”, ages 14-15). The students are then randomly assigned to one of three groups, each consisting of 7 students: a control group, experimental group 1 (exposure to similar examples without instructions), and experimental group 2 (exposure to similar examples with instructions). The outcome measured is the <strong>number of mistakes</strong> made while attempting to solve the problems.</p>
 <div class="cell">
-<div id="fig-sat0" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes0" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sat0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f5bf340a98e1b05fc811" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f5bf340a98e1b05fc811">{"x":{"filter":"none","vertical":false,"extensions":["Scroller","Buttons"],"data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35],[0,0,0,0,0,0,0,2,2,2,2,2,2,2,4,4,4,4,4,4,4,6,6,6,6,6,6,6,8,8,8,8,8,8,8],[370,380,420,420,430,430,440,410,430,440,480,510,520,530,530,530,540,540,550,570,610,560,580,590,620,640,650,660,550,610,620,630,640,650,660]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>subid<\/th>\n      <th>group<\/th>\n      <th>satscore<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"Bt","scrollY":452,"scroller":true,"scrollX":true,"pageLength":10,"buttons":[{"extend":"csv","filename":"sat"}],"columnDefs":[{"className":"dt-right","targets":[0,1,2]},{"name":"subid","targets":0},{"name":"group","targets":1},{"name":"satscore","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div aria-describedby="fig-mistakes0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c07341ee1772cc409033" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c07341ee1772cc409033">{"x":{"filter":"none","vertical":false,"extensions":["Scroller","Buttons"],"data":[["control","control","control","control","control","control","control","control","control","control","control","control","control","control","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2"],["secondary","secondary","secondary","secondary","secondary","secondary","secondary","primary","primary","primary","primary","primary","primary","primary","secondary","secondary","secondary","secondary","secondary","secondary","secondary","primary","primary","primary","primary","primary","primary","primary","secondary","secondary","secondary","secondary","secondary","secondary","secondary","primary","primary","primary","primary","primary","primary","primary"],[38,47,42,37,33,31,33,34,39,37,26,46,40,27,20,20,22,24,32,19,36,29,47,28,43,41,44,31,10,8,12,5,6,0,0,37,45,48,29,34,32,51]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>intervention<\/th>\n      <th>school_age<\/th>\n      <th>mistakes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"Bt","scrollY":452,"scroller":true,"scrollX":true,"pageLength":10,"buttons":[{"extend":"csv","filename":"mistakes"}],"columnDefs":[{"className":"dt-right","targets":2},{"name":"intervention","targets":0},{"name":"school_age","targets":1},{"name":"mistakes","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Table with raw data.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Table with raw data.
 </figcaption>
 </figure>
 </div>
 </div>
-<p>Open the dataset named “sat” from the file tab in the menu (<a href="#fig-sat1" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
-<div id="fig-sat1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Open the dataset named “mistakes” from the file tab in the menu (<a href="#fig-mistakes1" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>).</p>
+<div id="fig-mistakes1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sat1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sat1.png" class="img-fluid figure-img" style="width:75.0%">
+<div aria-describedby="fig-mistakes1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes1.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: The sat dataset.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: The mistakes dataset.
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
-<p>We prepare the data as follows (<a href="#fig-sat2" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>):</p>
-<div id="fig-sat2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>We prepare the data as follows (<a href="#fig-mistakes2" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>):</p>
+<div id="fig-mistakes2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sat2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sat2.png" class="img-fluid figure-img" style="width:75.0%">
+<div aria-describedby="fig-mistakes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes2.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: The modified dataset.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: The modified dataset.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="research-question" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="research-question"><span class="header-section-number">2.1.2</span> Research question</h3>
-<p>A quaziexperimental study explored the effect of preparation time on SAT performance, with students having studied for different duration (zero, two, four, six, or eight months). The question of interest is whether the mean SAT score differs across these preparation times.</p>
+<section id="research-question" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="research-question"><span class="header-section-number">4.1.2</span> Research question</h3>
+<p>The question of interest is whether the effect of school age and instructions on the number of mistakes. Specifically, we want to answer the following questions:</p>
+<ul>
+<li><p>Does the number of mistakes differ based on instructions?</p></li>
+<li><p>Does it differ based on school age?</p></li>
+<li><p>Does the effect of instructions on the number of mistakes depend on school age (moderator)?</p></li>
+</ul>
 </section>
-<section id="hypothesis-testing-for-the-one-way-anova-test" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="hypothesis-testing-for-the-one-way-anova-test"><span class="header-section-number">2.1.3</span> Hypothesis testing for the one-way ANOVA test</h3>
+<section id="hypothesis-testing-for-the-one-way-anova-test" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="hypothesis-testing-for-the-one-way-anova-test"><span class="header-section-number">4.1.3</span> Hypothesis testing for the one-way ANOVA test</h3>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Null hypothesis and alternative hypothesis
+Null and alternative hypotheses
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p><strong>Main effect: intervention</strong></p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: all group means are equal (the means of SAT in the five conditions are equal: <span class="math inline">\(\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4} = \mu_{5}\)</span>)</li>
-<li><span class="math inline">\(H_1\)</span>: at least one group mean differs from the others (there is at least one group with mean SAT score different from the others)</li>
+<li><p><span class="math inline">\(H_0\)</span>: There is no significant difference in number of mistakes between intervention groups (<span class="math inline">\(\mu_{control} = \mu_{exper1} = \mu_{exper2}\)</span>)</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one intervention has a significantly different mean number of mistakes.</p></li>
+</ul>
+<p><strong>Main effect: school age</strong></p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: There is no significant difference in number of mistakes between primary and secondary school. (<span class="math inline">\(\mu_{primary} = \mu_{secondary}\)</span>)</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: There is a significant difference in number of mistakes between primary and secondary school (<span class="math inline">\(\mu_{primary} \neq \mu_{secondary}\)</span>).</p></li>
+</ul>
+<p><strong>Interaction effect between intervention and school age</strong></p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: There is no interaction effect between intervention and school age on number of mistakes (i.e., the effect of intervention on number of mistakes does not depend on school age).</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: There is a significant interaction effect between intervention and school age on number of mistakes (i.e., the effect of intervention on number of mistakes varies depending on school age).</p></li>
 </ul>
 </div>
 </div>
 </section>
-<section id="assumptions" class="level3" data-number="2.1.4">
-<h3 data-number="2.1.4" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">2.1.4</span> Assumptions</h3>
+<section id="assumptions" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">4.1.4</span> Assumptions</h3>
 <ol type="A">
-<li><p>The dependent variable, <code>satscore</code>, should be approximately <strong>normally</strong> distributed for all groups. To increase the number of observations used in assessing normality, we often examine the residuals from the ANOVA model for the entire dataset using a normal quantile plot of the standardized residuals (Normal Q-Q plot).</p></li>
-<li><p>The data in groups have similar <strong>variance</strong> (also named as homogeneity of variance or homoscedasticity).</p></li>
+<li><p><strong>Normality of Residuals:</strong> The number of mistakes should be approximately normally distributed within each group (i.e., for each combination of gender and residential community).</p></li>
+<li><p><strong>Homogeneity of Variance (Homoscedasticity):</strong> The variance of number of mistakes should be approximately equal across all groups. (also named as homogeneity of variance or homoscedasticity).</p></li>
 </ol>
 </section>
-<section id="descriptive-statistics-and-plots" class="level3" data-number="2.1.5">
-<h3 data-number="2.1.5" class="anchored" data-anchor-id="descriptive-statistics-and-plots"><span class="header-section-number">2.1.5</span> Descriptive statistics and plots</h3>
-<p>On the Jamovi top menu navigate to</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A(Exploration) -.-&gt; B(Descriptives)
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>as shown below in <a href="#fig-descript_sat" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>.</p>
-<div id="fig-descript_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-descript_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/descript_sat.png" class="img-fluid figure-img" style="width:55.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descript_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4: Select exploration and Desctriptives.
-</figcaption>
-</figure>
-</div>
-<p>Highlight <code>satscore</code> in the left panel and click it (or drug it) over the the <strong><em>Variables</em></strong>. Then highlight the <code>group</code> and click it over the <strong><em>Split by</em></strong> (<a href="#fig-descriptive_sat" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>). Additionally, select <em>variables across rows</em>.</p>
-<div id="fig-descriptive_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-descriptive_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/descriptive_sat.png" class="img-fluid figure-img" style="width:55.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.5: Descriptive dialog box.
-</figcaption>
-</figure>
-</div>
-<p>&nbsp;</p>
-<p>The default descriptive statistics are shown in <a href="#fig-descriptive_sat1" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>: the mean, median, standard deviation, minimum and maximum.</p>
-<div id="fig-descriptive_sat1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-descriptive_sat1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/descriptive_sat1.png" class="img-fluid figure-img" style="width:70.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-descriptive_sat1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6: Descriptive statistics.
-</figcaption>
-</figure>
-</div>
-<p>To generate boxplots, click the <strong><em>Plots</em></strong>, and check <em>Box plot</em>, <em>Data</em>, and <em>Mean</em>.</p>
-<div id="fig-plot_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-plot_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/plot_sat.png" class="img-fluid figure-img" style="width:65.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: Selection of boxplots.
-</figcaption>
-</figure>
-</div>
-<div id="fig-boxplot_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-boxplot_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/boxplot_sat.png" class="img-fluid figure-img" style="width:65.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.8: Boxplots.
-</figcaption>
-</figure>
-</div>
-<p>The plot suggests that the mean SAT score (black square) increases as the months progress, suggesting a positive association between time and SAT score improvement.</p>
-</section>
-<section id="anova-omnibus-analysis" class="level3" data-number="2.1.6">
-<h3 data-number="2.1.6" class="anchored" data-anchor-id="anova-omnibus-analysis"><span class="header-section-number">2.1.6</span> ANOVA (omnibus analysis)</h3>
+<section id="anova-omnibus-analysis" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="anova-omnibus-analysis"><span class="header-section-number">4.1.5</span> ANOVA (omnibus analysis)</h3>
 <p>On the Jamovi top menu navigate to</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -444,171 +386,185 @@ Figure&nbsp;2.8: Boxplots.
 </div>
 </div>
 </div>
-<p>as shown below in <a href="anova3.html#fig-sat3" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>.</p>
+<p>as shown below in <a href="#fig-sat3" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>.</p>
 <div id="fig-sat3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sat3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/sat3.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.9: Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -&gt; ANOVA <img src="images/anova_icon.png" width="35" height="33" class="figure-img"> -&gt; ANOVA.
+Figure&nbsp;4.4: Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -&gt; ANOVA <img src="images/anova_icon.png" width="35" height="33" class="figure-img"> -&gt; ANOVA.
 </figcaption>
 </figure>
 </div>
-<p><strong>NOTE:</strong> There is also a One-Way ANOVA menu option. This version of the ANOVA analysis does not have all the options we want so we are not going to use this method, so we will run our analysis via “ANOVA” rather than “One-Way ANOVA”.</p>
 <p>&nbsp;</p>
-<p>In the ANOVA dialog box, highlight <code>satscore</code> in the left panel and click it (or drug it) over the the <strong><em>Dependent Variable</em></strong>. Then highlight the <code>group</code> and click it over the <strong><em>Fixed Factors</em></strong> (<a href="#fig-sat4" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>). Additionally, check <span class="math inline">\(\eta^2\)</span>.</p>
-<div id="fig-sat4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>In the ANOVA dialog box, highlight <code>intervention</code> in the left panel and drug it to the the <strong><em>Dependent Variable</em></strong>. Then highlight the <code>gender</code> and <code>school_age</code> and drug them to the <strong><em>Fixed Factors</em></strong> (<a href="#fig-mistakes3" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>). Additionally, check <span class="math inline">\(\eta^2\)</span>.</p>
+<div id="fig-mistakes3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sat4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sat4.png" class="img-fluid figure-img" style="width:65.0%">
+<div aria-describedby="fig-mistakes3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes3.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.10: ANOVA dialog box.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: ANOVA dialog box.
 </figcaption>
 </figure>
 </div>
+<p>&nbsp;</p>
+</section>
+<section id="descriptive-statistics-and-plots" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="descriptive-statistics-and-plots"><span class="header-section-number">4.1.6</span> Descriptive statistics and plots</h3>
+<div id="fig-mistakes4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes4.png" class="img-fluid figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: The estimated marginal means panels.
+</figcaption>
+</figure>
+</div>
+<div id="fig-mistakes5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes5.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.7: Descriptive statistics.
+</figcaption>
+</figure>
+</div>
+<div id="fig-mistakes6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes6.png" class="img-fluid figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.8: Plot with means.
+</figcaption>
+</figure>
+</div>
+<p>We have created an interaction plot that illustrates the simple effects of intervention for primary and secondary school students. The resulting plot shows an interaction because the lines are not parallel. In this example, school age is a moderator.</p>
 <p>&nbsp;</p>
 <p><strong>Assumptions Checks</strong></p>
-<p>Click the <strong><em>Assumptions Checks</em></strong>, and check <em>Homogeneity test</em>, <em>Normality test</em>, and <em>Q-Q plot</em> (<a href="anova3.html#fig-sat41" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
+<p>Click the <strong><em>Assumptions Checks</em></strong>, and check <em>Homogeneity test</em>, <em>Normality test</em>, and <em>Q-Q plot</em> (<a href="#fig-sat41" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
 <div id="fig-sat41" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sat41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/sat41.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.11: Assumption selections for ANOVA.
+Figure&nbsp;4.9: Assumption selections for ANOVA.
 </figcaption>
 </figure>
 </div>
-<ul>
-<li><strong>Normality of distributions</strong></li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Remember: Hypothesis testing for Shapiro-Wilk test for normality
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(H_{0}\)</span>: the data came from a normally distributed population.</p>
-<p><span class="math inline">\(H_{1}\)</span>: the data tested are not normally distributed.</p>
-<ul>
-<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
-<li>If p − value ≥ 0.05, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
-</ul>
-</div>
-</div>
-<div id="fig-normal_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-normal_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/normal_sat.png" class="img-fluid figure-img" style="width:30.0%">
+<div aria-describedby="fig-mistakes7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes7.png" class="img-fluid figure-img" style="width:30.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.12: Normality test.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: Normality test.
 </figcaption>
 </figure>
 </div>
-<p>The Shapiro-Wilk test of normality suggests normal distributions (p=0.56 &gt; 0.05; <span class="math inline">\(H_o\)</span> is not rejected).</p>
+<p>The Shapiro-Wilk test of normality suggests normal distributions (p=0.08 &gt; 0.05; <span class="math inline">\(H_o\)</span> is not rejected).</p>
 <p>&nbsp;</p>
-<div id="fig-qq_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-qq_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/qq_sat.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-mistakes8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes8.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qq_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.13: Normal Q-Q plot.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.11: Normal Q-Q plot.
 </figcaption>
 </figure>
 </div>
-<p>The data points mostly fall along the diagonal line, indicating that the residuals are approximately normally distributed. Additionally, there are no extreme deviations or systematic patterns, suggesting that normality holds well.</p>
+<p>The data points mostly fall along the diagonal line, indicating that the residuals are approximately normally distributed.</p>
 <p>&nbsp;</p>
 <ul>
 <li><strong>Equality of variances</strong></li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Remember: Hypothesis testing for Levene’s test for equality of variances
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(H_{0}\)</span>: the variances of <code>WeightLoss</code> in all groups are equal (<span class="math inline">\(σ^2_1=σ^2_2=σ^2_3=σ^2_4=σ^2_5\)</span>)</p>
-<p><span class="math inline">\(H_{1}\)</span>: the variances of <code>satscore</code> differ between groups (<span class="math inline">\(σ^2_i\neq σ^2_j\)</span>, where <span class="math inline">\(i,j= 1, 2, 3, 4, 5\)</span> and <span class="math inline">\(i\neq j\)</span>)</p>
-<ul>
-<li>If p − value &lt; 0.05, reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
-<li>If p − value ≥ 0.05, do not reject the null hypothesis, <span class="math inline">\(H_{0}\)</span>.</li>
-</ul>
-</div>
-</div>
-<div id="fig-homo_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-homo_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/homo_sat.png" class="img-fluid figure-img" style="width:35.0%">
+<div aria-describedby="fig-mistakes9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes9.png" class="img-fluid figure-img" style="width:35.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-homo_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.14: Levene’s test.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.12: Levene’s test.
 </figcaption>
 </figure>
 </div>
-<p>Since p = 0.239 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and the variances of the five conditions are comparable; in short, it appears that the assumption of homogeneity of variance is not violated.</p>
+<p>Since p = 0.19 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and the variances are comparable.</p>
 <p>&nbsp;</p>
 <p><strong>ANOVA table</strong></p>
-<div id="fig-anova_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-anova_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/anova_sat.png" class="img-fluid figure-img" style="width:75.0%">
+<div aria-describedby="fig-mistakes10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes10.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anova_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.15: Summary table of ANOVA.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.13: Summary table of ANOVA.
 </figcaption>
 </figure>
 </div>
+<p>We observe that both main effects—intervention (F = 14.2, p &lt;0.001) and school age (F = 48.9, p &lt;0.001), are significant. Additionally, the interaction is also significant (F = 23.1, p &lt;0.001).</p>
+<p>A key principle in interpreting and reporting factorial analysis results is that interactions take precedence over main effects. This is because interactions offer a more detailed and comprehensive understanding of the data.</p>
+<p>Therefore, we can conduct a simple effects analysis (which can be performed in the Linear Models module) and follow up with post hoc tests.</p>
+<div id="fig-mistakes13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes13.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.14: Simple effects (school age as moderator).
+</figcaption>
+</figure>
+</div>
+<p>The number of mistakes in the intervention groups differs significantly only among secondary school students (F = 36.7, p &lt;0.001).</p>
 <p>&nbsp;</p>
-<p>In <a href="#fig-anova_sat" class="quarto-xref">Figure&nbsp;<span>2.15</span></a>, the F-statistic is calculated as follows:</p>
-<p><span class="math display">\[F= \frac{Mean \ Square \ between \ groups}{Mean \ Square \ within \ groups} = \frac{Mean \ Square \ group}{Mean \ Square \ residuals} = \frac{57624.3}{1325.7} = 43.467\]</span></p>
-<p>Note that we compare this value to an F-distribution (F-test). The degrees of freedom in the numerator (df1) and the denominator (df2) are 4 and 30, respectively.</p>
-<p>The p-value &lt; 0.001 (reject <span class="math inline">\(H_0\)</span> of the ANOVA test). <strong>There is at least one condition with mean SAT score which is different from the other means</strong>.</p>
-<p>This table also presents the eta squared (<span class="math inline">\(\eta^2 = 0.85\)</span>) , which expresses the proportion of variability explained by the group relative to the total variability:</p>
-<p><span class="math display">\[\eta^2 = \frac{Sum \ of \ squares \ group}{Total \ sum \ of \ squares} = \frac{230497}{230497 + 39771} = \frac{230497}{270268}=0.85\]</span></p>
-<p>A value of 0.85 (85%) means that 85% of the variation in SAT scores can be attributed to the preparation time and would be considered a large effect size. (<strong>NOTE:</strong> Whether the <span class="math inline">\(\eta^2\)</span> value is considered “high” or not is relative and depends on the research context).</p>
-<p>&nbsp;</p>
+<div id="fig-mistakes14" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes14.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.15: Simple effects (intervention as moderator).
+</figcaption>
+</figure>
+</div>
+<p>The number of mistakes between primary school and secondary school students are significant for the experimental groups (F = 12.2, p = 0.001 and F = 82.8, p &lt;0.001).</p>
 </section>
-<section id="post-hoc-tests" class="level3" data-number="2.1.7">
-<h3 data-number="2.1.7" class="anchored" data-anchor-id="post-hoc-tests"><span class="header-section-number">2.1.7</span> Post hoc tests</h3>
-<p>Click the <strong><em>Post Hoc Tests</em></strong>, then highlight the <code>group</code> in the left panel and click it (or drug it) over the the right panel. Check <em>Tukey</em> correction.</p>
-<div id="fig-posthoc_sat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="post-hoc-tests" class="level3" data-number="4.1.7">
+<h3 data-number="4.1.7" class="anchored" data-anchor-id="post-hoc-tests"><span class="header-section-number">4.1.7</span> Post hoc tests</h3>
+<p>Click the <strong><em>Post Hoc Tests</em></strong>, then highlight the <code>gender x residence</code> in the left panel and click it over the the right panel. Check <em>Tukey</em> correction.</p>
+<div id="fig-mistakes11" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-posthoc_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/posthoc_sat.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-mistakes11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes11.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-posthoc_sat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.16: Post Hoc Tests panels.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.16: Post Hoc Tests panels.
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
-<div id="fig-posthoc_res" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-posthoc_res-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/posthoc_res.png" class="img-fluid figure-img" style="width:85.0%">
+<div aria-describedby="fig-mistakes12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes12.png" class="img-fluid figure-img" style="width:85.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-posthoc_res-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.17: Post Hoc Tests (Tukey correction).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.17: Post Hoc Tests (Bonferroni correction).
 </figcaption>
 </figure>
 </div>
-<p>For example, the mean difference between zero months and two months is: 412.857 - 474.286 = -61.429, which is significant (p=0.028).</p>
 <p>&nbsp;</p>
 <div class="content-box-green">
 <p><strong>Interpretation</strong></p>
-<p>An analysis of variance showed that the amount of preparation for the SAT in which students engaged appeared to significantly affect their performances on the test, F(4, 30) = 43.47, p &lt; 0.001, <span class="math inline">\(\eta^2 = 0.85\)</span>. Post-hoc analyses with Tukey’s test, adjusting p-values for multiple comparisons, indicated that each additional two months of study up to six months was associated with significantly higher SAT scores. However, there was no significant difference in scores between the six month and eight month study groups.</p>
+<p>Simple effects tests were conducted using the Tukey adjustment to maintain an alpha level of 0.05. Results showed that the effect of instructions on the number of mistakes depends on school age.</p>
+<p>Primary school students showed a relatively stable number of mistakes across all three groups, with their mistakes remaining high even with experimental interventions.</p>
+<p>Secondary school students demonstrated a significant decrease in mistakes. Specifically, there was a significant reduction in mistakes when comparing the control group to the group exposed to examples (MD = 12.6, p = 0.019). Adding instructions led to an even greater reduction in mistakes (MD = 18.9, p &lt;0.001), indicating that explicit guidance further enhanced their problem-solving skills.</p>
+<p>Additionally, secondary school students made significantly fewer mistakes than primary school students in both experimental interventions, suggesting that older children may have a stronger ability to apply analogical reasoning in problem-solving after being exposed to similar examples and instructions.</p>
 </div>
 
 
@@ -1043,13 +999,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./introduction.html" class="pagination-link" aria-label="Introduction to Jamovi and data preparation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Jamovi and data preparation</span></span>
+      <a href="./anova2.html" class="pagination-link" aria-label="ANOVA Designs (2)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ANOVA Designs (2)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./anova2.html" class="pagination-link" aria-label="ANOVA Designs (2)">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ANOVA Designs (2)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./presentations.html" class="pagination-link" aria-label="Presentations">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Presentations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
