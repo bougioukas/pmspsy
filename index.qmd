@@ -6,7 +6,7 @@ This course introduces postgraduate students to advanced statistical methods use
 
 -   Analysis of Variance (ANOVA) Designs. Moderator analysis.
 
--   Simple and multiple Linear Regression.
+-   Multiple Linear Regression. Interaction between variables.
 
 -   Factor Analysis.
 

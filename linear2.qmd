@@ -1,0 +1,27 @@
+# Simple linear regression {#sec-anova1}
+
+```{r}
+#| include: false
+
+
+library(tidyverse)
+library(here)
+
+library(fontawesome)
+
+
+library(readxl)
+sat <- read_excel(here("data", "sat.xlsx"))
+```
+
+When we have finished this Lab, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Apply hypothesis testing
+-   Understand one-way between-subjects ANOVA
+-   Perform post-hoc tests
+-   Interpret the results
+:::
+

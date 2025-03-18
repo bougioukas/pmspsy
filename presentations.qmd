@@ -1,6 +1,5 @@
 # Presentations
 
-
 -   **Lecture 1: Introduction**
 
 ![psy-introduction](presentations/introduction.pdf){width="60%" height="400"}
@@ -8,3 +7,8 @@
      
 
 
+-   **Lecture 2: Between-subjects ANOVA**
+
+![psy-anova1](presentations/anova1.pdf){width="60%" height="400"}
+
+     
