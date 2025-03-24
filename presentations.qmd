@@ -6,9 +6,18 @@
 
      
 
-
 -   **Lecture 2: Between-subjects ANOVA**
 
 ![psy-anova1](presentations/anova1.pdf){width="60%" height="400"}
 
      
+
+
+-   **Lecture 3: Within-subjects ANOVA**
+
+![psy-anova2](presentations/anova2.pdf){width="60%" height="400"}
+
+     
+
+
+

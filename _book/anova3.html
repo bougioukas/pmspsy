@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; ANOVA Designs (2) – Advanced Statistical Methods for Analyzing Empirical Data</title>
+<title>4&nbsp; ANOVA Designs (3) – Advanced Statistical Methods for Analyzing Empirical Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./anova3.html" rel="next">
-<link href="./anova1.html" rel="prev">
+<link href="./presentations.html" rel="next">
+<link href="./anova2.html" rel="prev">
 <link href="./images/cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -148,7 +148,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anova2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ANOVA Designs (2)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anova3.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -193,13 +193,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anova2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./anova2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ANOVA Designs (2)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anova3.html" class="sidebar-item-text sidebar-link">
+  <a href="./anova3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></span></a>
   </div>
 </li>
@@ -225,15 +225,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#one-way-within-subjects-analysis-of-variance-repeated-one-way-anova" id="toc-one-way-within-subjects-analysis-of-variance-repeated-one-way-anova" class="nav-link active" data-scroll-target="#one-way-within-subjects-analysis-of-variance-repeated-one-way-anova"><span class="header-section-number">3.1</span> One-way within-subjects Analysis of Variance (repeated one-way ANOVA)</a>
+  <li><a href="#two-way-between-subjects-analysis-of-variance-two-way-anova" id="toc-two-way-between-subjects-analysis-of-variance-two-way-anova" class="nav-link active" data-scroll-target="#two-way-between-subjects-analysis-of-variance-two-way-anova"><span class="header-section-number">4.1</span> Two-way between-subjects Analysis of Variance (Two-way ANOVA)</a>
   <ul class="collapse">
-  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data"><span class="header-section-number">3.1.1</span> Importing data</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question"><span class="header-section-number">3.1.2</span> Research question</a></li>
-  <li><a href="#hypothesis-testsing-for-the-one-way-repeated-anova-test" id="toc-hypothesis-testsing-for-the-one-way-repeated-anova-test" class="nav-link" data-scroll-target="#hypothesis-testsing-for-the-one-way-repeated-anova-test"><span class="header-section-number">3.1.3</span> Hypothesis testsing for the one-way repeated ANOVA test</a></li>
-  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"><span class="header-section-number">3.1.4</span> Assumptions</a></li>
-  <li><a href="#anova-omnibus-analysis" id="toc-anova-omnibus-analysis" class="nav-link" data-scroll-target="#anova-omnibus-analysis"><span class="header-section-number">3.1.5</span> ANOVA (omnibus analysis)</a></li>
-  <li><a href="#descriptive-statistics-and-plots" id="toc-descriptive-statistics-and-plots" class="nav-link" data-scroll-target="#descriptive-statistics-and-plots"><span class="header-section-number">3.1.6</span> Descriptive statistics and plots</a></li>
-  <li><a href="#post-hoc-tests" id="toc-post-hoc-tests" class="nav-link" data-scroll-target="#post-hoc-tests"><span class="header-section-number">3.1.7</span> Post hoc tests</a></li>
+  <li><a href="#importing-data" id="toc-importing-data" class="nav-link" data-scroll-target="#importing-data"><span class="header-section-number">4.1.1</span> Importing data</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question"><span class="header-section-number">4.1.2</span> Research question</a></li>
+  <li><a href="#hypothesis-testing-for-the-one-way-anova-test" id="toc-hypothesis-testing-for-the-one-way-anova-test" class="nav-link" data-scroll-target="#hypothesis-testing-for-the-one-way-anova-test"><span class="header-section-number">4.1.3</span> Hypothesis testing for the one-way ANOVA test</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions"><span class="header-section-number">4.1.4</span> Assumptions</a></li>
+  <li><a href="#anova-omnibus-analysis" id="toc-anova-omnibus-analysis" class="nav-link" data-scroll-target="#anova-omnibus-analysis"><span class="header-section-number">4.1.5</span> ANOVA (omnibus analysis)</a></li>
+  <li><a href="#descriptive-statistics-and-plots" id="toc-descriptive-statistics-and-plots" class="nav-link" data-scroll-target="#descriptive-statistics-and-plots"><span class="header-section-number">4.1.6</span> Descriptive statistics and plots</a></li>
+  <li><a href="#post-hoc-tests" id="toc-post-hoc-tests" class="nav-link" data-scroll-target="#post-hoc-tests"><span class="header-section-number">4.1.7</span> Post hoc tests</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -243,7 +243,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-anova2" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ANOVA Designs (2)</span></span></h1>
+<h1 class="title"><span id="sec-anova3" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></span></h1>
 </div>
 
 
@@ -273,87 +273,105 @@ Learning objectives
 <div class="callout-body-container callout-body">
 <ul>
 <li>Apply hypothesis testing</li>
-<li>Understand one-way repeated ANOVA</li>
-<li>Perform post-hoc tests</li>
+<li>Understand two-way between-subjects ANOVA</li>
+<li>Understand moderation analysis (interaction)</li>
+<li>Perform post hoc tests</li>
 <li>Interpret the results</li>
 </ul>
 </div>
 </div>
-<section id="one-way-within-subjects-analysis-of-variance-repeated-one-way-anova" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="one-way-within-subjects-analysis-of-variance-repeated-one-way-anova"><span class="header-section-number">3.1</span> One-way within-subjects Analysis of Variance (repeated one-way ANOVA)</h2>
-<p>The one-way repeated measures analysis of variance (also known as a within-subjects ANOVA) is an extension of the paired t-test designed to assess whether there are significant differences in the means of three or more related groups, such as comparing the difference between three or more time points.</p>
-<section id="importing-data" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="importing-data"><span class="header-section-number">3.1.1</span> Importing data</h3>
-<p>In hypothetical study, it is hoped that a certain drug will alleviate the intensity of symptoms of a certain disease. Symptom intensity was evaluated on a twelve-point scale with higher values indicating more intense symptoms. Two pre-treatment baseline measurements are made, the first a month prior to treatment and the second one week prior to treatment. Post-treatments measures of symptom intensity are made after one week, one month, and one year following administration of the drug. In this simplified example, we have eight patients in the study.</p>
+<section id="two-way-between-subjects-analysis-of-variance-two-way-anova" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="two-way-between-subjects-analysis-of-variance-two-way-anova"><span class="header-section-number">4.1</span> Two-way between-subjects Analysis of Variance (Two-way ANOVA)</h2>
+<p>A research design is not limited to examining the effects of a single independent variable. In this section, we will explore how to incorporate a second independent variable. A design that includes multiple independent variables is known as a <em>factorial design</em>, where each level of one independent variable is combined with each level of the other.</p>
+<p>After obtaining a significant ANOVA result, it is essential to conduct post hoc tests that account for the number of comparisons to ensure accurate statistical interpretation.</p>
+<section id="importing-data" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="importing-data"><span class="header-section-number">4.1.1</span> Importing data</h3>
+<p>Assume that researchers are interested in exploring the role of analogical thinking in the problem-solving skills of children and adolescents. The researchers sample 21 students from primary school (6th grade students from “Dimotiko”, ages 11-12) and 21 students from secondary school (3rd grade students from “Gymnasium”, ages 14-15). The students are then randomly assigned to one of three groups, each consisting of 7 students: a control group, experimental group 1 (exposure to similar examples without instructions), and experimental group 2 (exposure to similar examples with instructions). The outcome measured is the <strong>number of mistakes</strong> made while attempting to solve the problems.</p>
 <div class="cell">
-<div id="fig-symptoms0" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes0" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-symptoms0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-b690973ded307a7c4e5d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b690973ded307a7c4e5d">{"x":{"filter":"none","vertical":false,"extensions":["Scroller","Buttons"],"data":[[1,2,3,4,5,6,7,8],[12,9,9,8,8,9,12,6],[12,10,8,6,9,10,10,7],[7,5,7,6,6,8,7,5],[5,6,5,4,4,6,5,7],[5,5,6,4,5,7,4,5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>subid<\/th>\n      <th>pre1<\/th>\n      <th>pre2<\/th>\n      <th>post1<\/th>\n      <th>post2<\/th>\n      <th>post3<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"Bt","scrollY":452,"scroller":true,"scrollX":true,"pageLength":10,"buttons":[{"extend":"csv","filename":"symptoms"}],"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5]},{"name":"subid","targets":0},{"name":"pre1","targets":1},{"name":"pre2","targets":2},{"name":"post1","targets":3},{"name":"post2","targets":4},{"name":"post3","targets":5}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div aria-describedby="fig-mistakes0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-1630200c63311e584a4a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1630200c63311e584a4a">{"x":{"filter":"none","vertical":false,"extensions":["Scroller","Buttons"],"data":[["control","control","control","control","control","control","control","control","control","control","control","control","control","control","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_1","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2","experimental_2"],["secondary","secondary","secondary","secondary","secondary","secondary","secondary","primary","primary","primary","primary","primary","primary","primary","secondary","secondary","secondary","secondary","secondary","secondary","secondary","primary","primary","primary","primary","primary","primary","primary","secondary","secondary","secondary","secondary","secondary","secondary","secondary","primary","primary","primary","primary","primary","primary","primary"],[38,47,42,37,33,31,33,34,39,37,26,46,40,27,20,20,22,24,32,19,36,29,47,28,43,41,44,31,10,8,12,5,6,0,0,37,45,48,29,34,32,51]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>intervention<\/th>\n      <th>school_age<\/th>\n      <th>mistakes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"Bt","scrollY":452,"scroller":true,"scrollX":true,"pageLength":10,"buttons":[{"extend":"csv","filename":"mistakes"}],"columnDefs":[{"className":"dt-right","targets":2},{"name":"intervention","targets":0},{"name":"school_age","targets":1},{"name":"mistakes","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-symptoms0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Table with raw data.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Table with raw data.
 </figcaption>
 </figure>
 </div>
 </div>
-<p>Open the dataset named “symptoms” from the file tab in the menu (<a href="#fig-symptoms1" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>).</p>
-<div id="fig-symptoms1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Open the dataset named “mistakes” from the file tab in the menu (<a href="#fig-mistakes1" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>).</p>
+<div id="fig-mistakes1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-symptoms1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/symptoms1.png" class="img-fluid figure-img" style="width:75.0%">
+<div aria-describedby="fig-mistakes1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes1.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-symptoms1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: The symptoms dataset.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: The mistakes dataset.
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
-<p>We prepare the data as follows (<a href="#fig-symptoms2" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>):</p>
-<div id="fig-symptoms2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>We prepare the data as follows (<a href="#fig-mistakes2" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>):</p>
+<div id="fig-mistakes2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-symptoms2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/symptoms2.png" class="img-fluid figure-img" style="width:75.0%">
+<div aria-describedby="fig-mistakes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes2.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-symptoms2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.3: The modified dataset.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: The modified dataset.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="research-question" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="research-question"><span class="header-section-number">3.1.2</span> Research question</h3>
-<p>A study investigated the effect of a drug on symptom intensity in a specific disease, assessing eight patients before (two pre-test baseline measures) and after treatment (three post-test measures). The primary question is whether the mean symptom intensity score changed over time.</p>
+<section id="research-question" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="research-question"><span class="header-section-number">4.1.2</span> Research question</h3>
+<p>The question of interest is whether the effect of school age and instructions on the number of mistakes. Specifically, we want to answer the following questions:</p>
+<ul>
+<li><p>Does the number of mistakes differ based on instructions?</p></li>
+<li><p>Does it differ based on school age?</p></li>
+<li><p>Does the effect of instructions on the number of mistakes depend on school age (moderator)?</p></li>
+</ul>
 </section>
-<section id="hypothesis-testsing-for-the-one-way-repeated-anova-test" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="hypothesis-testsing-for-the-one-way-repeated-anova-test"><span class="header-section-number">3.1.3</span> Hypothesis testsing for the one-way repeated ANOVA test</h3>
+<section id="hypothesis-testing-for-the-one-way-anova-test" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="hypothesis-testing-for-the-one-way-anova-test"><span class="header-section-number">4.1.3</span> Hypothesis testing for the one-way ANOVA test</h3>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Null hypothesis and alternative hypothesis
+Null and alternative hypotheses
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p><strong>Main effect: intervention</strong></p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: all related group means are equal (the means of symptom intensity score in the five time points are equal: <span class="math inline">\(\mu_{1} = \mu_{2} = \mu_{3} = \mu_{4} = \mu_{5}\)</span>)</li>
-<li><span class="math inline">\(H_1\)</span>: at least one group mean differs from the others (there is at least one group with mean symptom intensity score different from the others)</li>
+<li><p><span class="math inline">\(H_0\)</span>: There is no significant difference in number of mistakes between intervention groups (<span class="math inline">\(\mu_{control} = \mu_{exper1} = \mu_{exper2}\)</span>)</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one intervention has a significantly different mean number of mistakes.</p></li>
+</ul>
+<p><strong>Main effect: school age</strong></p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: There is no significant difference in number of mistakes between primary and secondary school. (<span class="math inline">\(\mu_{primary} = \mu_{secondary}\)</span>)</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: There is a significant difference in number of mistakes between primary and secondary school (<span class="math inline">\(\mu_{primary} \neq \mu_{secondary}\)</span>).</p></li>
+</ul>
+<p><strong>Interaction effect between intervention and school age</strong></p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: There is no interaction effect between intervention and school age on number of mistakes (i.e., the effect of intervention on number of mistakes does not depend on school age).</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: There is a significant interaction effect between intervention and school age on number of mistakes (i.e., the effect of intervention on number of mistakes varies depending on school age).</p></li>
 </ul>
 </div>
 </div>
 </section>
-<section id="assumptions" class="level3" data-number="3.1.4">
-<h3 data-number="3.1.4" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">3.1.4</span> Assumptions</h3>
+<section id="assumptions" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="assumptions"><span class="header-section-number">4.1.4</span> Assumptions</h3>
 <ol type="A">
-<li>The data are <strong>normally</strong> distributed in all time points.</li>
-<li>The <strong>variances</strong> of the differences between all possible pairs of within-subject conditions are equal (sphericity assumption).</li>
+<li><p><strong>Normality of Residuals:</strong> The number of mistakes should be approximately normally distributed within each group (i.e., for each combination of gender and residential community).</p></li>
+<li><p><strong>Homogeneity of Variance (Homoscedasticity):</strong> The variance of number of mistakes should be approximately equal across all groups. (also named as homogeneity of variance or homoscedasticity).</p></li>
 </ol>
 </section>
-<section id="anova-omnibus-analysis" class="level3" data-number="3.1.5">
-<h3 data-number="3.1.5" class="anchored" data-anchor-id="anova-omnibus-analysis"><span class="header-section-number">3.1.5</span> ANOVA (omnibus analysis)</h3>
+<section id="anova-omnibus-analysis" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="anova-omnibus-analysis"><span class="header-section-number">4.1.5</span> ANOVA (omnibus analysis)</h3>
 <p>On the Jamovi top menu navigate to</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -361,170 +379,192 @@ Null hypothesis and alternative hypothesis
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  A(Analyses) -.-&gt; B(ANOVA) -.-&gt; C(Repeated Measures ANOVA)
+  A(Analyses) -.-&gt; B(ANOVA) -.-&gt; C(ANOVA)
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-<p>as shown below in <a href="#fig-repeated_aov1" class="quarto-xref">Figure&nbsp;<span>3.4</span></a>.</p>
-<div id="fig-repeated_aov1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>as shown below in <a href="#fig-sat3" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>.</p>
+<div id="fig-sat3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-repeated_aov1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/repeated_aov1.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-sat3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/sat3.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repeated_aov1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.4: Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -&gt; ANOVA <img src="images/anova_icon.png" width="35" height="33" class="figure-img"> -&gt; Repeated Measures ANOVA.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Conducting ANOVA test in Jamovi. In the menu at the top, choose Analyses -&gt; ANOVA <img src="images/anova_icon.png" width="35" height="33" class="figure-img"> -&gt; ANOVA.
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
-<p>In the repeated ANOVA dialog box, define the levels of the “RM Factor 1” which we will rename as <strong>time</strong>. Then, highlight the variables from <code>pre1</code> to <code>post3</code> in the left panel and click them (or drug them) to the <strong><em>Repeated Measure Cells</em></strong>. Additionally, check <span class="math inline">\(\eta^2\)</span> and Partial <span class="math inline">\(\eta^2\)</span> (<a href="#fig-repeated_dialog" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>).</p>
-<div id="fig-repeated_dialog" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>In the ANOVA dialog box, highlight <code>intervention</code> in the left panel and drug it to the the <strong><em>Dependent Variable</em></strong>. Then highlight the <code>gender</code> and <code>school_age</code> and drug them to the <strong><em>Fixed Factors</em></strong> (<a href="#fig-mistakes3" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>). Additionally, check <span class="math inline">\(\eta^2\)</span>.</p>
+<div id="fig-mistakes3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-repeated_dialog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/repeated_dialog.png" class="img-fluid figure-img" style="width:65.0%">
+<div aria-describedby="fig-mistakes3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes3.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repeated_dialog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.5: Repeated ANOVA dialog box.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: ANOVA dialog box.
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
 </section>
-<section id="descriptive-statistics-and-plots" class="level3" data-number="3.1.6">
-<h3 data-number="3.1.6" class="anchored" data-anchor-id="descriptive-statistics-and-plots"><span class="header-section-number">3.1.6</span> Descriptive statistics and plots</h3>
-<div id="fig-means_symptom1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="descriptive-statistics-and-plots" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="descriptive-statistics-and-plots"><span class="header-section-number">4.1.6</span> Descriptive statistics and plots</h3>
+<div id="fig-mistakes4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-means_symptom1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/means_symptom1.png" class="img-fluid figure-img" style="width:65.0%">
+<div aria-describedby="fig-mistakes4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes4.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means_symptom1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.6: The estimated marginal means panels.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: The estimated marginal means panels.
 </figcaption>
 </figure>
 </div>
-<div id="fig-means_symptom2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-means_symptom2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/means_symptom2.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-mistakes5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes5.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means_symptom2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.7: Descriptive statistics.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.7: Descriptive statistics.
 </figcaption>
 </figure>
 </div>
-<div id="fig-means_symptom3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-means_symptom3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/means_symptom3.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-mistakes6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes6.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-means_symptom3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.8: Plot with means.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.8: Plot with means.
 </figcaption>
 </figure>
 </div>
-<p>The graph shows a clear reduction in mean symptom intensity after the treatment.</p>
+<p>We have created an interaction plot that illustrates the simple effects of intervention for primary and secondary school students. The resulting plot shows an interaction because the lines are not parallel. In this example, school age is a moderator.</p>
 <p>&nbsp;</p>
 <p><strong>Assumptions Checks</strong></p>
-<p>Click on <strong><em>Assumptions Checks</em></strong>, select <em>Sphericity tests</em>, and <em>Q-Q Plot</em> (<a href="#fig-sphericity0" class="quarto-xref">Figure&nbsp;<span>3.9</span></a>).</p>
-<div id="fig-sphericity0" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Click the <strong><em>Assumptions Checks</em></strong>, and check <em>Homogeneity test</em>, <em>Normality test</em>, and <em>Q-Q plot</em> (<a href="#fig-sat41" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
+<div id="fig-sat41" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sphericity0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sphericity0.png" class="img-fluid figure-img" style="width:65.0%">
+<div aria-describedby="fig-sat41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/sat41.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sphericity0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.9: Assumption selections for repeated ANOVA.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sat41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.9: Assumption selections for ANOVA.
 </figcaption>
 </figure>
 </div>
-<ul>
-<li><strong>Normality of distributions</strong></li>
-</ul>
-<div id="fig-qq_symptom" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-qq_symptom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/qq_symptom.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-mistakes7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes7.png" class="img-fluid figure-img" style="width:30.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qq_symptom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.10: Normal Q-Q plot.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: Normality test.
 </figcaption>
 </figure>
 </div>
-<ul>
-<li><strong>Sphericity assumption</strong></li>
-</ul>
-<p>This assumption is usually checked with the <strong>Mauchly’s sphericity test</strong>, where null hypothesis states that the variances of the differences are equal (<a href="#fig-sphericity2" class="quarto-xref">Figure&nbsp;<span>3.11</span></a>).</p>
-<div id="fig-sphericity2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sphericity2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sphericity2.png" class="img-fluid figure-img" style="width:65.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sphericity2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.11: Assumption selections for repeated ANOVA.
-</figcaption>
-</figure>
-</div>
-<p>In our example, the assumption of sphericity has not been met (p = 0.043). In this case, we have to correct the degrees of freedom in repeated ANOVA analysis.</p>
-<p>There are two correction options <span class="math inline">\(\epsilon\)</span> available: Greenhouse-Geisser (GGe), or Huynh-Feldt (HFe) (<a href="#fig-sphericity1" class="quarto-xref">Figure&nbsp;<span>3.12</span></a>). The general recommendation is to use the Greenhouse-Geisser <span class="math inline">\(\epsilon\)</span> correction when it is less than 0.75; otherwise, we should use the Huynh-Feldt <span class="math inline">\(\epsilon\)</span> correction.</p>
-<p>As the GGe value is less than 0.75, we use the Greenhouse-Geisser adjustment of 0.488.</p>
-<div id="fig-sphericity1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sphericity1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/sphericity1.png" class="img-fluid figure-img" style="width:65.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sphericity1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.12: Assumption selections for repeated ANOVA.
-</figcaption>
-</figure>
-</div>
-<p>The corrected degrees of freedom are:</p>
-<p><span class="math inline">\(df_1*GGe=4*0.488=1.95\)</span></p>
-<p>and</p>
-<p><span class="math inline">\(df_2*HFe=28*0.488=13.66\)</span>.</p>
+<p>The Shapiro-Wilk test of normality suggests normal distributions (p=0.08 &gt; 0.05; <span class="math inline">\(H_o\)</span> is not rejected).</p>
 <p>&nbsp;</p>
-<p><strong>Repeated ANOVA table</strong></p>
-<div id="fig-repeated_res" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-repeated_res-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/repeated_res.png" class="img-fluid figure-img" style="width:85.0%">
+<div aria-describedby="fig-mistakes8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes8.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repeated_res-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.13: Summary table of repeated ANOVA.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.11: Normal Q-Q plot.
 </figcaption>
 </figure>
 </div>
-<p>As we can see from <a href="#fig-repeated_res" class="quarto-xref">Figure&nbsp;<span>3.13</span></a>, the within-subjects variable (time) was statistically significant under the Greenhouse-Geisser correction, F(1.95, 13.66) = 18.624, p &lt; 0.001, <span class="math inline">\(\eta^2_p = 0.727\)</span>.</p>
+<p>The data points mostly fall along the diagonal line, indicating that the residuals are approximately normally distributed.</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>Equality of variances</strong></li>
+</ul>
+<div id="fig-mistakes9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes9.png" class="img-fluid figure-img" style="width:35.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.12: Levene’s test.
+</figcaption>
+</figure>
+</div>
+<p>Since p = 0.19 &gt; 0.05, the <span class="math inline">\(H_0\)</span> of the Levene’s test is not rejected and the variances are comparable.</p>
+<p>&nbsp;</p>
+<p><strong>ANOVA table</strong></p>
+<div id="fig-mistakes10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes10.png" class="img-fluid figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.13: Summary table of ANOVA.
+</figcaption>
+</figure>
+</div>
+<p>We observe that both main effects—intervention (F = 14.2, p &lt;0.001) and school age (F = 48.9, p &lt;0.001), are significant. Additionally, the interaction is also significant (F = 23.1, p &lt;0.001).</p>
+<p>A key principle in interpreting and reporting factorial analysis results is that interactions take precedence over main effects. This is because interactions offer a more detailed and comprehensive understanding of the data.</p>
+<p>Therefore, we can conduct a simple effects analysis (which can be performed in the Linear Models module) and follow up with post hoc tests.</p>
+<div id="fig-mistakes13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes13.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.14: Simple effects (school age as moderator).
+</figcaption>
+</figure>
+</div>
+<p>The number of mistakes in the intervention groups differs significantly only among secondary school students (F = 36.7, p &lt;0.001).</p>
+<p>&nbsp;</p>
+<div id="fig-mistakes14" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mistakes14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes14.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.15: Simple effects (intervention as moderator).
+</figcaption>
+</figure>
+</div>
+<p>The number of mistakes between primary school and secondary school students are significant for the experimental groups (F = 12.2, p = 0.001 and F = 82.8, p &lt;0.001).</p>
 </section>
-<section id="post-hoc-tests" class="level3" data-number="3.1.7">
-<h3 data-number="3.1.7" class="anchored" data-anchor-id="post-hoc-tests"><span class="header-section-number">3.1.7</span> Post hoc tests</h3>
-<p>Click the <strong><em>Post Hoc Tests</em></strong>, then highlight the <code>time</code> in the left panel and click it (or drug it) over the the right panel. Check <em>Bonferroni</em> correction.</p>
-<div id="fig-posthoc_symptom" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="post-hoc-tests" class="level3" data-number="4.1.7">
+<h3 data-number="4.1.7" class="anchored" data-anchor-id="post-hoc-tests"><span class="header-section-number">4.1.7</span> Post hoc tests</h3>
+<p>Click the <strong><em>Post Hoc Tests</em></strong>, then highlight the <code>gender x residence</code> in the left panel and click it over the the right panel. Check <em>Tukey</em> correction.</p>
+<div id="fig-mistakes11" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-posthoc_symptom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/posthoc_symptom.png" class="img-fluid figure-img" style="width:55.0%">
+<div aria-describedby="fig-mistakes11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes11.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-posthoc_symptom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.14: Post Hoc Tests panels.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.16: Post Hoc Tests panels.
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
-<div id="fig-posthoc_res1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mistakes12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-posthoc_res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/posthoc_res1.png" class="img-fluid figure-img" style="width:85.0%">
+<div aria-describedby="fig-mistakes12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mistakes12.png" class="img-fluid figure-img" style="width:85.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-posthoc_res1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.15: Post Hoc Tests (Bonferroni correction).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mistakes12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.17: Post Hoc Tests (Bonferroni correction).
 </figcaption>
 </figure>
 </div>
 <p>&nbsp;</p>
 <div class="content-box-green">
 <p><strong>Interpretation</strong></p>
-<p>Based on Greenhouse-Geisser correction for violation of sphericity, a one-way within-subjects ANOVA revealed a significant difference in the pre-test and post-test means, F(1.95, 13.66) = 18.62, p &lt; 0.001, within-subjects <span class="math inline">\(\eta^2 = 0.73\)</span>. Pairwise comparisons using a Bonferroni correction to maintain an alpha level of 0.05 revealed that intensity of symptoms remained constant from the two pre-test baseline measures, significantly decreased after a week following drug therapy, and further significantly decreased after one month. Symptom intensity did not significantly differ from that level at the end of a year.</p>
+<p>Simple effects tests were conducted using the Tukey adjustment to maintain an alpha level of 0.05. Results showed that the effect of instructions on the number of mistakes depends on school age.</p>
+<p>Primary school students showed a relatively stable number of mistakes across all three groups, with their mistakes remaining high even with experimental interventions.</p>
+<p>Secondary school students demonstrated a significant decrease in mistakes. Specifically, there was a significant reduction in mistakes when comparing the control group to the group exposed to examples (MD = 12.6, p = 0.019). Adding instructions led to an even greater reduction in mistakes (MD = 18.9, p &lt;0.001), indicating that explicit guidance further enhanced their problem-solving skills.</p>
+<p>Additionally, secondary school students made significantly fewer mistakes than primary school students in both experimental interventions, suggesting that older children may have a stronger ability to apply analogical reasoning in problem-solving after being exposed to similar examples and instructions.</p>
 </div>
 
 
@@ -959,13 +999,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./anova1.html" class="pagination-link" aria-label="ANOVA Designs (1)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">ANOVA Designs (1)</span></span>
+      <a href="./anova2.html" class="pagination-link" aria-label="ANOVA Designs (2)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ANOVA Designs (2)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./anova3.html" class="pagination-link" aria-label="ANOVA Designs (3)">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA Designs (3)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./presentations.html" class="pagination-link" aria-label="Presentations">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Presentations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,27 +1,96 @@
-# Simple linear regression {#sec-anova1}
+# Linear regression (2) {#sec-linear2}
 
 ```{r}
 #| include: false
 
-
-library(tidyverse)
-library(here)
-
 library(fontawesome)
+
+library(kableExtra)
+library(moderndive)
+
+library(here)
+library(tidyverse)
 
 
 library(readxl)
-sat <- read_excel(here("data", "sat.xlsx"))
+BirthWeight <- read_excel(here("data", "BirthWeight.xlsx"))
 ```
 
-When we have finished this Lab, we should be able to:
+When we have finished this chapter, we should be able to:
 
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Apply hypothesis testing
--   Understand one-way between-subjects ANOVA
--   Perform post-hoc tests
--   Interpret the results
+-   Fit and interpret multiple linear models
+-   Assess the quality of a linear regression fit
+-   Compare linear models
 :::
+
+
+
+## Multiple linear model
+
+Although the concepts, computations, and interpretations in multi-variable data analysis may seem complex, they are natural extensions of those in simple regression.
+
+We can write the linear model as:
+
+$$\widehat{y} = b_o  + b_1 \cdot x_1 + b_2 \cdot x_2 + b_3 \cdot x_3 + ...+b_p \cdot x_p$$ {#eq-line21}
+
+The goal is to obtain coefficient estimates, which are also known as partial regression slopes, $b_o, b_1, b_2, b_3,...,b_p$. 
+
+It is important to note that the model called “linear” because it is linear in the b’s not necessarily in the x’s. For example, the following model is considering a **general** linear model:
+
+$$\widehat{y} = b_o  + b_1 \cdot x_1 + b_2 \cdot x_2 + b_3 \cdot x_1 \cdot x_2 + b_4 \cdot x_1^2$$ {#eq-line22}
+
+
+
+## Basic criteria for model selection
+
+In simple linear regression, there is only one possible model, as it involves just a single explanatory variable. However, in multiple linear regression, where multiple explanatory variables are involved, the challenge shifts to selecting the best model. But what does "best" actually mean?
+
+Should we choose a model with only a few explanatory variables, or one with many? For example, if we have 20 explanatory variables, should we use all of them or only a subset? And if we opt for a subset, how do we select the variables to optimize a particular function of the data?
+
+Surprisingly, these questions are not easily answered, even by experienced researchers and data analysts. Selecting variables in regression models is a complex task, and there is no consensus on the best approach. As we’ll see, determining the “best” model often depends as much on substantive and scientific factors as on statistical criteria.
+
+A fundamental principle in model selection is the preference for simplicity. When faced with a choice between a more complex model and a simpler one, all else being equal, the simpler model is typically favored. This idea, known as Occam’s razor (or the law of parsimony), is not only relevant to statistical models but also to nearly all forms of explanation.
+
+> **Parcimonious model:** we typically prefer models that are simple if they account for similar amounts of variance as do more complex ones.
+
+
+Next we present some commonly used strategies for model selection:
+
+- **Simultaneous Regression**
+
+The first and most straightforward approach to model selection is to include all available explanatory variables and assess model fit based on this complete model. This is known as full entry or simultaneous regression. In this method, the regression model is built by estimating all parameters simultaneously. However, there are cases where full-entry or simultaneous regression may not be the best choice for model-building. In such instances, the researcher may prefer to adopt a more complex algorithm for constructing the regression model.
+
+- **Hierarchical Regression**
+
+In hierarchical regression, unlike in simultaneous regression, where all explanatory variables are entered into the model at once, researchers typically follow a pre-specified order for introducing variables. This order is usually driven by theory, reflecting the researcher’s prior knowledge. Hierarchical regression is particularly popular among social scientists when testing mediational hypotheses.
+
+
+- **Automated regression methods (Best subset selection)**
+
+These methods combine the explanatory variables in all possible ways. The best subset selection (using backward elimination, forward selection, or both[stepwise selection]) seek to find the best model according to statistical criteria in many steps (stepwise method, the model is re-avaluated in each step). However, as you might imagine, the number of possible models quickly becomes quite large.
+
+It is important to note that several statistical criteria can be used to assess the efficiency or fit of a model, with penalties for the number of explanatory variables. These criteria are calculated and compared across a set of competing models, providing an objective basis for selecting the "best" regression model. Examples include adjusted R-squared, Akaike Information Criterion (AIC)—where a smaller AIC indicates a better model—and Bayesian Information Criterion (BIC).
+
+
+At first glance, especially for those new to statistics, automated selection methods may seem like an ideal solution for many multiple regression problems. They can appear to be the “panacea” for model selection—after all, allowing the computer to determine the “correct” model using its complex computational abilities seems like a logical approach.
+
+However, the situation is not as straightforward as it seems, and there are several issues—both statistical and substantive—that complicate the use of these methods. While automation offers convenience, it also has significant drawbacks, and not all decisions can or should be left to a computer.
+
+From a statistical perspective, automated selection methods, such as forward and backward regression, can introduce bias into parameter estimates, making the resulting inferential model unreliable. After multiple iterations, the likelihood of a Type I error is often much higher than the nominal $\alpha$ (typically 0.05). In addition to these statistical concerns, there are substantive issues that must be considered when selecting a model. The final model chosen through automated methods may not necessarily be the one that offers the greatest practical value or utility.
+
+>**Maximizing statistical criteria is not the same as maximizing utility of the model.**
+
+
+- **Purposeful selection process**
+
+The purposeful selection process begins with a univariable analysis of each candidate variable. A general decision rule is then applied to determine which variables to include. For example, any variable with a p-value < 0.20 in the univariable analysis may be selected for the multivariable analysis.
+
+However, since the primary goal of the multivariable model is typically to assess the effect of the study intervention while controlling for potential confounders, variable selection should also consider existing knowledge and the clinical importance of the variables. If necessary, the initial rule can be adjusted. For instance, a potential confounder might be included in the model if it alters the coefficient of the primary exposure variable by 10% in the multivariable model.
+
+
+
+
 

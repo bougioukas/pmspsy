@@ -169,9 +169,7 @@ A key principle in interpreting and reporting factorial analysis results is that
 
 Therefore, we can conduct a simple effects analysis (which can be performed in the Linear Models module) and follow up with post hoc tests.
 
-
 ![Simple effects (school age as moderator).](images/mistakes13.png){#fig-mistakes13 width="55%"}
-
 
 The number of mistakes in the intervention groups differs significantly only among secondary school students (F = 36.7, p \<0.001).
 
@@ -180,8 +178,6 @@ The number of mistakes in the intervention groups differs significantly only amo
 ![Simple effects (intervention as moderator).](images/mistakes14.png){#fig-mistakes14 width="55%"}
 
 The number of mistakes between primary school and secondary school students are significant for the experimental groups (F = 12.2, p = 0.001 and F = 82.8, p \<0.001).
-
-
 
 ### Post hoc tests
 
