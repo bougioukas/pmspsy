@@ -6,18 +6,28 @@
 
      
 
--   **Lecture 2: Between-subjects ANOVA**
+-   **Lecture 2: Between-subjects: One-way ANOVA**
 
 ![psy-anova1](presentations/anova1.pdf){width="60%" height="400"}
 
      
 
-
--   **Lecture 3: Within-subjects ANOVA**
+-   **Lecture 3: Within-subjects: Repeated ANOVA**
 
 ![psy-anova2](presentations/anova2.pdf){width="60%" height="400"}
 
      
+
+
+-   **Lecture 4: Within-subjects: Two-way ANOVA**
+
+![psy-anova3](presentations/anova3.pdf){width="60%" height="400"}
+
+     
+
+
+
+
 
 
 
