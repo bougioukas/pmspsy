@@ -169,13 +169,13 @@ evals_line <- model_height %>%
 
  
 
-Now, let's focus on interpreting the regression table in @fig-scat9. In the **estimate** column are the intercept $b_o$ = `r format(evals_line[1], digits=6)` and the slope $b_1$ = `r format(evals_line[2], digits=5)` for height. Thus the equation of the regression line becomes:
+Now, let's focus on interpreting the regression table in @fig-scat9. In the **estimate** column are the intercept $b_o$ = `r format(evals_line[1], digits=6)` $\approx 5412$ and the slope $b_1$ = `r format(evals_line[2], digits=5)` $\approx 178$ for height. Thus the equation of the regression line becomes:
 
 $$
 \begin{aligned}
 \widehat{y} &= b_o + b_1 \cdot x\\
 \widehat{\text{weight}} &= b_o + b_1 \cdot\text{height}\\
-\widehat{\text{weight}}&= -5411.953 + 178.296\cdot\text{height}
+\widehat{\text{weight}}&= -5412 + 178\cdot\text{height}
 \end{aligned}
 $$
 
@@ -183,7 +183,7 @@ $$
 
 **The intercept** $b_o$
 
-The intercept $b_o$ = `r format(evals_line[1], digits=6)` is the average weight for those infants with height of 0. In graphical terms, it's where the line intersects the $y$ axis when $x$ = 0 (@fig-intercept). Note, however, that while the intercept of the regression line has a mathematical interpretation, it has no *physical* interpretation here, since observing a weight of 0 is impossible.
+The intercept $b_o =5412$ is the average weight for those infants with height of 0. In graphical terms, it's where the line intersects the $y$ axis when $x$ = 0 (@fig-intercept). Note, however, that while the intercept of the regression line has a mathematical interpretation, it has no *physical* interpretation here, since observing a weight of 0 is impossible.
 
 ```{r}
 #| echo: false
@@ -204,7 +204,7 @@ text(49, -4300, bquote(paste (hat(weight), "= -5412.15+178.31*height")),col="bla
 
 **The slope** $b_1$
 
-Of greater interest is the slope of height, $b_1$=$`r format(evals_line[2], digits=5)`$, as it summarizes the association between the height and weight variables.
+Of greater interest is the slope of height, $b_1 = 178$, as it summarizes the association between the height and weight variables.
 
 ```{r}
 #| echo: false
