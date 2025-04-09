@@ -18,7 +18,6 @@
 
      
 
-
 -   **Lecture 4: Within-subjects: Two-way ANOVA**
 
 ![psy-anova3](presentations/anova3.pdf){width="60%" height="400"}
@@ -27,7 +26,18 @@
 
 
 
+-   **Lecture: Linear Regression (Simple Models)**
 
+![psy-linear1](presentations/linear1.pdf){width="60%" height="400"}
+
+     
+
+
+-   **Lecture: Systematic Reviews**
+
+![psy-SR_meta1](presentations/SR_meta1.pdf){width="60%" height="400"}
+
+     
 
 
 
