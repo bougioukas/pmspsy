@@ -44,7 +44,7 @@ For example, in @fig-linear3d we present a model consisted of one response varia
 
 $$
 \begin{aligned}
-\widehat{\text{weight}} &= b_o + b_1 \cdot x_1 + b_2 \cdot x_2\\
+\widehat{\text{y}} &= b_o + b_1 \cdot x_1 + b_2 \cdot x_2\\
 \widehat{\text{weight}} &= b_o + b_1 \cdot \text{height} + b_2 \cdot \text{headc}
 \end{aligned}
 $$
