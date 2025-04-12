@@ -17,7 +17,7 @@ book:
     - anova2.qmd
     - anova3.qmd
     - linear1.qmd
-    #- linear2.qmd
+    - linear2.qmd
     - presentations.qmd
     #- sources.qmd
     - references.qmd

@@ -147,7 +147,11 @@ Next, from the **Assumption Checks** section tick the box “Q-Q plot of residua
 
 ![Assumption Checks choices.](images/scat6.png){#fig-scat6 width="65%"}
 
-![Assumption Checks choices.](images/scat7.png){#fig-scat7 width="65%"}
+![Normal Q-Q plot of the residuals.](images/scat7.png){#fig-scat7 width="65%"}
+
+The @fig-scat6 shows no significant deviation from normality.
+
+ 
 
 Additionally, from the *Model Coefficients* section tick the box "**Confidence interval**" in **Estimate** (@fig-linear4):
 
@@ -445,7 +449,6 @@ $$
 \end{aligned}
 $$
 
-
 -   The "intercept" represents the average weight of a female infant, which is 4140 g and serves as the reference category.
 
 -   The "gender" term denotes the average weight difference between male and female infants, which is 452 g.
@@ -491,8 +494,7 @@ $$
 \widehat{y} &= b_o + b_1 \cdot x\\
 \widehat{\text{weight}} &= b_o + b_1 \cdot\text{parity1} + b_2 \cdot\text{parity2}
 \end{aligned}
-$$ 
-
+$$
 
 Therefore, we are including all the categories to the linear regression model except the one which is going to be used as the reference category (here is the Singleton). Actually, we create a multiple regression model which we will examine later analytically.
 
@@ -504,7 +506,6 @@ The output table with the model coefficients should look like the following (@fi
 
 ![The model coefficients table.](images/scat20.png){#fig-scat20 width="75%"}
 
-
 The equation of the model becomes:
 
 $$
@@ -512,8 +513,7 @@ $$
 \widehat{\text{weight}} &= b_o + b_1 \cdot\text{parity1} + b_2 \cdot\text{parity2}\\
 \widehat{\text{weight}} &= 4259 + 130 \cdot\text{parity1} + 192 \cdot\text{parity2}
 \end{aligned}
-$$ 
-
+$$
 
 -   The intercept corresponds to the mean weight 4259 g for a singleton infant which is the reference category.
 
