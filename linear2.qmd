@@ -188,8 +188,7 @@ To examine linearity and homoscedasticity we examine the Residuals vs Fitted val
 
 ![Residuals vs Fitted values plot.](images/mlinear8.png){#fig-mlinear8 width="55%"}
 
-We would expect to see a random scatter of points around zero on the y-axis. In our example, the residuals appear randomly dispersed in a cloud-like pattern, which indicates that the assumption of linearity and  homoscedasticity is satisfied.
-
+We would expect to see a random scatter of points around zero on the y-axis. In our example, the residuals appear randomly dispersed in a cloud-like pattern, which indicates that the assumption of linearity and homoscedasticity is satisfied.
 
 > If the residuals display a pattern—such as being more spread out at the ends and tighter in the middle (a bow tie shape), or more spread out on one side of the x-axis and tighter on the other (a funnel or fan shape)—this suggests heteroscedasticity. In such cases, the assumption of homoscedasticity is violated.
 
@@ -229,9 +228,27 @@ In our data, the VIF values satisfy the assumption of no multicollinearity.
 
  
 
-### No outliers
+::: content-box-blue
+**Proposed remedies for multicollinearity**
+
+• **Increase the sample size:** A larger sample can reduce the standard errors of the coefficient estimates, thereby improving the precision and stability of the model.
+
+• **Model respecification:** Remove some of the highly associated explanatory variables or replace them with a linear combination of them (if possible).
+
+• **Regularization (Tolerant) techniques:** Some regression techniques may be more sensitive to multicollinearity than others. Recent developments in model selection methods have introduced new methods for balancing model complexity and fit. For example two special linear regression model — Lasso and Ridge regression. Although not necessarily designed to be tolerant of collinearity, they offer approaches that may be less sensitive.
+
+• **Principal Component Regression: **This technique transforms the original correlated variables into a smaller set of uncorrelated components and uses them in the regression, effectively addressing multicollinearity.
+
+• **Change the reference category for categorical variables:** In cases where multicollinearity arises from dummy variables, selecting a different reference category can sometimes alleviate the problem.
+:::
+
+
+### No outliers that influence the model (influential points)
 
 There shouldn’t be any data point in the dataset that is an outlier which would strongly influence our results.
+
+
+Outliers are points that fall away from the cloud of points. Outliers that actually influence the parameters of the regression model are called **influential points**. Therefore, not all outliers are influential in linear regression analysis. Even though data have extreme values, they might not be influential to determine a regression model. That means, the results wouldn’t be much different if we either include or exclude them from analysis.
 
 Cook’s distance is a measure used to identify influential data points in regression analysis. In general, Cook’s distances greater than 1 indicate an outlier that may influence the model.
 
@@ -243,10 +260,13 @@ Our Cook’s distances are very small, so we do not have a problem with outliers
 
 ### The model fit and coefficients
 
+
+
+
+
 From the *Model Fit* section tick the box "**Adjusted** $R^2$" in **Fit Measures** (@fig-linear4):
 
 ![Adjusted R square.](images/mlinear4.png){#fig-linear4 width="55%"}
-
 
 Additionally, from the *Model Coefficients* section tick the box "**Confidence interval**" in **Estimate** (@fig-linear4):
 
@@ -264,7 +284,6 @@ The output table with the model coefficients should look like the following (@fi
 
 ![The model coefficients table.](images/mlinear12.png){#fig-mlinear12 width="95%"}
 
-
 The equation of our model with all variables is:
 
 \begin{align}
@@ -272,21 +291,17 @@ The equation of our model with all variables is:
 &\quad +\ 76 \cdot parity1 + 96 \cdot parity2 - 35 \cdot edu1 - 36 \cdot edu2
 \end{align}
 
-
-All variables in the model are statistically significant except for the comparison between infants with two or more siblings and singletons (p = 0.06), as well as the mother's education level (year12-year10, p = 0.47;  tertiary-year10 p = 0.33).
+All variables in the model are statistically significant except for the comparison between infants with two or more siblings and singletons (p = 0.06), as well as the mother's education level (year12-year10, p = 0.47; tertiary-year10 p = 0.33).
 
  
 
 ## Hierarchical regression
 
-First, we check Akaike Information Criterion (AIC) from the **Model Fit** (@fig-mlinear14). 
-
+First, we check Akaike Information Criterion (AIC) from the **Model Fit** (@fig-mlinear14).
 
 ![Akaike Information Criterion (AIC).](images/mlinear14.png){#fig-mlinear14 width="65%"}
 
 The AIC is a statistical measure used to evaluate the goodness of fit of a model while penalizing for the number of parameters used. It helps compare different models and choose the one that best balances model fit and complexity. A lower AIC indicates a better model.
-
-
 
 ### Model 1
 
@@ -294,17 +309,13 @@ We can specify hierarchical regression using the Model Builder drop-down menu in
 
 ![Model builder: Block 1.](images/mlinear2.png){#fig-mlinear2 width="65%"}
 
-
-
 ![Model fit table.](images/mlinear15.png){#fig-mlinear15 width="55%"}
 
-About 55% of the variation in infant’s body weight can be explained by  `height` and `gender` in the model 1.
-
+About 55% of the variation in infant’s body weight can be explained by `height` and `gender` in the model 1.
 
  
 
 The output table with the model coefficients should look like the following (@fig-mlinear16):
-
 
 ![Model 1 coefficients table.](images/mlinear16.png){#fig-mlinear16 width="65%"}
 
@@ -312,10 +323,7 @@ The equation of model 1 is:
 
 $$\widehat{Weight} = -4814 + 165 \cdot height + 251 \cdot gender$$
 
-Both variables in the model are statistically significant (p<0.001).
-
-
-
+Both variables in the model are statistically significant (p\<0.001).
 
 ### Model 2
 
@@ -323,17 +331,13 @@ Next, we select **Add New Block** and include the `headc` and `parity` variables
 
 ![Model builder: Block 2.](images/mlinear17.png){#fig-mlinear17 width="40%"}
 
-
-
 ![Model fit table.](images/mlinear18.png){#fig-mlinear18 width="55%"}
 
-Model 2 explains approximately 59% of the variation in infant body weight using the variables  `height`, `gender`, `headc`, and `parity`, compared to 55% in Model 1 ($\Delta R_{adj}^2 = 0.04$ or 4%). Additionally, the AIC of Model 2 (8115) is lower than that of Model 1 (8169), indicating that Model 2 has a better fit.
-
+Model 2 explains approximately 59% of the variation in infant body weight using the variables `height`, `gender`, `headc`, and `parity`, compared to 55% in Model 1 ($\Delta R_{adj}^2 = 0.04$ or 4%). Additionally, the AIC of Model 2 (8115) is lower than that of Model 1 (8169), indicating that Model 2 has a better fit.
 
  
 
 The output table with the new model coefficients should look like the following (@fig-mlinear19):
-
 
 ![Model 2 coefficients table.](images/mlinear19.png){#fig-mlinear19 width="65%"}
 
@@ -344,9 +348,7 @@ The equation of model 2 is:
 &\quad +\ 82 \cdot parity1 + 105 \cdot parity2
 \end{align}
 
-All variables in the model are statistically significant (p<0.05).
-
-
+All variables in the model are statistically significant (p\<0.05).
 
 ### Model 3
 
@@ -354,17 +356,13 @@ Finally, we select **Add New Block** and include the `education` variable in **B
 
 ![Model builder: Block 3.](images/mlinear20.png){#fig-mlinear20 width="40%"}
 
-
-
 ![Model fit table.](images/mlinear21.png){#fig-mlinear21 width="55%"}
 
 Model 3 does not explain more variation than Model 2. Additionally, the AIC of Model 3 (8118) is greater than that of Model 2 (8115), indicating that Model 3 provides a worse fit.
 
-
  
 
 The output table with the new model coefficients should look like the following (@fig-mlinear19):
-
 
 ![Model 3 coefficients table.](images/mlinear22.png){#fig-mlinear22 width="65%"}
 
@@ -375,19 +373,13 @@ The equation of model 3 is:
 &\quad +\ 76 \cdot parity1 + 96 \cdot parity2 - 35 \cdot edu1 - 36 \cdot edu2
 \end{align}
 
-
 **NOTE:** This model is the complete that we have previously explored.
-
-
 
 ## Model with interaction
 
 Finally, we remove education from Block 3 and add the interaction term between `height` and `gender`.
 
-
 ![Model builder: Block 3.](images/mlinear23.png){#fig-mlinear23 width="40%"}
-
-
 
 ![Model fit table.](images/mlinear24.png){#fig-mlinear24 width="55%"}
 
@@ -397,10 +389,10 @@ The AIC of Model 3 (8101) is lower than that of Model 2 (8115), indicating that 
 
 The output table with the new model coefficients should look like the following (@fig-mlinear19):
 
-
 ![Model 3 coefficients table.](images/mlinear25.png){#fig-mlinear25 width="95%"}
 
-The interaction term is statistically significant (Estimate = 57, p < 0.001), suggesting that the effect of height on body weight differs by gender.
+The interaction term is statistically significant (Estimate = 57, p \< 0.001), suggesting that the effect of height on body weight differs by gender. This indicates **effect modification** (also known as a moderation effect), where gender alters the strength of the association between height and body weight.
+
 
 The equation of model 3 with the interaction term is:
 
@@ -411,29 +403,24 @@ The equation of model 3 with the interaction term is:
 
 In this case, the main effects of height and gender are not interpreted independently, as the interaction term modifies their meanings. Specifically:
 
-- For females (reference; gender = 0):
+-   For females (reference; gender = 0):
 
 \begin{align}
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc -2921 \cdot 0 \\
 &\quad +\ 91 \cdot parity1 + 116 \cdot parity2 + 57 \cdot heigh * 0
 \end{align}
-
-
 \begin{align}
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc + 91 \cdot parity1 + 116 \cdot parity2
 \end{align}
 
 Thus, the effect of height on body weight is 98 g.
 
-
-- For males (gender = 1):
+-   For males (gender = 1):
 
 \begin{align}
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc -2921 \cdot 1 \\
 &\quad +\ 91 \cdot parity1 + 116 \cdot parity2 + 57 \cdot heigh * 1
 \end{align}
-
-
 \begin{align}
 \widehat{Weight} &= -8220 + (98 + 57) \cdot height + 108 \cdot headc + 91 \cdot parity1 + 116 \cdot parity2 \\
 \end{align}
@@ -441,4 +428,3 @@ Thus, the effect of height on body weight is 98 g.
 Thus, the effect of height is 98 + 57 = 155 g.
 
 This implies that height has a stronger influence on weight for males than for females.
-
