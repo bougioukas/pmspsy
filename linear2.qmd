@@ -413,7 +413,7 @@ In this case, the main effects of height and gender are not interpreted independ
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc + 91 \cdot parity1 + 116 \cdot parity2
 \end{align}
 
-Thus, the effect of height on body weight is 98 g.
+Thus, the effect of height on body weight is 98 g/cm.
 
 -   For males (gender = 1):
 
@@ -425,6 +425,6 @@ Thus, the effect of height on body weight is 98 g.
 \widehat{Weight} &= -8220 + (98 + 57) \cdot height + 108 \cdot headc + 91 \cdot parity1 + 116 \cdot parity2 \\
 \end{align}
 
-Thus, the effect of height is 98 + 57 = 155 g.
+Thus, the effect of height is 98 + 57 = 155 g/cm.
 
 This implies that height has a stronger influence on weight for males than for females.
