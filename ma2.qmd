@@ -1,0 +1,83 @@
+# Systematic Review and Meta-analysis (2) {#sec-ma2}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+library(kableExtra)
+library(moderndive)
+
+library(here)
+library(tidyverse)
+
+
+library(readxl)
+dat <- read_excel(here("data", "meta.xlsx"))
+```
+
+When we have finished this chapter, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Fit and interpret multiple linear models
+-   Assess the quality of a linear regression fit
+-   Compare linear models
+:::
+
+## Introduction
+
+One common goal of a meta-analysis is to estimate the overall, or combined, effect of multiple studies.
+
+If all the studies included in the analysis were equally precise, we could simply calculate the average of their effect sizes. However, when some studies are more precise than others, it's important to give more weight to those that provide more reliable information. This is exactly what a meta-analysis does. Instead of computing a simple mean, it calculates a **weighted mean**, assigning greater weight to more precise studies and less to those with higher uncertainty.
+
+The key question, then, is how weights are assigned to individual studies. The answer depends on how we define the “combined effect”. There are two primary models used in meta-analysis, the fixed effect model and the random effects model. Each model has different assumptions regarding the included studies, leading to different definitions of the combined effect and different mechanisms for assigning weights.
+
+## Definition of the combined effect
+
+In a fixed effect model we assume that all studies considered in the
+meta-analysis share a common effect size, $\theta$ (hence, the
+term fixed). The observed effects will be distributed about $\theta$, with a variance $\sigma^2$ that depends primarily on the sample size for each study.
+
+Differences among observed effects are related to sampling error, and factors influencing the effect size are assumed to be the same in all the studies. The summary effect is the estimate of a common true effect, and the confidence intervals (CIs) represent the uncertainty around this estimate.
+
+
+
+
+
+
+
+
+By contrast, under the random effects model we allow that the true effect could vary from study to study. For example, the effect size might be a little higher if the population is older, or more educated, or healthier, and so on. The studies included in the meta-analysis are assumed to be a random sample of the relevant distribution of effects, and the combined effect estimates the mean effect in this distribution.
+
+
+
+
+Effect measure 
+
+Outcome data for each selected study will be in different measures. It is important to select a comparable effect measure for all studies for the particular outcome to facilitate synthesis of overall effect measure.
+
+
+
+
+## Heterogeneity
+
+Different types of heterogeneity:
+• Clinical heterogeneity (diversity): Variability in participants, interventions and outcomes
+• Methodological heterogeneity (diversity): Variability in study design and risk of bias
+• Statistical heterogeneity: Variability in treatment effects, resulting from clinical and/or methodological diversity
+
+
+Statistical heterogeneity is present if the observed treatment effects are more different from each other than would be expected due to chance alone
+
+
+
+
+
+
+
+
+
+
+

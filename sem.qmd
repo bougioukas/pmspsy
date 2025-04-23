@@ -1,0 +1,10 @@
+# Structural Equation Modelling {#sec-sem}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+```
+
+-   **Analysis of Variance (ANOVA) designs**
+    -   [Analysis of Variance Designs: A Conceptual and Computational Approach with SPSS and SAS](https://www.cambridge.org/highereducation/books/analysis-of-variance-designs/5500246DE031763B7D439A162FA97DF5#overview)

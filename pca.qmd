@@ -1,0 +1,404 @@
+# Principal Components Analysis {#sec-pca}
+
+```{r}
+#| include: false
+
+library(fontawesome)
+
+
+library(here)
+library(tidyverse)
+
+
+library(readxl)
+dat <- read_excel(here("data", "dfGRMS.xlsx"))
+```
+
+When we have finished this chapter, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Understand when and why to use Principal Component Analysis (PCA), and recognize appropriate data conditions
+-   Understand the concept of eigen decomposition
+-   Perform PCA through a step-by-step process
+-   Interpret component loadings and the proportion of explained variance
+-   Extract and interpret component scores for further analysis
+:::
+
+## Introduction
+
+Principal Component Analysis (PCA) is a statistical technique used to reduce the dimensionality of a dataset while preserving as much of its original variability as possible. It transforms a large set of correlated variables into a smaller set of representative variables, called principal components, which collectively explain most of the variability in the original data.
+
+Suppose that we have $n$ observations with measurements on a set of $p$ observed variables (features), $X_1,X_2, . . . ,X_p$. This means that each of the $n$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting.
+
+PCA seeks a small number of dimensions that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension. Each of the dimensions found by PCA is a linear combination of the $p$ observed variables. We now explain the manner in which these dimensions, or principal components, are found.
+
+The first principal component of a set of observed variables $X_1, X_2, . . . ,X_p$ is the normalized linear combination of the observed variables:
+
+$$PC1: Z_1 = \phi_{11} X_1 + \phi_{21} X_2  + ...+ \phi_{p1} X_p $$ that has the largest variance. By normalized, we mean that $\sum_{j=1}^p \phi_{j1}^2 = 1$. We refer to the elements $\phi_{11}, \phi_{21},..., \phi_{p1}$ as the loadings of the first principal component.
+
+To obtain the loadings of the first principal component (PC1), we solve an optimization problem that maximizes the variance of the data projected onto a linear combination of the original variables. This can be solved via an **eigen decomposition**, a standard technique in linear algebra (algebra of matrices).
+
+After the first principal component $Z_1$ of the observed variables has been determined, we can find the second principal component $Z_2$.
+
+$$PC2: Z_2 = \phi_{12} X_1 + \phi_{22} X_2  + ...+ \phi_{p2} X_p $$
+
+The second principal component (PC2) explaines the next highest amount of variance. The elements $\phi_{12}, \phi_{22},..., \phi_{p2}$ are referred to as the loadings of the second principal component.
+
+The same procedure can be applied to obtain the third principal component (PC3), the fourth component (PC4) and so on for subsequent components.
+
+**EXAMPLE DATA**
+
+Our data analysis is based on the paper published by Lewis and Neville on the Gendered Racial Microaggressions Scale for Black Women. The article presents two separate studies that contributed to the development, refinement, and psychometric evaluation of two parallel versions of the scale: one measuring stress appraisal and the other measuring frequency. For the purposes of our analysis, we focus on the final construction of the stress appraisal version. Items were rated on a 6-point Likert scale ranging from 0 (not at all stressful) to 5 (extremely stressful).
+
+```{r}
+#| echo: false
+#| label: fig-dfGRMS0
+#| fig-cap: Table with raw data.
+
+DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'dfGRMS'
+      ))))
+
+```
+
+Lewis and Neville provided support for both a total scale score, consisting of 25 items, and four subscales. Below, we outline the four subscales, including the number of items in each, their abbreviations, and a sample item representing each subscale:
+
+-   Assumptions of Beauty and Sexual Objectification (10 items)
+    -   Unattractive because of size of butt (Obj1)
+    -   Negative comments about size of facial features (Obj2)
+    -   Imitated the way they think Black women speak (Obj3)
+    -   Someone made me feel unattractive (Obj4)
+    -   Negative comment about skin tone (Obj5)
+    -   Someone assumed I speak a certain way (Obj6)
+    -   Objectified me based on physical features(Obj7)
+    -   Someone assumed I have a certain body type (Obj8)
+    -   Made a sexually inappropriate comment (Obj9)
+    -   Negative comments about my hair when natural (Obj10)
+-   Silenced and Marginalized (7 items)
+    -   I have felt unheard (Marg1)
+    -   My comments have been ignored (Marg2)
+    -   Someone challenged my authority (Marg3)
+    -   I have been disrespected in workplace (Marg4)
+    -   Someone has tried to “put me in my place” (Marg5)
+    -   Felt excluded from networking opportunities (Marg6)
+    -   Assumed I did not have much to contribute to the conversation (Marg7)
+-   Strong Black Woman Stereotype (5 items)
+    -   Someone assumed I was sassy and straightforward (Str1)
+    -   I have been told that I am too independent (Str2)
+    -   Someone made me feel exotic as a Black woman (Str3)
+    -   I have been told that I am too assertive (Str4)
+    -   Assumed to be a strong Black woman (Str5)
+-   Angry Black Woman Stereotype (3 items)
+    -   Someone has told me to calm down (Ang1)
+    -   Perceived to be “angry Black woman" (Ang2)
+    -   Someone accused me of being angry when speaking calm (Ang3)
+
+## The technical part: eigen decomposition
+
+-   R-matrix
+
+First, we calculate the R-matrix, which is a correlation matrix—a table of correlation coefficients between variables.
+
+```{r, echo=FALSE}
+round(cor(dat), 2)
+```
+
+Our objective is to turn the R-matrix (correlation matrix) into an output which represents the degree to which each observed variable contributes to a component.
+
+Principal components are derived through an eigen-decomposition of the correlation matrix. This process involves re-expressing the matrix in terms of its eigenvectors and eigenvalues. The **eigenvectors** define the directions (or axes) of the new feature space, while the corresponding **eigenvalues** indicate the amount of variance explained by each component.
+
+### PC1
+
+-   Eigenvector and eigenvalue for PC1
+
+The first eigenvector ($\alpha_{11}, \alpha_{21}, ..., \alpha_{p1}$):
+
+```{r, echo=FALSE}
+eigen_res <- eigen(cor(dat))
+evector1 <- -eigen(cor(dat))$vectors[, 1]
+round(evector1, 3)
+```
+
+The corresponding eigenvalue, $\lambda_{1}$ is:
+
+```{r, echo=FALSE}
+evalue1 <- eigen_res$values[1]
+revalue1 <- round(evalue1 , 3)
+revalue1
+```
+
+-   Loadings of PC1
+
+Now, we are ready to calculate the loadings $\phi_{11}, \phi_{21},..., \phi_{p1}$ of the first principal component according to the formula:
+
+$$\phi_{i1} = \alpha_{i1} \sqrt{\lambda_{1}}$$
+
+where $i= 1,...p$.
+
+```{r, echo=FALSE}
+round(evector1 * sqrt(evalue1), 2)
+```
+
+### PC2
+
+-   Eigenvector and eigenvalue for PC2
+
+The second eigenvector ($\alpha_{12}, \alpha_{22}, ..., \alpha_{p2}$):
+
+```{r, echo=FALSE}
+evector2 <- eigen(cor(dat))$vectors[, 2]
+round(evector2, 3)
+```
+
+The corresponding eigenvalue, $\lambda_{2}$ is:
+
+```{r, echo=FALSE}
+evalue2 <- eigen_res$values[2]
+revalue2 <- round(evalue2 , 3)
+revalue2
+```
+
+-   Loadings of PC2
+
+Now, we are ready to calculate the loadings $\phi_{12}, \phi_{22},..., \phi_{p2}$ of the second principal component according to the formula:
+
+$$\phi_{i2} = \alpha_{i2} \sqrt{\lambda_{2}}$$
+
+where $i= 1,...p$.
+
+```{r, echo=FALSE}
+round(evector2 * sqrt(evalue2), 2)
+```
+
+The same procedure can be applied to calculate the loadings of the third principal component (PC3), the fourth component (PC4) and so on for subsequent components. Therefore, the loadings are scaled versions of eigenvectors that reflect both direction and strength of association.
+
+## Eigenvalues and variance
+
+A fundamental aspect of principal component analysis (PCA) is understanding how eigenvalues relate to the variance in the dataset.
+
+Each of the 25 eigenvectors has an associated eigenvalue, $\lambda_1, \lambda_2, ... \lambda_p$, as shown below:
+
+```{r, echo=FALSE}
+eigen_res$values
+```
+
+The sum of the eigenvalues will equal the number of variables in the data set:
+
+$$\lambda_1 + \lambda_2 + \lambda_3 + ...+ \lambda_p = 5.37 + 1.71 + 1.54 +...+ 0.41 = 25$$
+
+To determine the proportion of variance explained by the first principal component (i.e., direction by that component), we use the following formula:
+
+$$\frac{\lambda_1}{\lambda_1 + \lambda_2 + \lambda_3 + ...+ \lambda_p} = \frac{5.37}{25} = 0.215 \ or \ 21.5\%$$
+
+Similarly, the explained variance by the second principal component is:
+
+$$\frac{\lambda_2}{\lambda_1 + \lambda_2 + \lambda_3 + ...+ \lambda_p} = \frac{1.71}{25} = 0.068 \ or \ 6.8\%$$
+
+Note that the first component captures the maximum variance, the second captures the next highest variance orthogonal to the first, and so on.
+
+## Steps in the process of PCA
+
+-   **Prepare the Data:** Create a dataframe where any items are scaled in the same direction (e.g., negatively worded items are reverse scored).
+
+-   **Evaluate Assumptions:** Assess the suitability of the data for PCA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. These tests determine whether the correlation matrix is appropriate for component extraction.
+
+-   **Determine the Number of Components:** Identify how many components to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. These components often correspond to underlying subscales.
+
+-   **Extract and Rotate Components:** Perform the extraction of components through an iterative process. Explore both orthogonal (uncorrelated) and oblique (correlated) rotation methods to enhance interpretability. Adjust the number of components and rotation type as needed to arrive at a theoretically meaningful and statistically sound solution.
+
+## Example of GRMS Stress Appraisal
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(Factor) -.-> C(Principal Component Analysis)
+```
+
+as shown below (@fig-mlinear30).
+
+![Select from Factor the Principal Component Analysis.](images/mlinear30.png){#fig-mlinear30 width="70%"}
+
+The *Principal Component Analysis box* opens (@fig-mlinear30). From the left-hand pane drag all the variables into the *Variables* field on the right-hand side, as shown below (@fig-mlinear26):
+
+![Principal Component Analysis box options. Drag and drop the variables in the fields on the right-hand side.](images/mlinear26.png){#fig-mlinear26 width="65%"}
+
+All variables in the dataset are on the same scale (Likert scale).
+
+### Assumptions
+
+From the **Assumption Checks**, tick both boxes: Bartlett’s test of sphericity and KMO measure of Sampling Adequacy.
+
+![Assumptions for PCA.](images/mlinear27.png){#fig-mlinear27 width="40%"}
+
+-   Bartlett’s test of sphericity
+
+Bartlett’s test examines the null hypothesis that the correlation matrix is an identity matrix—meaning all the variables are uncorrelated (i.e., the off-diagonal elements are zero). A significant result (p \< 0.05) indicates that the correlation matrix significantly differs from an identity matrix, suggesting that the variables share enough correlation to justify the use of principal component analysis (PCA).
+
+![Bartlett’s test.](images/mlinear29.png){#fig-mlinear29 width="30%"}
+
+Our Bartlett’s test is significant: $\chi^2 = 1217$ (p\<0.001). This means that our sample correlation matrix is statistically significantly different than an identity matrix and, therefore, supports a component analytic approach for investigating the data.
+
+-   Kaiser-Meyer-Olkin (MKO) index of Sampling Adequacy
+
+The **Kaiser-Meyer-Olkin** index (KMO) is an index of *sampling adequacy* that varies between 0 and 1. Kaiser's 1974 recommendations were:
+
+-   bare minimum of 0.5
+-   values between 0.5 and 0.7 as mediocre
+-   values between 0.7 and 0.8 as good
+-   values between 0.8 and 0.9 as great
+-   values above 0.9 are superb
+
+If the KMO is below the recommendations, we should probably collect more data to see if it can achieve a satisfactory value.
+
+![Kaiser-Meyer-Olkin measure.](images/mlinear28.png){#fig-mlinear28 width="30%"}
+
+The Kaiser–Meyer–Olkin (KMO) measure verified the sampling adequacy for the analysis KMO = 0.85, which is considered "great". Additionally, all individual KMO values were above 0.74—well above the acceptable threshold of 0.50.
+
+### Specify the Number of Components
+
+Our decisions on how many components to keep can be guided by several methods:
+
+-   Cumulative variance explained – Retain enough components to account for a desired proportion of total variance.
+
+-   Parallel analysis – Compare the observed eigenvalues with those obtained from randomly generated data to determine which components are meaningful.
+
+-   Kaiser’s criterion – Retain components with **eigenvalues greater than 1**.
+
+-   Theoretical justification – Retain components that align with prior knowledge, conceptual frameworks, or hypotheses relevant to the domain of study (fixed number).
+
+Jamovi allows users to choose the number of components based on parallel analysis, eigenvalues, or by manually specifying a fixed number.
+
+![Choose a method to define the number of components.](images/mlinear45.png){#fig-mlinear45 width="35%"}
+
+Additionally, a scree plot displays the eigenvalues associated with each principal component in descending order. It is used to visually identify the "elbow point"—the point at which the rate of decline in eigenvalues noticeably levels off. This point suggests the optimal number of components to retain, as additional components contribute relatively little to explaining variance.
+
+![Scree plot.](images/mlinear44.png){#fig-mlinear44 width="30%"}
+
+![Scree plot determining the number of components based on parallel analysis.](images/mlinear31.png){#fig-mlinear31 width="60%"}
+
+![Scree plot determining the number of components based on Kaiser’s criterion.](images/mlinear32.png){#fig-mlinear32 width="60%"}
+
+In our example, parallel analysis suggests retaining 3 components (@fig-mlinear31), while Kaiser’s criterion indicates 7 components (@fig-mlinear32).
+
+If we select three principal components based on parallel analysis, we observe that the uniqueness of some variables is relatively high (e.g., Obj6 Uniqueness = 0.8). Uniqueness refers to the proportion of a variable's variance that is not explained by the retained components. Therefore, if a variable has high uniqueness (close to 1), it indicates that the variable is poorly explained by the selected number of components.
+
+![The uniqueness of some variables is relatively high when selecting three principal components.](images/mlinear48.png){#fig-mlinear48 width="45%"}
+
+
+If our scale construction includes a priori or planned subscales, we expect the observed variables to reflect the following conceptual dimensions:
+
+-   Assumptions of Beauty and Sexual Objectification
+-   Silenced and Marginalized
+-   Strong Woman Stereotype
+-   Angry Woman Stereotype
+
+Therefore, guided by prior knowledge and theoretical considerations, we have decided to retain the first four components for further analysis.
+
+![Select four principal components.](images/mlinear43.png){#fig-mlinear43 width="35%"}
+
+
+### Component Rotation
+
+Rotation in PCA redistributes the variance between components, making the loadings more distinct and interpretable. In other words, rotation typically causes each observed variable to load highly on precisely one component.
+
+There are two main types of rotation, and the choice between them depends on theoretical considerations:
+
+-   **Orthogonal Rotation:** Use this if you believe the components are independent or unrelated.
+    -   Varimax is the most common orthogonal rotation method.
+-   **Oblique Rotation:** Use this if you believe the components are correlated or related.
+    -   Oblimin and Promax are common oblique rotation methods.
+
+**Which method should we choose?**
+
+-   Orthogonal rotation is often considered "easier" because it minimizes cross-loadings (i.e., it reduces the correlation between components). However, this assumes that the components are truly independent, which may not always be the case.
+
+-   Can you think of a measure where the subscales would *not* be correlated? In many real-world cases, components are likely to be correlated, which might suggest that oblique rotation is the better choice.
+
+## Varimax rotation
+
+Select the **Varimax** rotation method:
+
+![Select the Varimax method of rotation.](images/mlinear41.png){#fig-mlinear41 width="30%"}
+
+After rotation, there are four clear components/scales (NOTE: In the unrotated method, most variables loaded on the first component). 
+
+![Loadings with orthogonal rotation.](images/mlinear33.png){#fig-mlinear33 width="55%"}
+
+There is clear (or at least reasonable) component/scale membership for each variable. This table lists all component loadings that are greater than 0.30. When an observed variable has multiple component loadings listed, we inspect it for “cross-loading.” We observe cross-loadings with the following observed variables: Obj6, Marg6, and Ang1.
+
+It is important to note that in PCA with **orthogonal** rotation (such as Varimax), the factor loadings can be interpreted as **correlation coefficients** between the original observed variables and the rotated components.
+
+
+ 
+
+Moreover, under the **Additional Output** section, select *Component summary*:
+
+![Select component summary.](images/mlinear46.png){#fig-mlinear46 width="30%"}
+
+@fig-mlinear35 presents the percentage of variance in the variable set that is captured by the derived components after Varimax rotation.
+
+![Variance with orthogonal rotation.](images/mlinear35.png){#fig-mlinear35 width="50%"}
+
+The SS Loadings column represents the eigenvalues for each component after Varimax rotation, with Principal Component 1 explaining 13.2%, Principal Component 2 explaining an additional 11.7%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.
+
+The path diagram follows:
+
+```{r, echo=FALSE}
+PC1 <- psych::principal(dat, rotate = "varimax", nfactors=4)
+colnames(PC1$loadings) <- c("PC1", "PC2", "PC3", "PC4")
+psych::fa.diagram(PC1, digits = 2, l.cex=0.8,
+                  marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
+```
+
+## Oblique rotation
+
+![Select the Oblimin method of rotation.](images/mlinear42.png){#fig-mlinear42 width="30%"}
+
+@fig-mlinear36 shows the loadings of the principal components after rotation.
+
+![Loadings with oblique rotation.](images/mlinear36.png){#fig-mlinear36 width="55%"}
+
+@fig-mlinear37 presents the percentage of variance in the variable set that is captured by the derived components after Oblimin rotation.
+
+![Variance with oblique rotation.](images/mlinear37.png){#fig-mlinear37 width="50%"}
+
+The SS Loadings column represents the eigenvalues for each component after Oblimin rotation, with Principal Component 1 explaining 13.3%, Principal Component 2 explaining an additional 11.6%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.
+
+ 
+
+Moreover, under the **Additional Output** section, select *Component correlations*:
+
+![Select Component correlations.](images/mlinear47.png){#fig-mlinear47 width="30%"}
+
+The Inter-Component Correlation Matrix reveals that the four components are positively correlated with each other, with correlations ranging from 0.09 to 0.35 (@fig-mlinear38).
+
+![Inter-Component Correlation Matrix.](images/mlinear38.png){#fig-mlinear38 width="50%"}
+
+The path diagram follows:
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+PC2 <- psych::principal(dat, rotate = "oblimin", nfactors=4)
+colnames(PC2$loadings) <- c("PC1", "PC2", "PC3", "PC4")
+psych::fa.diagram(PC2, cut = 0, digits = 2, l.cex=0.8,
+                  marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
+```
+
+Note that this path diagram includes links with numerical values between components, representing the correlation coefficients among them. In contrast, orthogonal rotation assumes the components are uncorrelated, so such links do not appear.
+
+## Component scores
+
+Component scores represent each observation’s position on the extracted components. They are calculated as weighted combinations of the original variables, using the component loadings derived from PCA. After rotation, these scores reflect the rotated solution, providing insight into how each case (e.g., participant) scores on the newly defined components.
+
+To compute the component scores, click on the Save dropdown menu and select the Component scores option (@fig-mlinear40).
+
+![From the Save dropdown menu select the Component scores.](images/mlinear40.png){#fig-mlinear40 width="50%"}
+
+New variables have been created, each containing the component scores for the extracted components (@fig-mlinear39).
+
+![Component scores after Oblimin rotation.](images/mlinear39.png){#fig-mlinear39 width="65%"}

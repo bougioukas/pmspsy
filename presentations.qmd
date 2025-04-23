@@ -24,11 +24,15 @@
 
      
 
-
-
 -   **Lecture: Linear Regression (Simple Models)**
 
 ![psy-linear1](presentations/linear1.pdf){width="60%" height="400"}
+
+     
+
+-   **Lecture: Linear Regression (Multi-variable models)**
+
+![psy-linear2](presentations/linear2.pdf){width="60%" height="400"}
 
      
 
@@ -38,6 +42,3 @@
 ![psy-SR_meta1](presentations/SR_meta1.pdf){width="60%" height="400"}
 
      
-
-
-

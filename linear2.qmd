@@ -237,16 +237,14 @@ In our data, the VIF values satisfy the assumption of no multicollinearity.
 
 • **Regularization (Tolerant) techniques:** Some regression techniques may be more sensitive to multicollinearity than others. Recent developments in model selection methods have introduced new methods for balancing model complexity and fit. For example two special linear regression model — Lasso and Ridge regression. Although not necessarily designed to be tolerant of collinearity, they offer approaches that may be less sensitive.
 
-• **Principal Component Regression: **This technique transforms the original correlated variables into a smaller set of uncorrelated components and uses them in the regression, effectively addressing multicollinearity.
+• **Principal Component Regression:** This technique transforms the original correlated variables into a smaller set of uncorrelated components and uses them in the regression, effectively addressing multicollinearity.
 
 • **Change the reference category for categorical variables:** In cases where multicollinearity arises from dummy variables, selecting a different reference category can sometimes alleviate the problem.
 :::
 
-
 ### No outliers that influence the model (influential points)
 
 There shouldn’t be any data point in the dataset that is an outlier which would strongly influence our results.
-
 
 Outliers are points that fall away from the cloud of points. Outliers that actually influence the parameters of the regression model are called **influential points**. Therefore, not all outliers are influential in linear regression analysis. Even though data have extreme values, they might not be influential to determine a regression model. That means, the results wouldn’t be much different if we either include or exclude them from analysis.
 
@@ -259,10 +257,6 @@ Our Cook’s distances are very small, so we do not have a problem with outliers
  
 
 ### The model fit and coefficients
-
-
-
-
 
 From the *Model Fit* section tick the box "**Adjusted** $R^2$" in **Fit Measures** (@fig-linear4):
 
@@ -375,7 +369,7 @@ The equation of model 3 is:
 
 **NOTE:** This model is the complete that we have previously explored.
 
-## Model with interaction
+## Model with an interaction term
 
 Finally, we remove education from Block 3 and add the interaction term between `height` and `gender`.
 
@@ -393,7 +387,6 @@ The output table with the new model coefficients should look like the following 
 
 The interaction term is statistically significant (Estimate = 57, p \< 0.001), suggesting that the effect of height on body weight differs by gender. This indicates **effect modification** (also known as a moderation effect), where gender alters the strength of the association between height and body weight.
 
-
 The equation of model 3 with the interaction term is:
 
 \begin{align}
@@ -408,8 +401,7 @@ In this case, the main effects of height and gender are not interpreted independ
 \begin{align}
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc -2921 \cdot 0 \\
 &\quad +\ 91 \cdot parity1 + 116 \cdot parity2 + 57 \cdot heigh * 0
-\end{align}
-\begin{align}
+\end{align} \begin{align}
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc + 91 \cdot parity1 + 116 \cdot parity2
 \end{align}
 
@@ -420,8 +412,7 @@ Thus, the effect of height on body weight is 98 g/cm.
 \begin{align}
 \widehat{Weight} &= -5299 + 98 \cdot height + 108 \cdot headc -2921 \cdot 1 \\
 &\quad +\ 91 \cdot parity1 + 116 \cdot parity2 + 57 \cdot heigh * 1
-\end{align}
-\begin{align}
+\end{align} \begin{align}
 \widehat{Weight} &= -8220 + (98 + 57) \cdot height + 108 \cdot headc + 91 \cdot parity1 + 116 \cdot parity2 \\
 \end{align}
 

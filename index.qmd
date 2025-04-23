@@ -8,7 +8,7 @@ This course introduces postgraduate students to advanced statistical methods use
 
 -   Multiple Linear Regression. Interaction between variables.
 
--   Factor Analysis.
+-   Principal Components Analysis and Factor Analysis.
 
 -   Mediation and Path Analysis.
 

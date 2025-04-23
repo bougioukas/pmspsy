@@ -18,6 +18,13 @@ book:
     - anova3.qmd
     - linear1.qmd
     - linear2.qmd
+    #- pca.qmd
+    #- efa.qmd
+    #- path.qmd
+    #- cfa.qmd
+    #- sem.qmd
+    - ma1.qmd
+    #- ma2.qmd
     - presentations.qmd
     #- sources.qmd
     - references.qmd
