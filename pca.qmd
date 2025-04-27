@@ -100,6 +100,13 @@ Lewis and Neville provided support for both a total scale score, consisting of 2
 
 ## The technical part: eigen decomposition
 
+
+![Select from Factor the Principal Component Analysis.](images/pca0001.png){#fig-pca0001 width="95%"}
+
+
+@fig-pca0001 illustrates the technical workflow of principal component analysis (PCA), as a method to reduce the number of dimensions of the data. It starts with a large table of data ($X_{n \times p}$), standardizes it ($X^c_{n \times p}$), and calculates the covariance matrix ($C_{p \times p}$) between observed variables (features). Then, it finds the principal directions (eigenvectors) and their importance (eigenvalues). By selecting the most important directions (top k), the original data is projected onto a lower-dimensional space applying the projection matrix $W_{p \times k}$, resulting in a smaller table that still captures most of the data's variability. The scatter plots visually show this reduction from a higher to a lower dimension.
+
+
 -   R-matrix
 
 First, we calculate the R-matrix, which is a correlation matrix—a table of correlation coefficients between variables.
@@ -211,6 +218,7 @@ Note that the first component captures the maximum variance, the second captures
 
 -   **Extract and Rotate Components:** Perform the extraction of components through an iterative process. Explore both orthogonal (uncorrelated) and oblique (correlated) rotation methods to enhance interpretability. Adjust the number of components and rotation type as needed to arrive at a theoretically meaningful and statistically sound solution.
 
+
 ## Example of GRMS Stress Appraisal
 
 On the Jamovi top menu navigate to
@@ -290,7 +298,6 @@ If we select three principal components based on parallel analysis, we observe t
 
 ![The uniqueness of some variables is relatively high when selecting three principal components.](images/mlinear48.png){#fig-mlinear48 width="45%"}
 
-
 If our scale construction includes a priori or planned subscales, we expect the observed variables to reflect the following conceptual dimensions:
 
 -   Assumptions of Beauty and Sexual Objectification
@@ -301,7 +308,6 @@ If our scale construction includes a priori or planned subscales, we expect the 
 Therefore, guided by prior knowledge and theoretical considerations, we have decided to retain the first four components for further analysis.
 
 ![Select four principal components.](images/mlinear43.png){#fig-mlinear43 width="35%"}
-
 
 ### Component Rotation
 
@@ -326,14 +332,13 @@ Select the **Varimax** rotation method:
 
 ![Select the Varimax method of rotation.](images/mlinear41.png){#fig-mlinear41 width="30%"}
 
-After rotation, there are four clear components/scales (NOTE: In the unrotated method, most variables loaded on the first component). 
+After rotation, there are four clear components/scales (NOTE: In the unrotated method, most variables loaded on the first component).
 
 ![Loadings with orthogonal rotation.](images/mlinear33.png){#fig-mlinear33 width="55%"}
 
 There is clear (or at least reasonable) component/scale membership for each variable. This table lists all component loadings that are greater than 0.30. When an observed variable has multiple component loadings listed, we inspect it for “cross-loading.” We observe cross-loadings with the following observed variables: Obj6, Marg6, and Ang1.
 
 It is important to note that in PCA with **orthogonal** rotation (such as Varimax), the factor loadings can be interpreted as **correlation coefficients** between the original observed variables and the rotated components.
-
 
  
 
