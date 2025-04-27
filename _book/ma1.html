@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Systematic Review and Meta-analysis (1) – Advanced Statistical Methods for Analyzing Empirical Data</title>
+<title>8&nbsp; Systematic Review and Meta-analysis (1) – Advanced Statistical Methods for Analyzing Empirical Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./presentations.html" rel="next">
-<link href="./linear2.html" rel="prev">
+<link href="./ma2.html" rel="next">
+<link href="./pca.html" rel="prev">
 <link href="./images/cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -102,7 +102,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ma1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (1)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ma1.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (1)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -171,14 +171,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./pca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principal Components Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ma1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (1)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (1)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ma2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (2)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Presentations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Presentations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,25 +209,25 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#meeting-the-review-family" id="toc-meeting-the-review-family" class="nav-link active" data-scroll-target="#meeting-the-review-family"><span class="header-section-number">7.1</span> Meeting the review family</a></li>
-  <li><a href="#evidence-based-pyramid-in-research" id="toc-evidence-based-pyramid-in-research" class="nav-link" data-scroll-target="#evidence-based-pyramid-in-research"><span class="header-section-number">7.2</span> Evidence based pyramid in research</a></li>
-  <li><a href="#systematic-review" id="toc-systematic-review" class="nav-link" data-scroll-target="#systematic-review"><span class="header-section-number">7.3</span> Systematic review</a></li>
-  <li><a href="#establish-a-team-and-develop-a-focused-research-question" id="toc-establish-a-team-and-develop-a-focused-research-question" class="nav-link" data-scroll-target="#establish-a-team-and-develop-a-focused-research-question"><span class="header-section-number">7.4</span> Establish a team and develop a focused research question</a></li>
-  <li><a href="#develop-your-research-plan-and-pre-register-the-project" id="toc-develop-your-research-plan-and-pre-register-the-project" class="nav-link" data-scroll-target="#develop-your-research-plan-and-pre-register-the-project"><span class="header-section-number">7.5</span> Develop your research plan and (pre) register the project</a></li>
-  <li><a href="#specify-the-inclusion-and-exclusion-criteria" id="toc-specify-the-inclusion-and-exclusion-criteria" class="nav-link" data-scroll-target="#specify-the-inclusion-and-exclusion-criteria"><span class="header-section-number">7.6</span> Specify the inclusion and exclusion criteria</a></li>
-  <li><a href="#search-information-sources" id="toc-search-information-sources" class="nav-link" data-scroll-target="#search-information-sources"><span class="header-section-number">7.7</span> Search information sources</a>
+  <li><a href="#meeting-the-review-family" id="toc-meeting-the-review-family" class="nav-link active" data-scroll-target="#meeting-the-review-family"><span class="header-section-number">8.1</span> Meeting the review family</a></li>
+  <li><a href="#evidence-based-pyramid-in-research" id="toc-evidence-based-pyramid-in-research" class="nav-link" data-scroll-target="#evidence-based-pyramid-in-research"><span class="header-section-number">8.2</span> Evidence based pyramid in research</a></li>
+  <li><a href="#systematic-review" id="toc-systematic-review" class="nav-link" data-scroll-target="#systematic-review"><span class="header-section-number">8.3</span> Systematic review</a></li>
+  <li><a href="#establish-a-team-and-develop-a-focused-research-question" id="toc-establish-a-team-and-develop-a-focused-research-question" class="nav-link" data-scroll-target="#establish-a-team-and-develop-a-focused-research-question"><span class="header-section-number">8.4</span> Establish a team and develop a focused research question</a></li>
+  <li><a href="#develop-your-research-plan-and-pre-register-the-project" id="toc-develop-your-research-plan-and-pre-register-the-project" class="nav-link" data-scroll-target="#develop-your-research-plan-and-pre-register-the-project"><span class="header-section-number">8.5</span> Develop your research plan and (pre) register the project</a></li>
+  <li><a href="#specify-the-inclusion-and-exclusion-criteria" id="toc-specify-the-inclusion-and-exclusion-criteria" class="nav-link" data-scroll-target="#specify-the-inclusion-and-exclusion-criteria"><span class="header-section-number">8.6</span> Specify the inclusion and exclusion criteria</a></li>
+  <li><a href="#search-information-sources" id="toc-search-information-sources" class="nav-link" data-scroll-target="#search-information-sources"><span class="header-section-number">8.7</span> Search information sources</a>
   <ul class="collapse">
-  <li><a href="#search-in-multiple-electronic-databases-platforms-and-engines" id="toc-search-in-multiple-electronic-databases-platforms-and-engines" class="nav-link" data-scroll-target="#search-in-multiple-electronic-databases-platforms-and-engines"><span class="header-section-number">7.7.1</span> Search in multiple electronic databases, platforms and engines</a></li>
-  <li><a href="#build-a-high-quality-and-effective-search-strategy" id="toc-build-a-high-quality-and-effective-search-strategy" class="nav-link" data-scroll-target="#build-a-high-quality-and-effective-search-strategy"><span class="header-section-number">7.7.2</span> Build a high-quality and effective search strategy</a></li>
-  <li><a href="#search-citations-using-both-backward-and-forward-citation-tracking-methods" id="toc-search-citations-using-both-backward-and-forward-citation-tracking-methods" class="nav-link" data-scroll-target="#search-citations-using-both-backward-and-forward-citation-tracking-methods"><span class="header-section-number">7.7.3</span> Search citations using both backward and forward citation tracking methods</a></li>
+  <li><a href="#search-in-multiple-electronic-databases-platforms-and-engines" id="toc-search-in-multiple-electronic-databases-platforms-and-engines" class="nav-link" data-scroll-target="#search-in-multiple-electronic-databases-platforms-and-engines"><span class="header-section-number">8.7.1</span> Search in multiple electronic databases, platforms and engines</a></li>
+  <li><a href="#build-a-high-quality-and-effective-search-strategy" id="toc-build-a-high-quality-and-effective-search-strategy" class="nav-link" data-scroll-target="#build-a-high-quality-and-effective-search-strategy"><span class="header-section-number">8.7.2</span> Build a high-quality and effective search strategy</a></li>
+  <li><a href="#search-citations-using-both-backward-and-forward-citation-tracking-methods" id="toc-search-citations-using-both-backward-and-forward-citation-tracking-methods" class="nav-link" data-scroll-target="#search-citations-using-both-backward-and-forward-citation-tracking-methods"><span class="header-section-number">8.7.3</span> Search citations using both backward and forward citation tracking methods</a></li>
   </ul></li>
-  <li><a href="#screen-and-select-studies" id="toc-screen-and-select-studies" class="nav-link" data-scroll-target="#screen-and-select-studies"><span class="header-section-number">7.8</span> Screen and select studies</a></li>
-  <li><a href="#collect-data-form-included-studies" id="toc-collect-data-form-included-studies" class="nav-link" data-scroll-target="#collect-data-form-included-studies"><span class="header-section-number">7.9</span> Collect data form included studies</a></li>
-  <li><a href="#assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies" id="toc-assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies" class="nav-link" data-scroll-target="#assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies"><span class="header-section-number">7.10</span> Assess the methodological quality and risk of bias of the included studies</a></li>
-  <li><a href="#synthesize-the-results" id="toc-synthesize-the-results" class="nav-link" data-scroll-target="#synthesize-the-results"><span class="header-section-number">7.11</span> Synthesize the results</a></li>
-  <li><a href="#assess-reporting-bias" id="toc-assess-reporting-bias" class="nav-link" data-scroll-target="#assess-reporting-bias"><span class="header-section-number">7.12</span> Assess reporting bias</a></li>
-  <li><a href="#grade-quality-of-evidence-grade-approach" id="toc-grade-quality-of-evidence-grade-approach" class="nav-link" data-scroll-target="#grade-quality-of-evidence-grade-approach"><span class="header-section-number">7.13</span> Grade Quality of Evidence (GRADE approach)</a></li>
-  <li><a href="#update-report-and-submit-for-publication" id="toc-update-report-and-submit-for-publication" class="nav-link" data-scroll-target="#update-report-and-submit-for-publication"><span class="header-section-number">7.14</span> Update, report, and submit for publication</a></li>
+  <li><a href="#screen-and-select-studies" id="toc-screen-and-select-studies" class="nav-link" data-scroll-target="#screen-and-select-studies"><span class="header-section-number">8.8</span> Screen and select studies</a></li>
+  <li><a href="#collect-data-form-included-studies" id="toc-collect-data-form-included-studies" class="nav-link" data-scroll-target="#collect-data-form-included-studies"><span class="header-section-number">8.9</span> Collect data form included studies</a></li>
+  <li><a href="#assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies" id="toc-assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies" class="nav-link" data-scroll-target="#assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies"><span class="header-section-number">8.10</span> Assess the methodological quality and risk of bias of the included studies</a></li>
+  <li><a href="#synthesize-the-results" id="toc-synthesize-the-results" class="nav-link" data-scroll-target="#synthesize-the-results"><span class="header-section-number">8.11</span> Synthesize the results</a></li>
+  <li><a href="#assess-reporting-bias" id="toc-assess-reporting-bias" class="nav-link" data-scroll-target="#assess-reporting-bias"><span class="header-section-number">8.12</span> Assess reporting bias</a></li>
+  <li><a href="#grade-quality-of-evidence-grade-approach" id="toc-grade-quality-of-evidence-grade-approach" class="nav-link" data-scroll-target="#grade-quality-of-evidence-grade-approach"><span class="header-section-number">8.13</span> Grade Quality of Evidence (GRADE approach)</a></li>
+  <li><a href="#update-report-and-submit-for-publication" id="toc-update-report-and-submit-for-publication" class="nav-link" data-scroll-target="#update-report-and-submit-for-publication"><span class="header-section-number">8.14</span> Update, report, and submit for publication</a></li>
   </ul>
 </nav>
     </div>
@@ -224,7 +236,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ma1" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (1)</span></span></h1>
+<h1 class="title"><span id="sec-ma1" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (1)</span></span></h1>
 </div>
 
 
@@ -259,8 +271,8 @@ Learning objectives
 </ul>
 </div>
 </div>
-<section id="meeting-the-review-family" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="meeting-the-review-family"><span class="header-section-number">7.1</span> Meeting the review family</h2>
+<section id="meeting-the-review-family" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="meeting-the-review-family"><span class="header-section-number">8.1</span> Meeting the review family</h2>
 <p>As more primary studies are conducted in research, the body of relevant research literature continues to grow. This expansion is a welcome development for psychologists working across various fields—such as clinical, educational, school, industrial-organizational, health, and sports psychology—who aim to ground their practice in evidence-based findings. However, the growing volume of research also presents new challenges in gathering, analyzing, and synthesizing the vast amount of available information.</p>
 <p>To manage this complexity, researchers are increasingly turning to research reviews, which help organize, evaluate, and interpret existing studies. These reviews make the growing body of knowledge more accessible and applicable to both practice and future research. Forty-eight review types have been identiﬁed and categorized into seven families <span class="citation" data-cites="sutton2019">(<a href="references.html#ref-sutton2019" role="doc-biblioref">Sutton et al. 2019</a>)</span>:</p>
 <ul>
@@ -280,9 +292,9 @@ Learning objectives
 <li>Measurement properties review</li>
 </ul>
 </section>
-<section id="evidence-based-pyramid-in-research" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="evidence-based-pyramid-in-research"><span class="header-section-number">7.2</span> Evidence based pyramid in research</h2>
-<p>The levels of evidence, or hierarchy of evidence, provide a framework for ranking medical studies according to the quality and reliability of their design. This hierarchy is often represented as a pyramid, which reflects both the quality and quantity of evidence available. In this model, higher levels represent more rigor and reliable evidence. Each level builds upon the data and research found in the tiers below (<a href="#fig-ma9" class="quarto-xref">Figure&nbsp;<span>7.1</span></a>).</p>
+<section id="evidence-based-pyramid-in-research" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="evidence-based-pyramid-in-research"><span class="header-section-number">8.2</span> Evidence based pyramid in research</h2>
+<p>The levels of evidence, or hierarchy of evidence, provide a framework for ranking medical studies according to the quality and reliability of their design. This hierarchy is often represented as a pyramid, which reflects both the quality and quantity of evidence available. In this model, higher levels represent more rigor and reliable evidence. Each level builds upon the data and research found in the tiers below (<a href="#fig-ma9" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>).</p>
 <p>Evidence based pyramids are typically divided into two or three sections. The top section includes secondary evidence such as systematic reviews, meta-analyses, and critical appraisals. The middle section contains primary evidence, including randomized controlled trials (RCTs), cohort studies, case-control studies, case series, and case reports. Some models also include a bottom tier that represents background information and expert opinion (Source: <a href="https://openmd.com/guide/levels-of-evidence">openmd</a>).</p>
 <div id="fig-ma9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -290,21 +302,21 @@ Learning objectives
 <img src="images/ma9.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Evidence based pyramid (Based on Source: https://openmd.com/guide/levels-of-evidence).
+Figure&nbsp;8.1: Evidence based pyramid (Based on Source: https://openmd.com/guide/levels-of-evidence).
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="systematic-review" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="systematic-review"><span class="header-section-number">7.3</span> Systematic review</h2>
-<p>Among all types of reviews (<a href="#fig-ma10" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>), the systematic review is considered one of the most rigorous and trusted forms of research synthesis. Therefore, conducting reliable, well-organized systematic reviews is essential for effectively synthesizing the findings of primary studies .</p>
+<section id="systematic-review" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="systematic-review"><span class="header-section-number">8.3</span> Systematic review</h2>
+<p>Among all types of reviews (<a href="#fig-ma10" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>), the systematic review is considered one of the most rigorous and trusted forms of research synthesis. Therefore, conducting reliable, well-organized systematic reviews is essential for effectively synthesizing the findings of primary studies .</p>
 <div id="fig-ma10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ma10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ma10.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: Evidence pyramid.
+Figure&nbsp;8.2: Evidence pyramid.
 </figcaption>
 </figure>
 </div>
@@ -315,8 +327,8 @@ Figure&nbsp;7.2: Evidence pyramid.
 <p>For example, let’s consider the Cochrane systematic review titled “Psychological therapies for anxiety and depression in children and adolescents with long-term physical conditions” <span class="citation" data-cites="thabrew2018">(<a href="references.html#ref-thabrew2018" role="doc-biblioref">Thabrew et al. 2018</a>)</span>.</p>
 <p>Next, we outline the <strong>fundamental steps</strong> involved in conducting a systematic review.</p>
 </section>
-<section id="establish-a-team-and-develop-a-focused-research-question" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="establish-a-team-and-develop-a-focused-research-question"><span class="header-section-number">7.4</span> Establish a team and develop a focused research question</h2>
+<section id="establish-a-team-and-develop-a-focused-research-question" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="establish-a-team-and-develop-a-focused-research-question"><span class="header-section-number">8.4</span> Establish a team and develop a focused research question</h2>
 <p>The first step in conducting a systematic review is typically initiated by independent researchers, universities, institutes, or organizations such as the Cochrane Collaboration, the Joanna Briggs Institute (JBI), and the Centre for Reviews and Dissemination at the University of York. Policy-focused groups, including professional societies, government agencies, and healthcare payers, may also initiate such reviews. These entities undertake systematic reviews to address well-defined research questions or explore specific hypotheses, aiming to generate high-quality evidence that can guide practice, inform policy, and shape future research directions.</p>
 <p>Initially, a <strong>preliminary search</strong> of the existing literature is conducted to identify knowledge gaps within the field. The existence of previous systematic reviews on similar topics does not preclude the need for a new review—provided the new review addresses unresolved issues, incorporates updated evidence, or offers a novel analytical perspective that adds meaningful value.</p>
 <p><strong>Establish a research team</strong></p>
@@ -341,14 +353,14 @@ Figure&nbsp;7.2: Evidence pyramid.
 </div>
 <p>It is important to note that a systematic review with a broad scope provides a comprehensive summary of the available evidence base, nevertheless it is resource-intensive and usually comes with substantial heterogeneity that hinders interpretation of the findings. In contrast, a systematic review with a narrow focus is more manageable, but the available evidence may be limited, and the generalizability of the findings may be reduced.</p>
 </section>
-<section id="develop-your-research-plan-and-pre-register-the-project" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="develop-your-research-plan-and-pre-register-the-project"><span class="header-section-number">7.5</span> Develop your research plan and (pre) register the project</h2>
+<section id="develop-your-research-plan-and-pre-register-the-project" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="develop-your-research-plan-and-pre-register-the-project"><span class="header-section-number">8.5</span> Develop your research plan and (pre) register the project</h2>
 <p>A pre-study plan (or protocol) outlines objectives, methods, and criteria for a systematic review. In other words, it provides a structured framework to guide the review process through its various stages.</p>
 <p>To increase the openness and transparency of a systematic review and streamlines the review process, researchers can preregister or register their projects using a registry. Preregistration and registration differ primarily in terms of timing. Preregistration occurs when researchers document essential information about a research project before they begin collecting data or analyzing primary sources. In contrast, registration refers to documenting the research project after the research process has already begun.</p>
 </section>
-<section id="specify-the-inclusion-and-exclusion-criteria" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="specify-the-inclusion-and-exclusion-criteria"><span class="header-section-number">7.6</span> Specify the inclusion and exclusion criteria</h2>
-<p>The PICO framework is commonly used to specify the inclusion and exclusion criteria (eligibility criteria) for reviews of interventions. A critical step in setting these criteria is the evaluation of the type(s) of study design that may best answer the research question. Another important step is the clear definition of the outcomes. Specifically, an outcome can include five elements(<a href="#fig-ma8" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>) <span class="citation" data-cites="saldanha2014">(<a href="references.html#ref-saldanha2014" role="doc-biblioref">Saldanha et al. 2014</a>)</span>:</p>
+<section id="specify-the-inclusion-and-exclusion-criteria" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="specify-the-inclusion-and-exclusion-criteria"><span class="header-section-number">8.6</span> Specify the inclusion and exclusion criteria</h2>
+<p>The PICO framework is commonly used to specify the inclusion and exclusion criteria (eligibility criteria) for reviews of interventions. A critical step in setting these criteria is the evaluation of the type(s) of study design that may best answer the research question. Another important step is the clear definition of the outcomes. Specifically, an outcome can include five elements(<a href="#fig-ma8" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>) <span class="citation" data-cites="saldanha2014">(<a href="references.html#ref-saldanha2014" role="doc-biblioref">Saldanha et al. 2014</a>)</span>:</p>
 <ol type="1">
 <li><p>The domain or outcome title (e.g., anxiety).</p></li>
 <li><p>The specific measurement or technique/instrument used to make the measurement (e.g., Hamilton Anxiety Rating Scale).</p></li>
@@ -362,7 +374,7 @@ Figure&nbsp;7.2: Evidence pyramid.
 <img src="images/ma8.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.3: Each outcome has five elements.
+Figure&nbsp;8.3: Each outcome has five elements.
 </figcaption>
 </figure>
 </div>
@@ -377,12 +389,12 @@ Figure&nbsp;7.3: Each outcome has five elements.
 </div>
 <p><strong>NOTE:</strong> Researchers should consider the risk of <strong>inclusion bias</strong>. For example, review investigators may be aware of the results from various clinical trials when setting inclusion criteria, and may unintentionally include only those trials that support the hypothesis of the systematic review.</p>
 </section>
-<section id="search-information-sources" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="search-information-sources"><span class="header-section-number">7.7</span> Search information sources</h2>
+<section id="search-information-sources" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="search-information-sources"><span class="header-section-number">8.7</span> Search information sources</h2>
 <p>It is recommended to search at least two major bibliographic databases, along with other sources of published and unpublished studies—including backward and forward citation tracking, reviews, consultation with field experts, and grey and non-English literature. Be sure to specify the date each source was last searched.</p>
 <p><strong>NOTE:</strong> Researchers must be cautious of <strong>ascertainment bias</strong>, which occurs when certain studies are more likely to be identified (e.g., published in open-access journals or high-impact international journals) and included in a systematic review — not because they are necessarily better or more relevant, but simply because they are easier to find.</p>
-<section id="search-in-multiple-electronic-databases-platforms-and-engines" class="level3" data-number="7.7.1">
-<h3 data-number="7.7.1" class="anchored" data-anchor-id="search-in-multiple-electronic-databases-platforms-and-engines"><span class="header-section-number">7.7.1</span> Search in multiple electronic databases, platforms and engines</h3>
+<section id="search-in-multiple-electronic-databases-platforms-and-engines" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="search-in-multiple-electronic-databases-platforms-and-engines"><span class="header-section-number">8.7.1</span> Search in multiple electronic databases, platforms and engines</h3>
 <p>Before initiating the search, the team must develop a well-defined search strategy, identify relevant electronic databases, platforms and appropriate search engines, and, if necessary, create access accounts for those databases.</p>
 <div class="content-box-green">
 <p><strong>Search algorithm</strong></p>
@@ -431,21 +443,21 @@ Figure&nbsp;7.3: Each outcome has five elements.
 <li><p><a href="http://www.guideline.gov/">National Guidelines Clearing House</a></p></li>
 </ul>
 </section>
-<section id="build-a-high-quality-and-effective-search-strategy" class="level3" data-number="7.7.2">
-<h3 data-number="7.7.2" class="anchored" data-anchor-id="build-a-high-quality-and-effective-search-strategy"><span class="header-section-number">7.7.2</span> Build a high-quality and effective search strategy</h3>
+<section id="build-a-high-quality-and-effective-search-strategy" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="build-a-high-quality-and-effective-search-strategy"><span class="header-section-number">8.7.2</span> Build a high-quality and effective search strategy</h3>
 <p>When searching for academic papers, selecting the right search terms is crucial for finding relevant studies. These terms are typically derived from key concepts related to the topic of interest. There are two main types of search terms that should be used:</p>
 <ul>
 <li><p><strong>Controlled vocabulary terms:</strong> These are standardized subject terms used by databases to tag articles consistently, regardless of the terminology used by the authors. They help retrieve articles even if they use different words to describe the same concept. For example, MeSH (Medical Subject Headings) – used in PubMed/MEDLINE; Emtree – used in EMBASE; APA Thesaurus of Psychological Index Terms – used in PsycINFO.</p></li>
 <li><p><strong>Keywords:</strong> These are natural language terms—the words and phrases that researchers might use in titles, abstracts, or full texts.</p></li>
 </ul>
-<p>For systematic review searches, researchers should use both controlled vocabulary and keywords. Using only keywords may result in missing articles that use different terminology, while relying solely on controlled vocabulary could exclude articles that have not yet been indexed or were indexed using outdated terms. Boolean operators (OR, AND, NOT) are crucial, as they allow researchers to combine search terms and help narrow or expand the search results, making them more relevant to the research (<a href="#fig-ma1" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>).</p>
+<p>For systematic review searches, researchers should use both controlled vocabulary and keywords. Using only keywords may result in missing articles that use different terminology, while relying solely on controlled vocabulary could exclude articles that have not yet been indexed or were indexed using outdated terms. Boolean operators (OR, AND, NOT) are crucial, as they allow researchers to combine search terms and help narrow or expand the search results, making them more relevant to the research (<a href="#fig-ma1" class="quarto-xref">Figure&nbsp;<span>8.4</span></a>).</p>
 <div id="fig-ma1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ma1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ma1.png" class="img-fluid figure-img" style="width:35.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.4: Boolean operators.
+Figure&nbsp;8.4: Boolean operators.
 </figcaption>
 </figure>
 </div>
@@ -461,8 +473,8 @@ Figure&nbsp;7.4: Boolean operators.
 <p>[Age Group] 1. (child* or boy* or girl* or infant* or juvenil* or minors or paediatric* or pediatric* or school* or preschool* or pre-school* or kindergarten or nursery or adolesc* or preadolesc* or pre-adolesc* or pubert* or pubescen* or prepube* or pre-pube* or high-school or teen* or (young next (adult* or people or patient* or men* or women* or mother* or male or female or survivor* or oCender* or minorit<em>)) or youth</em> or student* or undergrad* or college or campus or classroom):ti,ab</p>
 </div>
 </section>
-<section id="search-citations-using-both-backward-and-forward-citation-tracking-methods" class="level3" data-number="7.7.3">
-<h3 data-number="7.7.3" class="anchored" data-anchor-id="search-citations-using-both-backward-and-forward-citation-tracking-methods"><span class="header-section-number">7.7.3</span> Search citations using both backward and forward citation tracking methods</h3>
+<section id="search-citations-using-both-backward-and-forward-citation-tracking-methods" class="level3" data-number="8.7.3">
+<h3 data-number="8.7.3" class="anchored" data-anchor-id="search-citations-using-both-backward-and-forward-citation-tracking-methods"><span class="header-section-number">8.7.3</span> Search citations using both backward and forward citation tracking methods</h3>
 <p>Citation searching in the context of systematic reviews is a method used to identify relevant literature that may not be captured through standard database searches. It involves tracking how research articles are connected through citations. There are two main types of citation searching: backward citation searching (also known as reference list checking) and forward citation searching.</p>
 <ul>
 <li><p><strong>Backward Citation Search:</strong> A search to find all the references cited within a single article. This search looks backwards in time to trace the prior research and sources that informed the development of the article.</p></li>
@@ -470,40 +482,40 @@ Figure&nbsp;7.4: Boolean operators.
 </ul>
 </section>
 </section>
-<section id="screen-and-select-studies" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="screen-and-select-studies"><span class="header-section-number">7.8</span> Screen and select studies</h2>
+<section id="screen-and-select-studies" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="screen-and-select-studies"><span class="header-section-number">8.8</span> Screen and select studies</h2>
 <p>The search process most often yields a large number of potentially pertinent citations that need to be checked against the pre-specified eligibility criteria. Study selection is a staged process, which needs to be explicit and objective in order to minimize errors and biases.</p>
 <p>At least two reviewers should first <strong>screen</strong> records retrieved at title and abstract level working independently (meaning that each reviewer is blinded to the decisions of the other). The initially selected reports will then qualify for <strong>full-text</strong> screening in a similar manner to reach a final decision about studies that will be included in the systematic review. Disagreements at any stage between assessors need to be resolved either with consensus or through arbitration with a senior reviewer.</p>
 <p>Automation tools are available to facilitate both the de-duplication of records (i.e., removing duplicate records retrieved from multiple databases) and the study selection process. Software such as <a href="https://www.rayyan.ai/">Rayyan</a>, <a href="https://www.covidence.org/">Covidence</a>, <a href="https://eppi.ioe.ac.uk/cms/Default.aspx?tabid=2914">EPPI-Reviewer</a>, <a href="https://www.cadima.info/">CADIMA</a>, <a href="https://www.distillersr.com/products/distillersr-systematic-review-software">DistillerSR</a> are specifically designed to support systematic reviews. Additionally, reference management tools like <a href="https://endnote.com/">EndNote</a>, <a href="https://www.mendeley.com/">Mendeley</a> or <a href="https://www.zotero.org/">Zotero</a> can also be used to organize and manage citations, including handling duplicates.</p>
-<p>The entire process should be documented using a well-designed flow diagram, known as the PRISMA flow chart, which outlines the number of records or studies reviewed at each stage and provides detailed reasons for exclusion (<a href="#fig-ma2" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>) <span class="citation" data-cites="iddagoda2023">(<a href="references.html#ref-iddagoda2023" role="doc-biblioref">Iddagoda and Flicker 2023</a>)</span>.</p>
+<p>The entire process should be documented using a well-designed flow diagram, known as the PRISMA flow chart, which outlines the number of records or studies reviewed at each stage and provides detailed reasons for exclusion (<a href="#fig-ma2" class="quarto-xref">Figure&nbsp;<span>8.5</span></a>) <span class="citation" data-cites="iddagoda2023">(<a href="references.html#ref-iddagoda2023" role="doc-biblioref">Iddagoda and Flicker 2023</a>)</span>.</p>
 <div id="fig-ma2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ma2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ma2.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.5: PRISMA flow chart.
+Figure&nbsp;8.5: PRISMA flow chart.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="collect-data-form-included-studies" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="collect-data-form-included-studies"><span class="header-section-number">7.9</span> Collect data form included studies</h2>
+<section id="collect-data-form-included-studies" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="collect-data-form-included-studies"><span class="header-section-number">8.9</span> Collect data form included studies</h2>
 <p>Having completed the study selection process, the reviewers should proceed with data extraction, during which they obtain all necessary information and outcome data from each eligible study. The data items to be extracted are agreed upon by the review team, and electronic data extraction forms are typically pilot tested on a small sample of eligible studies. This process is again conducted in duplicate to ensure accuracy and data integrity. At this stage unreported information or missing data might be sought through communication with authors of original reports.</p>
 <p>During data extraction, reviewers should ensure the use of clear abbreviations, consistent unit conversions, standardized definitions, and concise presentation of information.</p>
 </section>
-<section id="assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies"><span class="header-section-number">7.10</span> Assess the methodological quality and risk of bias of the included studies</h2>
+<section id="assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="assess-the-methodological-quality-and-risk-of-bias-of-the-included-studies"><span class="header-section-number">8.10</span> Assess the methodological quality and risk of bias of the included studies</h2>
 <p>A systematic review is only as good as the studies upon which is built. Evidence and results should be interpreted in light of the quality of the included studies. The quality of the research encompasses how a study has been conducted (methodological quality) and how it has been described (reporting quality and reproducibility). Poor methodological and reporting quality of primary studies included in the review may introduce bias and spurious conclusions <span class="citation" data-cites="muka2019 mantsiou2023">(<a href="references.html#ref-muka2019" role="doc-biblioref">Muka et al. 2019</a>; <a href="references.html#ref-mantsiou2023" role="doc-biblioref">Mantsiou et al. 2023</a>)</span>.</p>
 <p>Therefore, assessment of the methodological quality and risk of bias in the included studies by two independent reviewers is an essential component of a systematic review. For randomized controlled trials Cochrane released the <a href="https://www.riskofbias.info/welcome/rob-2-0-tool">RoB 2 tool</a> (revised tool for Risk of Bias in randomized trials). Risk of bias is assessed at the outcome level for the following domains: randomization process, deviations from the intended interventions, missing outcome data, measurement of the outcome and selection of the reported result.</p>
-<p>After completing all seven bias domains, an overall judgment is made regarding the risk of bias of the study for the outcome under assessment: “low risk of bias”, “some concerns”, or “high risk of bias”. The overall risk-of-bias judgment is derived from the domain-level judgments using a predefined algorithm (<a href="#fig-ma3" class="quarto-xref">Figure&nbsp;<span>7.6</span></a>).</p>
+<p>After completing all seven bias domains, an overall judgment is made regarding the risk of bias of the study for the outcome under assessment: “low risk of bias”, “some concerns”, or “high risk of bias”. The overall risk-of-bias judgment is derived from the domain-level judgments using a predefined algorithm (<a href="#fig-ma3" class="quarto-xref">Figure&nbsp;<span>8.6</span></a>).</p>
 <div id="fig-ma3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ma3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ma3.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.6: Traffic light plot for ROB 2 tool.
+Figure&nbsp;8.6: Traffic light plot for ROB 2 tool.
 </figcaption>
 </figure>
 </div>
@@ -514,19 +526,19 @@ Figure&nbsp;7.6: Traffic light plot for ROB 2 tool.
 <img src="images/ma6.png" class="img-fluid figure-img" style="width:95.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.7: Summary barplot for ROB 2 tool.
+Figure&nbsp;8.7: Summary barplot for ROB 2 tool.
 </figcaption>
 </figure>
 </div>
 <p>For observational studies evaluation of methodological quality is based on the <a href="https://www.riskofbias.info/welcome/robins-i-v2">ROBINS-I tool V2</a> (Risk Of Bias in Non-randomized Studies - of Interventions Version 2). Risk of bias is assessed at the outcome level for the following domains: confounding, selection of participants into the study, classification of interventions, deviations from intended interventions, missing data, bias arising from measurement of the outcome, selection of the reported result.</p>
-<p>After completing all seven bias domains, an overall judgment is made regarding the risk of bias: “low risk of bias,” “moderate risk of bias,” “serious risk of bias,” or “critical risk of bias.” The overall risk-of-bias judgment is derived from the domain-level judgments using a predefined algorithm (<a href="#fig-ma4" class="quarto-xref">Figure&nbsp;<span>7.8</span></a>).</p>
+<p>After completing all seven bias domains, an overall judgment is made regarding the risk of bias: “low risk of bias,” “moderate risk of bias,” “serious risk of bias,” or “critical risk of bias.” The overall risk-of-bias judgment is derived from the domain-level judgments using a predefined algorithm (<a href="#fig-ma4" class="quarto-xref">Figure&nbsp;<span>8.8</span></a>).</p>
 <div id="fig-ma4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ma4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ma4.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.8: Traffic light plot for ROBINS-I tool.
+Figure&nbsp;8.8: Traffic light plot for ROBINS-I tool.
 </figcaption>
 </figure>
 </div>
@@ -537,41 +549,43 @@ Figure&nbsp;7.8: Traffic light plot for ROBINS-I tool.
 <img src="images/ma7.png" class="img-fluid figure-img" style="width:95.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.9: Summary barplot for ROBINS-I tool.
+Figure&nbsp;8.9: Summary barplot for ROBINS-I tool.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="synthesize-the-results" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="synthesize-the-results"><span class="header-section-number">7.11</span> Synthesize the results</h2>
-<p>The final step in conducting a systematic review is to synthesize the results. This synthesis can be either qualitative or quantitative, if the data allows for appropriate statistical synthesis (i.e., meta-analysis).</p>
-<p>If meta-analysis is not feasible, authors should describe in a narrative way and summary tables the findings by grouping them according to interventions, population, outcomes, or study design.</p>
-<p>For systematic reviews of interventions, for each study a summary statistic is calculated, which is either a (standardized) difference in means for continuous outcomes, a risk ratio (RR) or an odds ratio (OR) for dichotomous outcomes. Subsequently, an overall effect estimate is generated as a weighted average of the effects estimated in the individual studies.</p>
-<p>Every single trial is different and studies brought together in a systematic review will inevitably differ to some extent. Reviewers should assess heterogeneity, which may arise from factors such as participants’ characteristics, disease severity, concomitant treatments, or methodological quality. Note that there are two basic meta-analytic options based on the presence of heterogeneity: the fixed-effect model and the random-effects model.</p>
+<section id="synthesize-the-results" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="synthesize-the-results"><span class="header-section-number">8.11</span> Synthesize the results</h2>
+<p>One of the most important steps in conducting a systematic review is synthesizing the results from the included primary studies. Authors should present the findings using narrative descriptions and summary tables, grouping the results according to key characteristics such as intervention, population, outcomes, or study design—this is referred to as qualitative synthesis.</p>
+<p>When the data are suitable for statistical aggregation, authors may also perform a meta-analysis (quantitative synthesis). In this process, a summary statistic is calculated for each included study—typically a (standardized) mean difference for continuous outcomes, or a risk ratio (RR) or odds ratio (OR) for dichotomous outcomes. An overall effect estimate is then computed as a weighted average of the individual study effects.</p>
+<blockquote class="blockquote">
+<p>Meta-analysis is an optional component of a systematic review, meaning that not every systematic review includes a meta-analysis. However, every systematic review does include a qualitative synthesis.</p>
+</blockquote>
+<p>It is important to note that every study is unique, and those included in a systematic review will inevitably differ to some extent. Reviewers should assess heterogeneity, which may arise from factors such as participant characteristics, disease severity, concomitant treatments, or methodological quality. Depending on the presence and extent of heterogeneity, two basic meta-analytic models are available: the fixed-effect model and the random-effects model.</p>
 </section>
-<section id="assess-reporting-bias" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="assess-reporting-bias"><span class="header-section-number">7.12</span> Assess reporting bias</h2>
+<section id="assess-reporting-bias" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="assess-reporting-bias"><span class="header-section-number">8.12</span> Assess reporting bias</h2>
 <p>Reviewers should assess the risk of bias in the result of a synthesis (such as meta-analysis) due to missing studies or missing results within studies. Missing studies/results may introduce bias when the decision to publish a study/result is influenced by the observed p-value or magnitude or direction of the effect <span class="citation" data-cites="page2021">(<a href="references.html#ref-page2021" role="doc-biblioref">Page et al. 2021</a>)</span>.</p>
 <p>For example, studies with statistically non-significant results may not have been submitted for publication (<strong>publication bias</strong>), or particular results that were statistically non-significant may have been omitted from study reports (<strong>selective outcome reporting bias</strong>).</p>
 </section>
-<section id="grade-quality-of-evidence-grade-approach" class="level2" data-number="7.13">
-<h2 data-number="7.13" class="anchored" data-anchor-id="grade-quality-of-evidence-grade-approach"><span class="header-section-number">7.13</span> Grade Quality of Evidence (GRADE approach)</h2>
+<section id="grade-quality-of-evidence-grade-approach" class="level2" data-number="8.13">
+<h2 data-number="8.13" class="anchored" data-anchor-id="grade-quality-of-evidence-grade-approach"><span class="header-section-number">8.13</span> Grade Quality of Evidence (GRADE approach)</h2>
 <p>The most common approach to rating the certainty of the evidence is the GRADE (Grading of Recommendations Assessment, Development and Evaluation) framework. GRADE has four levels of evidence ranging from very low quality, which suggests that we are very uncertain about the true estimate, to high quality, which suggests that further research is very unlikely to change our confidence in the estimate of effect <span class="citation" data-cites="balshem2011">(<a href="references.html#ref-balshem2011" role="doc-biblioref">Balshem et al. 2011</a>)</span>.</p>
-<p>Randomized controlled trials provide high quality evidence which may be downgraded for several reasons including high risk of bias, imprecision, inconsistency, indirectness, or concerns about publication bias. Conversely, evidence that includes observational data starts at low quality due to the possibility of residual confounding (i.e., confounding that persists after Adjustment for the putatively measured confounders) (<a href="#fig-ma5" class="quarto-xref">Figure&nbsp;<span>7.10</span></a>).</p>
+<p>Randomized controlled trials provide high quality evidence which may be downgraded for several reasons including high risk of bias, imprecision, inconsistency, indirectness, or concerns about publication bias. Conversely, evidence that includes observational data starts at low quality due to the possibility of residual confounding (i.e., confounding that persists after Adjustment for the putatively measured confounders) (<a href="#fig-ma5" class="quarto-xref">Figure&nbsp;<span>8.10</span></a>).</p>
 <div id="fig-ma5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ma5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ma5.png" class="img-fluid figure-img" style="width:95.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ma5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.10: A summary of GRADE’s approach to rating quality of evidence.
+Figure&nbsp;8.10: A summary of GRADE’s approach to rating quality of evidence.
 </figcaption>
 </figure>
 </div>
 <p>The evaluation should be performed independently by two reviewers, while any disagreement should be discussed with a third, independent reviewer.</p>
 </section>
-<section id="update-report-and-submit-for-publication" class="level2" data-number="7.14">
-<h2 data-number="7.14" class="anchored" data-anchor-id="update-report-and-submit-for-publication"><span class="header-section-number">7.14</span> Update, report, and submit for publication</h2>
+<section id="update-report-and-submit-for-publication" class="level2" data-number="8.14">
+<h2 data-number="8.14" class="anchored" data-anchor-id="update-report-and-submit-for-publication"><span class="header-section-number">8.14</span> Update, report, and submit for publication</h2>
 <p>When ready to submit the study for publication, if the interval since beginning the search of bibliographic databases is greater than 6–12 months the search should be updated to identify recently published articles <span class="citation" data-cites="muka2019">(<a href="references.html#ref-muka2019" role="doc-biblioref">Muka et al. 2019</a>)</span>.</p>
 <p>Reporting guidelines exist to help ensure that systematic reviews with or without meta-analysis are reported with transparency, reproducibility, and comparability. The most commonly used guideline is <a href="https://www.prisma-statement.org/">PRISMA</a> (Preferred Reporting Items for Systematic Reviews and Meta-Analyses), which assists authors in clearly reporting why the review was conducted, what methods were used, and what the review found.</p>
 <p>Finally, additional experts with content expertise may be invited to review and comment on the manuscript (and the published work should acknowledge their assistance). It is still possible to improve the quality of the publication further by appraising the interpretation of the results one last time.</p>
@@ -1033,13 +1047,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./linear2.html" class="pagination-link" aria-label="Linear regression (2)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Linear regression (2)</span></span>
+      <a href="./pca.html" class="pagination-link" aria-label="Principal Components Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principal Components Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./presentations.html" class="pagination-link" aria-label="Presentations">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Presentations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ma2.html" class="pagination-link" aria-label="Systematic Review and Meta-analysis (2)">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis (2)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

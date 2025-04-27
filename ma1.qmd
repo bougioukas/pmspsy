@@ -286,13 +286,13 @@ After completing all seven bias domains, an overall judgment is made regarding t
 
 ## Synthesize the results
 
-The final step in conducting a systematic review is to synthesize the results. This synthesis can be either qualitative or quantitative, if the data allows for appropriate statistical synthesis (i.e., meta-analysis).
+One of the most important steps in conducting a systematic review is synthesizing the results from the included primary studies. Authors should present the findings using narrative descriptions and summary tables, grouping the results according to key characteristics such as intervention, population, outcomes, or study design—this is referred to as qualitative synthesis.
 
-If meta-analysis is not feasible, authors should describe in a narrative way and summary tables the findings by grouping them according to interventions, population, outcomes, or study design.
+When the data are suitable for statistical aggregation, authors may also perform a meta-analysis (quantitative synthesis). In this process, a summary statistic is calculated for each included study—typically a (standardized) mean difference for continuous outcomes, or a risk ratio (RR) or odds ratio (OR) for dichotomous outcomes. An overall effect estimate is then computed as a weighted average of the individual study effects.
 
-For systematic reviews of interventions, for each study a summary statistic is calculated, which is either a (standardized) difference in means for continuous outcomes, a risk ratio (RR) or an odds ratio (OR) for dichotomous outcomes. Subsequently, an overall effect estimate is generated as a weighted average of the effects estimated in the individual studies.
+> Meta-analysis is an optional component of a systematic review, meaning that not every systematic review includes a meta-analysis. However, every systematic review does include a qualitative synthesis.
 
-Every single trial is different and studies brought together in a systematic review will inevitably differ to some extent. Reviewers should assess heterogeneity, which may arise from factors such as participants' characteristics, disease severity, concomitant treatments, or methodological quality. Note that there are two basic meta-analytic options based on the presence of heterogeneity: the fixed-effect model and the random-effects model.
+It is important to note that every study is unique, and those included in a systematic review will inevitably differ to some extent. Reviewers should assess heterogeneity, which may arise from factors such as participant characteristics, disease severity, concomitant treatments, or methodological quality. Depending on the presence and extent of heterogeneity, two basic meta-analytic models are available: the fixed-effect model and the random-effects model.
 
 ## Assess reporting bias
 

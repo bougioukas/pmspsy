@@ -57,11 +57,11 @@ DT::datatable(BirthWeight, extensions = c('Scroller', 'Buttons'), rownames = FAL
 
 ```
 
-Open the dataset named "BirthWeight" from the file tab in the menu (@fig-BirthWeight1).
+Open the dataset named "BirthWeight" from the file tab in the menu (@fig-BirthWeight01).
 
-![The BirthWeight dataset.](images/BirthWeight1.png){#fig-BirthWeight1 width="75%"}
+![The BirthWeight dataset.](images/BirthWeight01.png){#fig-BirthWeight01 width="75%"}
 
-Data of 550 infants at 1 month age was collected. The following variables were recorded (@fig-BirthWeight1):
+Data of 550 infants at 1 month age was collected. The following variables were recorded:
 
 • Body weight of the infant in g (weight)
 
