@@ -98,10 +98,9 @@ Lewis and Neville provided support for both a total scale score, consisting of 2
     -   Perceived to be “angry Black woman" (Ang2)
     -   Someone accused me of being angry when speaking calm (Ang3)
 
-## The technical part: eigen decomposition
+## The technical part of PCA
 
-
-![Select from Factor the Principal Component Analysis.](images/pca0001.png){#fig-pca0001 width="95%"}
+![The method of PCA for dimensionality reduction.](images/pca0001.png){#fig-pca0001 width="95%"}
 
 
 @fig-pca0001 illustrates the technical workflow of principal component analysis (PCA), as a method to reduce the number of dimensions of the data. It starts with a large table of data ($X_{n \times p}$), standardizes it ($X^c_{n \times p}$), and calculates the covariance matrix ($C_{p \times p}$) between observed variables (features). Then, it finds the principal directions (eigenvectors) and their importance (eigenvalues). By selecting the most important directions (top k), the original data is projected onto a lower-dimensional space applying the projection matrix $W_{p \times k}$, resulting in a smaller table that still captures most of the data's variability. The scatter plots visually show this reduction from a higher to a lower dimension.
