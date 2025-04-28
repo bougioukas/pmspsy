@@ -207,7 +207,7 @@ Note that the first component captures the maximum variance, the second captures
 
 ## Steps in the process of PCA
 
--   **Prepare the Data:** Standardize the items to have a mean of 0 and a standard deviation of 1. This ensures that variables with larger scales don’t dominate the principal components. However, in practice, many researchers analyzing **Likert scale** data choose not to standardize, as the scale is generally considered consistent across items. Additionally, it is important to reverse score negatively worded items so that all items are scaled in the same direction.
+-   **Prepare the Data:** (a) Standardize the items to have a mean of 0 and a standard deviation of 1. This ensures that variables with larger scales do not dominate the principal components. However, in practice, many researchers analyzing **Likert scale** data choose not to standardize, as the scale is generally considered consistent across items. (b) Address outliers in the data. Note that outliers in Likert data are often extreme values, such as respondents who consistently select the "0 = not at all stressful" or "5 = extremely stressful" option. (c) Additionally, it is important to reverse-score negatively worded items to ensure that all items are scaled in the same direction (though this step is not applicable in our example).
 
 -   **Evaluate Assumptions:** Assess the suitability of the data for PCA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. These tests determine whether the correlation matrix is appropriate for component extraction.
 
