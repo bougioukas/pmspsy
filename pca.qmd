@@ -348,7 +348,7 @@ Moreover, under the **Additional Output** section, select *Component summary*:
 
 The SS Loadings column represents the eigenvalues for each component after Varimax rotation, with Principal Component 1 explaining 13.2%, Principal Component 2 explaining an additional 11.7%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.
 
-The path diagram follows:
+The component analysis diagram follows:
 
 ```{r, echo=FALSE}
 PC1 <- psych::principal(dat, rotate = "varimax", nfactors=4)
@@ -356,6 +356,11 @@ colnames(PC1$loadings) <- c("PC1", "PC2", "PC3", "PC4")
 psych::fa.diagram(PC1, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
+
+
+Note that the arrows originate from the items (Obj1, Obj2,..., Arg1, Str1, Ang1, etc.) and point toward the principal components (PC1, PC2, PC3, PC4).
+
+
 
 ## Oblique rotation
 
@@ -381,7 +386,7 @@ The Inter-Component Correlation Matrix reveals that the four components are posi
 
 ![Inter-Component Correlation Matrix.](images/mlinear38.png){#fig-mlinear38 width="50%"}
 
-The path diagram follows:
+The component analysis diagram follows:
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 PC2 <- psych::principal(dat, rotate = "oblimin", nfactors=4)
@@ -390,7 +395,7 @@ psych::fa.diagram(PC2, cut = 0, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
 
-Note that this path diagram includes links with numerical values between components, representing the correlation coefficients among them. In contrast, orthogonal rotation assumes the components are uncorrelated, so such links do not appear.
+Note that this component analysis diagram includes links with numerical values **between components**, representing the correlation coefficients among them (@fig-mlinear38). In contrast, orthogonal rotation assumes the components are uncorrelated, so such links do not appear.
 
 ## Component scores
 
