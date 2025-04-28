@@ -322,11 +322,11 @@ There are two main types of rotation, and the choice between them depends on the
 
 ## Varimax rotation
 
-Select the **Varimax** rotation method:
+Select the **Varimax** rotation method (which is the default):
 
 ![Select the Varimax method of rotation.](images/mlinear41.png){#fig-mlinear41 width="30%"}
 
-After rotation, there are four clear components/scales (NOTE: In the unrotated method, most variables loaded on the first component).
+After rotation, there are four clear components/scales (**NOTE:** In the unrotated method, that is "Rotation None" in Jamovi, most variables loaded on the first component).
 
 ![Loadings with orthogonal rotation.](images/mlinear33.png){#fig-mlinear33 width="55%"}
 
