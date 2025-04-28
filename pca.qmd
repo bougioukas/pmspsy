@@ -315,7 +315,7 @@ There are two main types of rotation, and the choice between them depends on the
 
 -   **Orthogonal Rotation:** Use this if you believe the components are independent or unrelated.
     -   Varimax is the most common orthogonal rotation method.
--   **Oblique Rotation:** Use this if you believe the components are correlated or related.
+-   **Oblique Rotation:** Use this if you believe the components are correlated or related (although at that point, exploratory factor analysis (EFA) might be the more technically appropriate model).
     -   Oblimin and Promax are common oblique rotation methods.
 
 
@@ -361,7 +361,7 @@ Note that the arrows originate from the items (Obj1, Obj2,..., Arg1, Str1, Ang1,
 
 ## Oblique rotation
 
-In PCA the components are considered orthogonal (uncorrelated), and rotating them in an oblique way may not align with the standard objectives of PCA (e.g. dimensionality reduction). However, oblique rotations (such as Promax or Oblimin) are available in Jamovi for PCA. These rotations allow the components to become correlated, which may sometimes make the interpretation of the components more meaningful, especially when we are interested in modeling or understanding the association between variables that are not strictly independent.
+In PCA, the components are considered orthogonal (uncorrelated), and applying an oblique rotation may not align with the standard objectives of PCA. However, oblique rotations (such as Promax or Oblimin) are available for PCA in Jamovi, despite the resulting loss of strict PCA properties. Allowing components to correlate can sometimes aid interpretation, particularly when the goal is to better model or understand associations among variables that are not fully independent, as is often the case in real-world psychological research.
 
 ![Select the Oblimin method of rotation.](images/mlinear42.png){#fig-mlinear42 width="30%"}
 
