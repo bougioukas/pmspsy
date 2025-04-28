@@ -28,7 +28,7 @@ When we have finished this chapter, we should be able to:
 
 ## Introduction
 
-Principal Component Analysis (PCA) is a statistical technique used to reduce the dimensionality of a dataset while preserving as much of its original variability as possible. It transforms a large set of correlated variables into a smaller set of representative variables, called principal components, which collectively explain most of the variability in the original data.
+Principal Component Analysis (PCA) is a statistical technique used to reduce the dimensionality of a dataset while preserving as much of its original variability as possible. It transforms a large set of correlated variables into a smaller set of representative variables, called **principal components**, which collectively explain most of the variability in the original data.
 
 Suppose that we have $n$ observations with measurements on a set of $p$ observed variables (features), $X_1,X_2, . . . ,X_p$. This means that each of the $n$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting.
 
@@ -50,7 +50,7 @@ The same procedure can be applied to obtain the third principal component (PC3),
 
 **EXAMPLE DATA**
 
-Our data analysis is based on the paper published by Lewis and Neville on the Gendered Racial Microaggressions Scale for Black Women. The article presents two separate studies that contributed to the development, refinement, and psychometric evaluation of two parallel versions of the scale: one measuring stress appraisal and the other measuring frequency. For the purposes of our analysis, we focus on the final construction of the stress appraisal version. Items were rated on a 6-point Likert scale ranging from 0 (not at all stressful) to 5 (extremely stressful).
+Our data analysis is based on the paper published by Lewis and Neville on the Gendered Racial Microaggressions Scale for Black Women [@lewis2015]. The article presents two separate studies that contributed to the development, refinement, and psychometric evaluation of two parallel versions of the scale: one measuring stress appraisal and the other measuring frequency. For the purposes of our analysis, we focus on the final construction of the stress appraisal version. Items were rated on a 6-point Likert scale ranging from 0 (not at all stressful) to 5 (extremely stressful).
 
 ```{r}
 #| echo: false
@@ -102,9 +102,7 @@ Lewis and Neville provided support for both a total scale score, consisting of 2
 
 ![The method of PCA for dimensionality reduction.](images/pca0001.png){#fig-pca0001 width="95%"}
 
-
-@fig-pca0001 illustrates the technical workflow of principal component analysis (PCA), as a method to reduce the number of dimensions of the data. It starts with a large table of data ($X_{n \times p}$), standardizes it ($X^c_{n \times p}$), and calculates the covariance matrix ($C_{p \times p}$) between observed variables (features). Then, it finds the principal directions (eigenvectors) and their importance (eigenvalues). By selecting the most important directions (top k), the original data is projected onto a lower-dimensional space applying the projection matrix $W_{p \times k}$, resulting in a smaller table that still captures most of the data's variability. The scatter plots visually show this reduction from a higher to a lower dimension.
-
+@fig-pca0001 illustrates the workflow of principal component analysis (PCA), as a method to reduce the number of dimensions of the data. It starts with a large table of data ($X_{n \times p}$), standardizes it ($X^c_{n \times p}$), and calculates the covariance matrix ($C_{p \times p}$) between observed variables (features). Then, it finds the principal directions (eigenvectors) and their importance (eigenvalues). By selecting the most important directions (top k), the original data is projected onto a lower-dimensional space applying the projection matrix $W_{p \times k}$, resulting in a smaller table that still captures most of the data's variability. The scatter plots visually show this reduction from a higher to a lower dimension.
 
 -   R-matrix
 
@@ -209,14 +207,13 @@ Note that the first component captures the maximum variance, the second captures
 
 ## Steps in the process of PCA
 
--   **Prepare the Data:** Create a dataframe where any items are scaled in the same direction (e.g., negatively worded items are reverse scored).
+-   **Prepare the Data:** Standardize the items to have a mean of 0 and a standard deviation of 1. This ensures that variables with larger scales don’t dominate the principal components. However, in practice, many researchers analyzing **Likert scale** data choose not to standardize, as the scale is generally considered consistent across items. Additionally, it is important to reverse score negatively worded items so that all items are scaled in the same direction.
 
 -   **Evaluate Assumptions:** Assess the suitability of the data for PCA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. These tests determine whether the correlation matrix is appropriate for component extraction.
 
 -   **Determine the Number of Components:** Identify how many components to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. These components often correspond to underlying subscales.
 
 -   **Extract and Rotate Components:** Perform the extraction of components through an iterative process. Explore both orthogonal (uncorrelated) and oblique (correlated) rotation methods to enhance interpretability. Adjust the number of components and rotation type as needed to arrive at a theoretically meaningful and statistically sound solution.
-
 
 ## Example of GRMS Stress Appraisal
 
