@@ -28,7 +28,7 @@ When we have finished this chapter, we should be able to:
 
 ## Introduction
 
-Principal Component Analysis (PCA) is a statistical technique used to reduce the dimensionality of a dataset while preserving as much of its original variability as possible. It transforms a large set of correlated variables into a smaller set of representative variables, called **principal components**, which collectively explain most of the variability in the original data.
+Principal Component Analysis (PCA) is traditionally defined as a statistical technique used to reduce the dimensionality of a dataset while preserving as much of its original variability as possible. It transforms a large set of correlated variables into a smaller set of uncorrelated representative variables, called **principal components**, which collectively explain most of the variability in the original data.
 
 Suppose that we have $n$ observations with measurements on a set of $p$ observed variables (features), $X_1,X_2, . . . ,X_p$. This means that each of the $n$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting.
 
@@ -307,6 +307,8 @@ Therefore, guided by prior knowledge and theoretical considerations, we have dec
 
 ### Component Rotation
 
+In PCA, the principal components are orthogonal (uncorrelated) by definition and are ordered based on the amount of variance they explain. While rotation is not necessary for PCA from a mathematical standpoint, it can be particularly useful when the goal is not only to reduce dimensions but also to interpret the components in a practical and meaningful way.
+
 Rotation in PCA redistributes the variance between components, making the loadings more distinct and interpretable. In other words, rotation typically causes each observed variable to load highly on precisely one component.
 
 There are two main types of rotation, and the choice between them depends on theoretical considerations:
@@ -316,11 +318,6 @@ There are two main types of rotation, and the choice between them depends on the
 -   **Oblique Rotation:** Use this if you believe the components are correlated or related.
     -   Oblimin and Promax are common oblique rotation methods.
 
-**Which method should we choose?**
-
--   Orthogonal rotation is often considered "easier" because it minimizes cross-loadings (i.e., it reduces the correlation between components). However, this assumes that the components are truly independent, which may not always be the case.
-
--   Can you think of a measure where the subscales would *not* be correlated? In many real-world cases, components are likely to be correlated, which might suggest that oblique rotation is the better choice.
 
 ## Varimax rotation
 
@@ -364,6 +361,8 @@ Note that the arrows originate from the items (Obj1, Obj2,..., Arg1, Str1, Ang1,
 
 ## Oblique rotation
 
+In PCA the components are considered orthogonal (uncorrelated), and rotating them in an oblique way may not align with the standard objectives of PCA (e.g. dimensionality reduction). However, oblique rotations (such as Promax or Oblimin) are available in Jamovi for PCA. These rotations allow the components to become correlated, which may sometimes make the interpretation of the components more meaningful, especially when we are interested in modeling or understanding the association between variables that are not strictly independent.
+
 ![Select the Oblimin method of rotation.](images/mlinear42.png){#fig-mlinear42 width="30%"}
 
 @fig-mlinear36 shows the loadings of the principal components after rotation.
@@ -405,6 +404,9 @@ To compute the component scores, click on the Save dropdown menu and select the 
 
 ![From the Save dropdown menu select the Component scores.](images/mlinear40.png){#fig-mlinear40 width="50%"}
 
-New variables have been created, each containing the component scores for the extracted components (@fig-mlinear39).
+New variables have been created, each containing the component scores for the extracted components (@fig-mlinear39, @fig-mlinear401).
 
-![Component scores after Oblimin rotation.](images/mlinear39.png){#fig-mlinear39 width="65%"}
+![Component scores after Varimax rotation.](images/mlinear39.png){#fig-mlinear39 width="65%"}
+
+
+![Component scores after Oblimin rotation.](images/mlinear401.png){#fig-mlinear401 width="65%"}
