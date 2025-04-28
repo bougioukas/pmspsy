@@ -307,15 +307,16 @@ Therefore, guided by prior knowledge and theoretical considerations, we have dec
 
 ### Component Rotation
 
-In PCA, the principal components are orthogonal (uncorrelated) by definition and are ordered based on the amount of variance they explain. While rotation is not necessary for PCA from a mathematical standpoint, it can be particularly useful when the goal is not only to reduce dimensions but also to interpret the components in a practical and meaningful way.
+In PCA, the principal components are orthogonal (uncorrelated) by definition and are ordered based on the amount of variance they explain. While rotation is not necessary for PCA from a mathematical standpoint, it can be particularly useful when the goal is not only to reduce dimensions but also to interpret the components in a practical and meaningful way, as in our case.
 
 Rotation in PCA redistributes the variance between components, making the loadings more distinct and interpretable. In other words, rotation typically causes each observed variable to load highly on precisely one component.
 
 There are two main types of rotation, and the choice between them depends on theoretical considerations:
 
--   **Orthogonal Rotation:** Use this if you believe the components are independent or unrelated.
+-   **Orthogonal Rotation:** Use this if you believe the components are independent or unrelated (it preserves the orthogonality property of classical PCA).
     -   Varimax is the most common orthogonal rotation method.
--   **Oblique Rotation:** Use this if you believe the components are correlated or related (although at that point, exploratory factor analysis (EFA) might be the more technically appropriate model).
+    
+-   **Oblique Rotation:** Use this if you believe the components are correlated or related (although, at this point, exploratory factor analysis (EFA) may be a more technically appropriate model).
     -   Oblimin and Promax are common oblique rotation methods.
 
 
