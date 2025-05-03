@@ -19,7 +19,7 @@ book:
     - linear1.qmd
     - linear2.qmd
     - pca.qmd
-    #- efa.qmd
+    - efa.qmd
     #- path.qmd
     #- cfa.qmd
     #- sem.qmd

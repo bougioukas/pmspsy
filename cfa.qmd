@@ -4,7 +4,222 @@
 #| include: false
 
 library(fontawesome)
+
+
+library(here)
+library(tidyverse)
+
+
+library(readxl)
+dat <- read_excel(here("data", "dfGRMSAAW.xlsx"))
 ```
 
--   **Analysis of Variance (ANOVA) designs**
-    -   [Analysis of Variance Designs: A Conceptual and Computational Approach with SPSS and SAS](https://www.cambridge.org/highereducation/books/analysis-of-variance-designs/5500246DE031763B7D439A162FA97DF5#overview)
+When we have finished this chapter, we should be able to:
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Understand when and why to use Principal Component Analysis (PCA), and recognize appropriate data conditions
+-   Understand the concept of eigen decomposition
+-   Perform PCA through a step-by-step process
+-   Interpret component loadings and the proportion of explained variance
+-   Extract and interpret component scores for further analysis
+:::
+
+## Introduction
+
+Exploratory factor analysis (EFA) can be used to identify common factors and factor structure among a set of observed variables / indicators (@fig-cfa1). Confirmatory factor analysis (CFA) can be used to study **how well a hypothesized factor model fits a new sample** from the same population or a sample from a different population. The CFA model is the same as the EFA model with the exception that restrictions can be placed on factor loadings, variances, covariances, and residual variances resulting in a more parsimonious model (@fig-cfa2).
+
+![In an Exploratory Factor Analysis (EFA) model, all possible associations between latent variables (factors) and observed variables (items) are estimated. That is, each item is allowed to load on every factor, enabling the analysis to uncover the underlying structure without imposing prior constraints.](images/cfa1.png){#fig-cfa1 width="45%"}
+
+![In a Confirmatory Factor Analysis (CFA) model, we explicitly constrain many of the associations (factor loadings) between latent variables (factors) and observed variables (items) to be zero.](images/cfa2.png){#fig-cfa2 width="45%"}
+
+## First-order CFA model
+
+**EXAMPLE DATA**
+
+Our data analysis is based on the paper published by Keum et al's Gendered Racial Microaggressions Scale for Asian American Women. This article reported support for a total scale score (22 items) and four subscales. Items were rated on a 6-point Likert scale ranging from 0 (not at all stressful) to 5 (extremely stressful).
+
+```{r}
+#| echo: false
+#| label: fig-dfGRMSAAW0
+#| fig-cap: Table with raw data.
+
+DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'dfGRMSAAW'
+      ))))
+
+```
+
+Below, we outline the four subscales, including the number of items in each, their abbreviations, and a sample item representing each factor:
+
+-   Ascribed Submissiveness (9 items)
+    -   Others expect me to be submissive. (AS1)
+    -   Others have been surprised when I disagree with them. (AS2)
+    -   Others take my silence as a sign of compliance. (AS3)
+    -   Others have been surprised when I do things independent of my family. (AS4)
+    -   Others have implied that AAW seem content for being a subordinate. (AS5)
+    -   Others treat me as if I will always comply with their requests. (AS6)
+    -   Others expect me to sacrifice my own needs to take care of others (e.g., family, partner) because I am an AAW. (AS7)
+    -   Others have hinted that AAW are not assertive enough to be leaders. (AS8)
+    -   Others have hinted that AAW seem to have no desire for leadership. (AS9)
+-   Asian Fetishism (4 items)
+    -   Others express sexual interest in me because of my Asian appearance. (AF1)
+    -   Others take sexual interest in AAW to fulfill their fantasy. (AF2)
+    -   Others take romantic interest in AAW just because they never had sex with an AAW before. (AF3)
+    -   Others have treated me as if I am always open to sexual advances. (AF4)
+-   Media Invalidation (5 items)
+    -   I see non-Asian women being casted to play female Asian characters.(MI1)
+    -   I rarely see AAW playing the lead role in the media. (MI2)
+    -   I rarely see AAW in the media. (MI3)
+    -   I see AAW playing the same type of characters (e.g., Kung Fu woman, sidekick, mistress, tiger mom) in the media. (MI4)
+    -   I see AAW characters being portrayed as emotionally distant (e.g., cold-hearted, lack of empathy) in the media. (MI5)
+-   Assumptions of Universal Appearance (4 items)
+    -   Others have talked about AAW as if they all have the same facial features (e.g., eye shape, skin tone). (AUA1)
+    -   Others have suggested that all AAW look alike.(AUA2)
+    -   Others have talked about AAW as if they all have the same body type (e.g., petite, tiny, small-chested). (AUA3)
+    -   Others have pointed out physical traits in AAW that do not look 'Asian'.
+
+![A simple path diagram of four first-order CFA model.](images/cfa4.png){#fig-cfa4 width="45%"}
+
+The equations of the model are:
+
+$$AS_1 = intercept1 + l_1 \cdot AS + e_1$$ 
+
+$$AS_2 = intercept2 + l_2 \cdot AS + e_2$$ 
+
+$$AS_3 = intercept3 + l_3 \cdot AS + e_3$$ ...
+
+$$AS_9 = intercept9 + l_9 \cdot AS + e_9$$
+
+$$AF_1 = intercept10 + l_{10} \cdot AF + e_{10}$$
+
+$$AF_2 = intercept11 + l_{11} \cdot AF + e_{11}$$
+
+etc.
+
+where $l_{1}, l_{2}, ...$ are the loadings.
+
+## Example of GRMSAAW Stress Appraisal
+
+On the Jamovi top menu navigate to
+
+```{mermaid}
+flowchart LR
+  A(Analyses) -.-> B(Factor) -.-> C(Confirmatory Factor Analysis)
+```
+
+as shown below (@fig-cfa5).
+
+![Select Confirmatory Factor Analysis from Factor.](images/cfa5.png){#fig-cfa5 width="70%"}
+
+The *Confirmatory Factor Analysis box* opens. Select the AS1-AS9 variables from the left-hand pane, transfer them into the "Factors" box and give then the label "AS" (@fig-cfa6):
+
+![Select AS1-AS9 for the fisrt factor named AS.](images/cfa6.png){#fig-cfa6 width="70%"}
+
+Next, add a new Factor in the "Factors" box and label it “AF”. Select the AF1-AF4 variables and transfer them into the "Factors" box under the “Conscientiousness” label (@fig-cfa7):
+
+![Select AF1-AF4 for the second factor named AF.](images/cfa7.png){#fig-cfa7 width="70%"}
+
+Similarly, add a new factor to the "Factors" box and label it “MI”. Then, select the MI1–MI5 variables and move them into the "Factors" box under the “MI” label. Next, add another new factor labeled “AUA”, and transfer the AUA1–AUA4 variables into the "Factors" box under the “AUA” label.
+
+By default, Jamovi standardizes the latent variables so that their variances are equal to 1 (**Factor Variances = 1**), while keeping the observed indicator variables on their original measurement scales. In this case, the factor loadings (estimates) represent the change in the unstandardized observed variable associated with a one standard deviation increase in the standardized latent variable.
+
+We have also the option to set the first item of each factor as a reference by constraining its loading to 1 (**Scale factor = scale first indicator**). Let's apply this constraint (@fig-cfa10).
+
+![Select Options, Estimates, Model fit measures and Plots provided for CFA.](images/cfa10.png){#fig-cfa10 width="70%"}
+
+## Results
+
+### Factor Loadings (regression coefficients) table
+
+![Path diagram of four first-order CFA model.](images/cfa8.png){#fig-cfa8 width="95%"}
+
+-   *Estimate* contains the estimated or fixed parameter value for each model parameter. Note that in the unstandardized solution, the first items for each factor—such as AS1, AF1, MI1, and AUA1—may appear incomplete, showing only a fixed value of 1.000. When a coefficient is fixed for identification purposes, it does not have an associated standard error and, as a result, no significance test is performed.
+
+::: content-box-blue
+**Example**
+
+The unstandardized loading for AS2 is estimated at 1.132. This indicates that for every one-unit increase in the latent factor AS, the score on indicator AS2 is estimated to increase by 1.132 points on the 0-to-5 stress scale. This indicates that AS2 increases 0.132 points more than the reference indicator AS1.
+:::
+
+-   *SE* is the standard error for each estimated parameter.
+
+-   *95% Confidence Interval* is the confidence intervakl for each estimated parameter.
+
+-   *Z-value* is the Wald statistic (the parameter divided by its SE).
+
+-   *P(\>\|z\|)* is the p value for testing the null hypothesis that the parameter equals zero in the population.
+
+-   *Stand. Estimate* both latent and observed variables are standardized; this is considered the "completely standardized solution". Therefore, the standardized estimate represents the change in the standardized observed variable for a one standard deviation change in the standardized latent variable. They can be directly compared across different indicators and latent variables.
+
+### Factor Variances and Covariances
+
+![Variances and covariances between factors.](images/cfa11.png){#fig-cfa11 width="95%"}
+
+ 
+
+![Variances and covariances between factors in path diagram.](images/cfa13.png){#fig-cfa13 width="95%"}
+
+ 
+
+### Residuals covariances (error terms)
+
+![Error terms of the observed variables.](images/cfa12.png){#fig-cfa12 width="95%"}
+
+ 
+
+![Error terms of the observed variables in path diagram.](images/cfa14.png){#fig-cfa14 width="95%"}
+
+ 
+
+### Model Fit in CFA
+
+There are many measures of fit in Confirmatory Factor Analysis:
+
+![Measures of fit in Confirmatory Factor Analysis.](images/cfa501.png){#fig-cfa501 width="70%"}
+
+-   **Chi-square test**. The chi-square test can be used to assess whether the model fits the data adequately. A non-significant chi-square value (e.g., p ≥ 0.05) indicates that the model fits the data reasonably well. However, the test is highly sensitive to sample size—tending to yield non-significant results in small samples even when fit is poor, and significant results in large samples even when the model fits well.
+
+-   **The Comparative Fit Index (CFI):** The CFI is an incremental fit index, meaning it evaluates how much the hypothesized model improves upon a baseline (or null) model that assumes no associations among variables. CFI values range from 0 to 1, with higher values indicating better fit. (Rule of thumb: CFI values above 0.90 are generally considered indicative of acceptable model fit, while values above 0.95 suggest a good model fit).
+
+-   **Tucker-Lewis Index (TLI):** The TLI penalizes model complexity more heavily than the CFI. TLI values can sometimes exceed 1.0, making the index somewhat unstable. Given the close association between TLI and CFI, it is generally recommended to report only one of the two.
+
+-   **RMSEA (Root Mean Square Error of Approximation):** The RMSEA is an absolute fit index interpreted as a badness-of-fit measure, with 0.00 indicating a perfect fit. It tends to favor models with more degrees of freedom and larger sample sizes. A unique feature of RMSEA is that it is accompanied by a 90% confidence interval. Although there is ongoing debate about acceptable RMSEA values, a common consensus is that $RMSEA \geq 0.10$ indicates poor fit, while $RMSEA \leq 0.06$ suggests a good fit. When interpreting the RMSEA, it's important to examine the upper bound of the confidence interval to ensure it does not approach problematic levels.
+
+-   **SRMR (Standardized Root Mean Square Residual):** The SRMR is another absolute fit index and, like RMSEA, is a badness-of-fit statistic—values closer to 0.00 indicate better fit. The SRMR is a standardized version of the Root Mean Square Residual (RMR), which measures the mean absolute covariance residual. Standardization facilitates interpretation across different models. Poor model fit is typically flagged when $SRMR \geq 0.10$.
+
+According to Hu and Bentler (1999), an acceptable fit is achieved when $CFI \geq 0.95$ and $SRMR \leq 0.08$—a guideline known as the combination rule. This recommendation, however, remains a topic of debate.
+
+The conventional cutoffs for the aforementioned model fit indices – like any rule of thumb – should be applied with caution. Additionally, these indices do not always align with one another, which is why researchers often examine multiple fit indices to make an informed judgment about whether a model adequately fits the data.
+
+Using these criteria, we can evaluate how well our hypothesized factor model fits the sample data.
+
+![Model Fit statistical test and measures.](images/cfa9.png){#fig-cfa9 width="55%"}
+
+ 
+
+**In summary**
+
+| Criteria | Our Results | Criteria met? |
+|:------------------------|:---------------------------:|:----------------:|
+| Standardized Estimates significant, strong | AS: 0.50 to 0.65; AF: 0.42 to 0.62; MI: 0.38 to 0.58; AUA: 0.54 to 0.63 | Yes |
+| Non-significant chi-square | $\chi ^{2}(203) = 232.453, p = 0.076$ | Yes |
+| $CFI\geq 0.95$ | CFI = 0.976 | Yes |
+| $RMSEA\leq 0.05$ (but definitely \< 0.10) | RMSEA = 0.022, 90%CI(0.000, 0.034) | Yes |
+| $SRMR\leq 0.08$ (but definitely \< 0.10) | SRMR = 0.045 | Yes |
+| Combination rule: $CFI \geq 0.95$ and $SRMR \leq 0.08$ | CFI = 0.976, SRMR = 0.045 | Yes |
+
+## Path diafram of the first-rder correlated four-factors CFA model
+
+For each factor, one item (typically the first listed on the left) should be specified as the reference indicator and is represented with a dashed line. In the unstandardized solution, its loading is fixed to 1.0 to establish the scale of the latent variable (@fig-cfa3).
+
+![Path diafram of the first-rder correlated four-factors CFA model (unstandardized).](images/cfa3.png){#fig-cfa3 width="100%"}
+
+
+## Report the results
+
+> We evaluated a first-order, correlated factors model where each of the 22 items loaded onto one of four factors and the factors were free to correlate. Standardized estimates ranged between 0.50 to 0.65 on the AS factor, 0.42 to 0.62 on the AF factor, 0.38 to 0.58 on MI factor, and 0.54 to 0.63 on AUA factor. The Chi-square index was not statistically significant ($\chi ^{2}(203)=232.5, p = 0.076$) indicating reasonable fit. The CFI value of 0.976 exceeded the recommendation of 0.95. The RMSEA = 0.022 (90%CI\[.000, 0.034\]) was satisfactory. The SRMR value of 0.045 remained below the warning value of 0.10.

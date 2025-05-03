@@ -43,7 +43,6 @@ Assume that previous research has demonstrated that higher grades are associated
 
 ![Path diagram of grades, self-esteem, and happiness model.](images/path002.png){#fig-path002 width="65%"}
 
-
  
 
 **Importing data**
@@ -74,9 +73,13 @@ The following shows the basic steps for mediation analysis suggested by Baron & 
 
 $$Y = intercept \ + \text{w} \cdot X + e$$
 
+where $e$ is the residual error of the model (i.e. ).
+
  
 
+
 ![](images/path8.png){width="55%"}
+
 
 $$happiness = 2.86 \ + 0.40 \cdot grades$$ Therefore, the total effect w = 0.40 is statistical significant (p\<0.001).
 
@@ -84,19 +87,26 @@ $$happiness = 2.86 \ + 0.40 \cdot grades$$ Therefore, the total effect w = 0.40 
 
  
 
+
 -   **Step 2:** Estimate the association between X on M (grades on self-esteem). Path “a” must be significantly different from 0; The independent variable and the mediator must be associated. If X and M have no association, M is just a third variable that may or may not be associated with Y. A mediation makes sense only if X affects M.
+
 
 ![The effect of X on M.](images/path5.png){#fig-path5 width="65%"}
 
 $$M = intercept \ + \text{a} \cdot X + e$$
 
+where $e$ is the residual error of the model.
+
+
  
 
 ![](images/path9.png){width="55%"}
 
+
 $$selfesteem = 1.50 \ + 0.56 \cdot grades$$ Therefore, the effect of X on M (a = 0.56) is statistical significant (p\<0.001).
 
  
+
 
 -   **Step 3:** Estimate the effects of both X and M on Y. Path “b” must be significantly different from 0; mediator and outcome must be associated. Additionally, the path “c” should be non-significant and nearly 0. The effect of X on Y will disappear (or at least weaken) when M is included in the regression. The effect of X on Y goes through M.
 
@@ -104,9 +114,13 @@ $$selfesteem = 1.50 \ + 0.56 \cdot grades$$ Therefore, the effect of X on M (a =
 
 $$Y = intercept \ + c \cdot X + \text{b} \cdot M + e$$
 
+where $e$ is the residual error of the model.
+
  
 
+
 ![](images/path10.png){width="55%"}
+
 
 $$happiness = 1.90 \ + 0.04 \cdot grades + 0.64 \cdot selfesteem$$
 
@@ -127,7 +141,6 @@ Therefore, the effect of M (self-esteem) on Y (happiness), controlling for X (gr
 In practice, a simple mediation model decompose the total effect of X on Y, in a direct and indirect effect. Therefore:
 
 $$w = c + (a \times b) = 0.04 + (0.56 \times 0.64) = 0.04 + 0.36 = 0.40$$
-
 
 ### Mediation Using Jamovi
 
@@ -150,11 +163,11 @@ Additionally, check *Labels*, *Test Statistics*, *Confidence interval*, *Percent
 
 ![Mediation box choices.](images/path12.png){#fig-path12 width="65%"}
 
-First, @fig-path13 presents the path estimates (regression coefficients): 
+First, @fig-path13 presents the path estimates (regression coefficients):
 
-- a=0.56 (p \<0.001)
-- b=0.64 (\<0.001)
-- c = 0.04 (p = 0.714).
+-   a=0.56 (p \<0.001)
+-   b=0.64 (\<0.001)
+-   c = 0.04 (p = 0.714).
 
 ![Path estimates.](images/path13.png){#fig-path13 width="65%"}
 
@@ -165,7 +178,6 @@ Second, @fig-path14 presents the mediation estimates:
 -   The indirect effect ($a \times b = 0.36$; p \<0.001).
 -   The direct effect (c = 0.04; p = 0.714)
 -   The total effect (w = c + axb = 0.40; p\<0.001)
-
 
 ![Mediation estimates.](images/path14.png){#fig-path14 width="65%"}
 
@@ -189,10 +201,7 @@ It is also called “moderated mediation”. Due to the complexity of human and 
 
 Once we are familiar with mediation and moderation models, the intuition behind conditional process models is straightforward. When one of the paths of a mediation model is moderated, the corresponding direct or indirect effect becomes a conditional effect $\theta$.
 
-
-
 ![The conditional mediation model diagram.](images/path16.png){#fig-path16 width="65%"}
-
 
 ### Importing data
 
@@ -212,7 +221,6 @@ DT::datatable(dat2, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
 
 Open the dataset named "glbwarm" from the file tab in the menu (@fig-glbwarm1).
 
-
 The dataset contains the following variables:
 
 -   `govact`: the extent to which the participant supports various policies or actions by the U.S. government to mitigate the threat of global climate change (e.g., how much the participant supports increasing government investment for developing alternative energy like biofuels, wind, or solar).
@@ -222,8 +230,6 @@ The dataset contains the following variables:
 -   `posemot`: how frequently reported feeling “hopeful,” “encouraged,” and “optimistic” about global climate change.
 
 -   `sex`: 0 = female, 1 = male.
-
-
 
 ### Regression equations for the model
 
@@ -337,8 +343,16 @@ We can specify the Theory of Planned Behavior as a path diagram by drawing the o
 -   **(Residual) error terms** (which are sometimes called disturbances) are added to **endogenous variables**.
 
 
-### Importing data
+The equations of this model are:
 
+
+$$intention = intercept +  \beta_1 attitude + \beta_2 norms + \beta control + e$$
+
+and 
+
+$$behavior = intercept + \beta_4 intention + e$$
+
+### Importing data
 
 ```{r}
 #| echo: false
@@ -356,8 +370,6 @@ DT::datatable(dat3, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
 
 Open the dataset named "PlannedBehavior" from the file tab in the menu (@fig-PlannedBehavior1).
 
-
-
 ### Path Analysis using Jamovi
 
 This analysis can be achieved in Jamovi as follows:
@@ -373,12 +385,9 @@ as shown below in @fig-path11.
 
 ![In the menu at the top, choose Analyses -\> SEM -\> Path Analysis.](images/path29.png){width="65%"}
 
-
-
 The Path Analysis dialog box opens. From the left-hand pane drag the variables `behavior` and `intention` into the *Endogenous Variable* field, and the variables `attitude`, `norms` into the *Mediator* field, and the `grades` variable into the *Predictor* field as shown below (@fig-path12).
 
 ![Path analysis dialog box.](images/path003.png){#fig-path003 width="65%"}
-
 
  
 
@@ -390,17 +399,34 @@ Next we specify the variables of each endogenous variable. First we select on th
 
 Under the "Parameter Options", also check the *Indirect Effects*.
 
-![Parameters Options. Check Inderect Effects.](images/path006.png){#fig-path30 width="65%"}
- 
+![Parameters Options. Check Inderect Effects.](images/path006.png){width="65%"}  
 
 The direct effects (path coefficients) are obtained from regression analysis.
-
 
 The table in @fig-path31 summarizes hypotheses testing results of the study.
 
 ![Parameter Estimates of the model.](images/path31.png){#fig-path31 width="85%"}
 
-The path coefficient (i.e., regression coefficient b) between attitude and intention is statistically significant and positive (b = 0.352, p < 0.001). The path coefficient between norms and intention is statistically significant and positive (b = 0.153, p = 0.010). The path coefficient between control and intention is statistically significant and positive (b = 0.275, p < 0.001). Finally, the path coefficient between intention and behavior is statistically significant and positive (b = 0.453, p < 0.001).
+The path coefficient (i.e., regression coefficient b) between attitude and intention is statistically significant and positive (b = 0.352, p \< 0.001). The path coefficient between norms and intention is statistically significant and positive (b = 0.153, p = 0.010). The path coefficient between control and intention is statistically significant and positive (b = 0.275, p \< 0.001). Finally, the path coefficient between intention and behavior is statistically significant and positive (b = 0.453, p \< 0.001).
+
+
+ 
+
+The intercepts of the equations of the model are following:
+
+![The intercepts of the equation model.](images/path401.png){#fig-path401 width="75%"}
+
+
+According the outputs of @fig-path31 and @fig-path401, the equations can be expressed as follows:
+
+
+$$intention = 0.586 + 0.352 \cdot attitude + 0.153 \cdot norms + 0.275 \cdot control$$
+
+and 
+
+$$behavior = 1.743 + 0.453 \cdot intention$$
+
+ 
 
 Under the “R-Squared” table, we see the unadjusted R2 value for the outcome variable intention, which is equal to 0.369; that is, collectively, attitude, norms, and control explain 36.9% of the variance in intention. Additionally, intention explains 19.8% of the variance in behavior (@fig-path004).
 
@@ -408,21 +434,23 @@ Under the “R-Squared” table, we see the unadjusted R2 value for the outcome 
 
  
 
-The indirect effects are reported in the following table:
+Moreover, the indirect effects are reported in the following table:
 
-![Indirect effects.](images/path005.png){#fig-path30 width="65%"}
+![Indirect effects.](images/path005.png){#fig-path005 width="85%"}
 
+For example, the estimate for the indirect effect of the path attitude=>intention=>behavior is calculated as 0.35*0.45 = 0.16.  
 
-Moreover, using path analysis, we can explicitly model the variance of the exogenous variables, the covariances (correlations) between the exogenous variables, and the residual errors of the endogenous variables in the model.
+ 
 
+Using path analysis, we can also explicitly model the variance of the exogenous variables (e.g., attitude-attitude variance=0.93), the covariances (correlations) between the exogenous variables (e.g., norms-attitude covariance= 0.20), and the residual errors of the endogenous variables in the model (e.g., intention res. error = 0.53).
 
-![Variances and Covariances estimates.](images/path32.png){#fig-path32 width="85%"}
+![Variances and Covariances estimates.](images/path32.png){#fig-path32 width="95%"}
 
 
  
 
-We can also present the model with a path diagram. All options regard aestetics of the diagram are shown in @fig-path34. 
+We can also present the model with a path diagram. All options regard aestetics of the diagram are shown in @fig-path34.
 
-![Path Diagram choices. Check Residuals for variances (residual errors). ](images/path34.png){#fig-path34 width="65%"}
+![Path Diagram choices. Check Residuals for variances (residual errors).](images/path34.png){#fig-path34 width="65%"}
 
-![Path diagram of the model.](images/path33.png){#fig-path33 width="75%"}
+![Path diagram of the model with observed variables.](images/path33.png){#fig-path33 width="75%"}

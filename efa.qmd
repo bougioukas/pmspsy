@@ -19,16 +19,23 @@ When we have finished this chapter, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Understand when and why to use Principal Component Analysis (PCA), and recognize appropriate data conditions
--   Understand the concept of eigen decomposition
--   Perform PCA through a step-by-step process
--   Interpret component loadings and the proportion of explained variance
--   Extract and interpret component scores for further analysis
+-   Understand when and why to use Exploratory Factor Analysis (EFA), and recognize appropriate data conditions
+-   Perform EFA through a step-by-step process
+-   Interpret factor loadings and the proportion of explained variance
+-   Extract and interpret factors for further analysis
+-   Assess internal consistency (reliability).
 :::
 
 ## Introduction
 
-As we discussed in the previous chapter, Principal Component Analysis (PCA) is used to reduce the dimensionality of the data while retaining as much variance as possible. In this chapter, Exploratory Factor Analysis (EFA) focuses on identifying underlying **latent** factors that explain the correlations among observed (or manifest) variables, with the aim of uncovering the data's underlying structure.
+As we discussed in the previous chapter, Principal Component Analysis (PCA) is primarily used to reduce the dimensionality of the dataset while retaining as much of its total variance as possible. In this chapter, Exploratory Factor Analysis (EFA) focuses on identifying underlying **latent factors** that explain the correlations among observed (also known as manifest) variables, with the aim of uncovering the data's underlying structure. 
+
+
+::: content-box-blue
+**Exploratory Factor Analysis**
+
+Exploratory Factor Analysis (EFA) can be used to explore the dimensionality of a measurement instrument by identifying the smallest number of interpretable factors that explain the **common variance** among variables.
+:::
 
 **EXAMPLE DATA**
 
@@ -48,7 +55,7 @@ DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
 
 ```
 
-Lewis and Neville provided support for both a total scale score, consisting of 25 items, and four subscales. Below, we outline the four subscales, including the number of items in each, their abbreviations, and a sample item representing each factor:
+Lewis and Neville [@lewis2015] provided support for both a total scale score, consisting of 25 items, and four subscales. Below, we outline the four subscales, including the number of items in each, their abbreviations, and a sample item representing each factor:
 
 -   Assumptions of Beauty and Sexual Objectification (10 items)
     -   Unattractive because of size of butt (Obj1)
@@ -82,13 +89,13 @@ Lewis and Neville provided support for both a total scale score, consisting of 2
 
 ## Steps in the process of EFA
 
--   **Prepare the Data:** Create a dataframe where any observed variables (items) are scaled in the same direction (e.g., negatively worded items are reverse scored).
+-   **Prepare the Data:** Standardize the data. In practice, Likert scale data are typically not standardized, as the scale is generally considered consistent across items. (b) Address outliers in the data. Note that outliers in Likert data are often extreme values, such as respondents who consistently select the “0 = not at all stressful” or “5 = extremely stressful” option. (c) Additionally, it is important to reverse-score negatively worded items to ensure that all items are scaled in the same direction (though this step is not applicable in our example).
 
--   **Evaluate Assumptions:** Assess the suitability of the data for EFA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. Additionally, examine the correlation matrix to ensure that no pair of variables is perfectly correlated (correlation = 1 or -1; singularity). These tests determine whether the correlation matrix is appropriate for factor extraction.
+-   **Evaluate Assumptions:** Assess the suitability of the data for EFA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. Additionally, examine the correlation matrix to ensure that variables are sufficiently correlated for factor analysis but without multicollinearity (extremely high correlations) or singularity (perfect correlations of 1 or -1). These tests determine whether the correlation matrix is appropriate for factor extraction.
 
 -   **Choose the Extraction Method:** Select an extraction method for factors (e.g., Principal Axis Factoring, Maximum Likelihood, or Maximum Residuals). Principal Axis Factoring is commonly used when you assume that underlying latent factors are driving correlations.
 
--   **Determine the Number of Factors:** Identify how many components to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. These components often correspond to underlying subscales.
+-   **Determine the Number of Factors:** Identify how many factors to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. These components often correspond to underlying subscales.
 
 -   **Factor Rotation:** Apply a rotation method to simplify the factor structure. Orthogonal rotation (e.g., Varimax) assumes factors are uncorrelated. Oblique rotation (e.g., Oblimin, Promax) assumes factors are correlated.
 
@@ -109,11 +116,11 @@ flowchart LR
   A(Analyses) -.-> B(Factor) -.-> C(Exploratory Factor Analysis)
 ```
 
-as shown below (@fig-mlinear30).
+as shown below (@fig-fa1).
 
 ![Select Exploratory Factor Analysis from Factor.](images/fa1.png){#fig-fa1 width="70%"}
 
-The *Exploratory Factor Analysis box* opens (@fig-mlinear30). From the left-hand pane drag all the variables into the *Variables* field on the right-hand side, as shown below (@fig-fa2):
+The *Exploratory Factor Analysis box* opens. From the left-hand pane drag all the variables into the *Variables* field on the right-hand side, as shown below (@fig-fa2):
 
 ![Exploratory Factor Analysis box options. Drag and drop the variables in the fields on the right-hand side.](images/fa2.png){#fig-fa2 width="65%"}
 
@@ -121,9 +128,9 @@ All variables in the dataset are on the same scale (Likert scale).
 
 ### Assumptions
 
-The assumption checks for EFA are similar to those in PCA. However, in Exploratory Factor Analysis, we are also particularly concerned with issues of multicollinearity and singularity in the data. One way to assess this is by examining the determinant of the correlation matrix. If the determinant is smaller than 0.00001, this may indicate that some variables are too highly correlated (multicollinearity), or some variables are perfectly correlated (singularity), which can distort factor extraction.
+The assumption checks for EFA are similar to those in PCA (Bartlett’s test of sphericity, Kaiser-Meyer-Olkin (MKO) index of Sampling Adequacy; see @sec-pca). However, in Exploratory Factor Analysis, we are also particularly concerned with issues of multicollinearity and singularity in the data. One way to assess this is by examining the determinant of the correlation matrix. If the determinant is smaller than 0.00001, this may indicate that some variables are too highly correlated (multicollinearity), or some variables are perfectly correlated (singularity), which can distort factor extraction.
 
-In our example, the determinant of the correlation matrix can be calculated using a simple line of code in the Rj Editor of Jamovi:
+In our example, the determinant of the correlation matrix can be calculated using a simple line of code in the **Rj Editor+** of Jamovi:
 
 ![Calculation of determinant of correlation matrix in RJ Editor.](images/Rj1.png){#fig-Rj1 width="55%"}
 
@@ -135,7 +142,7 @@ With a value of 0.0075, the determinant is comfortably above the 0.00001 thresho
 
 If the determinant were below the threshold, we would need to identify and address problematic variables—those that are either overly correlated or not correlated sufficiently with others—and then re-run the diagnostic checks.
 
-### Specify the Number of Components
+### Specify the Number of Factors
 
 When researchers lack a clear theoretical framework to guide their analysis, they often adopt an iterative approach, exploring multiple solutions by extracting different numbers of factors. For instance, Lewis and Neville (2015) examined solutions with 2, 3, 4, and 5 factors using parallel analysis to inform their decision. In contrast, this example demonstrates the use of Principal Axis Factoring (PAF), extracting a **four-factor** solution as the chosen model:
 
@@ -144,62 +151,69 @@ When researchers lack a clear theoretical framework to guide their analysis, the
 -   Factor 3: Strong Woman Stereotype
 -   Factor 4: Angry Woman Stereotype
 
-### Factor Rotation
+### Extraction of factors and rotation
 
-We select Principal axis for extraction method and Oblimin for rotation method:
+We select Principal axis for extraction method and Oblimin (default) for rotation method:
 
-![Select the Oblimin method of rotation.](images/fa3.png){#fig-fa3 width="35%"}
+![Select the Principal Axis dor extraction and Oblimin method of rotation.](images/fa3.png){#fig-fa3 width="35%"}
 
-Additionally, we hide loading below 0.23:
+Additionally, we hide loading below 0.23 (the default is 0.3):
 
 ![Hide loadings below 0.23.](images/fa9.png){#fig-fa9 width="28%"}
 
-@fig-fa4 shows the loadings of the factors after rotation.
+@fig-fa4 shows the loadings of the factors after Oblimin rotation.
 
 ![Factor Loadings using Pricipal axis factoring in combination with Oblimin rotation.](images/fa4.png){#fig-fa4 width="55%"}
 
 In the rotated factor matrix, a few items exhibit cross-loadings, meaning they load significantly on more than one factor:
 
--  Obj6 loads on both Factor 1 (Objectification) and Factor 4 (Angry), with loadings of 0.43 and 0.25, respectively. While the item shows some association with both factors, its stronger loading on Factor 1 suggests it aligns more closely with the Objectification construct.
+-   Obj6 loads on both Factor 1 (Objectification) and Factor 4 (Angry), with loadings of 0.43 and 0.25, respectively. While the item shows some association with both factors, its stronger loading on Factor 1 suggests it aligns more closely with the Objectification construct.
 
--  Marg6 also displays cross-loadings, with loadings of 0.31 on Factor 1 (Objectification) and 0.25 on Factor 2 (Marginalized). Though both values are relatively low, the item may still require closer evaluation to determine its conceptual alignment.
+-   Marg6 also displays cross-loadings, with loadings of 0.31 on Factor 1 (Objectification) and 0.25 on Factor 2 (Marginalized). Though both values are relatively low, the item may still require closer evaluation to determine its conceptual alignment.
 
 -   Ang1 loads on both Factor 3 (Strong) and Factor 4 (Angry), with loadings of 0.33 and 0.24, respectively. Although neither loading is particularly high, this item should be reviewed in the context of theoretical expectations.
 
- 
+**NOTE:** In oblique rotation, a distinction is made between the pattern matrix and the structure matrix. The **pattern matrix** (@fig-fa4) displays the standardized regression coefficients (i.e., factor loadings) of each factor on each observed variable, reflecting the direct effects while controlling for the influence of other factors. In contrast, the **structure matrix** presents the simple correlations between each observed variable and each factor, reflecting both direct and indirect effects (due to factor intercorrelations) without controlling for the overlap among factors (this matrix is not included in the Jamovi output).
 
-Moreover, under the **Additional Output** section, select *Factor summary*, *Factor correlations*, and *Model fit measures*:
+### Explained variance and model fit
+
+Under the **Additional Output** section, select *Factor summary*, *Factor correlations*, and *Model fit measures*:
 
 ![Select Factor summary, correlations, and model fit measures.](images/fa7.png){#fig-fa7 width="25%"}
 
-@fig-fa5 presents the percentage of variance in the variable set that is captured by the derived components after Oblimin rotation.
+ 
 
-![Variance with oblique rotation.](images/fa5.png){#fig-fa5 width="50%"}
+**Explained variance**
 
-The SS Loadings column represents the eigenvalues for each component after Oblimin rotation, with Factor 1 explaining 11.2%, factor 2 explaining an additional 8.1%, factor 3 explaining an additional 5.5%, and Factor 4 explaining an additional 3.6%, resulting a cumulative variance of 28.4%. 
+@fig-fa5 presents the percentage of common variance in the variable set that is captured by the derived factors after Oblimin rotation.
 
-Although an explained variance of around 30% may seem modest, it is not uncommon in social science research, particularly when dealing with psychological or behavioral constructs. These constructs are often complex and difficult to measure precisely, which can lead to lower levels of explained variance.
+![Common variance explained.](images/fa5.png){#fig-fa5 width="50%"}
 
-The Inter-Component Correlation Matrix reveals that the four components are positively correlated with each other, with correlations ranging from 0.17 to 0.46 (@fig-fa16).
+Factor 1 explains 11.2% of the shared variance, Factor 2 explains an additional 8.1%, Factor 3 explains another 5.5%, and Factor 4 explains an additional 3.6%, resulting in a cumulative common variance of 28.4% explained by the first four factors.
 
-![Inter-Component Correlation Matrix.](images/fa16.png){#fig-fa16 width="50%"}
+Although explaining about 30% of the common variance may seem modest, it is not uncommon in social science research, particularly when dealing with psychological or behavioral constructs. These constructs are often complex and difficult to measure precisely, which can lead to lower levels of explained variance.
+
+The Inter-Factor Correlation Matrix reveals that the four factors are positively correlated with each other, with correlations ranging from 0.17 to 0.46 (@fig-fa16).
+
+![Inter-Factor Correlation Matrix.](images/fa16.png){#fig-fa16 width="45%"}
 
  
 
-The chi-square test can be used to assess whether the model fits the data. The null hypothesis for the chi-square test is that the model fits the data perfectly. Therefore, a non-significant chi-square value (e.g., p > 0.05) indicates that the model fits the data reasonably well. However, the chi-square test is sensitive to sample size and non-normal variable distributions. 
+**Model fit**
+
+The chi-square test can be used to assess whether the model fits the data. The null hypothesis for the chi-square test is that the model fits the data perfectly. Therefore, a non-significant chi-square value (e.g., p \> 0.05) indicates that the model fits the data reasonably well. However, the chi-square test is sensitive to sample size and non-normal variable distributions (@fig-fa21).
 
 In addition to the chi-square test, the root mean square error of approximation (RMSEA) serves as an absolute fit index that takes model complexity into account by incorporating a penalty for lack of parsimony. RMSEA values less than or equal to 0.08 are typically interpreted as good model fit.
 
-
-![Measures of model fit.](images/fa21.png){#fig-fa21 width="60%"}
+![Measures of model fit.](images/fa21.png){#fig-fa21 width="65%"}
 
 In our model: $\chi^2(206)= 189.19$, p = 0.794, which is non-significant and suggests that the model fits the data well. Moreover, the RMSEA value is 0.00, indicating a close fit between the model and the observed data.
 
 These results suggest that the model structure is appropriate, even if the strength of the factors is modest.
 
- 
+### Path diagram
 
-The path diagram for the factor analysis follows:
+The path diagram for the four-factor, 25 items EFA, showing only the dominant loading per item (for clarity) follows:
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -211,9 +225,23 @@ psych::fa.diagram(FA1, cut = 0, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
 
-It is important to note that the paths point from the factor (oval) to the observed variables (items in squares) illustrating that the factor “causes” the item’s score. Additionally, note that the path diagram includes links with numerical values between components, representing the correlation coefficients among them. 
+It is important to note that the arrows point from the factor (oval) to the observed variables (items in squares) illustrating that the factor “explains” the item’s score. This represents a **reflective model**, in which the latent construct exists independently of the measures. Additionally, note that the path diagram includes links with numerical values between latent factors, representing the correlation coefficients among them.
 
+### Factor scores
 
+Factor scores can be estimated for each case (row) on each latent factor (unobserved variables). These scores can be used to investigate the associations between the factors and other variables or to represent the underlying factors for subsequent analysis. For example, factor scores are often used in regression models (in place of means or sums) when predictors are highly correlated, helping to address multicollinearity.
+
+There are several estimation methods for obtaining factor scores in EFA using Jamovi, with each method having different assumptions and advantages.
+
+When using Oblimin rotation (which allows factors to be correlated), the best methods for estimating factor scores are **ten Berge’s method** and **Bartlett’s method**. Ten Berge’s method is generally considered the most accurate because it specifically adjusts for factor correlations using generalized least squares. Bartlett’s method is also a strong choice, producing consistent scores while accounting for factor correlations. In contrast, Anderson-Rubin’s method should be avoided because it forces factor scores to be uncorrelated, which conflicts with the purpose of Oblimin. Thurstone’s method can be used but is less optimal, and Harman’s method is not recommended because it does not properly adjust for correlated factors.
+
+In our example, we select the Ten Berge’s method (@fig-efa4002).
+
+![Select Factor scores and ten Berge estimation method.](images/efa4002.png){#fig-efa4002 width="60%"}
+
+ 
+
+![Factor scores usin ten Berge estimation method.](images/efa4003.png){#fig-efa4003 width="60%"}
 
 ## Reliability analysis
 
