@@ -152,11 +152,11 @@ When researchers lack a clear theoretical framework to guide their analysis, the
 
 Therefore, we select "Fixed number" and type 4 in the number of factors:
 
-![Select the number of factor for a four-factor model.](images/efa4004.png){#fig-efa4004 width="35%"}
+![Select the number of factor for a four-factor model.](images/efa4004.png){#fig-efa4004 width="30%"}
 
 We can also obtain the scree plot from the Additional Output:
 
-![Select Scree plot from the Additional Output.](images/efa4005.png){#fig-efa4005 width="30%"}
+![Select Scree plot from the Additional Output.](images/efa4005.png){#fig-efa4005 width="25%"}
 
 ![Scree plot.](images/efa4006.png){#fig-efa4006 width="65%"}
 
