@@ -19,10 +19,10 @@ When we have finished this chapter, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Understand when and why to use Exploratory Factor Analysis (EFA), and recognize appropriate data conditions
--   Perform EFA through a step-by-step process
--   Interpret factor loadings and the proportion of explained variance
--   Extract and interpret factors for further analysis
+-   Understand when and why to use Exploratory Factor Analysis (EFA), and recognize appropriate data conditions.
+-   Perform EFA through a step-by-step process.
+-   Interpret factor loadings and the proportion of common  variance explained by the factors.
+-   Extract and interpret factors for further analysis.
 -   Assess internal consistency (reliability).
 :::
 
@@ -36,55 +36,17 @@ As we discussed in the previous chapter, Principal Component Analysis (PCA) is p
 Exploratory Factor Analysis (EFA) can be used to explore the dimensionality of a measurement instrument by identifying the smallest number of interpretable factors that explain the **common variance** among variables.
 :::
 
-**EXAMPLE DATA**
+Let's say we have $p$ observed variables, denoted as $X_1, X_2, ..., X_p$. The factor model for the $i$-th observed variable ($X_i$) for a single individual can be expressed as:
 
-We will use the same data from the study by Lewis and Neville on the Gendered Racial Microaggressions Scale for Black Women.
+$$X_i = l_{i1}F_1 + l_{i2}F_2 + ... + l_{im}F_k + \epsilon_i$$
 
-```{r}
-#| echo: false
-#| label: fig-dfGRMS0
-#| fig-cap: Table with raw data.
+Where:
 
-DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
-              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
-      list(list(
-        extend = 'csv',
-        filename = 'dfGRMS'
-      ))))
-
-```
-
-Lewis and Neville [@lewis2015] provided support for both a total scale score, consisting of 25 items, and four subscales. Below, we outline the four subscales, including the number of items in each, their abbreviations, and a sample item representing each factor:
-
--   Assumptions of Beauty and Sexual Objectification (10 items)
-    -   Unattractive because of size of butt (Obj1)
-    -   Negative comments about size of facial features (Obj2)
-    -   Imitated the way they think Black women speak (Obj3)
-    -   Someone made me feel unattractive (Obj4)
-    -   Negative comment about skin tone (Obj5)
-    -   Someone assumed I speak a certain way (Obj6)
-    -   Objectified me based on physical features(Obj7)
-    -   Someone assumed I have a certain body type (Obj8)
-    -   Made a sexually inappropriate comment (Obj9)
-    -   Negative comments about my hair when natural (Obj10)
--   Silenced and Marginalized (7 items)
-    -   I have felt unheard (Marg1)
-    -   My comments have been ignored (Marg2)
-    -   Someone challenged my authority (Marg3)
-    -   I have been disrespected in workplace (Marg4)
-    -   Someone has tried to “put me in my place” (Marg5)
-    -   Felt excluded from networking opportunities (Marg6)
-    -   Assumed I did not have much to contribute to the conversation (Marg7)
--   Strong Black Woman Stereotype (5 items)
-    -   Someone assumed I was sassy and straightforward (Str1)
-    -   I have been told that I am too independent (Str2)
-    -   Someone made me feel exotic as a Black woman (Str3)
-    -   I have been told that I am too assertive (Str4)
-    -   Assumed to be a strong Black woman (Str5)
--   Angry Black Woman Stereotype (3 items)
-    -   Someone has told me to calm down (Ang1)
-    -   Perceived to be “angry Black woman" (Ang2)
-    -   Someone accused me of being angry when speaking calm (Ang3)
+* $X_i$ is the $i$-th observed variable (often standardized to have a mean of 0 and a standard deviation of 1).
+* $F_j$ is the $j$-th common factor ($j = 1, 2, ..., k$), which are the latent constructs we're trying to uncover.
+* $l_{ij}$ is the factor loading of the $i$-th observed variable on the $j$-th common factor. It represents the strength and direction of the association between the observed variable and the factor.
+* $k$ is the number of common factors (where $k < p$). This is a key parameter to determine in EFA.
+* $\epsilon_i$ is the error term (or uniqueness) associated with the $i$-th observed variable. It represents the variance in $X_i$ that is not explained by the common factors. These are assumed to be uncorrelated with each other and with the common factors, and have a mean of 0.
 
 ## Steps in the process of EFA
 
@@ -106,7 +68,56 @@ Lewis and Neville [@lewis2015] provided support for both a total scale score, co
 
 -   **Finalize the Factor Solution:** Once the factors are interpretable and reliable, finalize the model and prepare the results for reporting.
 
+
 ## Example of GRMS Stress Appraisal
+
+**EXAMPLE DATA**
+
+We will use the same data from the study by Lewis and Neville [@lewis2015] on the Gendered Racial Microaggressions Scale for Black Women.
+
+```{r}
+#| echo: false
+#| label: fig-dfGRMS0
+#| fig-cap: Table with raw data.
+
+DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
+              options = list(deferRender = F, dom = 'Bt', scrollY = 452, scroller = TRUE, scrollX = T, pageLength = 10, buttons = 
+      list(list(
+        extend = 'csv',
+        filename = 'dfGRMS'
+      ))))
+
+```
+
+
+-   Unattractive because of size of butt (Obj1)
+-   Negative comments about size of facial features (Obj2)
+-   Imitated the way they think Black women speak (Obj3)
+-   Someone made me feel unattractive (Obj4)
+-   Negative comment about skin tone (Obj5)
+-   Someone assumed I speak a certain way (Obj6)
+-   Objectified me based on physical features(Obj7)
+-   Someone assumed I have a certain body type (Obj8)
+-   Made a sexually inappropriate comment (Obj9)
+-   Negative comments about my hair when natural (Obj10)
+-   I have felt unheard (Marg1)
+-   My comments have been ignored (Marg2)
+-   Someone challenged my authority (Marg3)
+-   I have been disrespected in workplace (Marg4)
+-   Someone has tried to “put me in my place” (Marg5)
+-   Felt excluded from networking opportunities (Marg6)
+-   Assumed I did not have much to contribute to the conversation (Marg7)
+-   Someone assumed I was sassy and straightforward (Str1)
+-   I have been told that I am too independent (Str2)
+-   Someone made me feel exotic as a Black woman (Str3)
+-   I have been told that I am too assertive (Str4)
+-   Assumed to be a strong Black woman (Str5)
+-   Someone has told me to calm down (Ang1)
+-   Perceived to be “angry Black woman" (Ang2)
+-   Someone accused me of being angry when speaking calm (Ang3)
+
+
+## EFA in Jamovi
 
 On the Jamovi top menu navigate to
 
@@ -145,10 +156,6 @@ If the determinant were below the threshold, we would need to identify and addre
 
 When researchers lack a clear theoretical framework to guide their analysis, they often adopt an iterative approach, exploring multiple solutions by extracting varying numbers of factors. For example, Lewis and Neville (2015) examined models with two, three, four, and five factors. In this example, we will present a four-factor solution as the selected model:
 
--   **Factor 1:** Assumptions of Beauty and Sexual Objectification
--   **Factor 2:** Silenced and Marginalized
--   **Factor 3:** Strong Woman Stereotype
--   **Factor 4:** Angry Woman Stereotype
 
 Therefore, we select "Fixed number" and type 4 in the number of factors:
 
@@ -178,11 +185,11 @@ Additionally, we hide loading below 0.23 (the default is 0.3):
 
 In the rotated factor matrix, a few items exhibit cross-loadings, meaning they load significantly on more than one factor:
 
--   Obj6 loads on both Factor 1 (Objectification) and Factor 4 (Angry), with loadings of 0.43 and 0.25, respectively. While the item shows some association with both factors, its stronger loading on Factor 1 suggests it aligns more closely with the Objectification construct.
+-   Obj6 loads on both Factor 1 and Factor 4, with loadings of 0.43 and 0.25, respectively. While the item shows some association with both factors, its stronger loading on Factor 1 suggests it aligns more closely with the Objectification construct.
 
--   Marg6 also displays cross-loadings, with loadings of 0.31 on Factor 1 (Objectification) and 0.25 on Factor 2 (Marginalized). Though both values are relatively low, the item may still require closer evaluation to determine its conceptual alignment.
+-   Marg6 also displays cross-loadings, with loadings of 0.31 on Factor 1 and 0.25 on Factor 2. Though both values are relatively low, the item may still require closer evaluation to determine its conceptual alignment.
 
--   Ang1 loads on both Factor 3 (Strong) and Factor 4 (Angry), with loadings of 0.33 and 0.24, respectively. Although neither loading is particularly high, this item should be reviewed in the context of theoretical expectations.
+-   Ang1 loads on both Factor 3 and Factor 4, with loadings of 0.33 and 0.24, respectively. Although neither loading is particularly high, this item should be reviewed in the context of theoretical expectations.
 
 **NOTE:** In oblique rotation, a distinction is made between the pattern matrix and the structure matrix. The **pattern matrix** (@fig-fa4) displays the standardized regression coefficients (i.e., factor loadings) of each factor on each observed variable, reflecting the direct effects while controlling for the influence of other factors. In contrast, the **structure matrix** presents the simple correlations between each observed variable and each factor, reflecting both direct and indirect effects (due to factor intercorrelations) without controlling for the overlap among factors (this matrix is not included in the Jamovi output).
 
@@ -235,6 +242,13 @@ colnames(FA1$loadings) <- c("F1", "F2", "F3", "F4")
 psych::fa.diagram(FA1, cut = 0, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
+
+This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following underlying factors:
+
+-   **Factor 1:** Assumptions of Beauty and Sexual Objectification (11 items; Obj1-Obj10 and Marg6) 
+-   **Factor 2:** Silenced and Marginalized (6 items; Marg1-Marg5, Marg7)
+-   **Factor 3:** Strong Woman Stereotype (6 items; Str1-Str5, Ang1)
+-   **Factor 4:** Angry Woman Stereotype (2 items; Ang2 and Ang3)
 
 It is important to note that the arrows point from the factor (oval) to the observed variables (items in squares) illustrating that the factor “explains” the item’s score. This represents a **reflective model**, in which the latent construct exists independently of the measures. Additionally, note that the path diagram includes links with numerical values between latent factors, representing the correlation coefficients among them.
 
@@ -294,24 +308,6 @@ From the Scale Statistics options, select Cronbach’s $\alpha$ :
  
 
 ![Cronbach’s alpha for factor 4.](images/fa20.png){#fig-fa20 width="25%"}
-
- 
-
-Next, based on theoretical guidance, we suppose that Marg6 is included in the second factor (Marginalized) and Ang1 in the fourth factor (Angry). We re-calculate the Cronbach’s alpha.
-
-![Cronbach’s alpha for factor 1.](images/fa11.png){#fig-fa11 width="25%"}
-
- 
-
-![Cronbach’s alpha for factor 2.](images/fa12.png){#fig-fa12 width="25%"}
-
- 
-
-![Cronbach’s alpha for factor 3.](images/fa13.png){#fig-fa13 width="25%"}
-
- 
-
-![Cronbach’s alpha for factor 4.](images/fa14.png){#fig-fa14 width="25%"}
 
  
 

@@ -66,37 +66,37 @@ DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
 
 ```
 
-Lewis and Neville provided support for both a total scale score, consisting of 25 items, and four subscales. Below, we outline the four subscales, including the number of items in each, their abbreviations, and a sample item representing each subscale:
+Below is an outline of the 25 items included in the article by Lewis and Neville.
 
--   Assumptions of Beauty and Sexual Objectification (10 items)
-    -   Unattractive because of size of butt (Obj1)
-    -   Negative comments about size of facial features (Obj2)
-    -   Imitated the way they think Black women speak (Obj3)
-    -   Someone made me feel unattractive (Obj4)
-    -   Negative comment about skin tone (Obj5)
-    -   Someone assumed I speak a certain way (Obj6)
-    -   Objectified me based on physical features(Obj7)
-    -   Someone assumed I have a certain body type (Obj8)
-    -   Made a sexually inappropriate comment (Obj9)
-    -   Negative comments about my hair when natural (Obj10)
--   Silenced and Marginalized (7 items)
-    -   I have felt unheard (Marg1)
-    -   My comments have been ignored (Marg2)
-    -   Someone challenged my authority (Marg3)
-    -   I have been disrespected in workplace (Marg4)
-    -   Someone has tried to “put me in my place” (Marg5)
-    -   Felt excluded from networking opportunities (Marg6)
-    -   Assumed I did not have much to contribute to the conversation (Marg7)
--   Strong Black Woman Stereotype (5 items)
-    -   Someone assumed I was sassy and straightforward (Str1)
-    -   I have been told that I am too independent (Str2)
-    -   Someone made me feel exotic as a Black woman (Str3)
-    -   I have been told that I am too assertive (Str4)
-    -   Assumed to be a strong Black woman (Str5)
--   Angry Black Woman Stereotype (3 items)
-    -   Someone has told me to calm down (Ang1)
-    -   Perceived to be “angry Black woman" (Ang2)
-    -   Someone accused me of being angry when speaking calm (Ang3)
+-   Unattractive because of size of butt (Obj1)
+-   Negative comments about size of facial features (Obj2)
+-   Imitated the way they think Black women speak (Obj3)
+-   Someone made me feel unattractive (Obj4)
+-   Negative comment about skin tone (Obj5)
+-   Someone assumed I speak a certain way (Obj6)
+-   Objectified me based on physical features(Obj7)
+-   Someone assumed I have a certain body type (Obj8)
+-   Made a sexually inappropriate comment (Obj9)
+-   Negative comments about my hair when natural (Obj10)
+-   I have felt unheard (Marg1)
+-   My comments have been ignored (Marg2)
+-   Someone challenged my authority (Marg3)
+-   I have been disrespected in workplace (Marg4)
+-   Someone has tried to “put me in my place” (Marg5)
+-   Felt excluded from networking opportunities (Marg6)
+-   Assumed I did not have much to contribute to the conversation (Marg7)
+-   Someone assumed I was sassy and straightforward (Str1)
+-   I have been told that I am too independent (Str2)
+-   Someone made me feel exotic as a Black woman (Str3)
+-   I have been told that I am too assertive (Str4)
+-   Assumed to be a strong Black woman (Str5)
+-   Someone has told me to calm down (Ang1)
+-   Perceived to be “angry Black woman" (Ang2)
+-   Someone accused me of being angry when speaking calm (Ang3)
+
+
+Our objective is to to reduce the set of 25 correlated items to a smaller set of uncorrelated variables, known as **principal components**, that capture the most significant variation in the original data.  Ideally, these resulting components (or dimensions) should represent meaningful underlying concepts.
+
 
 ## The technical part of PCA
 
@@ -211,9 +211,9 @@ Note that the first component captures the maximum variance, the second captures
 
 -   **Evaluate Assumptions:** Assess the suitability of the data for PCA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. These tests determine whether the correlation matrix is appropriate for component extraction.
 
--   **Determine the Number of Components:** Identify how many components to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. The extracted components typically represent underlying dimensions that group the observed variables, helping to reveal meaningful structures (subscales). By selecting the appropriate number of components, you can ensure that the analysis captures the most important sources of variance in the data while maintaining interpretability.
+-   **Determine the Number of Components:** Identify how many components to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. The extracted components typically represent underlying dimensions that group the observed variables. By selecting the appropriate number of components, we can ensure that the analysis captures the most important sources of variance in the data.
 
--   **Extract and Rotate Components:** Extract the principal components based on the selected number. If interpretability is important, consider applying an orthogonal rotation (e.g., varimax) to clarify the component structure. Keep in mind that rotation is optional in PCA and affects interpretability but not the total variance explained. Once the component structure is finalized, compute the component scores for further analysis, such as visualization, clustering, or regression.
+-   **Extract and Rotate Components:** Extract the principal components based on the selected number. Consider applying an orthogonal rotation (e.g., varimax) to clarify the component structure. Keep in mind that rotation is optional in PCA and affects interpretability but not the total variance explained. Once the component structure is finalized, compute the component scores for further analysis, such as visualization, clustering, or regression.
 
 ## Example of GRMS Stress Appraisal
 
@@ -294,14 +294,8 @@ If we select three principal components based on parallel analysis, we observe t
 
 ![The uniqueness of some variables is relatively high when selecting three principal components.](images/mlinear48.png){#fig-mlinear48 width="45%"}
 
-If our scale construction includes a priori or planned subscales, we expect the observed variables to cluster together according to their underlying conceptual dimensions. For example, in our case, we anticipate the following groupings (components):
 
--   Assumptions of Beauty and Sexual Objectification
--   Silenced and Marginalized
--   Strong Woman Stereotype
--   Angry Woman Stereotype
-
-Therefore, guided by prior knowledge and theoretical considerations, we have decided to retain the first four components for further analysis.
+In our example we will retain the first four components for further analysis.
 
 ![Select four principal components.](images/mlinear43.png){#fig-mlinear43 width="35%"}
 
@@ -312,9 +306,8 @@ In PCA, components are by definition orthogonal and ordered by the amount of var
 Jamovi supports two options for rotation in PCA:
 
 -   **Orthogonal Rotation:** Methods like Varimax keep the components uncorrelated (i.e., orthogonal). This preserves the core mathematical properties of PCA, ensuring that the components remain independent.
-    
--   **Oblique Rotation:** Jamovi offers methods like Promax and Oblimin that allow components to be correlated, which are more commonly used in Exploratory Factor Analysis (EFA). While oblique rotation can improve interpretability when underlying constructs are expected to be correlated, it departs from the strict orthogonality assumption of PCA. As a result, the components are no longer independent, which can make PCA less appropriate in situations where correlated factors are theorized.
 
+-   **Oblique Rotation:** Jamovi offers methods like Promax and Oblimin that allow components to be correlated, which are more commonly used in Exploratory Factor Analysis (EFA). While oblique rotation can improve interpretability when underlying constructs are expected to be correlated, it departs from the strict orthogonality assumption of PCA. As a result, the components are no longer independent, which can make PCA less appropriate in situations where correlated factors are theorized.
 
 ## PCA with Varimax rotation
 
@@ -351,8 +344,15 @@ psych::fa.diagram(PC1, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
 
-Note that the arrows originate from the items (Obj1, Obj2,..., Arg1, Str1, Ang1, etc.) and point toward the principal components (PC1, PC2, PC3, PC4).
 
+This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following underlying conceptual dimensions (components):
+
+-   **PC 1:** Assumptions of Beauty and Sexual Objectification (10 items; Obj1-Obj10) 
+-   **PC 2:** Silenced and Marginalized (7 items; Marg1-Marg7)
+-   **PC 3:** Strong Woman Stereotype (6 items; Str1-Str5, Ang1)
+-   **PC 4:** Angry Woman Stereotype (2 items; Ang2 and Ang3)
+
+Note that the arrows originate from the items (Obj1, Obj2,..., Arg1, Str1, Ang1, etc.) and point toward the principal components (PC1, PC2, PC3, PC4).
 
 ## Component scores
 
