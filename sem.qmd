@@ -64,7 +64,7 @@ There are three types of parameters to be specified:
 
 ## Steps in Structural Equation Modeling (SEM)
 
-The main steps of SEM are following (@fig-sem3):
+The main steps of SEM are following (@fig-sem3) [@stoffels2023]:
 
 1.  **Model specification:** Define the hypothesized associations between variables based on theory. Establish a satisfactory measurement model for key concepts using latent variables. Fit regression paths between concepts (structural model).
 
@@ -129,25 +129,21 @@ Similarly, type "Adjustment" into the Latent Exogenous Variables box. Next, sele
 
 Next, add a new exogenous variable in the Latent Exogenous Variables box and label it “Risk”. Select the `verbal` (ref.), `ppsych`, and `ses` observed variables and from the left-hand pane and move them under the "Risk" label in the Latent Exogenous Variables box (@fig-sem6).
 
-
 We also need to define the exogenous factors "Adjustment" and "Risk" as predictors of the endogenous variable "Achievement". To do this, select the desired variables and use the arrow button to transfer them into the Endogenous Variables field in the model as shown in @fig-sem7.
 
 ![Endogenous Model determination.](images/sem7.png){#fig-sem7 width="70%"}
 
-We can also present the model with a path diagram by selecting "path diagram" and "show residuals" (@fig-sem9).  
-
+We can also present the model with a path diagram by selecting "path diagram" and "show residuals" (@fig-sem9).
 
 ![Select Path Diagram and check show residuals.](images/sem8.png){#fig-sem8 width="70%"}
 
-
 ## Output of Jamovi SEM analysis
 
-**Path coefficients** 
+**Path coefficients**
 
 The path coefficients of the structural model are shown in the following table:
 
 ![Direct path coefficients.](images/sem9.png){#fig-sem9 width="75%"}
-
 
 **Factor Loadings**
 
@@ -155,23 +151,12 @@ The factor Loadings of the measurement model are shown in the following table:
 
 ![Factor Loadings of the measurement model.](images/sem10.png){#fig-sem10 width="75%"}
 
-
 **Variances and Covariances**
 
-Variances (i.e., measurement errors, variances of the exogenous latent variables, variances of endogenous variables, and covariances between latent variables) are presented in the table @fig-sem12 
+Variances (i.e., measurement errors, variances of the exogenous latent variables, variances of endogenous variables, and covariances between latent variables) are presented in the table @fig-sem12
 
 ![Variances and Covariances of the model.](images/sem12.png){#fig-sem12 width="75%"}
-
 
 Finally, we can presnt our results of the model with a path diagram as follows:
 
 ![Path diagram of the model.](images/sem13.png){#fig-sem13 width="85%"}
-
-
-
-
-
-
-
-
-

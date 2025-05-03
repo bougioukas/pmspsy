@@ -28,8 +28,7 @@ When we have finished this chapter, we should be able to:
 
 ## Introduction
 
-As we discussed in the previous chapter, Principal Component Analysis (PCA) is primarily used to reduce the dimensionality of the dataset while retaining as much of its total variance as possible. In this chapter, Exploratory Factor Analysis (EFA) focuses on identifying underlying **latent factors** that explain the correlations among observed (also known as manifest) variables, with the aim of uncovering the data's underlying structure. 
-
+As we discussed in the previous chapter, Principal Component Analysis (PCA) is primarily used to reduce the dimensionality of the dataset while retaining as much of its total variance as possible. In this chapter, Exploratory Factor Analysis (EFA) focuses on identifying underlying **latent factors** that explain the correlations among observed (also known as manifest) variables, with the aim of uncovering the data's underlying structure.
 
 ::: content-box-blue
 **Exploratory Factor Analysis**
@@ -144,18 +143,30 @@ If the determinant were below the threshold, we would need to identify and addre
 
 ### Specify the Number of Factors
 
-When researchers lack a clear theoretical framework to guide their analysis, they often adopt an iterative approach, exploring multiple solutions by extracting different numbers of factors. For instance, Lewis and Neville (2015) examined solutions with 2, 3, 4, and 5 factors using parallel analysis to inform their decision. In contrast, this example demonstrates the use of Principal Axis Factoring (PAF), extracting a **four-factor** solution as the chosen model:
+When researchers lack a clear theoretical framework to guide their analysis, they often adopt an iterative approach, exploring multiple solutions by extracting varying numbers of factors. For example, Lewis and Neville (2015) examined models with two, three, four, and five factors. In this example, we will present a four-factor solution as the selected model:
 
--   Factor 1: Assumptions of Beauty and Sexual Objectification
--   Factor 2: Silenced and Marginalized
--   Factor 3: Strong Woman Stereotype
--   Factor 4: Angry Woman Stereotype
+-   **Factor 1:** Assumptions of Beauty and Sexual Objectification
+-   **Factor 2:** Silenced and Marginalized
+-   **Factor 3:** Strong Woman Stereotype
+-   **Factor 4:** Angry Woman Stereotype
+
+Therefore, we select "Fixed number" and type 4 in the number of factors:
+
+![Select the number of factor for a four-factor model.](images/efa4004.png){#fig-efa4004 width="35%"}
+
+We can also obtain the scree plot from the Additional Output:
+
+![Select Scree plot from the Additional Output.](images/efa4005.png){#fig-efa4005 width="30%"}
+
+![Scree plot.](images/efa4006.png){#fig-efa4006 width="65%"}
+
 
 ### Extraction of factors and rotation
 
-We select Principal axis for extraction method and Oblimin (default) for rotation method:
+Lewis and Neville (2015) used parallel analysis as their extraction method. In this example, we demonstrate the use of **Principal Axis Factoring** (PAF) for extraction and Oblimin (the default option) as the rotation method.
 
-![Select the Principal Axis dor extraction and Oblimin method of rotation.](images/fa3.png){#fig-fa3 width="35%"}
+
+![Select the Principal Axis for extraction and Oblimin method of rotation.](images/fa3.png){#fig-fa3 width="35%"}
 
 Additionally, we hide loading below 0.23 (the default is 0.3):
 
