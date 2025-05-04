@@ -342,7 +342,7 @@ psych::fa.diagram(PC1, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
 
-By examining which observed variables load onto each principal component, we can identify the following underlying conceptual dimensions:
+By examining the observed variables that load onto each principal component, we can assign conceptual meaning to the extracted dimensions as follows:
 
 -   **PC 1:** Assumptions of Beauty and Sexual Objectification (10 items; Obj1-Obj10)
 -   **PC 2:** Silenced and Marginalized (7 items; Marg1-Marg7)
