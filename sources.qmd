@@ -1,4 +1,4 @@
-# Sources for reading {#sec-introduction}
+# Sources & Aknowledgements {#sec-sources}
 
 ```{r}
 #| include: false
@@ -7,5 +7,12 @@ library(fontawesome)
 ```
 
 
-* **Analysis of Variance (ANOVA) designs**
-    + [Analysis of Variance Designs: A Conceptual and Computational Approach with SPSS and SAS](https://www.cambridge.org/highereducation/books/analysis-of-variance-designs/5500246DE031763B7D439A162FA97DF5#overview)
+- [Chapter 8 Principal Components Analysis](https://lhbikos.github.io/ReC_Psychometrics/PCA.html)
+
+- [Principal components analysis](https://bookdown.org/tpinto_home/Unsupervised-learning/principal-components-analysis.html)
+
+- [Introduction to Mediation Analysis](https://library.virginia.edu/data/articles/introduction-to-mediation-analysis)
+
+- [Chapter 55 Investigating Processes Using Path Analysis](https://rforhr.com/pathanalysis.html)
+
+- [Structural Equation Modeling (SEM)](https://kevintshoemaker.github.io/NRES-746/SEM.RMarkdown.html)
