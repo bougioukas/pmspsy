@@ -19,11 +19,10 @@ When we have finished this chapter, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Understand the principles of structural equation modeling (SEM)
--   Describe the basic elements of a structural equation model
--   Perform PCA through a step-by-step process
--   Interpret component loadings and the proportion of explained variance
--   Extract and interpret component scores for further analysis
+-   Understand the fundamental terminology used in Structural Equation Modeling (SEM).
+-   Describe the basic components of a structural equation model.
+-   Apply a step-by-step process to perform SEM.
+-   Interpret the results obtained from SEM analysis.
 :::
 
 In the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This integration gave rise to Path Analysis with latent variables—now known as Structural Equation Modeling (SEM).

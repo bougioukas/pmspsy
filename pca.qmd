@@ -19,11 +19,11 @@ When we have finished this chapter, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Understand when and why to use Principal Component Analysis (PCA), and recognize appropriate data conditions
--   Understand the concept of eigen decomposition
--   Perform PCA through a step-by-step process
--   Interpret component loadings and the proportion of explained variance
--   Extract and interpret component scores for further analysis
+-   Understand when and why to use Principal Component Analysis (PCA), and recognize appropriate data conditions.
+-   Understand the concept of eigen decomposition.
+-   Perform PCA through a step-by-step process.
+-   Interpret component loadings and the proportion of total variance explained by the components.
+-   Extract and interpret component scores for further analysis.
 :::
 
 ## Introduction
@@ -31,7 +31,6 @@ When we have finished this chapter, we should be able to:
 Suppose that we have $n$ observations with measurements on a set of $p$ observed variables (features), $X_1,X_2, . . . ,X_p$. This means that each of the $n$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting. Principal Component Analysis (PCA) is a statistical technique that seeks a small number of dimensions, called **principal components**, that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension.
 
 Therefore, PCA is commonly used to reduce the dimensionality of a dataset while preserving as much of the total variance as possible. In other words, it transforms a large set of correlated variables into a smaller set of uncorrelated representative variables (principal components), which collectively explain most of the variability in the original data.
-
 
 It is important to note that there are $p$ possible principal components representing the full-dimensional space of the data. The first principal component of a set of observed variables $X_1, X_2, . . . ,X_p$ is the normalized linear combination of the $p$ observed variables:
 
@@ -44,7 +43,6 @@ After the first principal component $Z_1$ of the observed variables has been det
 $$PC2: Z_2 = \phi_{12} X_1 + \phi_{22} X_2  + ...+ \phi_{p2} X_p $$
 
 The second principal component (PC2) explaines the next highest amount of variance. The elements $\phi_{12}, \phi_{22},..., \phi_{p2}$ are referred to as the loadings of the second principal component. The same procedure can be applied to obtain the third principal component (PC3), the fourth component (PC4) and so on for subsequent components.
-
 
 > While PCA computes all $p$ principal components, the goal is to reduce the dimensionality by keeping only the most important components. We might choose to keep just the **top k** components that explain a large portion of the total variance, and discard the remaining components.
 
@@ -213,13 +211,11 @@ Note that the first component captures the maximum variance, the second captures
 
 -   **Determine the Number of Components:** Identify how many components to retain, guided by criteria such as eigenvalues greater than one (Kaiser Criterion), scree plot inspection, parallel analysis, interpretability of components, or a combination of these methods. The goal is to select the number of components that represent meaningful dimensions, effectively capturing the most important sources of variance in the data.
 
--   **Extract the principal components:** Once the number of components  to retain is decided, select the eigenvectors that correspond to the most important directions (those with the largest eigenvalues). These eigenvectors represent the principal components (PCs) of interest, which are the new axes that capture the most variance in the data.
+-   **Extract the principal components:** Once the number of components to retain is decided, select the eigenvectors that correspond to the most important directions (those with the largest eigenvalues). These eigenvectors represent the principal components (PCs) of interest, which are the new axes that capture the most variance in the data.
 
-
--   **Rotate Components (optional):** After extracting the components, consider applying an orthogonal rotation (e.g., varimax) to clarify the component structure. Keep in mind that rotation is optional in PCA and affects interpretability but not the total variance explained. 
+-   **Rotate Components (optional):** After extracting the components, consider applying an orthogonal rotation (e.g., varimax) to clarify the component structure. Keep in mind that rotation is optional in PCA and affects interpretability but not the total variance explained.
 
 -   **Compute the component scores:** Once the component structure is finalized, compute the component scores for each observation. These scores represent the data projected onto the new principal component axes. Component scores can be used in further analyses, such as visualization (e.g., creating scatter plots of the first two components), clustering, or regression.
-
 
 ## Example of GRMS Stress Appraisal
 
@@ -274,7 +270,6 @@ The Kaiser–Meyer–Olkin (KMO) measure verified the sampling adequacy for the 
 
 Since PCA produces as many components as there are original variables, we need criteria to decide how many of them capture meaningful structure in the data
 
-
 Our decisions on how many components to keep can be guided by several methods:
 
 -   Cumulative variance explained – Retain enough components to account for a desired proportion of total variance.
@@ -297,7 +292,7 @@ Additionally, a scree plot displays the eigenvalues associated with each princip
 
 ![Scree plot determining the number of components based on Kaiser’s criterion.](images/mlinear32.png){#fig-mlinear32 width="60%"}
 
-In our example, parallel analysis suggests retaining 3 components (@fig-mlinear31), while Kaiser’s criterion indicates 7 components (@fig-mlinear32). We could also explore retaining 4, 5, or 6 components, as these values fall between the two suggested numbers. 
+In our example, parallel analysis suggests retaining 3 components (@fig-mlinear31), while Kaiser’s criterion indicates 7 components (@fig-mlinear32). We could also explore retaining 4, 5, or 6 components, as these values fall between the two suggested numbers.
 
 For the purposes of this analysis, let's retain the **first four components**.
 
@@ -325,7 +320,7 @@ After rotation, there are four clear components/dimensions (**NOTE:** In the unr
 
 There is clear (or at least reasonable) component membership for each variable. By default, the table displays all component loadings greater than 0.30. When an observed variable loads on multiple components above this threshold, it is examined for potential **cross-loading**. In this analysis, cross-loadings greater than 0.30 were identified for the following variables: `Obj6`, `Marg6`, and `Ang1`.
 
-It is important to note that in PCA with **orthogonal** rotation (such as Varimax), the component loadings can be interpreted as **correlation coefficients** between the original observed variables and the rotated components.
+It is important to note that in PCA with **orthogonal** rotation (such as Varimax), the component loadings can be interpreted as **correlation coefficients** between the original observed variables and the rotated components. Additionally, the "uniqueness" represents the portion of a variable’s variance that is not explained by the $k$ retained principal components.
 
  
 
@@ -337,7 +332,7 @@ Moreover, under the **Additional Output** section, select *Component summary*:
 
 ![Variance with orthogonal rotation.](images/mlinear35.png){#fig-mlinear35 width="50%"}
 
-The SS Loadings column represents the eigenvalues for each component after Varimax rotation, with Principal Component 1 explaining 13.2%, Principal Component 2 explaining an additional 11.7%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.
+The SS Loadings column represents the eigenvalues for each component after Varimax rotation, with Principal Component 1 explaining 13.2% of the **total variance**, Principal Component 2 explaining an additional 11.7%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.
 
 The component analysis diagram below displays the dominant loading for each observed variable on its corresponding principal component (PC):
 

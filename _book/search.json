@@ -434,7 +434,7 @@
     "href": "pca.html#pca-with-varimax-rotation",
     "title": "7  Principal Components Analysis",
     "section": "7.6 PCA with Varimax rotation",
-    "text": "7.6 PCA with Varimax rotation\nSelect the Varimax rotation method (which is the default):\n\n\n\n\n\n\nFigure 7.13: Select the Varimax method of rotation.\n\n\n\nAfter rotation, there are four clear components/dimensions (NOTE: In the unrotated method, that is “Rotation None” in Jamovi, most variables loaded on the first component).\n\n\n\n\n\n\nFigure 7.14: Loadings with orthogonal rotation.\n\n\n\nThere is clear (or at least reasonable) component membership for each variable. By default, the table displays all component loadings greater than 0.30. When an observed variable loads on multiple components above this threshold, it is examined for potential cross-loading. In this analysis, cross-loadings greater than 0.30 were identified for the following variables: Obj6, Marg6, and Ang1.\nIt is important to note that in PCA with orthogonal rotation (such as Varimax), the component loadings can be interpreted as correlation coefficients between the original observed variables and the rotated components.\n \nMoreover, under the Additional Output section, select Component summary:\n\n\n\n\n\n\nFigure 7.15: Select component summary.\n\n\n\nFigure 7.16 presents the percentage of variance in the variable set that is captured by the derived components after Varimax rotation.\n\n\n\n\n\n\nFigure 7.16: Variance with orthogonal rotation.\n\n\n\nThe SS Loadings column represents the eigenvalues for each component after Varimax rotation, with Principal Component 1 explaining 13.2%, Principal Component 2 explaining an additional 11.7%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.\nThe component analysis diagram below displays the dominant loading for each observed variable on its corresponding principal component (PC):\n\n\n\n\n\n\n\n\n\nBy examining the observed variables that load onto each principal component, we can assign conceptual meaning to the extracted dimensions as follows:\n\nPC 1: Assumptions of Beauty and Sexual Objectification (10 items; Obj1-Obj10)\nPC 2: Silenced and Marginalized (7 items; Marg1-Marg7)\nPC 3: Strong Woman Stereotype (6 items; Str1-Str5, Ang1)\nPC 4: Angry Woman Stereotype (2 items; Ang2 and Ang3)\n\nNote that the arrows originate from the items (Obj1, Obj2,…, Arg1, Str1, Ang1, etc.) and point toward the principal components (PC1, PC2, PC3, PC4).",
+    "text": "7.6 PCA with Varimax rotation\nSelect the Varimax rotation method (which is the default):\n\n\n\n\n\n\nFigure 7.13: Select the Varimax method of rotation.\n\n\n\nAfter rotation, there are four clear components/dimensions (NOTE: In the unrotated method, that is “Rotation None” in Jamovi, most variables loaded on the first component).\n\n\n\n\n\n\nFigure 7.14: Loadings with orthogonal rotation.\n\n\n\nThere is clear (or at least reasonable) component membership for each variable. By default, the table displays all component loadings greater than 0.30. When an observed variable loads on multiple components above this threshold, it is examined for potential cross-loading. In this analysis, cross-loadings greater than 0.30 were identified for the following variables: Obj6, Marg6, and Ang1.\nIt is important to note that in PCA with orthogonal rotation (such as Varimax), the component loadings can be interpreted as correlation coefficients between the original observed variables and the rotated components. Additionally, the “uniqueness” represents the portion of a variable’s variance that is not explained by the \\(k\\) retained principal components.\n \nMoreover, under the Additional Output section, select Component summary:\n\n\n\n\n\n\nFigure 7.15: Select component summary.\n\n\n\nFigure 7.16 presents the percentage of variance in the variable set that is captured by the derived components after Varimax rotation.\n\n\n\n\n\n\nFigure 7.16: Variance with orthogonal rotation.\n\n\n\nThe SS Loadings column represents the eigenvalues for each component after Varimax rotation, with Principal Component 1 explaining 13.2% of the total variance, Principal Component 2 explaining an additional 11.7%, Principal Component 3 explaining an additional 8.2%, and Principal Component 4 explaining an additional 6.2%, resulting a cumulative variance of 39.3%.\nThe component analysis diagram below displays the dominant loading for each observed variable on its corresponding principal component (PC):\n\n\n\n\n\n\n\n\n\nBy examining the observed variables that load onto each principal component, we can assign conceptual meaning to the extracted dimensions as follows:\n\nPC 1: Assumptions of Beauty and Sexual Objectification (10 items; Obj1-Obj10)\nPC 2: Silenced and Marginalized (7 items; Marg1-Marg7)\nPC 3: Strong Woman Stereotype (6 items; Str1-Str5, Ang1)\nPC 4: Angry Woman Stereotype (2 items; Ang2 and Ang3)\n\nNote that the arrows originate from the items (Obj1, Obj2,…, Arg1, Str1, Ang1, etc.) and point toward the principal components (PC1, PC2, PC3, PC4).",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Principal Components Analysis</span>"
     ]
@@ -940,13 +940,23 @@
     ]
   },
   {
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "14  Presentations",
+    "section": "",
+    "text": "Lecture 1: Introduction\n\n\n\n\npsy-introduction\n\n\n     \n\nLecture 2: Between-subjects: One-way ANOVA\n\n\n\n\npsy-anova1\n\n\n     \n\nLecture 3: Within-subjects: Repeated ANOVA\n\n\n\n\npsy-anova2\n\n\n     \n\nLecture 4: Within-subjects: Two-way ANOVA\n\n\n\n\npsy-anova3\n\n\n     \n\nLecture: Linear Regression (Simple Models)\n\n\n\n\npsy-linear1\n\n\n     \n\nLecture: Linear Regression (Multi-variable models)\n\n\n\n\npsy-linear2\n\n\n     \n\nLecture: Principal Component Analysis\n\n\n\n\npsy-pca\n\n\n     \n\nLecture: Systematic Reviews\n\n\n\n\npsy-SR_meta1\n\n\n     \n\nLecture: Meta-analysis\n\n\n\n\npsy-SR_meta2",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Presentations</span>"
+    ]
+  },
+  {
     "objectID": "sources.html",
     "href": "sources.html",
-    "title": "14  Sources & Aknowledgements",
+    "title": "15  Sources & Aknowledgements",
     "section": "",
     "text": "Chapter 8 Principal Components Analysis\nPrincipal components analysis\nIntroduction to Mediation Analysis\nChapter 55 Investigating Processes Using Path Analysis\nStructural Equation Modeling (SEM)",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Sources & Aknowledgements</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Sources & Aknowledgements</span>"
     ]
   },
   {

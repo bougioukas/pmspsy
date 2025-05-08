@@ -25,7 +25,7 @@ book:
     - sem.qmd
     - ma1.qmd
     - ma2.qmd
-    #- presentations.qmd
+    - presentations.qmd
     - sources.qmd
     - references.qmd
 

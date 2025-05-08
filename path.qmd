@@ -15,6 +15,17 @@ dat2 <- read_excel(here("data", "glbwarm.xlsx"))
 dat3 <- read_excel(here("data", "PlannedBehavior.xlsx"))
 ```
 
+
+::: {.callout-caution icon="false"}
+## Learning objectives
+
+-   Understand the concept of mediation analysis.
+-   Differentiate between direct and indirect effects within mediation models.
+-   Introduce the conditional mediation model, and recognize how moderation can influence mediation effects.
+-   Explain the basics of path analysis. Learn the basics of path diagrams. Distinguish between exogenous and endogenous variables within a path model.
+:::
+
+
 ## Mediation analysis
 
 A single mediation analysis is based on the estimation of the four pathways, w, a, b, and c shown in @fig-path001. In @fig-path001 A, the "w" path represents the total X→Y effect. In @fig-path001 B, the "a" path represents the X→M effect, the "b" path represents the M→Y effect, and the "c" path represents the direct X→Y effect. In traditional mediation analysis, the paths coefficients are estimated using linear regression equations.
@@ -77,9 +88,7 @@ where $e$ is the residual error of the model (i.e. ).
 
  
 
-
 ![](images/path8.png){width="55%"}
-
 
 $$happiness = 2.86 \ + 0.40 \cdot grades$$ Therefore, the total effect w = 0.40 is statistical significant (p\<0.001).
 
@@ -87,9 +96,7 @@ $$happiness = 2.86 \ + 0.40 \cdot grades$$ Therefore, the total effect w = 0.40 
 
  
 
-
 -   **Step 2:** Estimate the association between X on M (grades on self-esteem). Path “a” must be significantly different from 0; The independent variable and the mediator must be associated. If X and M have no association, M is just a third variable that may or may not be associated with Y. A mediation makes sense only if X affects M.
-
 
 ![The effect of X on M.](images/path5.png){#fig-path5 width="65%"}
 
@@ -97,16 +104,13 @@ $$M = intercept \ + \text{a} \cdot X + e$$
 
 where $e$ is the residual error of the model.
 
-
  
 
 ![](images/path9.png){width="55%"}
 
-
 $$selfesteem = 1.50 \ + 0.56 \cdot grades$$ Therefore, the effect of X on M (a = 0.56) is statistical significant (p\<0.001).
 
  
-
 
 -   **Step 3:** Estimate the effects of both X and M on Y. Path “b” must be significantly different from 0; mediator and outcome must be associated. Additionally, the path “c” should be non-significant and nearly 0. The effect of X on Y will disappear (or at least weaken) when M is included in the regression. The effect of X on Y goes through M.
 
@@ -118,9 +122,7 @@ where $e$ is the residual error of the model.
 
  
 
-
 ![](images/path10.png){width="55%"}
-
 
 $$happiness = 1.90 \ + 0.04 \cdot grades + 0.64 \cdot selfesteem$$
 
@@ -342,13 +344,11 @@ We can specify the Theory of Planned Behavior as a path diagram by drawing the o
 
 -   **(Residual) error terms** (which are sometimes called disturbances) are added to **endogenous variables**.
 
-
 The equations of this model are:
-
 
 $$intention = intercept +  \beta_1 attitude + \beta_2 norms + \beta control + e$$
 
-and 
+and
 
 $$behavior = intercept + \beta_4 intention + e$$
 
@@ -409,20 +409,17 @@ The table in @fig-path31 summarizes hypotheses testing results of the study.
 
 The path coefficient (i.e., regression coefficient b) between attitude and intention is statistically significant and positive (b = 0.352, p \< 0.001). The path coefficient between norms and intention is statistically significant and positive (b = 0.153, p = 0.010). The path coefficient between control and intention is statistically significant and positive (b = 0.275, p \< 0.001). Finally, the path coefficient between intention and behavior is statistically significant and positive (b = 0.453, p \< 0.001).
 
-
  
 
 The intercepts of the equations of the model are following:
 
 ![The intercepts of the equation model.](images/path401.png){#fig-path401 width="75%"}
 
-
 According the outputs of @fig-path31 and @fig-path401, the equations can be expressed as follows:
-
 
 $$intention = 0.586 + 0.352 \cdot attitude + 0.153 \cdot norms + 0.275 \cdot control$$
 
-and 
+and
 
 $$behavior = 1.743 + 0.453 \cdot intention$$
 
@@ -438,14 +435,13 @@ Moreover, the indirect effects are reported in the following table:
 
 ![Indirect effects.](images/path005.png){#fig-path005 width="85%"}
 
-For example, the estimate for the indirect effect of the path attitude=>intention=>behavior is calculated as 0.35*0.45 = 0.16.  
+For example, the estimate for the indirect effect of the path attitude=\>intention=\>behavior is calculated as 0.35\*0.45 = 0.16.
 
  
 
 Using path analysis, we can also explicitly model the variance of the exogenous variables (e.g., attitude-attitude variance=0.93), the covariances (correlations) between the exogenous variables (e.g., norms-attitude covariance= 0.20), and the residual errors of the endogenous variables in the model (e.g., intention res. error = 0.53).
 
 ![Variances and Covariances estimates.](images/path32.png){#fig-path32 width="95%"}
-
 
  
 
