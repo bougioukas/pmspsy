@@ -28,13 +28,12 @@ When we have finished this chapter, we should be able to:
 
 ## Introduction
 
-Principal Component Analysis (PCA) is traditionally defined as a statistical technique used to reduce the dimensionality of a dataset while preserving as much of its original variability as possible. It transforms a large set of correlated variables into a smaller set of uncorrelated representative variables, called **principal components**, which collectively explain most of the variability in the original data.
+Suppose that we have $n$ observations with measurements on a set of $p$ observed variables (features), $X_1,X_2, . . . ,X_p$. This means that each of the $n$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting. Principal Component Analysis (PCA) is a statistical technique that seeks a small number of dimensions, called **principal components**, that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension.
 
-Suppose that we have $n$ observations with measurements on a set of $p$ observed variables (features), $X_1,X_2, . . . ,X_p$. This means that each of the $n$ observations lives in p-dimensional space, but not all of these dimensions are equally interesting.
-PCA seeks a small number of dimensions that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension. Each of the dimensions found by PCA is a linear combination of the $p$ observed variables. 
+Therefore, PCA is commonly used to reduce the dimensionality of a dataset while preserving as much of the total variance as possible. In other words, it transforms a large set of correlated variables into a smaller set of uncorrelated representative variables (principal components), which collectively explain most of the variability in the original data.
 
 
-It is important to note that there are $p$ possible principal components representing the full-dimensional space of the data. The first principal component of a set of observed variables $X_1, X_2, . . . ,X_p$ is the normalized linear combination of the observed variables:
+It is important to note that there are $p$ possible principal components representing the full-dimensional space of the data. The first principal component of a set of observed variables $X_1, X_2, . . . ,X_p$ is the normalized linear combination of the $p$ observed variables:
 
 $$PC1: Z_1 = \phi_{11} X_1 + \phi_{21} X_2  + ...+ \phi_{p1} X_p $$ that has the largest variance. By normalized, we mean that $\sum_{j=1}^p \phi_{j1}^2 = 1$. We refer to the elements $\phi_{11}, \phi_{21},..., \phi_{p1}$ as the loadings of the first principal component.
 
@@ -47,9 +46,9 @@ $$PC2: Z_2 = \phi_{12} X_1 + \phi_{22} X_2  + ...+ \phi_{p2} X_p $$
 The second principal component (PC2) explaines the next highest amount of variance. The elements $\phi_{12}, \phi_{22},..., \phi_{p2}$ are referred to as the loadings of the second principal component. The same procedure can be applied to obtain the third principal component (PC3), the fourth component (PC4) and so on for subsequent components.
 
 
-While PCA computes all $p$ principal components, the goal is to reduce the dimensionality by keeping only the most important components. We might choose to keep just the **top k** components that explain a large portion of the total variance, and discard the remaining components.
+> While PCA computes all $p$ principal components, the goal is to reduce the dimensionality by keeping only the most important components. We might choose to keep just the **top k** components that explain a large portion of the total variance, and discard the remaining components.
 
-
+ 
 
 **EXAMPLE DATA**
 
@@ -208,13 +207,19 @@ Note that the first component captures the maximum variance, the second captures
 
 ## Steps in the process of PCA
 
--   **Prepare the Data:** (a) Standardize the items to have a mean of 0 and a standard deviation of 1. This ensures that variables with larger scales do not dominate the principal components. However, in practice, Likert scale data are typically not standardized, as the scale is generally considered consistent across items. (b) Address outliers in the data. Note that outliers in Likert data are often extreme values, such as respondents who consistently select the "0 = not at all stressful" or "5 = extremely stressful" option. (c) Additionally, it is important to reverse-score negatively worded items to ensure that all items are scaled in the same direction (though this step is not applicable in our example).
+-   **Prepare the Data:** (a) Standardize the items to have a mean of 0 and a standard deviation of 1. This ensures that variables with larger scales do not dominate the principal components. However, in practice, Likert scale data are typically not standardized, as the scale is generally considered consistent across items. (b) Address outliers in the data. Note that outliers in Likert data are often extreme values, such as respondents who consistently select the "0 = not at all stressful" or "5 = extremely stressful" option. (c) Additionally, it is important to reverse-score negatively worded items (if applicable) to ensure that all items are scaled in the same direction.
 
 -   **Evaluate Assumptions:** Assess the suitability of the data for PCA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. These tests determine whether the correlation matrix is appropriate for component extraction.
 
--   **Determine the Number of Components:** Identify how many components to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. The extracted components typically represent underlying dimensions that group the observed variables. By selecting the appropriate number of components, we can ensure that the analysis captures the most important sources of variance in the data.
+-   **Determine the Number of Components:** Identify how many components to retain, guided by criteria such as eigenvalues greater than one (Kaiser Criterion), scree plot inspection, parallel analysis, interpretability of components, or a combination of these methods. The goal is to select the number of components that represent meaningful dimensions, effectively capturing the most important sources of variance in the data.
 
--   **Extract and Rotate Components:** Extract the principal components based on the selected number. Consider applying an orthogonal rotation (e.g., varimax) to clarify the component structure. Keep in mind that rotation is optional in PCA and affects interpretability but not the total variance explained. Once the component structure is finalized, compute the component scores for further analysis, such as visualization, clustering, or regression.
+-   **Extract the principal components:** Once the number of components  to retain is decided, select the eigenvectors that correspond to the most important directions (those with the largest eigenvalues). These eigenvectors represent the principal components (PCs) of interest, which are the new axes that capture the most variance in the data.
+
+
+-   **Rotate Components (optional):** After extracting the components, consider applying an orthogonal rotation (e.g., varimax) to clarify the component structure. Keep in mind that rotation is optional in PCA and affects interpretability but not the total variance explained. 
+
+-   **Compute the component scores:** Once the component structure is finalized, compute the component scores for each observation. These scores represent the data projected onto the new principal component axes. Component scores can be used in further analyses, such as visualization (e.g., creating scatter plots of the first two components), clustering, or regression.
+
 
 ## Example of GRMS Stress Appraisal
 
@@ -278,7 +283,7 @@ Our decisions on how many components to keep can be guided by several methods:
 
 -   Kaiser’s criterion – Retain components with **eigenvalues greater than 1**.
 
--   “Meaningfulness criterion” Theoretical justification – Retain components that align with prior knowledge, conceptual frameworks, or hypotheses relevant to the domain of study (fixed number).
+-   Theoretical justification (“meaningfulness criterion”) – Retain components that align with prior knowledge, conceptual frameworks, or hypotheses relevant to the domain of study (fixed number).
 
 Jamovi allows users to choose the number of components based on parallel analysis, eigenvalues, or by manually specifying a fixed number.
 
@@ -292,13 +297,9 @@ Additionally, a scree plot displays the eigenvalues associated with each princip
 
 ![Scree plot determining the number of components based on Kaiser’s criterion.](images/mlinear32.png){#fig-mlinear32 width="60%"}
 
-In our example, parallel analysis suggests retaining 3 components (@fig-mlinear31), while Kaiser’s criterion indicates 7 components (@fig-mlinear32).
+In our example, parallel analysis suggests retaining 3 components (@fig-mlinear31), while Kaiser’s criterion indicates 7 components (@fig-mlinear32). We could also explore retaining 4, 5, or 6 components, as these values fall between the two suggested numbers. 
 
-If we select three principal components based on parallel analysis, we observe that the uniqueness of some variables is relatively high (e.g., Obj6 Uniqueness = 0.8). Uniqueness refers to the proportion of a variable's variance that is not explained by the retained components. Therefore, if a variable has high uniqueness (close to 1), it indicates that the variable is poorly explained by the selected number of components.
-
-![The uniqueness of some variables is relatively high when selecting three principal components.](images/mlinear48.png){#fig-mlinear48 width="45%"}
-
-In our example we will retain the first four components for further analysis.
+For the purposes of this analysis, let's retain the **first four components**.
 
 ![Select four principal components.](images/mlinear43.png){#fig-mlinear43 width="35%"}
 

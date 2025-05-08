@@ -21,14 +21,20 @@ When we have finished this chapter, we should be able to:
 
 -   Understand when and why to use Exploratory Factor Analysis (EFA), and recognize appropriate data conditions.
 -   Perform EFA through a step-by-step process.
--   Interpret factor loadings and the proportion of common  variance explained by the factors.
+-   Interpret factor loadings and the proportion of common variance explained by the factors.
 -   Extract and interpret factors for further analysis.
 -   Assess internal consistency (reliability).
 :::
 
 ## Introduction
 
-As we discussed in the previous chapter, Principal Component Analysis (PCA) is primarily used to reduce the dimensionality of the dataset while retaining as much of its total variance as possible. In this chapter, Exploratory Factor Analysis (EFA) focuses on identifying underlying **latent factors** that explain the correlations among observed (also known as manifest) variables, with the aim of uncovering the data's underlying structure.
+As we discussed in the previous chapter, Principal Component Analysis (PCA) is primarily used to reduce the dimensionality of the dataset while retaining as much of its total variance as possible. In this chapter, Exploratory Factor Analysis (EFA) focuses on identifying unobserved **latent variables** (also known as common factors) that explain the correlations among observed variables, with the aim of uncovering the data's underlying structure.
+
+- **Observed variables** (also called manifest variables) are the variables that we can directly measure or observe.
+
+- **Latent variables** are hidden or abstract concepts inferred from manifest variables.
+
+
 
 ::: content-box-blue
 **Exploratory Factor Analysis**
@@ -36,17 +42,17 @@ As we discussed in the previous chapter, Principal Component Analysis (PCA) is p
 Exploratory Factor Analysis (EFA) can be used to explore the dimensionality of a measurement instrument by identifying the smallest number of interpretable factors that explain the **common variance** among variables.
 :::
 
-Let's say we have $p$ observed variables, denoted as $X_1, X_2, ..., X_p$. The factor model for the $i$-th observed variable ($X_i$) for a single individual can be expressed as:
+Let's say we have $p$ observed variables, denoted as $X_1, X_2, ..., X_p$. The factor model for the $i$-th observed variable ($X_i$) for a single individual can be expressed as a regression on the common factors:
 
-$$X_i = l_{i1}F_1 + l_{i2}F_2 + ... + l_{im}F_k + \epsilon_i$$
+$$X_i = l_{i1}F_1 + l_{i2}F_2 + ... + l_{im}F_k + u_i$$
 
 Where:
 
-* $X_i$ is the $i$-th observed variable (often standardized to have a mean of 0 and a standard deviation of 1).
-* $F_j$ is the $j$-th common factor ($j = 1, 2, ..., k$), which are the latent constructs we're trying to uncover.
-* $l_{ij}$ is the factor loading of the $i$-th observed variable on the $j$-th common factor. It represents the strength and direction of the association between the observed variable and the factor.
-* $k$ is the number of common factors (where $k < p$). This is a key parameter to determine in EFA.
-* $\epsilon_i$ is the error term (or uniqueness) associated with the $i$-th observed variable. It represents the variance in $X_i$ that is not explained by the common factors. These are assumed to be uncorrelated with each other and with the common factors, and have a mean of 0.
+-   $X_i$ is the $i$-th observed variable (often standardized to have a mean of 0 and a standard deviation of 1).
+-   $F_j$ is the $j$-th common factor ($j = 1, 2, ..., k$), which are the latent constructs we're trying to uncover.
+-   $l_{ij}$ is the factor loading of the $i$-th observed variable on the $j$-th common factor. It represents the strength and direction of the association between the observed variable and the factor.
+-   $k$ is the number of common factors (where $k < p$). This is a key parameter to determine in EFA.
+-   $u_i$ is the unique factor associated with the  observed variable$X_i$, capturing variance not explained by the common factors. These are assumed to be uncorrelated with each other and with the common factors, and have a mean of 0.
 
 ## Steps in the process of EFA
 
@@ -54,7 +60,7 @@ Where:
 
 -   **Evaluate Assumptions:** Assess the suitability of the data for EFA using diagnostic tests such as the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy and Bartlett’s test of sphericity. Additionally, examine the correlation matrix to ensure that variables are sufficiently correlated for factor analysis but without multicollinearity (extremely high correlations) or singularity (perfect correlations of 1 or -1). These tests determine whether the correlation matrix is appropriate for factor extraction.
 
--   **Choose the Extraction Method:** Select an extraction method for factors (e.g., Principal Axis Factoring, Maximum Likelihood, or Maximum Residuals). Principal Axis Factoring is commonly used when you assume that underlying latent factors are driving correlations.
+-   **Choose the Extraction Method:** Select an extraction method for factors (e.g., Principal Axis Factoring, Maximum Likelihood, or Maximum Residuals). Principal Axis Factoring is commonly used when we assume that underlying latent factors are driving correlations.
 
 -   **Determine the Number of Factors:** Identify how many factors to extract, guided by criteria such as eigenvalues greater than one, scree plot inspection, or parallel analysis. These components often correspond to underlying subscales.
 
@@ -67,7 +73,6 @@ Where:
 -   **Refine the Model:** Based on the results, you may choose to drop items with low factor loadings or revise the number of factors. Ensure that any issues of singularity are addressed by removing highly correlated variables.
 
 -   **Finalize the Factor Solution:** Once the factors are interpretable and reliable, finalize the model and prepare the results for reporting.
-
 
 ## Example of GRMS Stress Appraisal
 
@@ -88,7 +93,6 @@ DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
       ))))
 
 ```
-
 
 -   Unattractive because of size of butt (Obj1)
 -   Negative comments about size of facial features (Obj2)
@@ -115,7 +119,6 @@ DT::datatable(dat, extensions = c('Scroller', 'Buttons'), rownames = FALSE,
 -   Someone has told me to calm down (Ang1)
 -   Perceived to be “angry Black woman" (Ang2)
 -   Someone accused me of being angry when speaking calm (Ang3)
-
 
 ## EFA in Jamovi
 
@@ -156,7 +159,6 @@ If the determinant were below the threshold, we would need to identify and addre
 
 When researchers lack a clear theoretical framework to guide their analysis, they often adopt an iterative approach, exploring multiple solutions by extracting varying numbers of factors. For example, Lewis and Neville (2015) examined models with two, three, four, and five factors. In this example, we will present a four-factor solution as the selected model:
 
-
 Therefore, we select "Fixed number" and type 4 in the number of factors:
 
 ![Select the number of factor for a four-factor model.](images/efa4004.png){#fig-efa4004 width="30%"}
@@ -167,11 +169,9 @@ We can also obtain the scree plot from the Additional Output:
 
 ![Scree plot.](images/efa4006.png){#fig-efa4006 width="65%"}
 
-
 ### Extraction of factors and rotation
 
 Lewis and Neville (2015) used parallel analysis as their extraction method. In this example, we demonstrate the use of **Principal Axis Factoring** (PAF) for extraction and Oblimin (the default option) as the rotation method.
-
 
 ![Select the Principal Axis for extraction and Oblimin method of rotation.](images/fa3.png){#fig-fa3 width="35%"}
 
@@ -192,6 +192,19 @@ In the rotated factor matrix, a few items exhibit cross-loadings, meaning they l
 -   Ang1 loads on both Factor 3 and Factor 4, with loadings of 0.33 and 0.24, respectively. Although neither loading is particularly high, this item should be reviewed in the context of theoretical expectations.
 
 **NOTE:** In oblique rotation, a distinction is made between the pattern matrix and the structure matrix. The **pattern matrix** (@fig-fa4) displays the standardized regression coefficients (i.e., factor loadings) of each factor on each observed variable, reflecting the direct effects while controlling for the influence of other factors. In contrast, the **structure matrix** presents the simple correlations between each observed variable and each factor, reflecting both direct and indirect effects (due to factor intercorrelations) without controlling for the overlap among factors (this matrix is not included in the Jamovi output).
+
+ 
+
+**Partitioning the variance in factor analysis**
+
+Factor analysis assumes that variance can be partitioned into two types of variance: common and unique.
+
+- **Common variance** (communality), denoted usually as $h^2$, represents the portion of a variable's variance that is shared with other variables and is explained by the underlying common factors (**NOTE:** A critical difference between PCA and EFA is that factor analysis only attempts to account for common variance, not total variance).
+
+
+- **Unique variance** (uniqueness), denoted usually as $u^2$, represents the portion of variance that is specific to the variable itself and not explained by the common factors. 
+The greater "uniqueness" the lower the relevance of the variable in the factor model. For example, if a variable has high uniqueness (close to 1), it indicates that the variable is poorly explained by the selected number of components.
+
 
 ### Explained variance and model fit
 
@@ -245,7 +258,7 @@ psych::fa.diagram(FA1, cut = 0, digits = 2, l.cex=0.8,
 
 This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following underlying factors:
 
--   **Factor 1:** Assumptions of Beauty and Sexual Objectification (11 items; Obj1-Obj10 and Marg6) 
+-   **Factor 1:** Assumptions of Beauty and Sexual Objectification (11 items; Obj1-Obj10 and Marg6)
 -   **Factor 2:** Silenced and Marginalized (6 items; Marg1-Marg5, Marg7)
 -   **Factor 3:** Strong Woman Stereotype (6 items; Str1-Str5, Ang1)
 -   **Factor 4:** Angry Woman Stereotype (2 items; Ang2 and Ang3)
