@@ -37,8 +37,26 @@
      
 
 
+-   **Lecture: Principal Component Analysis**
+
+![psy-pca](presentations/pca.pdf){width="60%" height="400"}
+
+     
+
+
+
 -   **Lecture: Systematic Reviews**
 
 ![psy-SR_meta1](presentations/SR_meta1.pdf){width="60%" height="400"}
 
      
+
+
+-   **Lecture: Meta-analysis**
+
+![psy-SR_meta2](presentations/SR_meta2.pdf){width="60%" height="400"}
+
+     
+
+
+
