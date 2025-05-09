@@ -179,7 +179,7 @@ Additionally, we hide loading below 0.23 (the default is 0.3):
 
 @fig-fa4 shows the loadings of the factors after Oblimin rotation.
 
-![Factor Loadings using Pricipal axis factoring in combination with Oblimin rotation.](images/fa4.png){#fig-fa4 width="55%"}
+![Factor Loadings using Pricipal axis factoring in combination with Oblimin rotation (pattern matrix).](images/fa4.png){#fig-fa4 width="55%"}
 
 In the rotated factor matrix, a few items exhibit cross-loadings, meaning they load significantly on more than one factor:
 
@@ -199,7 +199,7 @@ Factor analysis assumes that variance can be partitioned into two types of varia
 
 -   **Common variance** (communality), denoted usually as $h^2$, represents the portion of a variable's variance that is shared with other variables and is explained by the underlying common factors (**NOTE:** A critical difference between PCA and EFA is that factor analysis only attempts to account for common variance, not total variance).
 
--   **Unique variance** (uniqueness), denoted usually as $u^2$, represents the portion of variance that is specific to the variable itself and not explained by the common factors. The greater "uniqueness" the lower the relevance of the variable in the factor model. For example, if a variable has high uniqueness (close to 1), it indicates that the variable is poorly explained by the selected number of components.
+-   **Unique variance** (uniqueness), denoted usually as $u^2$, represents the portion of variance that is specific to the variable itself and not explained by the common factors. The greater "uniqueness" the lower the relevance of the variable in the factor model. For example, if a variable has high uniqueness (close to 1), it indicates that the variable is poorly explained by the selected number of factors.
 
 ### Explained variance and model fit
 
@@ -251,7 +251,7 @@ psych::fa.diagram(FA1, cut = 0, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
 
-This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following underlying factors:
+This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following common factors (latent variables).  These factors can also be considered as the subscales of the questionnaire:
 
 -   **Factor 1:** Assumptions of Beauty and Sexual Objectification (11 items; Obj1-Obj10 and Marg6)
 -   **Factor 2:** Silenced and Marginalized (6 items; Marg1-Marg5, Marg7)
@@ -268,7 +268,7 @@ There are several estimation methods for obtaining factor scores in EFA using Ja
 
 When using Oblimin rotation (which allows factors to be correlated), the best methods for estimating factor scores are **ten Berge’s method** and **Bartlett’s method**. Ten Berge’s method is generally considered the most accurate because it specifically adjusts for factor correlations using generalized least squares. Bartlett’s method is also a strong choice, producing consistent scores while accounting for factor correlations. In contrast, Anderson-Rubin’s method should be avoided because it forces factor scores to be uncorrelated, which conflicts with the purpose of Oblimin. Thurstone’s method can be used but is less optimal, and Harman’s method is not recommended because it does not properly adjust for correlated factors.
 
-In our example, we select the Ten Berge’s method (@fig-efa4002).
+In our example, we select the ten Berge’s method (@fig-efa4002).
 
 ![Select Factor scores and ten Berge estimation method.](images/efa4002.png){#fig-efa4002 width="60%"}
 
@@ -316,9 +316,3 @@ From the Scale Statistics options, select Cronbach’s $\alpha$ :
  
 
 ![Cronbach’s alpha for factor 4.](images/fa20.png){#fig-fa20 width="25%"}
-
- 
-
-The overall Cronbach’s $\alpha$ is:
-
-![Overall Cronbach’s alpha.](images/fa15.png){#fig-fa15 width="25%"}
