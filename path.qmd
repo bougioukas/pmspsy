@@ -407,9 +407,11 @@ Next we specify the variables of each endogenous variable. First we select on th
 
  
 
-Under the "Parameter Options", also check the *Indirect Effects*.
+Within the "Parameter Options" menu, also select the *Indirect Effects*.
 
-![Parameters Options. Check Inderect Effects.](images/path006.png){width="75%"}  
+![Parameters Options. Check Inderect Effects.](images/path006.png){width="75%"} 
+
+ 
 
 The direct effects (path coefficients) are obtained from regression analysis.
 
@@ -443,7 +445,7 @@ Under the “R-Squared” table, we see the unadjusted R2 value for the outcome 
 
 Moreover, the indirect effects are reported in the following table:
 
-![Indirect effects.](images/path005.png){#fig-path005 width="95%"}
+![Indirect effects.](images/path005.png){#fig-path005 width="100%"}
 
 For example, the estimate for the indirect effect of the path attitude=\>intention=\>behavior is calculated as 0.35\*0.45 = 0.16.
 
@@ -455,10 +457,10 @@ Using path analysis, we can also explicitly model the variance of the exogenous 
 
  
 
-We can also present the model with a path diagram. All options regard aestetics of the diagram are shown in @fig-path34.
+We can also present the model with a path diagram. All options regard aesthetics of the diagram are shown in @fig-path34.
 
 ![Path Diagram choices. Check Residuals for variances (residual errors).](images/path34.png){#fig-path34 width="75%"}
 
  
 
-![Path diagram of the model with observed variables.](images/path33.png){#fig-path33 width="75%"}
+![Path diagram of the model with observed variables.](images/path33.png){#fig-path33 width="80%"}
