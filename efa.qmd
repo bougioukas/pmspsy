@@ -42,7 +42,7 @@ Exploratory Factor Analysis (EFA) can be used to explore the dimensionality of a
 
 Let's say we have $p$ observed variables, denoted as $X_1, X_2, ..., X_p$. The factor model for the $i$-th observed variable ($X_i$) for a single individual can be expressed as a regression on the common factors:
 
-$$X_i = l_{i1}F_1 + l_{i2}F_2 + ... + l_{im}F_k + u_i$$
+$$X_i = l_{i1}F_1 + l_{i2}F_2 + ...+ l_{ij}F_j +... + l_{ik}F_k + u_i$$
 
 Where:
 
@@ -50,7 +50,7 @@ Where:
 -   $F_j$ is the $j$-th common factor ($j = 1, 2, ..., k$), which are the latent constructs we're trying to uncover.
 -   $l_{ij}$ is the factor loading of the $i$-th observed variable on the $j$-th common factor. It represents the strength and direction of the association between the observed variable and the factor.
 -   $k$ is the number of common factors (where $k < p$). This is a key parameter to determine in EFA.
--   $u_i$ is the unique factor associated with the observed variable$X_i$, capturing variance not explained by the common factors. These are assumed to be uncorrelated with each other and with the common factors, and have a mean of 0.
+-   $u_i$ is the unique factor associated with the observed variable $X_i$. It represents the portion of the variance in $X_i$ that cannot be explained by the common factors and is considered the specific variance of $X_i$, unique to it and not shared with the other variables. The $u_i$ terms are assumed to be uncorrelated with each other and with the common factors, and have a mean of 0.
 
 ## Steps in the process of EFA
 
@@ -139,9 +139,31 @@ All variables in the dataset are on the same scale (Likert scale).
 
 ### Assumptions
 
-The assumption checks for EFA are similar to those in PCA (Bartlett’s test of sphericity, Kaiser-Meyer-Olkin (MKO) index of Sampling Adequacy; see @sec-pca). However, in Exploratory Factor Analysis, we are also particularly concerned with issues of multicollinearity and singularity in the data. One way to assess this is by examining the determinant of the correlation matrix. If the determinant is smaller than 0.00001, this may indicate that some variables are too highly correlated (multicollinearity), or some variables are perfectly correlated (singularity), which can distort factor extraction.
+The assumption checks for EFA are similar to those in PCA (Bartlett’s test of sphericity, Kaiser-Meyer-Olkin (MKO) index of Sampling Adequacy; see @sec-pca). However, in Exploratory Factor Analysis, we are also particularly concerned with issues of multicollinearity and singularity in the data, as these can affect the reliability and interpretability of the factor model.
 
-In our example, the determinant of the correlation matrix can be calculated using a simple line of code in the **Rj Editor+** of Jamovi:
+One way to assess this is by examining the **determinant** of the correlation matrix. If the determinant is smaller than 0.00001, this may indicate that some variables are too highly correlated (multicollinearity), or some variables are perfectly correlated (singularity), which can distort factor extraction.
+
+ 
+
+NOTE: The simplest case of a 2 × 2 correlation matrix, for example, with `Obj1` and `Obj2` variables, consists of two rows and two columns and is written as:
+
+$$C = \begin{bmatrix}
+    r_{11}       & r_{12} \\
+    r_{21}       & r_{22} \\
+\end{bmatrix} = \begin{bmatrix}
+    1       & 0.35 \\
+    0.35       & 1 \\
+\end{bmatrix} $$
+
+Here, $r_{11}$ and $r_{22}$ represent the correlation of each variable with itself (which is always 1), and $r_{12}$ and $r_{21}$ represent the correlation between `Obj1` and `Obj2` (which is 0.35 in this example).
+
+
+The determinant of **C** is calculated as: $\text{det}(C) = r_{11} \cdot r_{22} - r_{12} \cdot r_{21} = 1 \cdot 1 - 0.35 \cdot 0.35 = 1-0.123 = 0.877$.
+
+
+ 
+
+In our example, the determinant of the correlation matrix (a 25 x 25 matrix with Pearson's correlations) can be calculated using a simple line of code in the **Rj Editor+** of Jamovi:
 
 ![Calculation of determinant of correlation matrix in RJ Editor.](images/Rj1.png){#fig-Rj1 width="55%"}
 
@@ -251,7 +273,7 @@ psych::fa.diagram(FA1, cut = 0, digits = 2, l.cex=0.8,
                   marg=c(0.0, 0.5, 0.5, 0.1), sort = F)
 ```
 
-This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following common factors (latent variables).  These factors can also be considered as the subscales of the questionnaire:
+This diagram illustrates how the observed variables can be grouped together, allowing us to identify the following common factors (latent variables). These factors can also be considered as the subscales of the questionnaire:
 
 -   **Factor 1:** Assumptions of Beauty and Sexual Objectification (11 items; Obj1-Obj10 and Marg6)
 -   **Factor 2:** Silenced and Marginalized (6 items; Marg1-Marg5, Marg7)
