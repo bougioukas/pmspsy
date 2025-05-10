@@ -344,11 +344,13 @@ Path analysis can be used to test more complex theories of observed variables. I
 
 We can specify the Theory of Planned Behavior as a path diagram by drawing the observed variables and the directional associations (paths) between the variables as implied by the theory, where rectangles represent the variables and directional arrows represent the directional relations between variables, which is depicted in the path diagram below:
 
-![Model diagram.](images/path27.png){#fig-path27 width="90%"}
+![Model diagram.](images/path27.png){#fig-path27 width="95%"}
 
 -   **Exogenous variables:** Independent variables that are influenced by factors outside the model and, in turn, influence endogenous variables. In path diagrams, arrows originate from exogenous variables but do not point to them.
 
 -   **Endogenous variables:** Dependent variables that are explained by exogenous variables in the model. Arrows point toward them and these represent causal paths. Note that an endogenous variable may also be specified as the predictor of another endogenous variable, as is the case in our example path diagram.
+
+-   **Path coefficients** are regression coefficients (typically denoted as $\beta_1-\beta_4$, or sometimes as $p_1-p_4$) that represent direct effects of one variable on another.
 
 -   **Variances** are typically represented as curved double-sided arrows, where both arrows point to the same variable. **Covariances** are also represented as double-sided arrows in which the arrows connect two distinct variables.
 
@@ -356,7 +358,7 @@ We can specify the Theory of Planned Behavior as a path diagram by drawing the o
 
 The equations of this model are:
 
-$$intention = intercept +  \beta_1 attitude + \beta_2 norms + \beta control + e$$
+$$intention = intercept +  \beta_1 attitude + \beta_2 norms + \beta_3 control + e$$
 
 and
 
@@ -397,7 +399,6 @@ as shown below in @fig-path11.
 
  
 
-
 The Path Analysis dialog box opens. From the left-hand pane drag the variables `behavior` and `intention` into the *Endogenous Variable* field, and the variables `attitude`, `norms` into the *Mediator* field, and the `grades` variable into the *Predictor* field as shown below (@fig-path003).
 
 ![Path analysis dialog box.](images/path003.png){#fig-path003 width="75%"}
@@ -412,7 +413,7 @@ Next we specify the variables of each endogenous variable (@fig-path30). First w
 
 Within the "Parameter Options" menu, also select the *Indirect Effects* (@fig-path006).
 
-![Parameters Options. Check Inderect Effects.](images/path006.png){#fig-path006 width="75%"} 
+![Parameters Options. Check Inderect Effects.](images/path006.png){#fig-path006 width="75%"}
 
  
 
