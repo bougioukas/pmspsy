@@ -123,7 +123,7 @@ The PICO framework is commonly used to specify the inclusion and exclusion crite
 
 5.  The time-points that will be used for analysis (e.g., 3 months, 6 months) .
 
-![Each outcome has five elements.](images/ma8.png){#fig-ma8 width="55%"}
+![Each outcome has five elements (Source: Saldanha et al. 2014).](images/ma8.png){#fig-ma8 width="55%"}
 
 ::: content-box-blue
 **Example of eligibility criteria in PICO format**
@@ -306,7 +306,7 @@ The most common approach to rating the certainty of the evidence is the GRADE (G
 
 Randomized controlled trials provide high quality evidence which may be downgraded for several reasons including high risk of bias, imprecision, inconsistency, indirectness, or concerns about publication bias. Conversely, evidence that includes observational data starts at low quality due to the possibility of residual confounding (i.e., confounding that persists after Adjustment for the putatively measured confounders) (@fig-ma5).
 
-![A summary of GRADE’s approach to rating quality of evidence.](images/ma5.png){#fig-ma5 width="95%"}
+![A summary of GRADE’s approach to rating quality of evidence (Source: Balshem et al. 2011).](images/ma5.png){#fig-ma5 width="95%"}
 
 The evaluation should be performed independently by two reviewers, while any disagreement should be discussed with a third, independent reviewer.
 

@@ -75,7 +75,7 @@ The main steps of SEM are following (@fig-sem3) [@stoffels2023]:
 
 5.  **Model respecification:** Model respecification in SEM refers to the process of modifying a model to improve its fit to the data after initial estimation. If the original model does not fit well, researchers may adjust it by adding or removing paths, correlating error terms, or reassigning indicators—guided by both theory and statistical diagnostics like modification indices.
 
-![Steps and key decisions involved in performing Structural Equation Modeling (SEM).](images/sem2.png){#fig-sem2 width="95%"}
+![Steps and key decisions involved in performing Structural Equation Modeling (SEM) (Source: Stoffels et al. 2023).](images/sem2.png){#fig-sem2 width="95%"}
 
 ## EXAMPLE Data and the model
 

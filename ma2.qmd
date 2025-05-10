@@ -333,12 +333,20 @@ We check *Show Test of Excess Significance output* from the Publication Bias (@f
 
 ![Tests for publication bias.](images/ma23.png){#fig-ma23 width="65%"}
 
+ 
+
 ![Test of Excess Significance (TES).](images/ma24.png){#fig-ma24 width="65%"}
+
+ 
 
 ![Funnel plot.](images/ma25.png){#fig-ma25 width="75%"}
 
+ 
+
 ![Results of the tests for publication bias.](images/ma26.png){#fig-ma26 width="55%"}
 
-The visual asymmetry of the funnel plot, particularly the absence of smaller studies showing non-positive effects, raises concerns about a small-study effect (). Egger's test also suggests the presence of funnel plot asymmetry (z = 4.4, p \< 0.001). However, the Begg and Mazumdar rank correlation test was not statistically significant (Kendall's tau = 0.62, p = 0.069) and the Test of Excess Significance indicated no evidence of excess significance bias (i.e., no suspiciously high number of significant findings). Given the small number of studies (n = 7), the results from both the statistical tests and the funnel plot are not very clear and should be interpreted with caution.
+ 
+
+The visual asymmetry of the funnel plot, particularly the absence of smaller studies showing non-positive effects, raises concerns about a small-study effect (@fig-ma25). Egger's test also suggests the presence of funnel plot asymmetry (z = 4.4, p \< 0.001). However, the Begg and Mazumdar rank correlation test was not statistically significant (Kendall's tau = 0.62, p = 0.069) and the Test of Excess Significance indicated no evidence of excess significance bias (i.e., no suspiciously high number of significant findings). Given the small number of studies (n = 7), the results from both the statistical tests and the funnel plot are not very clear and should be interpreted with caution.
 
 (**NOTE:** Research has found that funnel plots using the standardized mean difference (SMD) in combination with the standard error (SE) are unsuitable for assessing publication bias and can lead to false-positive results [@zwetsloot2017a])
