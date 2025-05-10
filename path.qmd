@@ -398,19 +398,19 @@ as shown below in @fig-path11.
  
 
 
-The Path Analysis dialog box opens. From the left-hand pane drag the variables `behavior` and `intention` into the *Endogenous Variable* field, and the variables `attitude`, `norms` into the *Mediator* field, and the `grades` variable into the *Predictor* field as shown below (@fig-path12).
+The Path Analysis dialog box opens. From the left-hand pane drag the variables `behavior` and `intention` into the *Endogenous Variable* field, and the variables `attitude`, `norms` into the *Mediator* field, and the `grades` variable into the *Predictor* field as shown below (@fig-path003).
 
 ![Path analysis dialog box.](images/path003.png){#fig-path003 width="75%"}
 
  
 
-Next we specify the variables of each endogenous variable. First we select on the right panel the endogenous model that needs to be set, then select the variable(s) and fill the Models for Endogenous Vars field clicking the arrow.
+Next we specify the variables of each endogenous variable (@fig-path30). First we select on the right panel the endogenous model that needs to be set, then select the variable(s) and fill the Models for Endogenous Vars field clicking the arrow.
 
 ![Endogenous Model determination.](images/path30.png){#fig-path30 width="75%"}
 
  
 
-Within the "Parameter Options" menu, also select the *Indirect Effects*.
+Within the "Parameter Options" menu, also select the *Indirect Effects* (@fig-path006).
 
 ![Parameters Options. Check Inderect Effects.](images/path006.png){#fig-path006 width="75%"} 
 

@@ -157,9 +157,7 @@ $$C = \begin{bmatrix}
 
 Here, $r_{11}$ and $r_{22}$ represent the correlation of each variable with itself (which is always 1), and $r_{12}$ and $r_{21}$ represent the correlation between `Obj1` and `Obj2` (which is 0.35 in this example).
 
-
 The determinant of **C** is calculated as: $\text{det}(C) = r_{11} \cdot r_{22} - r_{12} \cdot r_{21} = 1 \cdot 1 - 0.35 \cdot 0.35 = 1-0.123 = 0.877$.
-
 
  
 
