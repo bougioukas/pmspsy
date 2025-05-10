@@ -393,7 +393,10 @@ flowchart LR
 
 as shown below in @fig-path11.
 
-![In the menu at the top, choose Analyses -\> SEM -\> Path Analysis.](images/path29.png){width="95%"}
+![In the menu at the top, choose Analyses -\> SEM -\> Path Analysis.](images/path29.png){#fig-path29 width="95%"}
+
+ 
+
 
 The Path Analysis dialog box opens. From the left-hand pane drag the variables `behavior` and `intention` into the *Endogenous Variable* field, and the variables `attitude`, `norms` into the *Mediator* field, and the `grades` variable into the *Predictor* field as shown below (@fig-path12).
 
