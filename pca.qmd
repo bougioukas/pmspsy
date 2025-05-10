@@ -127,7 +127,7 @@ round(evector1, 3)
 ```
 
 
-Therefore, $a_{11} = 0.225$, $a_{21} = 0.239$, $a_{31} = 0.214$, ..., $a_{25 \ 2} = 0.166$ etc.
+Therefore, $a_{11} = 0.225$, $a_{21} = 0.239$, $a_{31} = 0.214$, ..., $a_{25 \ 1} = 0.166$ etc.
 
  
 
@@ -182,8 +182,9 @@ evector2 <- eigen(cor(dat))$vectors[, 2]
 round(evector2, 3)
 ```
 
-Therefore, $a_{12} = -0.224$, $a_{22} = -0.212$, $a_{32} = -0.201$,..., $a_{25 \ 1} = 0.237$ etc.
+Therefore, $a_{12} = -0.224$, $a_{22} = -0.212$, $a_{32} = -0.201$,..., $a_{25 \ 2} = 0.237$ etc.
 
+ 
 
 The corresponding eigenvalue, $\lambda_{2}$, is:
 
@@ -373,7 +374,9 @@ After rotation, there are four clear components/dimensions (**NOTE:** In the unr
 
 There is clear (or at least reasonable) component membership for each variable. By default, the table displays all component loadings greater than 0.30. When an observed variable loads on multiple components above this threshold, it is examined for potential **cross-loading**. In this analysis, cross-loadings greater than 0.30 were identified for the following variables: `Obj6`, `Marg6`, and `Ang1`.
 
-It is important to note that in PCA with **orthogonal** rotation (such as Varimax), the component loadings can be interpreted as **correlation coefficients** between the original observed variables and the rotated components. Additionally, the "uniqueness" represents the portion of a variable’s variance that is not explained by the $k$ retained principal components.
+It is important to note that in PCA with **orthogonal** rotation (such as Varimax), the component loadings can be interpreted as **correlation coefficients** (Pearson's r) between the original observed variables and the (rotated) component scores (see bellow in 7.7 how we can calculate these scores). 
+
+In the @fig-mlinear33, there is also a column labeled "uniqueness". This represents the portion of a variable’s variance that is not explained by the $k$ retained principal components.
 
  
 
