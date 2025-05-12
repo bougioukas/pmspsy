@@ -25,25 +25,27 @@ When we have finished this chapter, we should be able to:
 -   Interpret the results obtained from SEM analysis.
 :::
 
+## Basic concepts in SEM
+
 In the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This integration gave rise to Path Analysis with latent variables—now known as Structural Equation Modeling (SEM).
 
-## Measurement and Structural Models
+### Measurement and Structural Models
 
-The general SEM model can be decomposed into two two submodels: a measurement model, and a structural model (@fig-sem1).
+The general SEM model can be decomposed into two submodels: a measurement model, and a structural model (@fig-sem1).
 
 ![The measurement model and structural model.](images/sem1.png){#fig-sem1 width="90%"}
 
 **The measurement model**
 
-The measurement model defines associations between the observed and unobserved variables. In other words, it provides the link between scores on a measuring instrument (observed indicator variables, $x_1,...,x_6$) and the underlying structures they are designed to measure (unobserved latent variables $\xi_1$, $\eta_1$). The measurement model, then, represents the **CFA model** described earlier in @sec-cfa in that it specifies the pattern by which each measure loads on a particular factor.
+The measurement model defines associations between the observed and unobserved variables. In other words, it provides the link between scores on measuring instruments (observed indicator variables, $x_1,...,x_6$) and the underlying structures they are designed to measure (unobserved latent variables $\xi_1$, $\eta_1$). The measurement model, then, represents the **CFA model** described earlier in @sec-cfa in that it specifies the pattern by which each measure loads on a particular factor.
 
 **The structural model**
 
 The structural model defines associations among the unobserved variables (latent variables, $\xi_1$ and $\eta_1$). Accordingly, it specifies the manner by which particular latent variables directly or indirectly influence changes in the values of certain other latent variables in the model. In @fig-sem1 the latent variable $\xi_1$ is exogenous, while the latent variable $\eta_1$ is endogenous.
 
-## Effects in SEM
+### Effects in SEM
 
-In SEM two types of effects are estimates: **direct and indirect effects** (@fig-sem3).
+In SEM two types of effects are estimated: **direct and indirect effects** (@fig-sem3).
 
 ![Hypothesized Structural Equation Model (SEM).](images/sem3.png){#fig-sem3 width="90%"}
 
@@ -51,7 +53,7 @@ Direct effects (p1), indicated by a straight arrow, represent the association be
 
 Indirect effects ($p2*p3$), on the other hand, reflect the association between an independent latent variable (exogenous variable) (e.g. $\xi_2$) and a dependent latent variable (endogenous variable) (e.g. $\eta_2$) that is **mediated** by one or more latent variables (e.g. $\eta_1$). This path is illustrated by the red arrows in @fig-sem3.
 
-## Parameters in the SEM
+### Parameters in SEM
 
 There are three types of parameters to be specified:
 
@@ -120,6 +122,8 @@ as shown below (@fig-sem5).
 
 ![select SEM (interactive) from SEM icon in the menu.](images/sem5.png){#fig-sem5 width="90%"}
 
+ 
+
 Once the Structural Equation Modeling window appears, type "Achievement" into the Latent Endogenous Variables box. Next, select the observed variables `read` (ref.), `arith`, and `spell` from the left-hand pane and move them under the "Achievement" label in the Latent Endogenous Variables box (@fig-sem6).
 
 ![Select read, arith, and spell for the endogenous variable named Achievement.](images/sem6.png){#fig-sem6 width="70%"}
@@ -132,7 +136,9 @@ We also need to define the exogenous factors "Adjustment" and "Risk" as predicto
 
 ![Endogenous Model determination.](images/sem7.png){#fig-sem7 width="70%"}
 
-We can also present the model with a path diagram by selecting "path diagram" and "show residuals" (@fig-sem9).
+ 
+
+We can present the model with a path diagram by selecting "path diagram" and "show residuals" (@fig-sem9).
 
 ![Select Path Diagram and check show residuals.](images/sem8.png){#fig-sem8 width="70%"}
 
@@ -144,11 +150,15 @@ The path coefficients of the structural model are shown in the following table:
 
 ![Direct path coefficients.](images/sem9.png){#fig-sem9 width="75%"}
 
+ 
+
 **Factor Loadings**
 
 The factor Loadings of the measurement model are shown in the following table:
 
 ![Factor Loadings of the measurement model.](images/sem10.png){#fig-sem10 width="75%"}
+
+ 
 
 **Variances and Covariances**
 
@@ -156,6 +166,8 @@ Variances (i.e., measurement errors, variances of the exogenous latent variables
 
 ![Variances and Covariances of the model.](images/sem12.png){#fig-sem12 width="75%"}
 
-Finally, we can presnt our results of the model with a path diagram as follows:
+ 
+
+Finally, we can present the SEM with a path diagram as follows:
 
 ![Path diagram of the model.](images/sem13.png){#fig-sem13 width="85%"}
