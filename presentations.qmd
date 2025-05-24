@@ -42,12 +42,28 @@
 
      
 
-
 -   **Lecture: Exploratory Factor Analysis**
 
 ![psy-efa](presentations/efa.pdf){width="60%" height="400"}
 
      
+
+
+-   **Lecture: Mediation and Path Analysis**
+
+![psy-path](presentations/path.pdf){width="60%" height="400"}
+
+     
+
+
+
+
+-   **Lecture: Confirmatory Factor Analysis**
+
+![psy-cfa](presentations/cfa.pdf){width="60%" height="400"}
+
+     
+
 
 
 

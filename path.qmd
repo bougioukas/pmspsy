@@ -340,7 +340,9 @@ as shown below in @fig-path11.
 
 ### Basic concepts
 
-Path analysis can be used to test more complex theories of observed variables. In this example, we look at the theory of planned behavior (TPB). This theory is a psychological theory that links beliefs to behavior. In its simplified form, the TPB proposes that an individual's intention to perform a specific behavior influences the individual’s decision to enact that behavior, and attitude toward the behavior, perception of norms pertaining to that behavior, and perception of control over performing that behavior influence the individual’s intention to perform the behavior.
+Path analysis can be used to test more complex theories of observed variables. It is an extension of multiple regression and is used primarily to examine direct and indirect associations among variables.
+
+In this example, we look at the theory of planned behavior (TPB). This theory is a psychological theory that links beliefs to behavior. In its simplified form, the TPB proposes that an individual's intention to perform a specific behavior influences the individual’s decision to enact that behavior, and attitude toward the behavior, perception of norms pertaining to that behavior, and perception of control over performing that behavior influence the individual’s intention to perform the behavior.
 
 We can specify the Theory of Planned Behavior as a path diagram by drawing the observed variables and the directional associations (paths) between the variables as implied by the theory, where rectangles represent the variables and directional arrows represent the directional relations between variables, which is depicted in the path diagram below:
 
