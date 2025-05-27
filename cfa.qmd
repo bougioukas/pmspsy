@@ -165,13 +165,13 @@ The unstandardized loading for AS2 is estimated at 1.132. This indicates that fo
 
  
 
-### Residuals covariances (error terms)
+### Residuals (co)variances (variance of error terms)
 
-![Error terms of the observed variables.](images/cfa12.png){#fig-cfa12 width="95%"}
+![Variance of error terms of the observed variables.](images/cfa12.png){#fig-cfa12 width="95%"}
 
  
 
-![Error terms of the observed variables in path diagram.](images/cfa14.png){#fig-cfa14 width="95%"}
+![Variance of error terms of the observed variables in path diagram.](images/cfa14.png){#fig-cfa14 width="95%"}
 
  
 

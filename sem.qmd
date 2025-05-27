@@ -1,4 +1,4 @@
-# Structural Equation Modelling {#sec-sem}
+# Introduction to Structural Equation Modelling {#sec-sem}
 
 ```{r}
 #| include: false
@@ -27,11 +27,11 @@ When we have finished this chapter, we should be able to:
 
 ## Basic concepts in SEM
 
-In the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This integration gave rise to Path Analysis with latent variables—now known as Structural Equation Modeling (SEM).
+In the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This **integration** gave rise to Path Analysis with latent variables—now known as **Structural Equation Modeling (SEM)**.
 
 ### Measurement and Structural Models
 
-The general SEM model can be decomposed into two submodels: a measurement model, and a structural model (@fig-sem1).
+The general SEM model can be decomposed into two submodels: a **measurement model**, and a **structural model** (@fig-sem1).
 
 ![The measurement model and structural model.](images/sem1.png){#fig-sem1 width="90%"}
 
@@ -41,7 +41,7 @@ The measurement model defines associations between the observed and unobserved v
 
 **The structural model**
 
-The structural model defines associations among the unobserved variables (latent variables, $\xi_1$ and $\eta_1$). Accordingly, it specifies the manner by which particular latent variables directly or indirectly influence changes in the values of certain other latent variables in the model. In @fig-sem1 the latent variable $\xi_1$ is exogenous, while the latent variable $\eta_1$ is endogenous.
+The structural model defines associations among the **unobserved variables** (latent variables, $\xi_1$ and $\eta_1$). Accordingly, it specifies the manner by which particular latent variables directly or indirectly influence changes in the values of certain other latent variables in the model. In @fig-sem1 the latent variable $\xi_1$ is exogenous, while the latent variable $\eta_1$ is endogenous.
 
 ### Effects in SEM
 
@@ -51,15 +51,15 @@ In SEM two types of effects are estimated: **direct and indirect effects** (@fig
 
 Direct effects (p1), indicated by a straight arrow, represent the association between one latent variable to another and this is indicated using single-directional arrows (e.g., the green arrow that connects directly $\xi_2$ and $\eta_2$). The arrows are used in SEM to indicate directionality and do not imply causality.
 
-Indirect effects ($p2*p3$), on the other hand, reflect the association between an independent latent variable (exogenous variable) (e.g. $\xi_2$) and a dependent latent variable (endogenous variable) (e.g. $\eta_2$) that is **mediated** by one or more latent variables (e.g. $\eta_1$). This path is illustrated by the red arrows in @fig-sem3.
+Indirect effects ($p2*p3$), on the other hand, reflect the association between an independent latent variable (exogenous variable) (e.g., $\xi_2$) and a dependent latent variable (endogenous variable) (e.g., $\eta_2$) that is **mediated** by one or more latent variables (e.g., $\eta_1$). This path is illustrated by the red arrows in @fig-sem3.
 
 ### Parameters in SEM
 
 There are three types of parameters to be specified:
 
--   **Directional effects:** These are **regression coefficients** (e.g., $l_1-l_12$ in @fig-sem3) that represent the associations between observed indicators and latent variables (referred to as **factor loadings**), as well as the associations between latent variables and other latent variables (referred to as **path coefficients**; e.g., $p_1-p_4$ in @fig-sem3).
+-   **Directional effects:** These are **regression coefficients** (e.g., $l_1-l_{12}$ in @fig-sem3) that represent the associations between observed indicators and latent variables (referred to as **factor loadings**), as well as the associations between latent variables and other latent variables (referred to as **path coefficients**; e.g., $p_1-p_4$ in @fig-sem3). Note also that the path coefficients from $e_1 - e_{12}$ to the observed variables $X_i - X_{12}$ are fixed to 1.
 
--   **Variances:** Variances in a structural equation model account for unexplained variability in both observed and latent variables. For observed indicators, they represent **measurement error**—the variance not accounted for by the latent factor the indicator is intended to measure (e.g., $e_1-e_{12}$ in @fig-sem3). For exogenous latent variables, they are represented with the green double-headed arrows in @fig-sem3 (these are often fixed to 1 for scaling but can sometimes be estimated). For endogenous latent variables, they reflect the variance in an endogenous (dependent) latent variable that is not explained by the exogenous (independent) latent variables predicting it in the model (e.g., $resid_1, resid_2$ in @fig-sem3).
+-   **Variances:** Variances in a structural equation model account for unexplained variability in both observed and latent variables. For observed indicators, they represent **measurement error**—the variance not accounted for by the latent factor the indicator is intended to measure (e.g., the purple circles $e_1-e_{12}$ in @fig-sem3). For exogenous latent variables, they are represented with the green double-headed arrows in @fig-sem3. For endogenous latent variables, they reflect the variance in an endogenous (dependent) latent variable that is not explained by the exogenous (independent) latent variables predicting it in the model (e.g., the purple circles $resid_1, resid_2$ in @fig-sem3).
 
 -   **Covariances:** These parameters represent non-directional associations among independent (exogenous) latent variables and these exist when a researcher hypothesizes that the factors are correlated ($\phi_1$ shown as the curved double-headed orange arrow connected ($\xi_1$ and $\xi_2$ in @fig-sem3).
 

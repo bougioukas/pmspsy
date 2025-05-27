@@ -40,7 +40,7 @@ As we discussed in the previous chapter, Principal Component Analysis (PCA) is p
 Exploratory Factor Analysis (EFA) can be used to explore the dimensionality of a measurement instrument by identifying the smallest number of interpretable factors that explain the **common variance** among variables.
 :::
 
-Let's say we have $p$ observed variables, denoted as $X_1, X_2, ..., X_p$. The factor model for the $i$-th observed variable ($X_i$) for a single individual can be expressed as a regression on the common factors:
+Let's say we have $p$ observed variables, denoted as $X_1, X_2, ..., X_p$. The factor model for the $i$-th observed variable ($X_i$) can be expressed as a regression on the common factors:
 
 $$X_i = l_{i1}F_1 + l_{i2}F_2 + ...+ l_{ij}F_j +... + l_{ik}F_k + u_i$$
 
@@ -50,7 +50,11 @@ Where:
 -   $F_j$ is the $j$-th common factor ($j = 1, 2, ..., k$), which are the latent constructs we're trying to uncover.
 -   $l_{ij}$ is the factor loading of the $i$-th observed variable on the $j$-th common factor. It represents the strength and direction of the association between the observed variable and the factor.
 -   $k$ is the number of common factors (where $k < p$). This is a key parameter to determine in EFA.
--   $u_i$ is the unique factor associated with the observed variable $X_i$. It represents the portion of the variance in $X_i$ that cannot be explained by the common factors and is considered the specific variance of $X_i$, unique to it and not shared with the other variables. The $u_i$ terms are assumed to be uncorrelated with each other and with the common factors, and have a mean of 0.
+-   $u_i$ is the unique factor associated with the observed variable $X_i$. It represents the part of $X_i$ that is not explained by the common factors ($F_1, F_2, ..., F_k$). In EFA, the $u_i$ terms are assumed to be uncorrelated with each other and with the common factors, and have a mean of zero. 
+
+Furthermore, the variance of $u_i$ (i.e., $Var(u_i)$) is commonly referred to as the *uniqueness* of $X_i$. Although it is sometimes denoted conventionally as $u_i^2$, a more precise notation is $\sigma^2(u_i)$. This term represents the proportion of variance in $X_i$ that is unique (idiosyncratic) and not explained by the underlying common factors.
+
+
 
 ## Steps in the process of EFA
 
