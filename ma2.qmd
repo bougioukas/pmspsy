@@ -278,6 +278,8 @@ Open the dataset named "meta" from the file tab in the menu (@fig-ma16).
 
 ![The meta dataset.](images/ma16.png){#fig-ma16 width="75%"}
 
+ 
+
 On the Jamovi top menu navigate to
 
 ```{mermaid}
@@ -289,9 +291,13 @@ as shown below (@fig-ma17).
 
 ![In the menu at the top, choose Analyses -\> Meta Analysis -\> Mean Differences.](images/ma17.png){#fig-ma17 width="85%"}
 
+ 
+
 The *The Mean Differences box* opens (@fig-ma18). From the left-hand pane drag the variables into the right-hand fields, as shown below:
 
 ![The Mean Differences box options. Drag and drop the variables into the right-hand field.](images/ma18.png){#fig-ma18 width="65%"}
+
+ 
 
 From the **Model Options** we select "Restricted Maximum-Likelihood" for estimating the $\tau^2$, and "Standardized Mean Difference" as the measure of effect size.
 
@@ -326,6 +332,9 @@ The psychological therapies were more effective than any comparator in improving
 Observe that the forest plot clearly demonstrates that the Monghanloo (2015) study (n = 34) exhibits a large standardized mean difference (SMD) of approximately 5.20, with a confidence interval ranging from 3.8 to 6.6. This finding is markedly different from the other studies (it may be a potential outlier in the context of this model), which show effect sizes closer to zero or slightly positive.
 
 (**Note:** The authors of the systematic review considered a SMD effect size of 0.2 to be small, 0.5 medium, and greater than 0.8 large).
+
+
+ 
 
 **Small-study effects and publication bias**
 
