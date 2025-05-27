@@ -178,11 +178,11 @@ In contrast, the **95% prediction interval** reflects the expected range of effe
 
 There are three types of heterogeneity: clinical, methodological, and statistical.
 
--   Clinical heterogeneity: Variability in participants (e.g., inclusion criteria, geographical location), interventions (e.g., dose, nature of control interventions) and outcomes (e.g., follow-up duration, cut-off points).
+-   **Clinical heterogeneity:** Variability in participants (e.g., inclusion criteria, geographical location), interventions (e.g., dose, nature of control interventions) and outcomes (e.g., follow-up duration, cut-off points).
 
--   Methodological heterogeneity: Variability in the study design, the quality of conduct, and approach to analysis. For example, when the sequence of assigning participants to treatment groups is not concealed, randomized clinical trials tend to estimate larger treatment effects.
+-   **Methodological heterogeneity:** Variability in the study design, the quality of conduct, and approach to analysis. For example, when the sequence of assigning participants to treatment groups is not concealed, randomized clinical trials tend to estimate larger treatment effects.
 
--   Statistical heterogeneity: Variability in effect sizes, resulting from clinical and/or methodological diversity. Statistical heterogeneity is present if the observed effects are more different from each other than would be expected due to random sampling.
+-   **Statistical heterogeneity:** Variability in effect sizes, resulting from clinical and/or methodological diversity. Statistical heterogeneity is present if the observed effects are more different from each other than would be expected due to random sampling.
 
 ### Assessing heterogeneity in meta-analysis
 
@@ -198,13 +198,13 @@ The statistical power of Cochran’s Q test is often low, particularly in meta-a
 
  
 
-$\tau^2$ measure
+**$\tau^2$ measure**
 
 $\tau^2$ describes the underlying between-study variability. Its square root, $\tau$, is measured in the same units as the outcome. Its estimate does not systematically increase with either the number of studies or the sample size.
 
  
 
-$I^2$ index
+**$I^2$ index**
 
 Another statistic used to assess heterogeneity is $I^2$, which represents the part of total variation that is due to between-studies variance. $I^2$ is a percentage and its values lie between 0% and 100%. For example, an $I^2$ value of 0% indicates that all variability in effect size estimates is due to sampling error within studies, whereas an $I^2$ value of 50% indicates that half of the total variability among effect sizes is caused by true heterogeneity between studies. Importantly, $I^2$ is a relative measure and can be directly compared between meta-analyses with different numbers of studies and various types of outcome data.
 
@@ -218,13 +218,10 @@ The majority of meta-analyses use the $I^2$ index to quantify heterogeneity. Whi
 
 **Potential sources of asymmetry in funnel plots**
 
--   One possible, and probably the most well-known, reason is **publication bias**. This occurs when the likelihood of a study being published—particularly a small study—increases if it shows a stronger, statistically significant, and favorable effect. Conversely, small studies with null or negative findings are less likely to be published, especially since such studies are often perceived as less robust or less interesting.
+One possible, and perhaps the most well-known, cause of small-study effects is **publication bias**. This occurs when the likelihood of a study being published—particularly a small study—increases if it shows a stronger, statistically significant, and favorable effect. Conversely, small studies with null or negative findings are less likely to be published, especially since such studies are often perceived as less robust or less interesting. (**NOTE:** Publication bias affects all review methods, not limited to meta-analyses).
 
-**NOTE:** Publication bias affects all review methods (not a problem exclusive to MAs!)
+There are several other potential causes of small-study effects. One example is **outcome reporting bias**, where only the most favorable outcomes within a study are selectively reported, while less favorable or non-significant results are omitted. Another potential cause is **clinical heterogeneity** between patients in large and small studies; for example, patients in smaller studies may be selectively chosen because they are more likely to experience a favorable outcome from the experimental treatment.
 
--   There are a number of other possible reasons for small-study effects. One is selective reporting of the most favourable outcomes, known as outcome reporting bias.
-
--   Another possible cause of small-study effects is clinical heterogeneity between patients in large and small studies; e.g., patients in smaller studies may have been selected so that a favourable outcome of the experimental treatment may be expected.
 
  
 
