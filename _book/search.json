@@ -634,7 +634,7 @@
     "href": "sem.html",
     "title": "11  Introduction to Structural Equation Modelling",
     "section": "",
-    "text": "11.1 Basic concepts in SEM\nIn the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This integration gave rise to Path Analysis with latent variables—now known as Structural Equation Modeling (SEM).",
+    "text": "11.1 Basic concepts in SEM\nIn the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This integration gave rise to Path Analysis with latent variables—now known as Structural Equation Modelling (SEM).",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Introduction to Structural Equation Modelling</span>"
     ]
@@ -924,7 +924,7 @@
     "href": "presentations.html",
     "title": "14  Presentations",
     "section": "",
-    "text": "Lecture 1: Introduction\n\n\n\n\npsy-introduction\n\n\n     \n\nLecture 2: Between-subjects: One-way ANOVA\n\n\n\n\npsy-anova1\n\n\n     \n\nLecture 3: Within-subjects: Repeated ANOVA\n\n\n\n\npsy-anova2\n\n\n     \n\nLecture 4: Within-subjects: Two-way ANOVA\n\n\n\n\npsy-anova3\n\n\n     \n\nLecture: Linear Regression (Simple Models)\n\n\n\n\npsy-linear1\n\n\n     \n\nLecture: Linear Regression (Multi-variable models)\n\n\n\n\npsy-linear2\n\n\n     \n\nLecture: Principal Component Analysis\n\n\n\n\npsy-pca\n\n\n     \n\nLecture: Exploratory Factor Analysis\n\n\n\n\npsy-efa\n\n\n     \n\nLecture: Mediation and Path Analysis\n\n\n\n\npsy-path\n\n\n     \n\nLecture: Confirmatory Factor Analysis\n\n\n\n\npsy-cfa\n\n\n     \n\nLecture: Systematic Reviews\n\n\n\n\npsy-SR_meta1\n\n\n     \n\nLecture: Meta-analysis\n\n\n\n\npsy-SR_meta2",
+    "text": "Lecture 1: Introduction\n\n\n\n\npsy-introduction\n\n\n     \n\nLecture 2: Between-subjects: One-way ANOVA\n\n\n\n\npsy-anova1\n\n\n     \n\nLecture 3: Within-subjects: Repeated ANOVA\n\n\n\n\npsy-anova2\n\n\n     \n\nLecture 4: Within-subjects: Two-way ANOVA\n\n\n\n\npsy-anova3\n\n\n     \n\nLecture 5: Linear Regression (Simple Models)\n\n\n\n\npsy-linear1\n\n\n     \n\nLecture 6: Linear Regression (Multi-variable models)\n\n\n\n\npsy-linear2\n\n\n     \n\nLecture 7: Principal Component Analysis\n\n\n\n\npsy-pca\n\n\n     \n\nLecture 8: Exploratory Factor Analysis\n\n\n\n\npsy-efa\n\n\n     \n\nLecture 9: Mediation and Path Analysis\n\n\n\n\npsy-path\n\n\n     \n\nLecture 10: Confirmatory Factor Analysis\n\n\n\n\npsy-cfa\n\n\n     \n\nLecture 11: Introduction to Structural Equation Modelling\n\n\n\n\npsy-sem\n\n\n     \n\nLecture 12: Systematic Reviews\n\n\n\n\npsy-SR_meta1\n\n\n     \n\nLecture 13: Meta-analysis\n\n\n\n\npsy-SR_meta2",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Presentations</span>"
     ]

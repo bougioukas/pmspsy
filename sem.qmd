@@ -19,7 +19,7 @@ When we have finished this chapter, we should be able to:
 ::: {.callout-caution icon="false"}
 ## Learning objectives
 
--   Understand the fundamental terminology used in Structural Equation Modeling (SEM).
+-   Understand the fundamental terminology used in Structural Equation Modelling (SEM).
 -   Describe the basic components of a structural equation model.
 -   Apply a step-by-step process to perform SEM.
 -   Interpret the results obtained from SEM analysis.
@@ -27,7 +27,7 @@ When we have finished this chapter, we should be able to:
 
 ## Basic concepts in SEM
 
-In the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This **integration** gave rise to Path Analysis with latent variables—now known as **Structural Equation Modeling (SEM)**.
+In the second half of the 1960s, a significant development emerged from the collaboration of researchers working on Factor Analysis (and the concept of latent variables) and Path Analysis (which introduced the concepts of exogenous/endogenous variables and direct/indirect effects). This **integration** gave rise to Path Analysis with latent variables—now known as **Structural Equation Modelling (SEM)**.
 
 ### Measurement and Structural Models
 

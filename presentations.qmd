@@ -24,56 +24,58 @@
 
      
 
--   **Lecture: Linear Regression (Simple Models)**
+-   **Lecture 5: Linear Regression (Simple Models)**
 
 ![psy-linear1](presentations/linear1.pdf){width="60%" height="400"}
 
      
 
--   **Lecture: Linear Regression (Multi-variable models)**
+-   **Lecture 6: Linear Regression (Multi-variable models)**
 
 ![psy-linear2](presentations/linear2.pdf){width="60%" height="400"}
 
      
 
--   **Lecture: Principal Component Analysis**
+-   **Lecture 7: Principal Component Analysis**
 
 ![psy-pca](presentations/pca.pdf){width="60%" height="400"}
 
      
 
--   **Lecture: Exploratory Factor Analysis**
+-   **Lecture 8: Exploratory Factor Analysis**
 
 ![psy-efa](presentations/efa.pdf){width="60%" height="400"}
 
      
 
-
--   **Lecture: Mediation and Path Analysis**
+-   **Lecture 9: Mediation and Path Analysis**
 
 ![psy-path](presentations/path.pdf){width="60%" height="400"}
 
      
 
-
-
-
--   **Lecture: Confirmatory Factor Analysis**
+-   **Lecture 10: Confirmatory Factor Analysis**
 
 ![psy-cfa](presentations/cfa.pdf){width="60%" height="400"}
 
      
 
 
+-   **Lecture 11: Introduction to Structural Equation Modelling**
+
+![psy-sem](presentations/sem.pdf){width="60%" height="400"}
+
+     
 
 
--   **Lecture: Systematic Reviews**
+
+-   **Lecture 12: Systematic Reviews**
 
 ![psy-SR_meta1](presentations/SR_meta1.pdf){width="60%" height="400"}
 
      
 
--   **Lecture: Meta-analysis**
+-   **Lecture 13: Meta-analysis**
 
 ![psy-SR_meta2](presentations/SR_meta2.pdf){width="60%" height="400"}
 
