@@ -110,7 +110,7 @@ $$selfesteem = 1.50 \ + 0.56 \cdot grades$$ Therefore, the effect of X on M (a =
 
  
 
--   **Step 3:** Estimate the effects of both X and M on Y. Path “b” must be significantly different from 0; mediator and outcome must be associated. Additionally, the path “c” should be non-significant and nearly 0. The effect of X on Y will disappear (or at least weaken) when M is included in the regression. The effect of X on Y goes through M.
+-   **Step 3:** Estimate the effects of both X and M on Y. Path “b” must be significantly different from 0; mediator and outcome must be associated. Additionally, the path “c” should be non-significant and nearly 0. The effect of X on Y will disappear (full mediation) or at least weaken (partial mediation) when M is included in the regression. The effect of X on Y goes through M.
 
 ![The effects of both X and M on Y.](images/path6.png){#fig-path6 width="65%"}
 
